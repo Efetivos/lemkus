@@ -52,7 +52,6 @@ img(src="{{ section.settings.header-img | img_url: 'master' }}", alt='')
         "settings": [
             {
                 "type": "text",
-                "type": "textarea",
                 "id": "text",
                 "label": "text",
                 "default": "This is a text",

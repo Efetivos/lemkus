@@ -8,30 +8,264 @@
     "theme_support_email": "victor@victor.work"
   },
   {
-    "name": "Colors",
+    "name": "DROPDOWN SNEAKERS",
     "settings": [
       {
-        "type": "color",
-        "id": "color_borders",
-        "label": "Border colors",
-        "default": "#e5e5e5"
+        "type": "link_list",
+        "id": "link_all_sneakers",
+        "label": "LINK LIST 1"
       },
       {
-        "type": "color",
-        "id": "color_body_text",
-        "label": "Body text",
-        "default": "#333333"
+        "type": "link_list",
+        "id": "link_brands_sneakers",
+        "label": "LINK LIST 2"
+      },
+      {
+        "type": "url",
+        "id": "sneakers-ft1-link",
+        "label": "Featured Link 1"
+      },
+      {
+        "type": "text",
+        "id": "sneakers-ft1-heading",
+        "label": "Heading Link 1",
+        "default": "Heading Link 1"
+      },
+      {
+        "type": "image_picker",
+        "id": "sneakers-ft1-img",
+        "label": "Featured Img 1"
+      },
+      {
+        "type": "url",
+        "id": "sneakers-ft2-link",
+        "label": "Featured Link 2"
+      },
+      {
+        "type": "text",
+        "id": "sneakers-ft2-heading",
+        "label": "Heading Link 2",
+        "default": "Heading Link 2"
+      },
+      {
+        "type": "image_picker",
+        "id": "sneakers-ft2-img",
+        "label": "Featured Img 2"
+      },
+      {
+        "type": "url",
+        "id": "sneakers-ft3-link",
+        "label": "Featured Link 3"
+      },
+      {
+        "type": "text",
+        "id": "sneakers-ft3-heading",
+        "label": "Heading Link 3",
+        "default": "Heading Link 3"
+      },
+      {
+        "type": "image_picker",
+        "id": "sneakers-ft3-img",
+        "label": "Featured Img 3"
       }
     ]
   },
   {
-    "name": "Dropdown Sneakers",
+    "name": "DROPDOWN KIDS",
     "settings": [
       {
         "type": "link_list",
-        "id": "id",
-        "label": "text",
-        "info": "text"
+        "id": "link_all_kids",
+        "label": "LINK LIST 1"
+      },
+      {
+        "type": "link_list",
+        "id": "link_brands_kids",
+        "label": "LINK LIST 2"
+      },
+      {
+        "type": "link_list",
+        "id": "link_appa_kids",
+        "label": "LINK LIST 3"
+      },
+      {
+        "type": "url",
+        "id": "kids-ft1-link",
+        "label": "Featured Link 1"
+      },
+      {
+        "type": "text",
+        "id": "kids-ft1-heading",
+        "label": "Heading Link 1",
+        "default": "Heading Link 1"
+      },
+      {
+        "type": "image_picker",
+        "id": "kids-ft1-img",
+        "label": "Featured Img 1"
+      },
+      {
+        "type": "url",
+        "id": "kids-ft2-link",
+        "label": "Featured Link 2"
+      },
+      {
+        "type": "text",
+        "id": "kids-ft2-heading",
+        "label": "Heading Link 2",
+        "default": "Heading Link 2"
+      },
+      {
+        "type": "image_picker",
+        "id": "kids-ft2-img",
+        "label": "Featured Img 2"
+      },
+      {
+        "type": "url",
+        "id": "kids-ft3-link",
+        "label": "Featured Link 3"
+      },
+      {
+        "type": "text",
+        "id": "kids-ft3-heading",
+        "label": "Heading Link 3",
+        "default": "Heading Link 3"
+      },
+      {
+        "type": "image_picker",
+        "id": "kids-ft3-img",
+        "label": "Featured Img 3"
+      }
+    ]
+  },
+  {
+    "name": "DROPDOWN APPAREL",
+    "settings": [
+      {
+        "type": "link_list",
+        "id": "link_all_appa",
+        "label": "LINK LIST 1"
+      },
+      {
+        "type": "link_list",
+        "id": "link_brands_appa",
+        "label": "LINK LIST 2"
+      },
+      {
+        "type": "link_list",
+        "id": "link_appa_appa",
+        "label": "LINK LIST 3"
+      },
+      {
+        "type": "url",
+        "id": "appa-ft1-link",
+        "label": "Featured Link 1"
+      },
+      {
+        "type": "text",
+        "id": "appa-ft1-heading",
+        "label": "Heading Link 1",
+        "default": "Heading Link 1"
+      },
+      {
+        "type": "image_picker",
+        "id": "appa-ft1-img",
+        "label": "Featured Img 1"
+      },
+      {
+        "type": "url",
+        "id": "appa-ft2-link",
+        "label": "Featured Link 2"
+      },
+      {
+        "type": "text",
+        "id": "appa-ft2-heading",
+        "label": "Heading Link 2",
+        "default": "Heading Link 2"
+      },
+      {
+        "type": "image_picker",
+        "id": "appa-ft2-img",
+        "label": "Featured Img 2"
+      },
+      {
+        "type": "url",
+        "id": "appa-ft3-link",
+        "label": "Featured Link 3"
+      },
+      {
+        "type": "text",
+        "id": "appa-ft3-heading",
+        "label": "Heading Link 3",
+        "default": "Heading Link 3"
+      },
+      {
+        "type": "image_picker",
+        "id": "appa-ft3-img",
+        "label": "Featured Img 3"
+      }
+    ]
+  },
+  {
+    "name": "DROPDOWN ACCESSORIES",
+    "settings": [
+      {
+        "type": "link_list",
+        "id": "link_all_acces",
+        "label": "LINK LIST 1"
+      },
+      {
+        "type": "link_list",
+        "id": "link_brands_acces",
+        "label": "LINK LIST 2"
+      },
+      {
+        "type": "url",
+        "id": "acces-ft1-link",
+        "label": "Featured Link 1"
+      },
+      {
+        "type": "text",
+        "id": "acces-ft1-heading",
+        "label": "Heading Link 1",
+        "default": "Heading Link 1"
+      },
+      {
+        "type": "image_picker",
+        "id": "acces-ft1-img",
+        "label": "Featured Img 1"
+      },
+      {
+        "type": "url",
+        "id": "acces-ft2-link",
+        "label": "Featured Link 2"
+      },
+      {
+        "type": "text",
+        "id": "acces-ft2-heading",
+        "label": "Heading Link 2",
+        "default": "Heading Link 2"
+      },
+      {
+        "type": "image_picker",
+        "id": "acces-ft2-img",
+        "label": "Featured Img 2"
+      },
+      {
+        "type": "url",
+        "id": "acces-ft3-link",
+        "label": "Featured Link 3"
+      },
+      {
+        "type": "text",
+        "id": "acces-ft3-heading",
+        "label": "Heading Link 3",
+        "default": "Heading Link 3"
+      },
+      {
+        "type": "image_picker",
+        "id": "acces-ft3-img",
+        "label": "Featured Img 3"
       }
     ]
   }
