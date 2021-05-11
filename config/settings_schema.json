@@ -23,5 +23,16 @@
         "default": "#333333"
       }
     ]
+  },
+  {
+    "name": "Dropdown Sneakers",
+    "settings": [
+      {
+        "type": "link_list",
+        "id": "id",
+        "label": "text",
+        "info": "text"
+      }
+    ]
   }
 ]
