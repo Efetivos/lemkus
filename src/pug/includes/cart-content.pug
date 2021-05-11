@@ -1,0 +1,28 @@
+|   {% if cart.item_count > 0 %}
+form(action="/cart" method="post" novalidate).cart
+    //- _________________ each item
+    ul.cart__items
+        |   {% for item in cart.items %}
+        li.cart__each
+            |   {% render 'cart-item' item:item forloop:forloop %}
+            |   {% endfor %}
+
+    .cart__infos
+    
+        .cart__infos__shipping 
+            span Shipping
+            span Calculated at checkout
+        
+        .cart__infos__estimated
+            span.estimated ESTIMATED TOTAL 
+            span.subtotal {{ cart.total_price | money }}
+
+        button(type="submit" name="checkout").btn-checkout Checkout
+
+
+|   {% else %}
+
+span.your-bag Your bag is empty
+a(href="{{ shop.url }}/").browse BROWSE NEW IN
+
+|   {% endif %}

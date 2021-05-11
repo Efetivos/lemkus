@@ -1,0 +1,41 @@
+.page.page-collection.page-search(data-ispage="collection", data-scroll-content)
+
+
+    //- =========================  HEADER  ========================= -//
+    //- =========================  HEADER  ========================= -//
+
+    main.main-collection
+        
+        //- =========================  PRODUCTS  ========================= -//
+        //- =========================  PRODUCTS  ========================= -//
+        |   {% if search.performed %}
+        |   {% assign searchsize = search.results.size %}
+        section.products
+            p.search-terms SEARCH RESULTS FOR: #[span.t-bold {{ search.terms | upcase  }} ]
+            div.hold_search(class!="{% if searchsize > 0 %} products__hold {% else %}{% endif %}")
+                |   {% for item in search.results %}
+                .collection-decor {{ collection.title }}
+
+                //- calling prod
+                |   {% render 'product-card' prod: item %}
+
+                |   {% else %}
+                .no-result-search
+                    p Your search for "{{ search.terms }}" did not yield any results.
+
+                .may-also
+                    span BUT YOU MAY LIKE
+                    nav.cross-sell
+                        div
+                            |   {% for product in collections.search.products limit:4 %}
+                            |   {% render 'product-card' prod: product %}
+
+                            |   {% endfor %}
+
+                |   {% endfor %}
+        |   {% endif %}
+
+
+    | {% render  'myfooter' %}
+
+

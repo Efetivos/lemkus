@@ -1,0 +1,8 @@
+<a class="item-img" href="{{ item.url | within: collections.all }}"><img src="{{ item | img_url: 'master' }}" alt="{{ item.title | escape }}"></a><a class="item-title" href="{{ item.url }}">{{ item.product.title }}</a>
+<p class="item-size">Size {{ item.variant.title }}</p>
+<button class="item-remove" href="/cart/change?line={{ forloop.index }}&amp;amp;quantity=0" data-line="{{ forloop.index }}" data-id="{{ item.variant.id }}">Remove</button>
+<p class="item-price">{{ item.price | money }}</p>
+<p class="item-qty">Qty {{ item.quantity }}</p>
+<input type="number" name="updates[]" id="updates_{{ item.key }}" value="{{ item.quantity }}" min="0">  {% if item.original_line_price != item.line_price %}
+<p class="item-price-dis">{{ item.original_line_price | money }}</p>  {% endif %}
+<p class="item-total-price">{{ item.line_price | money }}</p>  {% for discount in item.discounts %}{{ discount.title }}{% endfor %}

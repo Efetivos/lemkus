@@ -1,0 +1,41 @@
+
+<div class="page page-acc" data-ispage="account" data-scroll-content>
+  <header>
+    <button data-to="orders"> My Orders</button>
+    <button data-to="details"> Account Details</button>
+    <p>Hello {{ customer.first_name }}, </p>
+    <p>Your account details are below.</p>
+  </header>
+  <main>
+    <section>
+      <p>ACCOUNT INFORMATION</p><span>{{ customer.name | default: "customer" }}</span><span>{{ customer.email }}</span>
+    </section>
+    <section>
+      <p>ORDER HISTORY</p>
+      <ul>
+        <li><span>ORDER</span><span>FINANCIAL</span><span>DATE</span><span>STATUS</span><span>SUBTOTAL</span></li>  {% if customer.orders.size != 0 %}                
+          {% for order in customer.orders %}
+        <li><span>{{ order.name | link_to: order.customer_url }}</span><span>{{ order.financial_status | capitalize  }}</span><span>{{ order.created_at | date: format: 'abbreviated_date' }}</span><span>{{ order.fulfillment_status | capitalize  }}</span><span>{{ order.line_items_subtotal_price | money_without_trailing_zeros  }}</span></li>  {% endfor %}
+          {% else %}
+        <p>You haven't placed any orders yet.</p>  {% endif %}
+      </ul>
+    </section>
+    <section>
+      <div>
+          {% for line_item in order.line_items %}
+          {% if line_item.fulfillment.tracking_number %}<span>TRACK NUMBER:   <a href="{{ line_item.fulfillment.tracking_url }}"> {{ line_item.fulfillment.tracking_number }}  </a></span>  {% endif %}
+          {% endfor %}
+      </div>
+    </section>
+    <aside>
+        {% if shop.customer_accounts_enabled %}
+        {% if customer %}
+        {{ 'Log out'  | customer_logout_link }}
+        {% else %}
+        {{ 'Login ' | customer_login_link }}
+        {{ 'Register' | customer_register_link }}
+        {% endif %}
+        {% endif %}
+    </aside>
+  </main>{% render  'myfooter' %}
+</div>

@@ -1,0 +1,87 @@
+.footer
+    margin: 10.5rem 0 0 0
+    padding: 0 0 7rem 0
+    @include desk
+        margin: 9.7rem 0 0
+        padding: 0 0 1rem
+    
+.footer a
+    color: #000
+    display: block
+    font-size: 1.5rem
+    padding: 0 0 1.5rem 0
+    @include tablet
+        font-size: 1rem
+    @include desk
+        align-self: start
+        display: inline
+        flex: 0 0 auto
+        font-size: 2.5rem
+        margin: 0 0 2.5rem
+        padding: 0
+        width: auto
+
+    &:after
+        @include desk
+            bottom: -0.4rem
+
+.footer__hold
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    @include desk
+        border-top: 1px solid #000
+        flex-wrap: nowrap
+        padding: 3.4rem 0 0 0
+
+.footer__hold > *
+    @include desk
+        display: flex
+        flex-direction: column
+
+
+.footer__menu
+    text-align: left
+    flex: 1 1 29%
+    @include desk
+        flex: 0 0 auto
+
+.footer__legal
+    flex: 1 1 50%
+    @include desk
+        flex: 0 0 auto
+
+.footer__social
+    border-top: 1px solid #000
+    display: flex
+    flex: 1 1 100%
+    justify-content: space-between
+    margin: 2.5rem 0 0 0
+    padding: 2.3rem 0 0 0
+    text-transform: uppercase
+    @include desk
+        border: none
+        flex: 0 0 auto
+        margin: 0
+        padding: 0
+        text-transform: initial
+
+.footer__social  a
+    font-size: 1rem
+    @include tablet
+        font-size: .8rem
+    @include desk
+        font-size: 2.5rem
+
+.footer__social a + a:before
+    background: #000
+    content: ''
+    height: 47%
+    left: -2rem
+    position: absolute
+    top: 0
+    width: 1px
+    @include tablet
+        left: -5.6rem
+    @include desk
+        display: none

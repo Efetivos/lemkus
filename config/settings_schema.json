@@ -1,0 +1,27 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Lemkus",
+    "theme_author": "Victor Work",
+    "theme_version": "1.0.0",
+    "theme_documentation_url": "https://help.shopify.com/debut",
+    "theme_support_email": "victor@victor.work"
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "color",
+        "id": "color_borders",
+        "label": "Border colors",
+        "default": "#e5e5e5"
+      },
+      {
+        "type": "color",
+        "id": "color_body_text",
+        "label": "Body text",
+        "default": "#333333"
+      }
+    ]
+  }
+]

@@ -1,0 +1,104 @@
+.page.page-order(data-ispage="order", data-scroll-content)
+    header
+        h1  Order Number: {{ order.name }}
+        
+
+
+    main
+        section
+            
+                p
+                    strong Date:
+                    span {{ order.created_at | date: format: 'abbreviated_date' }}
+                p
+                    strong Status:
+                    span {{ order.fulfillment_status | capitalize }}
+                p
+                    strong Financial:
+                    span {{ order.financial_status | capitalize }}
+
+
+
+        section
+            h1  Billing Address
+            p
+                strong Payment Status:
+                span(class='status_{{ order.financial_status | capitalize }}') {{ order.financial_status | capitalize }}
+            
+            span {{ order.billing_address.name }}
+            span {{ order.billing_address.company }}
+            span {{ order.billing_address.street }}
+            span {{ order.billing_address.city }}, {{ order.billing_address.province }}
+            span {{ order.billing_address.country }} {{ order.billing_address.zip }}
+            span {{ order.billing_address.phone }}
+
+        div
+            h1  Shipping Address
+            p
+                strong Fulfillment Status:
+                span(class='status_{{ order.fulfillment_status | capitalize }}') {{ order.fulfillment_status | capitalize }}
+            
+            span {{ order.shipping_address.name }}
+            span {{ order.shipping_address.company }}
+            span {{ order.shipping_address.street }}
+            span {{ order.shipping_address.city }}, {{ order.shipping_address.province }}
+            span {{ order.shipping_address.country }} {{ order.shipping_address.zip }}
+            span {{ order.shipping_address.phone }}
+            
+                
+
+
+
+
+        section
+            div
+                h1  ITEMS ORDERED
+                ul
+                    li
+                        p Product:
+                        p ID
+                        p Item Price:
+                        p Quantity:
+                        p Total Price:
+                        p Track order:
+                    | {% for line_item in order.line_items %}
+                    li
+                        p
+                            strong Product:
+                            span {{ line_item.title | link_to: line_item.product.url }}
+                        p
+                            strong ID:
+                            span {{ line_item.sku }}
+                        p
+                            strong Item Price:
+                            span {{ line_item.original_price | money_without_trailing_zeros }}
+                        p
+                            strong Quantity:
+                            span {{ line_item.quantity }}
+                        p
+                            strong Total Price:
+                            span {{ line_item.line_price | money_without_trailing_zeros }}
+                        p
+                            strong Track order:
+                            span 
+                                a(href="{{ line_item.fulfillment.tracking_url }}")  {{ line_item.fulfillment.tracking_number }}
+                    | {% endfor %}
+
+
+
+
+    
+        aside.e-flex-col
+            |   {% if shop.customer_orderounts_enabled %}
+            |   {% if customer %}
+            |   {{ 'log out'  | customer_logout_link }}
+            |   {% else %}
+            |   {{ 'log in ' | customer_login_link }}
+            |   {{ 'register' | customer_register_link }}
+            |   {% endif %}
+            |   {% endif %}
+
+
+
+
+    | {% render  'myfooter' %}

@@ -1,0 +1,43 @@
+.   
+    {% schema %}
+        {
+            "name": "Header",
+            "class": "header-index",
+            "settings": [
+                {
+                    "id": "header-img",
+                    "type": "image_picker",
+                    "label": "Imagem Header"
+                },
+                {
+                    "id": "text-decor",
+                    "type": "text",
+                    "label": "Text Decor"
+                },
+                {
+                    "id": "text-btn",
+                    "type": "text",
+                    "label": "Text Button",
+                    "default": "SHOP NOW"
+                },
+                {
+                    "id": "url-btn",
+                    "type": "url",
+                    "label": "Link Button"
+                }
+            ]
+        }
+    {% endschema %}
+
+
+header
+    img(src="{{ section.settings.header-img | img_url: 'master' }}", alt='').img-load
+    div
+        span {{ section.settings.text-decor }}
+
+
+    span(data-decor="{{ section.settings.text-decor }}") {{ section.settings.text-decor }}
+    a(href="{{ section.settings.url-btn }}") {{ section.settings.text-btn }}
+    
+
+

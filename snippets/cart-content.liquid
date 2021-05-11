@@ -1,0 +1,14 @@
+  {% if cart.item_count > 0 %}
+<form class="cart" action="/cart" method="post" novalidate>
+  <ul class="cart__items">  {% for item in cart.items %}
+    <li class="cart__each">
+        {% render 'cart-item' item:item forloop:forloop %}
+        {% endfor %}
+    </li>
+  </ul>
+  <div class="cart__infos">
+    <div class="cart__infos__shipping"> <span>Shipping</span><span>Calculated at checkout</span></div>
+    <div class="cart__infos__estimated"><span class="estimated">ESTIMATED TOTAL </span><span class="subtotal">{{ cart.total_price | money }}</span></div>
+    <button class="btn-checkout" type="submit" name="checkout">Checkout</button>
+  </div>
+</form>  {% else %}<span class="your-bag">Your bag is empty</span><a class="browse" href="{{ shop.url }}/">BROWSE NEW IN</a>  {% endif %}

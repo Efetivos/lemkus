@@ -1,0 +1,32 @@
+.page.page-article( data-ispage="article", data-scroll-content)
+    header
+        nav(role="navigation" aria-label="breadcrumbs")
+            a(href="{{ shop.url }}") HOME //
+            |   {% for tag in article.tags %}
+            a(href="{{ blog.url }}/tagged/{{ tag | handle }}") {{ tag }} /
+            |   {% endfor %}
+            span {{ article.title }}
+
+
+        img(src="{{ article.image.src | img_url: 'master' }}" alt="{{ article.title }}").img-load
+        span.author BY {{ article.author }}
+        h1 {{ article.title }}
+
+
+
+    main
+        section
+        |   {{ article.content }}
+                
+        section
+            |   {% if blog.next_article %}
+            a(href="{{ blog.next_article.url }}", title="{{ blog.next_article.title }}")
+                img(src="{{ blog.next_article.image.src | img_url: 'master' }}" alt="{{ blog.next_article.title }}").img-load
+                span {{ blog.next_article.title }}
+            |   {% else %}
+            a(href="{{ blog.previous_article.url }}", title="{{ blog.previous_article.title }}")
+                img(src="{{ blog.previous_article.image.src | img_url: 'master' }}" alt="{{ blog.previous_article.title }}").img-load
+                span {{ blog.next_article.title }}
+            |   {% endif %}
+
+    | {% render  'myfooter' %}

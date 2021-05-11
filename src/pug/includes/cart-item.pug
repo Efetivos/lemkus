@@ -1,0 +1,33 @@
+
+//- ___img
+a(href="{{ item.url | within: collections.all }}").item-img
+    img(src="{{ item | img_url: 'master' }}" alt="{{ item.title | escape }}")
+
+//- ___title
+a(href="{{ item.url }}").item-title {{ item.product.title }}
+
+//- ___variant
+p.item-size Size {{ item.variant.title }}
+
+//- ___remove
+button(href="/cart/change?line={{ forloop.index }}&amp;quantity=0", data-line="{{ forloop.index }}" data-id="{{ item.variant.id }}").item-remove Remove
+
+//- ___price
+p.item-price {{ item.price | money }}
+
+//- qty
+p.item-qty Qty {{ item.quantity }}
+//- ___qty input
+input(type="number" name="updates[]" id="updates_{{ item.key }}" value="{{ item.quantity }}" min="0")
+
+//- ___price with discount
+|   {% if item.original_line_price != item.line_price %}
+p.item-price-dis {{ item.original_line_price | money }}
+|   {% endif %}
+
+
+//- ___total item price
+p.item-total-price {{ item.line_price | money }}
+
+//- ___ if discount
+|   {% for discount in item.discounts %}{{ discount.title }}{% endfor %}

@@ -1,0 +1,34 @@
+.page.page-collection(data-ispage="collection", data-scroll-content)
+
+
+    //- =========================  HEADER  ========================= -//
+    //- =========================  HEADER  ========================= -//
+    
+    |   {% section 'collection-filter' %}
+
+    main.main-collection
+        
+        //- =========================  PRODUCTS  ========================= -//
+        //- =========================  PRODUCTS  ========================= -//
+        section.products
+            .products__hold
+                .collection-title {{ collection.title }}
+                |   {% for product in collection.products %}
+
+                //- calling prod
+                |   {% render 'product-card' prod: product %}
+
+                |   {% else %}
+                p No products in this collection
+                |   {% endfor %}
+
+        //-
+            |   {% paginate collection.products by 3 %}
+            |   {% if paginate.pages > 1 %}
+            |   {{ paginate | default_pagination }}
+            |   {% endif %}
+            |   {% endpaginate %}
+
+    | {% render  'myfooter' %}
+
+

@@ -1,0 +1,27 @@
+
+<div class="page page-login" data-ispage="login" data-scroll-content>
+  <header>
+    <p>My account /</p>
+    <div class="form-login e-flex-col">{% form 'customer_login' %} {{ form.errors | default_errors }}
+      <input type="email" name="customer[email]" placeholder="Email">
+      <input type="password" name="customer[password]" autocomplete placeholder="Password">
+      <input type="submit" value="Sign In">{% endform %} 
+    </div>
+    <section class="login-opt">
+      <div class="login-opt__creat">
+          {% if shop.customer_accounts_enabled %} {% if customer  %} {% else %}
+          {% if shop.customer_accounts_optional %}
+              {{ 'Create an account' | customer_register_link }}
+          {% endif %}
+          {% endif %} {% endif %}
+      </div>
+      <div class="login-opt__forgot">
+        <button>Forgot password?</button>
+        <div class="forgot-form e-flex-col">  {% form 'recover_customer_password' %} {{ form.errors | default_errors}}
+          <input type="email" name="email" placeholder=" Email Address">
+          <input type="submit" value="Submit">  {% endform %} 
+        </div>
+      </div>
+    </section>
+  </header>{% render  'myfooter' %}
+</div>

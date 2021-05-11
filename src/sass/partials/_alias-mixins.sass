@@ -1,0 +1,174 @@
+@mixin mobile 
+	@media only screen and (max-width: 960px) 
+		@content
+
+
+
+@mixin tablet 
+	@media only screen and (min-width: 580px) and (max-width: 1024px) 
+		@content
+
+
+
+@mixin tablet-land
+	@media only screen and (min-width: 900px) and (max-width: 1180px)  and (min-height: 700px)
+		@content
+
+
+
+@mixin desk 
+	@media only screen and (min-width: 1025px) 
+		@content
+
+
+@mixin title 
+	@include serif
+	font-size: 30px
+	font-weight: 100
+	letter-spacing: 1px
+	color: var(--color)
+	@include desk 
+		font-size: 73px			
+
+
+
+@mixin hd 
+	@media only screen and (min-width: 1800px) 
+		@content		
+	
+
+
+@mixin gray 
+   	filter: grayscale(100%)
+    -webkit-filter: grayscale(100%)
+    -moz-filter: grayscale(100%)
+    -o-filter: grayscale(100%)
+    -ms-filter: grayscale(100%)
+
+
+
+@mixin hw100p 
+	width: 100%
+	height: 100%
+
+
+@mixin hw100v
+	width: 100vw
+	height: 100vh
+
+
+@mixin flex-center-col 
+	display: flex
+	justify-content: center
+	align-items: center
+	flex-direction: column
+
+
+@mixin flex-center 
+	display: flex
+	justify-content: center
+	align-items: center
+
+
+
+@mixin gray 
+   	filter: grayscale(100%)
+    -webkit-filter: grayscale(100%)
+    -moz-filter: grayscale(100%)
+    -o-filter: grayscale(100%)
+    -ms-filter: grayscale(100%)
+
+
+@mixin rotate 
+	-webkit-transform: rotate(-90deg)
+	-moz-transform: rotate(-90deg)
+	-ms-transform: rotate(-90deg)
+	-o-transform: rotate(-90deg)
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3)
+
+
+@mixin clear 
+/*     border: none
+    background-image: none
+    background-color: transparent
+    -webkit-box-shadow: none
+    -moz-box-shadow: none
+    box-shadow: none	
+	outline: 0 */
+
+@mixin	not-visible
+    clip-path: inset(1px 1px 1px 1px)
+    height: 1px
+    overflow: hidden
+    position: absolute !important
+    width: 1px
+
+
+
+@mixin resetbtn 
+	background: none repeat scroll 0 0 transparent
+	border: medium none
+	border-spacing: 0
+	color: #26589F
+	outline: none
+
+
+\:root
+	--gap: 2.5rem
+	--dark: #191919
+	--gray: #f6f6f6
+	--soft: #fdfbf5
+	--white: #ffffff
+	--color: #fec333
+	--pink: #e6cac6
+	--dharma: 'DharmaGothicE-Bold', condensed, sans-serif
+	--dharmaex: 'DharmaGothicE-ExBold', condensed, sans-serif
+	--sans: 'OpenSans-Regular', sans-serif
+	--openbold: 'OpenSans-Bold', sans-serif
+	--opensemi: 'OpenSans-SemiBold', sans-serif
+	--reco: 'RecoletaAlt-Regular', serif
+	--recosemi: 'RecoletaAlt-SemiBold', serif
+	--recomed: 'RecoletaAlt-Medium', serif
+	--serif: 'RecoletaAlt-Regular', serif
+	@include desk
+		--gap: 2.5rem
+
+
+@mixin dharma
+	font-family: var(--dharma)
+@mixin dharmaex
+	font-family: var(--dharmaex)
+@mixin sans
+	font-family: var(--sans)
+@mixin openbold
+	font-family: var(--openbold)
+@mixin opensemi
+	font-family: var(--opensemi)
+@mixin reco
+	font-family: var(--reco)
+@mixin recosemi
+	font-family: var(--recosemi)
+@mixin recomed
+	font-family: var(--recomed)
+@mixin serif
+	font-family: var(--serif)
+
+
+.dharma
+	font-family: var(--dharma)
+.dharmaex
+	font-family: var(--dharmaex)
+.sans
+	font-family: var(--sans)
+.openbold
+	font-family: var(--openbold)
+.opensemi
+	font-family: var(--opensemi)
+.reco
+	font-family: var(--reco)
+.recosemi
+	font-family: var(--recosemi)
+.recomed
+	font-family: var(--recomed)
+.serif
+	font-family: var(--serif)

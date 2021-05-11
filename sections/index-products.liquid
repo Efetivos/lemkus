@@ -1,0 +1,40 @@
+
+{% schema %}
+    {
+        "name": "Collection",
+        "class": "collection-index",
+        "settings": [
+            {
+                "id": "collection-index",
+                "type": "collection",
+                "label": "Collection"
+            },
+            {
+                "id": "text-btn",
+                "type": "text",
+                "label": "Text Button",
+                "default": "SHOP ALL"
+            },
+            {
+                "id": "url-btn",
+                "type": "url",
+                "label": "Link Button"
+            }
+        ]
+    }
+{% endschema %}
+{% assign collection = collections[section.settings.collection-index] %}
+<section class="collect-index">{% for product in collection.products %}
+  <div class="collect-index__each"><a href="{{ product.url | within: collection }}" title="{{ product.featured_image.alt | escape }}"><img class="img-load" src="{{ product.featured_image.src | img_url: '700x' }}" alt="{{ product.featured_image.alt | escape }}">  {% if product.images.size == 1 %} 
+        {% assign my_product_image =  product.images[0] %}
+        {% else %}
+        {% assign my_product_image =  product.images[1] %}
+        {% endif %}<img class="img-load img-load" src="{{ my_product_image | img_url: '700x' }}" alt="{{ product.featured_image.alt | escape }}"></a><a href="{{ product.url | within: collection }}" alt="{{ product.featured_image.alt | escape }}">{{ product.title }}</a>  {% unless product.available %}<br><strong>sold out</strong>{% endunless %}
+    <form class="js-add-cart no-mobile" method="post" action="/cart/add">
+      <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+      <input class="no-desk" min="1" type="number" id="quantity" name="quantity" value="1">
+      <button type="submit">ADD</button>
+    </form>
+  </div>{% endfor %}
+  <div><a class="t-serif t-center e-wp" href="{{ section.settings.url-btn }}">{{ section.settings.text-btn }}</a></div>
+</section>

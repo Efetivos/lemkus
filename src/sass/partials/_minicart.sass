@@ -1,0 +1,34 @@
+@import './partials/alias-mixins'
+.minicart__fader
+    background: #C4C4C4
+    height: 100vh
+    left: 0
+    opacity: 0
+    visibility: hidden
+    position: fixed
+    top: 0
+    width: 100vw
+    z-index: 10
+    transition: .6s opacity ease-out
+
+.minicart
+    background: var(--color)
+    height: calc(var(--vh) * 100)
+    overflow: hidden
+    overflow-y: auto
+    position: fixed
+    right: 0
+    top: 0
+    z-index: 10
+    transform: translateX(100%)
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)
+    width: 100vw
+    @include desk
+        width: 79.1rem
+
+.is-minicart .minicart
+    transform: translateX(0%)
+
+.is-minicart .minicart__fader
+    visibility: visible
+    opacity: .48

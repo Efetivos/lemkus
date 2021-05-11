@@ -1,0 +1,26 @@
+
+<div class="page page-collection page-search" data-ispage="collection" data-scroll-content>
+  <main class="main-collection">
+      {% if search.performed %}
+      {% assign searchsize = search.results.size %}
+    <section class="products">
+      <p class="search-terms">SEARCH RESULTS FOR: <span class="t-bold">{{ search.terms | upcase  }} </span></p>
+      <div class="hold_search {% if searchsize > 0 %} products__hold {% else %}{% endif %}">  {% for item in search.results %}
+        <div class="collection-decor">{{ collection.title }}</div>  {% render 'product-card' prod: item %}
+          {% else %}
+        <div class="no-result-search">
+          <p>Your search for "{{ search.terms }}" did not yield any results.</p>
+        </div>
+        <div class="may-also"><span>BUT YOU MAY LIKE</span>
+          <nav class="cross-sell">
+            <div>
+                {% for product in collections.search.products limit:4 %}
+                {% render 'product-card' prod: product %}
+                {% endfor %}
+            </div>
+          </nav>
+        </div>  {% endfor %}
+      </div>
+    </section>  {% endif %}
+  </main>{% render  'myfooter' %}
+</div>

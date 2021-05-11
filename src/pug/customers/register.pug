@@ -1,0 +1,32 @@
+
+.page.page-register(data-ispage="register", data-scroll-content)
+    header
+        p Create an Account / 
+        .form-register.e-flex-col
+            |{% form 'create_customer' %} {{ form.errors | default_errors }}
+            input(type='text' value='' name='customer[first_name]' size='30', placeholder="First Name")
+            input(type='text' value='' name='customer[last_name]' size='30', placeholder="Last Name")
+            input(type='email' value='' name='customer[email]' size='30', placeholder="Email Address")
+            input(type='password' value='' name='customer[password]' size='30', placeholder="Password")
+            input(type='submit' value='Create')
+            |{% endform %} 
+
+
+        section.register-opt.e-flex-col
+            .register-opt__creat.e-flex-col
+                |   {% if shop.customer_accounts_enabled %} 
+                |   {{ 'Log in' | customer_login_link }}
+                |   {% endif %}
+
+            .register-opt__forgot.e-flex-col
+                button.toggle-forgot Forgot password?
+
+                .forgot-form.e-flex-col.js-hidden
+                    |   {% form 'recover_customer_password' %} {{ form.errors | default_errors}}
+                    input(type='email' name='email', placeholder="Email Address").input-cost
+                    input(type='submit' value='Submit').submit-cost
+                    |   {% endform %} 
+
+
+
+    | {% render  'myfooter' %}

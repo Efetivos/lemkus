@@ -1,0 +1,11 @@
+|   {% unless template == 'index' or template == 'cart' or template == 'list-collections' %}
+nav.breadcrumbs(role="navigation" aria-label="breadcrumbs").e-flex
+    a(href="{{ shop.url }}") HOME /
+    a(href="{{ shop.url }}/collections/all") SHOP ALL /
+    |   {% for collection in product.collections %}
+    |   {% unless collection.title == 'Homepage' %}
+    a(href="{{ collection.url }}").e-upper {{ collection.title }} /
+    |   {% endunless %}
+    |   {% endfor %}
+    span {{ product.title }}
+|   {% endunless %}

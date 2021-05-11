@@ -1,0 +1,11 @@
+
+<div class="page page-article" data-ispage="article" data-scroll-content>
+  <header>
+    <nav role="navigation" aria-label="breadcrumbs"><a href="{{ shop.url }}">HOME //</a>  {% for tag in article.tags %}<a href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }} /</a>  {% endfor %}<span>{{ article.title }}</span></nav><img class="img-load" src="{{ article.image.src | img_url: 'master' }}" alt="{{ article.title }}"><span class="author">BY {{ article.author }}</span>
+    <h1>{{ article.title }}</h1>
+  </header>
+  <main>
+    <section></section>  {{ article.content }}
+    <section>  {% if blog.next_article %}<a href="{{ blog.next_article.url }}" title="{{ blog.next_article.title }}"><img class="img-load" src="{{ blog.next_article.image.src | img_url: 'master' }}" alt="{{ blog.next_article.title }}"><span>{{ blog.next_article.title }}</span></a>  {% else %}<a href="{{ blog.previous_article.url }}" title="{{ blog.previous_article.title }}"><img class="img-load" src="{{ blog.previous_article.image.src | img_url: 'master' }}" alt="{{ blog.previous_article.title }}"><span>{{ blog.next_article.title }}</span></a>  {% endif %}</section>
+  </main>{% render  'myfooter' %}
+</div>

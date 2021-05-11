@@ -1,0 +1,90 @@
+@import 'alias-mixins'
+
+
+	
+.t-sans
+    font-family: var(--sans)
+	
+.t-kaft
+    font-family: var(--kaft)
+	
+.t-italic
+    font-family: var(--italic)
+	
+.t-serif
+    font-family: var(--serif)
+
+.t-light
+    font-weight: 300
+
+.t-bold
+    font-weight: 700
+h1
+    font-size: 4rem
+
+
+
+
+
+
+
+
+
+
+
+//- =========================  COSTUMERS  ========================= -//
+//- =========================  COSTUMERS  ========================= -//
+
+.its-page
+    display: none
+    font-family: var(--serif)
+    @include desk
+        display: block
+        text-align: left
+        width: 100%
+        text-indent: 23.5rem
+        font-size: 3.5rem
+
+
+.input-cost
+    background: transparent
+    border: none
+    border-bottom: 2px solid rgba(54,54,54,1)
+    font-size: 2.4rem
+    text-align: center
+    text-transform: uppercase
+    width: 100%
+    @include desk
+        font-size: 3.5rem
+
+
+
+.input-cost::placeholder
+    color: rgba(54,54,54,.25)
+
+
+.submit-cost, .shopify-challenge__button
+    border: 1px solid #363636
+    font-family: var(--serif)
+    font-size: 2rem
+    padding: 0.9rem 2rem 0.5rem
+    text-transform: uppercase
+    width: auto !important
+    @include desk
+        font-size: 4rem
+        padding: 1.9rem 4.4rem 1.5rem
+
+
+
+.js-hidden
+    clip-path: inset(0% 0% 100% 0%) !important
+
+.errors
+    padding: 1.55rem 0 0 0
+
+
+.errors li
+    color: #c30808
+
+.t-under
+    text-decoration: underline

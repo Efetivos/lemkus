@@ -1,0 +1,65 @@
+.page.page-acc( data-ispage="account", data-scroll-content)
+    header
+        button(data-to="orders")  My Orders
+        button(data-to="details")  Account Details
+        p Hello {{ customer.first_name }}, 
+        p Your account details are below.
+
+
+    main
+        section
+            p ACCOUNT INFORMATION
+            span {{ customer.name | default: "customer" }}
+            span {{ customer.email }}
+
+
+
+
+
+        section
+                p ORDER HISTORY
+                ul
+                    li
+                        span ORDER
+                        span FINANCIAL
+                        span DATE
+                        span STATUS
+                        span SUBTOTAL
+                    |   {% if customer.orders.size != 0 %}                
+                    |   {% for order in customer.orders %}
+                    li
+                        span {{ order.name | link_to: order.customer_url }}
+                        span {{ order.financial_status | capitalize  }}
+                        span {{ order.created_at | date: format: 'abbreviated_date' }}
+                        span {{ order.fulfillment_status | capitalize  }}
+                        span {{ order.line_items_subtotal_price | money_without_trailing_zeros  }}
+
+                    |   {% endfor %}
+                    |   {% else %}
+                    p You haven't placed any orders yet.
+                    |   {% endif %}
+
+
+        section
+            div
+                |   {% for line_item in order.line_items %}
+                |   {% if line_item.fulfillment.tracking_number %}
+                span TRACK NUMBER:   
+                    a(href="{{ line_item.fulfillment.tracking_url }}")  {{ line_item.fulfillment.tracking_number }}  
+                |   {% endif %}
+                |   {% endfor %}
+        
+        aside
+            |   {% if shop.customer_accounts_enabled %}
+            |   {% if customer %}
+            |   {{ 'Log out'  | customer_logout_link }}
+            |   {% else %}
+            |   {{ 'Login ' | customer_login_link }}
+            |   {{ 'Register' | customer_register_link }}
+            |   {% endif %}
+            |   {% endif %}
+
+
+
+
+    | {% render  'myfooter' %}

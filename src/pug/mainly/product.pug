@@ -1,0 +1,45 @@
+.page.page-product(data-barba="container", data-barba-namespace="product", data-ispage="product", data-scroll-content)
+    header.header-prod
+        .header-prod__bread
+            |   {% render 'breadcrumbs' %}
+        .header-prod__hold
+
+            //- _____ gallery
+            .header-prod__gallery
+                .header-prod__gallery__travel
+                    |   {% for image in product.images %}
+                    .header-prod__gallery__each
+                        img(src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}" ).img-load
+                    |   {% endfor %}
+                
+            //- _____ infos
+            .header-prod__infos
+                //-  title
+                h1.t-serif.header-prod__title  {{ product.title }}
+
+                //-  prices
+                span.indic.price-text PRICE 
+                | {% if product.compare_at_price_max != 0 %}
+                span.sale-price {{ product.compare_at_price_max  | money_without_trailing_zeros  }}
+                | {% endif %}
+                .regular-price {{ product.price | money_without_trailing_zeros }}
+
+
+                |   {% render 'add-to-cart' %}
+
+                //-  descrip
+                .prod-descr
+                    | {{ product.content }}
+        
+
+    main.main-prod
+
+
+
+        section.may-also
+            span.t-serif YOU MAY ALSO LIKE
+            |   {% render 'cross-sell' %}
+
+
+
+    | {% render  'myfooter' %}

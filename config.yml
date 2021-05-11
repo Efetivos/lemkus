@@ -1,0 +1,6 @@
+development:
+  password: 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
+  theme_id: "119018455231"
+  store: lemkus-staging.myshopify.com
+  ignore_files:
+    - /config/settings_data.json

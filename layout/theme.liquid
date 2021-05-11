@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+  <title>{{ page_title }} | {{ shop.name }}</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="description" content="{{ page_description | escape }}">
+  <link rel="canonical" href="{{ canonical_url }}">
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+  {{ content_for_header }} <!-- Header hook for plugins -->
+  <link rel="preload" href=" {{ 'DharmaGothicE-Bold.woff' | asset_url }} " as="font" type="font/woff" crossorigin>
+  <link rel="preload" href=" {{ 'DharmaGothicE-ExBold.woff' | asset_url }} " as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="  {{ 'OpenSans-Bold.woff' | asset_url }} " as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="  {{ 'OpenSans-Regular.woff' | asset_url }} " as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="  {{ 'OpenSans-SemiBold.woff' | asset_url }} " as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="  {{ 'RecoletaAlt-Medium.woff' | asset_url }} " as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="  {{ 'RecoletaAlt-SemiBold.woff' | asset_url }} " as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="  {{ 'RecoletaAlt-Regular.woff' | asset_url }} " as="font" type="font/woff" crossorigin>
+
+  <link rel="preconnect" href="https://www.google-analytics.com/" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    @font-face{font-family: 'DharmaGothicE-Bold'; font-display: fallback; src: url('{{ "DharmaGothicE-Bold.eot" | asset_url }}') format('embedded-opentype'), url('{{ "DharmaGothicE-Bold.ttf" | asset_url }}') format('truetype'), url('{{ "DharmaGothicE-Bold.woff" | asset_url }}') format('woff'), url('{{ "DharmaGothicE-Bold.woff2" | asset_url }}') format('woff2'); font-weight: normal; font-style: normal;}
+
+    @font-face{font-family: 'DharmaGothicE-ExBold'; font-display: fallback; src: url('{{ "DharmaGothicE-ExBold.eot" | asset_url }}') format('embedded-opentype'), url('{{ "DharmaGothicE-ExBold.ttf" | asset_url }}') format('truetype'), url('{{ "DharmaGothicE-ExBold.woff" | asset_url }}') format('woff'), url('{{ "DharmaGothicE-ExBold.woff2" | asset_url }}') format('woff2'); font-weight: normal; font-style: normal;}
+
+    @font-face{font-family: 'OpenSans-Bold'; font-display: fallback; src: url('{{ "OpenSans-Bold.ttf" | asset_url }}') format('truetype'), url('{{ "OpenSans-Bold.woff" | asset_url }}') format('woff'); font-weight: normal; font-style: normal;}
+
+    @font-face{font-family: 'OpenSans-Regular'; font-display: fallback; src: url('{{ "OpenSans-Regular.ttf" | asset_url }}') format('truetype'), url('{{ "OpenSans-Regular.woff" | asset_url }}') format('woff'); font-weight: normal; font-style: normal;}
+
+    @font-face{font-family: 'OpenSans-SemiBold'; font-display: fallback; src: url('{{ "OpenSans-SemiBold.ttf" | asset_url }}') format('truetype'), url('{{ "OpenSans-SemiBold.woff" | asset_url }}') format('woff'); font-weight: normal; font-style: normal;}
+
+    @font-face{font-family: 'RecoletaAlt-Medium'; font-display: fallback; src: url('{{ "RecoletaAlt-Medium.eot" | asset_url }}') format('embedded-opentype'), url('{{ "RecoletaAlt-Medium.ttf" | asset_url }}') format('truetype'), url('{{ "RecoletaAlt-Medium.woff" | asset_url }}') format('woff'), url('{{ "RecoletaAlt-Medium.woff2" | asset_url }}') format('woff2'); font-weight: normal; font-style: normal;}
+
+    @font-face{font-family: 'RecoletaAlt-SemiBold'; font-display: fallback;  src: url('{{ "RecoletaAlt-SemiBold.eot" | asset_url }}') format('embedded-opentype'),  url('{{ "RecoletaAlt-SemiBold.ttf" | asset_url }}') format('truetype'),  url('{{ "RecoletaAlt-SemiBold.woff" | asset_url }}') format('woff'),  url('{{ "RecoletaAlt-SemiBold.woff2" | asset_url }}') format('woff2'); font-weight: normal; font-style: normal;} 
+
+    @font-face{font-family: 'RecoletaAlt-Regular'; font-display: fallback;  src: url('{{ "RecoletaAlt-Regular.eot" | asset_url }}') format('embedded-opentype'),  url('{{ "RecoletaAlt-Regular.ttf" | asset_url }}') format('truetype'),  url('{{ "RecoletaAlt-Regular.woff" | asset_url }}') format('woff'),  url('{{ "RecoletaAlt-Regular.woff2" | asset_url }}') format('woff2'); font-weight: normal; font-style: normal;} 
+  </style>
+  {{ 'app.css' | asset_url | stylesheet_tag }}
+</head>
+<body class="{{ template }}">
+  {% render 'mymenu' %}
+  {% render 'myminicart' %}
+  
+  <main role="main">
+    <div data-scroll>
+      {{ content_for_layout }}
+    </div>
+  </main>
+  {{ 'app.bundle.js' | asset_url | script_tag }}
+</body>
+</html>

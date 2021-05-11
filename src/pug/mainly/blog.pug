@@ -1,0 +1,77 @@
+.page.page-blog(data-ispage="blog", data-scroll-content)
+    header
+
+    main
+        section.blog-page
+
+    
+            //- LIST
+            |   {% section 'categories-blog' %}
+
+
+            //- BLOG
+            |   {% paginate blog.articles by 3 %}
+            .blog-page__hold
+
+
+                .blog-page__list
+                    //- only featured
+                    |   {% assign count = 0 %}
+                    |   {% for article in blog.articles %}
+                    |   {% if article.tags contains 'Featured' %}
+                    .blog-page__each
+
+                        a(href="{{ article.url }}", title="{{ article.title }}")
+                            img(src="{{ article.image.src | img_url: 'master' }}" alt="{{ article.title }}")
+
+                        .blog-page__each__texts
+                            a(href="{{ article.url }}", title="{{ article.title }}")
+                                h1 {{ article.title }}
+                            .blog-page__each__excerpt
+                                |   {{ article.excerpt }}
+                            span.blog-page__each__author {{ article.author }}
+                    
+
+                    |   {% else %}
+                    
+                    //- not featured
+                    .blog-page__each.regular-post(data-index="0{% assign count = count | plus: 1 %}{{ count}}")
+                        a(href="{{ article.url }}", title="{{ article.title }}")
+                            h1 {{ article.title }}
+                            
+                            .blog-page__each__exc
+                                |   {% if article.excerpt.size > 0 %}
+                                p {{ article.excerpt | truncatewords: 15 }}
+                                |   {% endif %}
+                            .blog-page__each__by-read
+                                span.author BY {{ article.author }}
+                                a(href="{{ article.url }}", title="{{ article.title }}") Read More >
+
+                        a(href="{{ article.url }}", title="{{ article.title }}").blog-page__each__img-regular
+                            img(src="{{ article.image.src | img_url: 'master' }}" alt="{{ article.title }}").img-load
+                    |   {% endif %}
+                    |   {% endfor %}
+
+
+
+                    //- =========================  PAGINATES  ========================= -//
+                    //- =========================  PAGINATES  ========================= -//
+                    |   {% if paginate.pages > 1 %}
+                    section.more-art
+                        .more-art__hold
+                        
+                            //- PREVIOUS
+                            |   {% if paginate.previous.is_link %}
+                            a(href="{{ paginate.previous.url }}") OLDER ARTICLES
+                            |   {% endif %}
+
+
+                            //- NEXT
+                            |   {% if paginate.next.is_link %}
+                            a(href="{{ paginate.next.url }}") NEWER ARTICLES
+                            |   {% endif %}
+                    |   {% endif %}
+            |   {% endpaginate %}
+
+
+    | {% render  'myfooter' %}

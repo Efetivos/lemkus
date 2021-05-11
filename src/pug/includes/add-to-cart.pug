@@ -1,0 +1,44 @@
+form(action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm").js-add-cart
+
+
+    //- =========================  variants  ========================= -//
+    |   {% if product.variants.size > 1 %}
+    //-  variants sizess
+    span.indic.select-text SELECT SIZE
+    |   {% for variant in product.variants %}
+    |   {% if variant.available %}
+
+    
+    
+    fieldset.fieldset-var
+        input(type="radio", name="id" id="variant-{{ forloop.index }}" value="{{ variant.id }}", data-inventory-qty="{{ variant.inventory_quantity }}", class="{% unless variant.available %}disabled{% endunless %}").js-variant-radio
+        label(for="variant-{{ forloop.index }}") {{ variant.title }}
+    |   {% else %}
+    fieldset.fieldset-var
+        input(type="radio" disabled="disabled").disabled
+        label(for="variant-{{ forloop.index }}") {{ variant.title }}
+    |   {% endif %}
+    |   {% endfor %}
+    |   {% else %}
+    input(type="hidden" name="id" value="{{ product.variants.first.id }}")
+    |   {% endif %}
+
+
+    //- =========================  quantity   ========================= -//
+    fieldset.fieldset-qty
+        span Quantity
+        <input class="js-qty-field" type="number" id="Quantity-{{ forloop.index }}" name="quantity" value="1" min="1" {% if product.variants.size == 1 %} max="{{ product.variants.first.inventory_quantity }}" {% endif %}>
+        button(type="button", disabled="disabled").js-qty-btn.disabled.quantity-button.minus -
+        span.quantity-text.js-qty-text 1
+        button(type="button").js-qty-btn.quantity-button.plus +
+
+    
+
+    //- =========================  add to cart  ========================= -//
+    div
+        //- _______ btn add to cart
+        <button class="e-black t-white {% if product.variants.size > 1 %}disabled{% endif %}" type="submit" name="add" id="add-to-cart-button"> ADD TO YOUR BAG </button>
+
+    //- =========================  wishlist button   ========================= -//
+    | {% render 'ZooomyListWishlistProduct' %}
+    

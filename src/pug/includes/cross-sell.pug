@@ -1,0 +1,14 @@
+|   {% assign $id =  product.id %}
+nav.cross-sell
+    |   {% for collection in product.collections %}
+    |   {% unless collection.title == 'Homepage' or collection.title == 'SEARCH'  %}
+    div.e-hold
+        |   {% for product in collections[collection.title].products limit:4 %}
+        |   {% if product.id != $id %}
+        |   {% render 'product-card' prod: product %}
+
+        |   {% endif %}
+        |   {% endfor %}
+
+    |   {% endunless %}
+    |   {% endfor %}

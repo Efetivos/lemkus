@@ -1,0 +1,374 @@
+@import './partials/alias-mixins'
+
+
+
+//- =========================  LOGO MAIN  ========================= -//
+//- =========================  LOGO MAIN  ========================= -//
+a.logo-main
+    left: calc(50vw - 3.65rem)
+    mix-blend-mode: difference
+    position: fixed
+    top: calc(var(--vh) * 3)
+    width: 7.3rem
+    z-index: 9
+    @include desk
+        left: calc(50vw - (14.7rem/2))
+        width: 14.7rem
+        top: calc(var(--vh) *  2.8)
+
+
+a.logo-main svg path
+    fill: #fff
+
+.on-top .logo-main
+    left: 0 !important
+    width: 100vw !important
+    top: 30vh !important
+
+
+
+
+
+//- =========================  TRGS  ========================= -//
+//- =========================  TRGS  ========================= -//
+.menu-trg
+    left: var(--gap)
+    mix-blend-mode: difference
+    position: fixed
+    top: calc(var(--vh) * 3.3)
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)
+    width: 24px
+    z-index: 9
+    @include desk
+        cursor: pointer
+        top: calc(var(--vh)*4)
+        width: 4rem
+
+
+
+
+.menu-trg__hold
+    height: 100%
+    position: relative
+    width: 100%
+
+
+.menu-trg .line
+    background: #fff
+    height: 1px
+    width: 100%
+
+
+.menu-trg .line + .line
+    margin: 5px 0 0  0
+    @include desk
+        margin: 0.8rem 0 0
+
+
+.menu-trg .line-0, .menu-trg .line-1
+    width: 80%
+
+
+
+
+.menu-trg .line0
+    width: 81%
+
+
+
+.trg-cart
+    font-size: 1.2rem
+    font-weight: 780
+    mix-blend-mode: difference
+    position: fixed
+    right: var(--gap)
+    top: 3.8vh
+    z-index: 9
+
+.trg-cart.no-mobile
+    cursor: pointer
+    font-family: var(--sans)
+    font-size: 1.9rem
+    font-weight: 500
+    right: 3.3rem
+    top: calc(var(--vh) *  3.8)
+
+.cart-counter
+    color: #fff
+    
+.trg-cart.no-mobile .lined
+    display: flex
+    color: #fff
+
+
+
+//- =========================  MENU FS  ========================= -//
+//- =========================  MENU FS  ========================= -//
+.menu-fs
+    background: var(--color)
+    height: 100vh
+    height: calc(var(--vh) * 100)
+    left: 0
+    overflow: hidden
+    overflow-y: scroll
+    position: fixed
+    top: 0
+    width: 100vw
+    z-index: 9
+    transform: translateX(-100%)
+    transition: transform 1.8s cubic-bezier(0.16, 1, 0.3, 1)
+    @include desk
+        width: 67rem
+        background: rgba(35, 59, 147, .9)
+
+    &::-webkit-scrollbar
+        webkit-appearance: none
+        width: 0
+
+
+
+.menu-fs__hold
+    align-items: center
+    display: flex
+    flex-direction: column
+    height: 100%
+    position: relative
+    width: 100%
+
+
+
+.menu-fs__close
+    height: 15px
+    margin-top: calc(var(--vh) * 7.9)
+    width: 15px
+    @include desk
+        height: 3rem
+        margin-top: calc(var(--vh)*7)
+        width: 3rem
+
+
+.menu-fs__close__hold
+    align-items: center
+    display: flex
+    height: 100%
+    justify-content: center
+    position: relative
+    width: 100%
+
+
+    .line
+        background: #fff
+        height: 100%
+        position: absolute
+        width: 1px
+
+
+    .line-0
+        transform: rotate(45deg)
+
+
+
+    .line-1
+        transform: rotate(-45deg)
+
+
+.menu-fs__search
+    font-family: var(--serif)
+    font-size: 1.5rem
+    line-height: 2.3rem
+    @include desk
+        margin-top: calc(var(--vh)*5.9)
+        width: 71%
+
+
+.menu-fs__search button
+    color: #fff
+    position: absolute
+    right: 0
+    transform: translateX(-100%)
+    @include desk
+        transform: translateX(-9rem)
+        cursor: pointer
+
+
+.menu-fs__search form
+    align-items: center
+    display: flex
+    width: 100%
+
+
+.menu-fs__search
+    margin-top: calc(var(--vh) * 10.2)
+    width: 82%
+
+
+.menu-fs__search input[type=search]
+    background: transparent
+    border: none
+    border-bottom: 1px solid #fff
+    color: #fff
+    font-family: var(--serif)
+    line-height: 3.5rem
+    width: 100%
+    @include desk
+        font-size: 3rem
+        line-height: 4.4rem
+
+.menu-fs__search input[type=search]::placeholder
+    color: inherit
+
+
+.menu-fs__links
+    margin-top: calc(var(--vh)*11.5)
+    @include desk
+        margin-top: calc(var(--vh)*5.8)
+
+
+.menu-fs__links a, .menu-fs__links span
+    color: #fff
+    font-family: var(--serif)
+    font-size: 2rem
+    line-height: 3.1rem
+    text-align: center
+    @include desk
+        font-size: 4rem
+        line-height: 6.2rem
+
+.menu-fs__links a
+    position: relative
+
+.menu-fs__links a:after
+    @include desk
+        content: ''
+        position: absolute
+        height: 1px
+        background: #fff
+        width: 100%
+        left: 0
+        bottom: 1.1rem
+        display: inline-block
+
+
+.menu-fs__shop ul
+    overflow: hidden
+    @include desk
+        align-items: center
+        display: flex
+        flex-direction: column
+
+.menu-fs__shop__link
+    transition: height 0.6s cubic-bezier(0.16, 1, 0.3, 1)
+
+ul.menu-fs__shop__link li
+    text-align: center
+
+.hide-drop
+    height: 0
+
+
+ul.menu-fs__links__list
+    margin-top: calc(var(--vh) * 3.9)
+    padding: 0 0 calc(var(--vh) * 7) 0
+    @include desk
+        display: flex
+        flex-direction: column
+        align-items: center
+
+
+ul.menu-fs__links__list li + li
+    margin: calc(var(--vh) * 1.5) 0
+
+
+ul.menu-fs__links__list li
+    padding: calc(var(--vh) * 2.5) 0 
+    text-align: center
+
+
+.menu-fs__shop span.shop-text
+    display: block
+    cursor: pointer
+    position: relative
+
+
+.menu-fs__shop span.shop-text:after
+    content: '▼'
+    font-size: 1rem
+    margin-left: 1rem
+
+
+
+.menu-fs__shop ul li a
+    font-size: 2.2rem
+    padding: 1.3rem 0
+    text-transform: capitalize
+    @include desk
+        position: relative
+        line-height: 3.7rem
+
+.active-menu
+    transform: translateX(0)
+
+
+
+
+
+
+
+
+
+
+
+
+//- =========================  COOKIES  ========================= -//
+//- =========================  COOKIES  ========================= -//
+.cookies
+    display: none
+    background: var(--color)
+    bottom: 0
+    left: 0
+    padding: 15px 0 20px
+    position: fixed
+    width: 100vw
+    z-index: 8
+
+
+.cookies__hold
+    width: calc(100% - 20px)
+    @include desk
+        align-items: center
+        flex-direction: row-reverse
+
+.cookies__hold > *
+    color: #fff
+    font-family: var(--sans)
+    text-align: center
+
+
+.cookies__text
+    font-size: 1.3rem
+    font-weight: 600
+    line-height: 138%
+    @include tablet
+        font-size: 0.8rem
+        width: 70%
+    @include desk
+        font-size: 1.45rem
+        line-height: 1.8rem
+        margin: 0 2rem 0 0
+        width: auto
+
+
+.cookies__close
+    font-size: 23px
+    font-weight: 200
+    padding: 0 0 0.9rem 0
+    @include desk
+        cursor: pointer
+        padding: 0.4rem 1.4rem 0
+    
+.zoomywishid.zoomywishid-
+    position: absolute
+    border: 1px solid red
+    z-index: 1
+    width: 5rem
+    height: 5rem

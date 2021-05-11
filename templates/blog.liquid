@@ -1,0 +1,36 @@
+
+<div class="page page-blog" data-ispage="blog" data-scroll-content>
+  <header></header>
+  <main>
+    <section class="blog-page">
+        {% section 'categories-blog' %}
+        {% paginate blog.articles by 3 %}
+      <div class="blog-page__hold">
+        <div class="blog-page__list">
+            {% assign count = 0 %}
+            {% for article in blog.articles %}
+            {% if article.tags contains 'Featured' %}
+          <div class="blog-page__each"><a href="{{ article.url }}" title="{{ article.title }}"><img src="{{ article.image.src | img_url: 'master' }}" alt="{{ article.title }}"></a>
+            <div class="blog-page__each__texts"><a href="{{ article.url }}" title="{{ article.title }}">
+                <h1>{{ article.title }}</h1></a>
+              <div class="blog-page__each__excerpt">  {{ article.excerpt }}</div><span class="blog-page__each__author">{{ article.author }}</span>
+            </div>
+          </div>  {% else %}
+          <div class="blog-page__each regular-post" data-index="0{% assign count = count | plus: 1 %}{{ count}}"><a href="{{ article.url }}" title="{{ article.title }}">
+              <h1>{{ article.title }}</h1>
+              <div class="blog-page__each__exc">  {% if article.excerpt.size > 0 %}
+                <p>{{ article.excerpt | truncatewords: 15 }}</p>  {% endif %}
+              </div>
+              <div class="blog-page__each__by-read"><span class="author">BY {{ article.author }}</span><a href="{{ article.url }}" title="{{ article.title }}">Read More ></a></div></a><a class="blog-page__each__img-regular" href="{{ article.url }}" title="{{ article.title }}"><img class="img-load" src="{{ article.image.src | img_url: 'master' }}" alt="{{ article.title }}"></a></div>  {% endif %}
+            {% endfor %}
+            {% if paginate.pages > 1 %}
+          <section class="more-art">
+            <div class="more-art__hold">  {% if paginate.previous.is_link %}<a href="{{ paginate.previous.url }}">OLDER ARTICLES</a>  {% endif %}
+                {% if paginate.next.is_link %}<a href="{{ paginate.next.url }}">NEWER ARTICLES</a>  {% endif %}
+            </div>
+          </section>  {% endif %}
+        </div>
+      </div>  {% endpaginate %}
+    </section>
+  </main>{% render  'myfooter' %}
+</div>

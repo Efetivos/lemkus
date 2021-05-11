@@ -1,0 +1,8 @@
+
+<footer class="footer">
+  <div class="footer__hold e-hold">
+    <div class="footer__legal">{% for link in linklists.footer-legal.links %}<a href="{{link.url}}" title="{{link.title}}">{{link.title}}</a>{% endfor %}</div>
+    <div class="footer__menu">{% for link in linklists.footer.links %}<a href="{{link.url}}" title="{{link.title}}">{{link.title}}</a>{% endfor %}</div>
+    <div class="footer__social">{% for link in linklists.footer-social.links %}<a href="{{link.url}}" title="{{link.title}}" target="_blank">{{link.title}}</a>{% endfor %}</div>
+  </div>
+</footer>

@@ -1,0 +1,14 @@
+.page.page-cart(data-ispage="cart", data-scroll-content)
+    .page-cart__content(data-cartcounter="{{ cart.item_count }}")
+        .cart__close
+            .cart__close__hold
+                .line.line-0
+                .line.line-1
+        .cart__summary ORDER SUMMARY
+        //- =========================  HEADER  ========================= -//
+        //- =========================  HEADER  ========================= -//
+        |   {% render 'cart-content' %}
+
+
+    | {% render  'myfooter' %}
+

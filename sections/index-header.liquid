@@ -1,0 +1,35 @@
+
+{% schema %}
+    {
+        "name": "Header",
+        "class": "header-index",
+        "settings": [
+            {
+                "id": "header-img",
+                "type": "image_picker",
+                "label": "Imagem Header"
+            },
+            {
+                "id": "text-decor",
+                "type": "text",
+                "label": "Text Decor"
+            },
+            {
+                "id": "text-btn",
+                "type": "text",
+                "label": "Text Button",
+                "default": "SHOP NOW"
+            },
+            {
+                "id": "url-btn",
+                "type": "url",
+                "label": "Link Button"
+            }
+        ]
+    }
+{% endschema %}
+
+
+<header><img class="img-load" src="{{ section.settings.header-img | img_url: 'master' }}" alt="">
+  <div><span>{{ section.settings.text-decor }}</span></div><span data-decor="{{ section.settings.text-decor }}">{{ section.settings.text-decor }}</span><a href="{{ section.settings.url-btn }}">{{ section.settings.text-btn }}</a>
+</header>

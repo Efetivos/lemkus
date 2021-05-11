@@ -1,0 +1,39 @@
+.page.page-index(data-ispage="index", data-scroll-content)
+
+
+
+    //- =========================  HEADER  ========================= -//
+    //- =========================  HEADER  ========================= -//
+        |   {% section 'index-header' %}
+
+    h1.dharma TESTING FONT
+    h1.dharmaex TESTING FONT
+    h1.sans TESTING FONT
+    h1.openbold TESTING FONT
+    h1.opensemi TESTING FONT
+    h1.reco TESTING FONT
+    h1.recosemi TESTING FONT
+    h1.recomed TESTING FONT
+    h1.serif TESTING FONT
+    h1.serif {{ settings.color_body_text }}
+    h1.serif {{ settings.color_borders }}
+
+
+
+    main.main-index
+        
+        //- =========================  PRODUCTS  ========================= -//
+        //- =========================  PRODUCTS  ========================= -//
+            |   {% section 'index-products' %}
+
+
+
+        //- =========================  BLOG  ========================= -//
+        //- =========================  BLOG  ========================= -//
+            |   {% section 'index-blog' %}
+
+
+
+    | {% render  'myfooter' %}
+
+
