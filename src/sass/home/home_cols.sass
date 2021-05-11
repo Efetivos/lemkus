@@ -1,0 +1,41 @@
+@import '../partials/alias-mixins'
+ul.cols_index__items
+    display: flex
+    flex-wrap: nowrap
+    height: 85vh
+
+
+li.cols_index__each
+    flex-shrink: 0
+    height: 100%
+    position: relative
+    width: 42.2rem
+
+
+.cols_index__img
+    height: 100%
+    width: 100%
+
+
+.cols_index__img img
+    height: 100%
+    left: 0
+    object-fit: cover
+    position: absolute
+    top: 0
+    width: 100%
+
+
+section.cols_index
+    padding: 0 0 0 var(--gap)
+
+
+li.cols_index__each + li.cols_index__each
+    margin: 0 0 0 var(--gap)
+
+
+li.cols_index__each a
+    bottom: 2rem
+    font-size: 7.2rem
+    left: 2rem
+    position: absolute
