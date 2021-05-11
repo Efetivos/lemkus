@@ -1,43 +1,71 @@
 .   
     {% schema %}
         {
-            "name": "Header",
-            "class": "header-index",
+            "name": "Slide Highlight",
             "settings": [
                 {
-                    "id": "header-img",
+                    "id": "introducing",
+                    "type": "text",
+                    "label": "Introducing",
+                    "default": "INTRODUCING"
+                },
+                {
+                    "id": "img_hl",
                     "type": "image_picker",
-                    "label": "Imagem Header"
+                    "label": "Image Highlight"
                 },
                 {
-                    "id": "text-decor",
+                    "id": "title_hl",
                     "type": "text",
-                    "label": "Text Decor"
+                    "label": "Title Highlight"
                 },
                 {
-                    "id": "text-btn",
-                    "type": "text",
-                    "label": "Text Button",
-                    "default": "SHOP NOW"
-                },
-                {
-                    "id": "url-btn",
+                    "id": "url_hl",
                     "type": "url",
-                    "label": "Link Button"
+                    "label": "Link Highlight"
+                },
+                {
+                    "type": "color",
+                    "id": "color_text_hl",
+                    "label": "Color Text",
+                    "default": "#ffffff"
+                }
+            ],
+
+            "name": "Intro & Header",
+            "max_blocks": 9,
+            "blocks": [
+                {
+                    "name": "Images",
+                    "type": "images",
+                    "settings": [
+                        {
+                            "id": "img-intro",
+                            "type": "image_picker",
+                            "label": "Image"
+                        }
+                    ]
                 }
             ]
         }
     {% endschema %}
 
 
-header
-    img(src="{{ section.settings.header-img | img_url: 'master' }}", alt='').img-load
-    div
-        span {{ section.settings.text-decor }}
+header.header-index.e-hvh.e-wvw
+    .header-index__hold.e-hold
+        ul.header-index__imgs
+            | {% for block in section.blocks %}
+            li.header-index__imgs__each
+                img(src="{{ block.settings.img-intro | img_url: 'master' }}", alt='').img-load
+            | {% endfor %}
 
-
-    span(data-decor="{{ section.settings.text-decor }}") {{ section.settings.text-decor }}
-    a(href="{{ section.settings.url-btn }}") {{ section.settings.text-btn }}
-    
+        .header-index__hl
+            .header-index__hl__hold.e-wp.e-hp.e-rel
+                .header-index__hl__img
+                    img(src="{{ section.settings.img_hl | img_url: 'master' }}", alt='').img-load
+                .header-index__hl__texts
+                    span.recosemi(style="color:{{ section.settings.color_text_hl }}") {{ section.settings.introducing}}
+                    a(href="{{ section.settings.url_hl }}", title="{{ section.settings.title_hl }}", style="color:{{ section.settings.color_text_hl }}").dharma {{ section.settings.title_hl }}
+        
 
 

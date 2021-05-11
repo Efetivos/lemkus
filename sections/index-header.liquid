@@ -1,35 +1,66 @@
 
 {% schema %}
     {
-        "name": "Header",
-        "class": "header-index",
+        "name": "Slide Highlight",
         "settings": [
             {
-                "id": "header-img",
+                "id": "introducing",
+                "type": "text",
+                "label": "Introducing",
+                "default": "INTRODUCING"
+            },
+            {
+                "id": "img_hl",
                 "type": "image_picker",
-                "label": "Imagem Header"
+                "label": "Image Highlight"
             },
             {
-                "id": "text-decor",
+                "id": "title_hl",
                 "type": "text",
-                "label": "Text Decor"
+                "label": "Title Highlight"
             },
             {
-                "id": "text-btn",
-                "type": "text",
-                "label": "Text Button",
-                "default": "SHOP NOW"
-            },
-            {
-                "id": "url-btn",
+                "id": "url_hl",
                 "type": "url",
-                "label": "Link Button"
+                "label": "Link Highlight"
+            },
+            {
+                "type": "color",
+                "id": "color_text_hl",
+                "label": "Color Text",
+                "default": "#ffffff"
+            }
+        ],
+
+        "name": "Intro & Header",
+        "max_blocks": 9,
+        "blocks": [
+            {
+                "name": "Images",
+                "type": "images",
+                "settings": [
+                    {
+                        "id": "img-intro",
+                        "type": "image_picker",
+                        "label": "Image"
+                    }
+                ]
             }
         ]
     }
 {% endschema %}
 
 
-<header><img class="img-load" src="{{ section.settings.header-img | img_url: 'master' }}" alt="">
-  <div><span>{{ section.settings.text-decor }}</span></div><span data-decor="{{ section.settings.text-decor }}">{{ section.settings.text-decor }}</span><a href="{{ section.settings.url-btn }}">{{ section.settings.text-btn }}</a>
+<header class="header-index e-hvh e-wvw">
+  <div class="header-index__hold e-hold">
+    <ul class="header-index__imgs">{% for block in section.blocks %}
+      <li class="header-index__imgs__each"><img class="img-load" src="{{ block.settings.img-intro | img_url: 'master' }}" alt=""></li>{% endfor %}
+    </ul>
+    <div class="header-index__hl">
+      <div class="header-index__hl__hold e-wp e-hp e-rel">
+        <div class="header-index__hl__img"><img class="img-load" src="{{ section.settings.img_hl | img_url: 'master' }}" alt=""></div>
+        <div class="header-index__hl__texts"><span class="recosemi" style="color:{{ section.settings.color_text_hl }}">{{ section.settings.introducing}}</span><a class="dharma" href="{{ section.settings.url_hl }}" title="{{ section.settings.title_hl }}" style="color:{{ section.settings.color_text_hl }}">{{ section.settings.title_hl }}</a></div>
+      </div>
+    </div>
+  </div>
 </header>
