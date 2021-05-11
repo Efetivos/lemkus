@@ -14,197 +14,195 @@ a(href="{{ shop.url }}").logo-main.e-fixed !{logomain}
 
 //- =========================  SNEAKERS  ========================= -//
 //- =========================  SNEAKERS  ========================= -//
-.menu-dd.menu-dd__sneakers
-    .menu-dd__hold
-        .menu-dd__links
-            .menu-dd__all
-                h1.dharma ALL
-                ul
-                    |   {% for link in linklists[settings.link_all_sneakers].links %}
-                    li 
-                        a(href= "{{ link.url }}", title="{{ link.title }}") {{ link.title }}
-                    |   {% endfor %}
-            .menu-dd__brands
-                h1.dharma BRANDS
-                ul
-                    |   {% for link in linklists[settings.link_brands_sneakers].links %}
-                    li 
-                        a(href= "{{ link.url }}", title="{{ link.title }}") {{ link.title }}
-                    |   {% endfor %}
+    .menu-dd.menu-dd__sneakers
+        .menu-dd__hold
+            .menu-dd__links
+                .menu-dd__all
+                    h1.dharma ALL
+                    ul
+                        |   {% for link in linklists[settings.link_all_sneakers].links %}
+                        li 
+                            a(href= "{{ link.url }}", title="{{ link.title }}") {{ link.title }}
+                        |   {% endfor %}
+                .menu-dd__brands
+                    h1.dharma BRANDS
+                    ul
+                        |   {% for link in linklists[settings.link_brands_sneakers].links %}
+                        li 
+                            a(href= "{{ link.url }}", title="{{ link.title }}") {{ link.title }}
+                        |   {% endfor %}
 
-                    
-        .menu-dd__featured
-            h1.dharma FEATURED
-            .menu-dd__featured__hold
-                .menu-dd__featured__each
-                    a(href="{{ settings.sneakers-ft1-link }}", title="{{ settings.sneakers-ft1-heading }}").menu-dd__featured__img
-                        img(src="{{ settings.sneakers-ft1-img | img_url: 'master' }}", alt='#')    
-                    a(href="{{ settings.sneakers-ft1-link }}", title="{{ settings.sneakers-ft1-heading }}").menu-dd__featured__title {{ settings.sneakers-ft1-heading }}
-
-
-                .menu-dd__featured__each
-                    a(href="{{ settings.sneakers-ft2-link }}", title="{{ settings.sneakers-ft2-heading }}").menu-dd__featured__img
-                        img(src="{{ settings.sneakers-ft2-img | img_url: 'master' }}", alt='#')    
-                    a(href="{{ settings.sneakers-ft2-link }}", title="{{ settings.sneakers-ft2-heading }}").menu-dd__featured__title {{ settings.sneakers-ft2-heading }}
+                        
+            .menu-dd__featured
+                h1.dharma FEATURED
+                .menu-dd__featured__hold
+                    .menu-dd__featured__each
+                        a(href="{{ settings.sneakers-ft1-link }}", title="{{ settings.sneakers-ft1-heading }}").menu-dd__featured__img
+                            img(src="{{ settings.sneakers-ft1-img | img_url: 'master' }}", alt='#')    
+                        a(href="{{ settings.sneakers-ft1-link }}", title="{{ settings.sneakers-ft1-heading }}").menu-dd__featured__title {{ settings.sneakers-ft1-heading }}
 
 
-                .menu-dd__featured__each
-                    a(href="{{ settings.sneakers-ft3-link }}", title="{{ settings.sneakers-ft3-heading }}").menu-dd__featured__img
-                        img(src="{{ settings.sneakers-ft3-img | img_url: 'master' }}", alt='#')    
-                    a(href="{{ settings.sneakers-ft3-link }}", title="{{ settings.sneakers-ft3-heading }}").menu-dd__featured__title {{ settings.sneakers-ft3-heading }}
+                    .menu-dd__featured__each
+                        a(href="{{ settings.sneakers-ft2-link }}", title="{{ settings.sneakers-ft2-heading }}").menu-dd__featured__img
+                            img(src="{{ settings.sneakers-ft2-img | img_url: 'master' }}", alt='#')    
+                        a(href="{{ settings.sneakers-ft2-link }}", title="{{ settings.sneakers-ft2-heading }}").menu-dd__featured__title {{ settings.sneakers-ft2-heading }}
 
 
-
-
-
-
-//- =========================  KIDS  ========================= -//
-//- =========================  KIDS  ========================= -//
-.menu-dd.menu-dd__kids
-    .menu-dd__hold
-        .menu-dd__links
-            .menu-dd__all
-                h1.dharma ALL
-                ul
-                    |   {% for link in linklists[settings.link_all_kids].links %}
-                    li 
-                        a(href= "{{ link.url }}", title="{{ link.title }}") {{ link.title }}
-                    |   {% endfor %}
-            .menu-dd__brands
-                h1.dharma BRANDS
-                ul
-                    |   {% for link in linklists[settings.link_brands_kids].links %}
-                    li 
-                        a(href= "{{ link.url }}", title="{{ link.title }}") {{ link.title }}
-                    |   {% endfor %}
-            .menu-dd__appa
-                h1.dharma APPAREL
-                ul
-                    |   {% for link in linklists[settings.link_appa_kids].links %}
-                    li 
-                        a(href= "{{ link.url }}", title="{{ link.title }}") {{ link.title }}
-                    |   {% endfor %}
-
-                    
-        .menu-dd__featured
-            h1.dharma FEATURED
-            .menu-dd__featured__hold
-                .menu-dd__featured__each
-                    a(href="{{ settings.kids-ft1-link }}", title="{{ settings.kids-ft1-heading }}").menu-dd__featured__img
-                        img(src="{{ settings.kids-ft1-img | img_url: 'master' }}", alt='#')    
-                    a(href="{{ settings.kids-ft1-link }}", title="{{ settings.kids-ft1-heading }}").menu-dd__featured__title {{ settings.kids-ft1-heading }}
-
-
-                .menu-dd__featured__each
-                    a(href="{{ settings.kids-ft2-link }}", title="{{ settings.kids-ft2-heading }}").menu-dd__featured__img
-                        img(src="{{ settings.kids-ft2-img | img_url: 'master' }}", alt='#')    
-                    a(href="{{ settings.kids-ft2-link }}", title="{{ settings.kids-ft2-heading }}").menu-dd__featured__title {{ settings.kids-ft2-heading }}
-
-
-                .menu-dd__featured__each
-                    a(href="{{ settings.kids-ft3-link }}", title="{{ settings.kids-ft3-heading }}").menu-dd__featured__img
-                        img(src="{{ settings.kids-ft3-img | img_url: 'master' }}", alt='#')    
-                    a(href="{{ settings.kids-ft3-link }}", title="{{ settings.kids-ft3-heading }}").menu-dd__featured__title {{ settings.kids-ft3-heading }}
+                    .menu-dd__featured__each
+                        a(href="{{ settings.sneakers-ft3-link }}", title="{{ settings.sneakers-ft3-heading }}").menu-dd__featured__img
+                            img(src="{{ settings.sneakers-ft3-img | img_url: 'master' }}", alt='#')    
+                        a(href="{{ settings.sneakers-ft3-link }}", title="{{ settings.sneakers-ft3-heading }}").menu-dd__featured__title {{ settings.sneakers-ft3-heading }}
 
 
 
 
 
 
-//- =========================  APPA  ========================= -//
-//- =========================  APPA  ========================= -//
-.menu-dd.menu-dd__appa
-    .menu-dd__hold
-        .menu-dd__links
-            .menu-dd__all
-                h1.dharma ALL
-                ul
-                    |   {% for link in linklists[settings.link_all_appa].links %}
-                    li 
-                        a(href= "{{ link.url }}", title="{{ link.title }}") {{ link.title }}
-                    |   {% endfor %}
-            .menu-dd__brands
-                h1.dharma BRANDS
-                ul
-                    |   {% for link in linklists[settings.link_brands_appa].links %}
-                    li 
-                        a(href= "{{ link.url }}", title="{{ link.title }}") {{ link.title }}
-                    |   {% endfor %}
-            .menu-dd__appa
-                h1.dharma APPAREL
-                ul
-                    |   {% for link in linklists[settings.link_appa_appa].links %}
-                    li 
-                        a(href= "{{ link.url }}", title="{{ link.title }}") {{ link.title }}
-                    |   {% endfor %}
+    //- =========================  KIDS  ========================= -//
+    //- =========================  KIDS  ========================= -//
+    .menu-dd.menu-dd__kids
+        .menu-dd__hold
+            .menu-dd__links
+                .menu-dd__all
+                    h1.dharma ALL
+                    ul
+                        |   {% for link in linklists[settings.link_all_kids].links %}
+                        li 
+                            a(href= "{{ link.url }}", title="{{ link.title }}") {{ link.title }}
+                        |   {% endfor %}
+                .menu-dd__brands
+                    h1.dharma BRANDS
+                    ul
+                        |   {% for link in linklists[settings.link_brands_kids].links %}
+                        li 
+                            a(href= "{{ link.url }}", title="{{ link.title }}") {{ link.title }}
+                        |   {% endfor %}
+                .menu-dd__appa
+                    h1.dharma APPAREL
+                    ul
+                        |   {% for link in linklists[settings.link_appa_kids].links %}
+                        li 
+                            a(href= "{{ link.url }}", title="{{ link.title }}") {{ link.title }}
+                        |   {% endfor %}
 
-                    
-        .menu-dd__featured
-            h1.dharma FEATURED
-            .menu-dd__featured__hold
-                .menu-dd__featured__each
-                    a(href="{{ settings.appa-ft1-link }}", title="{{ settings.appa-ft1-heading }}").menu-dd__featured__img
-                        img(src="{{ settings.appa-ft1-img | img_url: 'master' }}", alt='#')    
-                    a(href="{{ settings.appa-ft1-link }}", title="{{ settings.appa-ft1-heading }}").menu-dd__featured__title {{ settings.appa-ft1-heading }}
-
-
-                .menu-dd__featured__each
-                    a(href="{{ settings.appa-ft2-link }}", title="{{ settings.appa-ft2-heading }}").menu-dd__featured__img
-                        img(src="{{ settings.appa-ft2-img | img_url: 'master' }}", alt='#')    
-                    a(href="{{ settings.appa-ft2-link }}", title="{{ settings.appa-ft2-heading }}").menu-dd__featured__title {{ settings.appa-ft2-heading }}
+                        
+            .menu-dd__featured
+                h1.dharma FEATURED
+                .menu-dd__featured__hold
+                    .menu-dd__featured__each
+                        a(href="{{ settings.kids-ft1-link }}", title="{{ settings.kids-ft1-heading }}").menu-dd__featured__img
+                            img(src="{{ settings.kids-ft1-img | img_url: 'master' }}", alt='#')    
+                        a(href="{{ settings.kids-ft1-link }}", title="{{ settings.kids-ft1-heading }}").menu-dd__featured__title {{ settings.kids-ft1-heading }}
 
 
-                .menu-dd__featured__each
-                    a(href="{{ settings.appa-ft3-link }}", title="{{ settings.appa-ft3-heading }}").menu-dd__featured__img
-                        img(src="{{ settings.appa-ft3-img | img_url: 'master' }}", alt='#')    
-                    a(href="{{ settings.appa-ft3-link }}", title="{{ settings.appa-ft3-heading }}").menu-dd__featured__title {{ settings.appa-ft3-heading }}
+                    .menu-dd__featured__each
+                        a(href="{{ settings.kids-ft2-link }}", title="{{ settings.kids-ft2-heading }}").menu-dd__featured__img
+                            img(src="{{ settings.kids-ft2-img | img_url: 'master' }}", alt='#')    
+                        a(href="{{ settings.kids-ft2-link }}", title="{{ settings.kids-ft2-heading }}").menu-dd__featured__title {{ settings.kids-ft2-heading }}
 
 
+                    .menu-dd__featured__each
+                        a(href="{{ settings.kids-ft3-link }}", title="{{ settings.kids-ft3-heading }}").menu-dd__featured__img
+                            img(src="{{ settings.kids-ft3-img | img_url: 'master' }}", alt='#')    
+                        a(href="{{ settings.kids-ft3-link }}", title="{{ settings.kids-ft3-heading }}").menu-dd__featured__title {{ settings.kids-ft3-heading }}
 
 
 
-//- =========================  ACESSORIES  ========================= -//
-//- =========================  ACESSORIES  ========================= -//
-.menu-dd.menu-dd__acces
-    .menu-dd__hold
-        .menu-dd__links
-            .menu-dd__all
-                h1.dharma ALL
-                ul
-                    |   {% for link in linklists[settings.link_all_acces].links %}
-                    li 
-                        a(href= "{{ link.url }}", title="{{ link.title }}") {{ link.title }}
-                    |   {% endfor %}
-            .menu-dd__brands
-                h1.dharma BRANDS
-                ul
-                    |   {% for link in linklists[settings.link_brands_acces].links %}
-                    li 
-                        a(href= "{{ link.url }}", title="{{ link.title }}") {{ link.title }}
-                    |   {% endfor %}
-
-                    
-        .menu-dd__featured
-            h1.dharma FEATURED
-            .menu-dd__featured__hold
-                .menu-dd__featured__each
-                    a(href="{{ settings.acces-ft1-link }}", title="{{ settings.acces-ft1-heading }}").menu-dd__featured__img
-                        img(src="{{ settings.acces-ft1-img | img_url: 'master' }}", alt='#')    
-                    a(href="{{ settings.acces-ft1-link }}", title="{{ settings.acces-ft1-heading }}").menu-dd__featured__title {{ settings.acces-ft1-heading }}
 
 
-                .menu-dd__featured__each
-                    a(href="{{ settings.acces-ft2-link }}", title="{{ settings.acces-ft2-heading }}").menu-dd__featured__img
-                        img(src="{{ settings.acces-ft2-img | img_url: 'master' }}", alt='#')    
-                    a(href="{{ settings.acces-ft2-link }}", title="{{ settings.acces-ft2-heading }}").menu-dd__featured__title {{ settings.acces-ft2-heading }}
+
+    //- =========================  APPA  ========================= -//
+    //- =========================  APPA  ========================= -//
+    .menu-dd.menu-dd__appa
+        .menu-dd__hold
+            .menu-dd__links
+                .menu-dd__all
+                    h1.dharma ALL
+                    ul
+                        |   {% for link in linklists[settings.link_all_appa].links %}
+                        li 
+                            a(href= "{{ link.url }}", title="{{ link.title }}") {{ link.title }}
+                        |   {% endfor %}
+                .menu-dd__brands
+                    h1.dharma BRANDS
+                    ul
+                        |   {% for link in linklists[settings.link_brands_appa].links %}
+                        li 
+                            a(href= "{{ link.url }}", title="{{ link.title }}") {{ link.title }}
+                        |   {% endfor %}
+                .menu-dd__appa
+                    h1.dharma APPAREL
+                    ul
+                        |   {% for link in linklists[settings.link_appa_appa].links %}
+                        li 
+                            a(href= "{{ link.url }}", title="{{ link.title }}") {{ link.title }}
+                        |   {% endfor %}
+
+                        
+            .menu-dd__featured
+                h1.dharma FEATURED
+                .menu-dd__featured__hold
+                    .menu-dd__featured__each
+                        a(href="{{ settings.appa-ft1-link }}", title="{{ settings.appa-ft1-heading }}").menu-dd__featured__img
+                            img(src="{{ settings.appa-ft1-img | img_url: 'master' }}", alt='#')    
+                        a(href="{{ settings.appa-ft1-link }}", title="{{ settings.appa-ft1-heading }}").menu-dd__featured__title {{ settings.appa-ft1-heading }}
 
 
-                .menu-dd__featured__each
-                    a(href="{{ settings.acces-ft3-link }}", title="{{ settings.acces-ft3-heading }}").menu-dd__featured__img
-                        img(src="{{ settings.acces-ft3-img | img_url: 'master' }}", alt='#')    
-                    a(href="{{ settings.acces-ft3-link }}", title="{{ settings.acces-ft3-heading }}").menu-dd__featured__title {{ settings.acces-ft3-heading }}
+                    .menu-dd__featured__each
+                        a(href="{{ settings.appa-ft2-link }}", title="{{ settings.appa-ft2-heading }}").menu-dd__featured__img
+                            img(src="{{ settings.appa-ft2-img | img_url: 'master' }}", alt='#')    
+                        a(href="{{ settings.appa-ft2-link }}", title="{{ settings.appa-ft2-heading }}").menu-dd__featured__title {{ settings.appa-ft2-heading }}
 
 
+                    .menu-dd__featured__each
+                        a(href="{{ settings.appa-ft3-link }}", title="{{ settings.appa-ft3-heading }}").menu-dd__featured__img
+                            img(src="{{ settings.appa-ft3-img | img_url: 'master' }}", alt='#')    
+                        a(href="{{ settings.appa-ft3-link }}", title="{{ settings.appa-ft3-heading }}").menu-dd__featured__title {{ settings.appa-ft3-heading }}
+
+
+
+
+
+    //- =========================  ACESSORIES  ========================= -//
+    //- =========================  ACESSORIES  ========================= -//
+    .menu-dd.menu-dd__acces
+        .menu-dd__hold
+            .menu-dd__links
+                .menu-dd__all
+                    h1.dharma ALL
+                    ul
+                        |   {% for link in linklists[settings.link_all_acces].links %}
+                        li 
+                            a(href= "{{ link.url }}", title="{{ link.title }}") {{ link.title }}
+                        |   {% endfor %}
+                .menu-dd__brands
+                    h1.dharma BRANDS
+                    ul
+                        |   {% for link in linklists[settings.link_brands_acces].links %}
+                        li 
+                            a(href= "{{ link.url }}", title="{{ link.title }}") {{ link.title }}
+                        |   {% endfor %}
+
+                        
+            .menu-dd__featured
+                h1.dharma FEATURED
+                .menu-dd__featured__hold
+                    .menu-dd__featured__each
+                        a(href="{{ settings.acces-ft1-link }}", title="{{ settings.acces-ft1-heading }}").menu-dd__featured__img
+                            img(src="{{ settings.acces-ft1-img | img_url: 'master' }}", alt='#')    
+                        a(href="{{ settings.acces-ft1-link }}", title="{{ settings.acces-ft1-heading }}").menu-dd__featured__title {{ settings.acces-ft1-heading }}
+
+
+                    .menu-dd__featured__each
+                        a(href="{{ settings.acces-ft2-link }}", title="{{ settings.acces-ft2-heading }}").menu-dd__featured__img
+                            img(src="{{ settings.acces-ft2-img | img_url: 'master' }}", alt='#')    
+                        a(href="{{ settings.acces-ft2-link }}", title="{{ settings.acces-ft2-heading }}").menu-dd__featured__title {{ settings.acces-ft2-heading }}
+
+
+                    .menu-dd__featured__each
+                        a(href="{{ settings.acces-ft3-link }}", title="{{ settings.acces-ft3-heading }}").menu-dd__featured__img
+                            img(src="{{ settings.acces-ft3-img | img_url: 'master' }}", alt='#')    
+                        a(href="{{ settings.acces-ft3-link }}", title="{{ settings.acces-ft3-heading }}").menu-dd__featured__title {{ settings.acces-ft3-heading }}
 
 
 
@@ -213,17 +211,59 @@ a(href="{{ shop.url }}").logo-main.e-fixed !{logomain}
 
 
 
-//- =========================  MENUFS  ========================= -//
-//- =========================  MENUFS  ========================= -//
+
+
+//- =========================  FIXED LINKS  ========================= -//
+//- =========================  FIXED LINKS  ========================= -//
+.cape-hour.no-mobile
+    span.cape CAPE TOWN
+    span.hour 11:18 AM
+
+
+.menu-search-bag
+    button(arial-label="SEARCH").trg-search SEARCH
+    .trg-cart BAG (#[span.cart-counter  {{ cart.item_count }}])
+
+.menu-acc-wish
+    a(href="{{ shop.url }}/account", title="account") ACCOUNT
+    a(href="{{ shop.url }}/wishlist", title="wishlist") WISHLIST
 
 
 
-    .trg-cart.no-desk
-        span.cart-counter ( {{ cart.item_count }})
 
 
-    .trg-cart.no-mobile
-        .lined Your Bag(#[span.cart-counter  {{ cart.item_count }}])
+
+
+
+
+
+
+
+
+
+
+
+
+//- =========================  MAIN MENU  ========================= -//
+//- =========================  MAIN MENU  ========================= -//
+nav.main-menu.no-mobile
+    ul
+        li
+            .item LAUNCHES
+
+        each list, index in['SNEAKERS','APPAREL','KIDS','ACCESSORIES']
+            li(class=""+list)
+                .item=list
+        |   {% for link in linklists.main-menu.links %}
+        li
+            a(href= "{{ link.url }}").item {{ link.title }}
+
+
+        |   {% endfor %}
+
+
+
+
 
 
 
