@@ -1,107 +1,32 @@
 @import './partials/alias-mixins'
 
+
+section.collect-index
+    display: flex
+    flex-wrap: nowrap
+
 .products__each
-    position: relative
-    width: 100%
+    width: 42.5rem
+    flex-shrink: 0
 
-    &:hover
-        img:last-child
-            opacity: 1
-        
-        .prod-infos
-            opacity: 1
 a.prod-img
-    height: auto
-    position: relative
     width: 100%
-    height: 100%
-
+    height: 51vh
 
 a.prod-img img
+    width: 100%
     height: 100%
     object-fit: cover
-    width: 100%
 
-
-
-.prod-img img:last-child
-    left: 0
-    opacity: 0
-    position: absolute
-    top: 0
-    transition: .5s opacity ease-out
-
-.prod-infos
-    align-items: flex-end
-    bottom: 3.4rem
-    display: flex
-    justify-content: space-between
+.products__each + .products__each
     margin: 0 0 0 var(--gap)
-    position: absolute
-    width: calc(100% - (var(--gap) *2))
-    z-index: 1
-    @include tablet
-        --gap: 1.9rem
-    @include desk
-        --gap: 2.4rem
-        opacity: 0
 
-.prod-infos__desc
-    align-items: flex-end
-    display: flex
-    flex-direction: column
+.prod-infos__title a
+    font-size: 4rem
 
-
-a.title-prod
-    font-size: 1.1rem
-    color: #fff
-    @include desk
-        font-size: 1.9rem
-
-
-span.sale-price
-    font-size: 1.2rem
-    text-align: right
-    @include desk
-        font-size: 1.8rem
-
-span.regular-price
-    font-size: 1.5rem
-    font-weight: 600
-    text-align: right
-    @include desk
-        font-size: 2rem
-        margin: 0.2rem 0 1rem
-
-
-.avai-sizes
-    color: #fff
-    font-size: 1rem
-    margin: 1rem 0
-    @include desk
-        font-size: 1.6rem
-        margin: 0 0 1.6rem
-
+section.collect-index
+    padding: 0 0 0 var(--gap)
 
 .sizes
     display: flex
-    font-size: 1rem
-    justify-content: flex-end
-    text-align: right
-
-
-.sizes span
-    color: #fff
-    font-size: 1rem
-    @include desk
-        font-size: 1.5rem
-
-
-.sizes span + span
-    margin: 0 0 0 1rem
-    @include desk
-        margin: 0 0 0 2rem
-
-
-.products__each .regular-price
-    color: var(--color)
+    gap: 0.7rem

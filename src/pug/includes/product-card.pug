@@ -1,37 +1,28 @@
 .products__each
-    |   {% unless prod.available %}<br><strong>sold out</strong>{% endunless %}
+    //-|   {% unless prod.available %}<br><strong>sold out</strong>{% endunless %}
     a(href="{{ prod.url | within: collection }}").prod-img
-        img.img-load(class="test" src="{{ prod.featured_image.src | img_url: '700x' }}" alt="{{ prod.featured_image.alt | escape }}")
-        |   {% if prod.images.size == 1 %} 
-        |   {% assign my_product_image =  prod.images[0] %}
-        |   {% else %}
-        |   {% assign my_product_image =  prod.images[1] %}
-        |   {% endif %}
-        img.img-load(src="{{ my_product_image | img_url: '700x' }}", alt="{{ prod.featured_image.alt | escape }}")
+        img.img-load(class="test" src="{{ prod.featured_image.src | img_url: 'master' }}" alt="{{ prod.featured_image.alt | escape }}")
 
     
 
     .prod-infos
     
         .prod-infos__title
-            a(href="{{ prod.url | within: collection }}").title-prod {{ prod.title }}
+            a(href="{{ prod.url | within: collection }}").title-prod.dharma {{ prod.title }}
         .prod-infos__desc
             | {% if prod.compare_at_price_max != 0 %}
             span.sale-price {{ prod.compare_at_price_max  | money_without_trailing_zeros  }}
             | {% endif %}
         
             span.regular-price {{ prod.price | money_without_trailing_zeros }}
-            .avai-sizes Available Sizes
             .sizes
                 |   {% assign sizes = '' %}
                 |   {% for variant in prod.variants %}
-                |   {% if variant.available %}
                 |   {% assign sizes = sizes | append: variant.options[0] | append: '_' %}
-                |   {% endif %}
                 |   {% endfor %}
 
                 |   {% assign sizesArr = sizes | split: '_' | uniq %}
 
                 |   {% for size in sizesArr %}
-                |   <span>{{ size }}</span>
+                |   <span class="recosemi">{{ size }}</span>
                 |   {% endfor %}
