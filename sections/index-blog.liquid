@@ -13,38 +13,18 @@
                 "id": "title-blog",
                 "type": "text",
                 "label": "Title Blog"
-            },
-            {
-                "id": "subt-blog",
-                "type": "text",
-                "label": "Subtitle Blog"
-            },
-            {
-                "id": "img-sticker",
-                "type": "image_picker",
-                "label": "Read Article Sticker"
             }
         ]
     }
 {% endschema %}
 {% assign blog = blogs[section.settings.blog-index] %}
-<section>
-  <div>
-    <h1>{{ section.settings.title-blog }}</h1>
-    <h2>{{ section.settings.subt-blog }}</h2><img src="{{ section.settings.img-sticker | img_url: 'master' }}" alt="">
-    <ul>
-        {% assign count = 0 %}
-        {% for article in blog.articles limit: 3 %}
-        {% if article.tags contains 'Featured' %}
-      <li><a href="{{ article.url }}" title="{{ article.title }}"><img class="img-load" src="{{ article.image.src | img_url: 'master' }}" alt="{{ article.title }}"></a>
-        <div><a href="{{ article.url }}" title="{{ article.title }}">
-            <h1>{{ article.title }}</h1></a>
-          <div>{{ article.excerpt }}</div><span> {{ article.author }}</span><span> READ ARITCLE</span>
-        </div>
-      </li>  {% else %}
-      <div><a href="{{ article.url }}" title="{{ article.title }}" data-index="0{% assign count = count | plus: 1 %}{{ count}}">
-          <h1>{{ article.title }}</h1></a></div>  {% endif %}
-        {% endfor %}
+<section class="blog-index">
+  <div class="blog-index__hold e-hold">
+    <div class="blog-index__cult-title">
+      <h1 class="t-color dharma">{{ section.settings.title-blog }}</h1><a class="ricosemi" href="{{ shop.url }}/blogs/news">VIEW ALL</a>
+    </div>
+    <ul class="blog-index__posts">  {% for article in blog.articles limit: 4 %}
+      <li class="blog-index__each"><a class="blog-index__img" href="{{ article.url }}" title="{{ article.title }}"><img class="img-load" src="{{ article.image.src | img_url: 'master' }}" alt="{{ article.title }}"></a><a class="blog-index__img dharma" href="{{ article.url }}" title="{{ article.title }}">{{ article.title }}</a></li>  {% endfor %}
     </ul>
   </div>
 </section>

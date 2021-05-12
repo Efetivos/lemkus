@@ -12,7 +12,7 @@
                 ul.prod-card__imgs__hold
                     |   {% for image in prod.images %}
                     li.prod-card__img__each 
-                        img.img-load(class="test" src="{{  image.src | img_url: 'master' }}" alt="{{ image.src | escape }}")
+                        img(src="{{  image.src | img_url: 'master' }}" alt="{{ image.src | escape }}").img-load
                     |   {% endfor %}
             .prod-card__img__logo !{logoBrand}
             .prod-card__img__date

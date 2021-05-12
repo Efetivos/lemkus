@@ -13,61 +13,33 @@
                     "id": "title-blog",
                     "type": "text",
                     "label": "Title Blog"
-                },
-                {
-                    "id": "subt-blog",
-                    "type": "text",
-                    "label": "Subtitle Blog"
-                },
-                {
-                    "id": "img-sticker",
-                    "type": "image_picker",
-                    "label": "Read Article Sticker"
                 }
             ]
         }
     {% endschema %}
 
 | {% assign blog = blogs[section.settings.blog-index] %}
-section
-
-
-
-    div
-        h1 {{ section.settings.title-blog }}
-        h2 {{ section.settings.subt-blog }}
-        img(src="{{ section.settings.img-sticker | img_url: 'master' }}", alt='')
+section.blog-index
+    .blog-index__hold.e-hold
+        .blog-index__cult-title
+            h1.t-color.dharma {{ section.settings.title-blog }}
+            a(href="{{ shop.url }}/blogs/news").ricosemi VIEW ALL
         
         
         
-        
-        ul
+        ul.blog-index__posts
 
 
 
             //- only featured
-            |   {% assign count = 0 %}
-            |   {% for article in blog.articles limit: 3 %}
-            |   {% if article.tags contains 'Featured' %}
-            li
+            |   {% for article in blog.articles limit: 4 %}
+            li.blog-index__each
 
-                a(href="{{ article.url }}", title="{{ article.title }}")
+                a.blog-index__img(href="{{ article.url }}", title="{{ article.title }}")
                     img(src="{{ article.image.src | img_url: 'master' }}" alt="{{ article.title }}").img-load
 
-                div
-                    a(href="{{ article.url }}", title="{{ article.title }}")
-                        h1 {{ article.title }}
-                    div {{ article.excerpt }}
-                    span  {{ article.author }}
-                    span  READ ARITCLE
+                a.blog-index__img(href="{{ article.url }}", title="{{ article.title }}").dharma {{ article.title }}
 
-
-            //- not featured
-            |   {% else %}
-            div
-                a(href="{{ article.url }}", title="{{ article.title }}", data-index="0{% assign count = count | plus: 1 %}{{ count}}")
-                    h1 {{ article.title }}
-            |   {% endif %}
             |   {% endfor %}
                 
 
