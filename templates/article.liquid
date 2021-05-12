@@ -1,29 +1,11 @@
 
 <div class="page page-article" data-ispage="article" data-scroll-content>
-  {% assign content = article.content %}
-  {% assign design = '' %}
-  {% assign size = '' %}
-  {% assign details = '' %}
-  {% if article.content contains '---' %}
-  {% assign content = article.content | split: '---' | first %}
-  {% assign description_array = article.content | split: '---' %}
-  {% assign articleInfoKeys = 'Design|Size|Details' | split: '|' %}
-    {% for key in articleInfoKeys %}
-    {% assign split_key = key | prepend: '~*~' | append: '~*~' %}
-        {% if article.content contains split_key %}
-            {% if key == 'Design' %}
-                {% assign design = article.content | split: split_key | last | split: '---' | first %}
-            {% elsif key == 'Size' %}
-                {% assign size = article.content | split: split_key | last | split: '---' | first %}
-            {% elsif key == 'Details' %}
-                {% assign details = article.content | split: split_key | last | split: '---' | first %}
-            {% endif %}
-        {% endif %}
-    {% endfor %}
-  {% endif %}
-  <div class="e-hvh e-wvw e-flex-col">
-      {{ design }}
-      {{ size }} 
-      {{ details }} 
-  </div>{% render  'myfooter' %}
+  <header>
+    <nav role="navigation" aria-label="breadcrumbs"><a href="{{ shop.url }}">HOME //</a>  {% for tag in article.tags %}<a href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }} /</a>  {% endfor %}<span>{{ article.title }}</span></nav><img class="img-load" src="{{ article.image.src | img_url: 'master' }}" alt="{{ article.title }}"><span class="author">BY {{ article.author }}</span>
+    <h1>{{ article.title }}</h1>
+  </header>
+  <main>
+    <section></section>  {{ article.content }}
+    <section>  {% if blog.next_article %}<a href="{{ blog.next_article.url }}" title="{{ blog.next_article.title }}"><img class="img-load" src="{{ blog.next_article.image.src | img_url: 'master' }}" alt="{{ blog.next_article.title }}"><span>{{ blog.next_article.title }}</span></a>  {% else %}<a href="{{ blog.previous_article.url }}" title="{{ blog.previous_article.title }}"><img class="img-load" src="{{ blog.previous_article.image.src | img_url: 'master' }}" alt="{{ blog.previous_article.title }}"><span>{{ blog.next_article.title }}</span></a>  {% endif %}</section>
+  </main>{% render  'myfooter' %}
 </div>

@@ -33,13 +33,7 @@ section.blog-index
 
             //- only featured
             |   {% for article in blog.articles limit: 4 %}
-            li.blog-index__each
-
-                a.blog-index__img(href="{{ article.url }}", title="{{ article.title }}")
-                    img(src="{{ article.image.src | img_url: 'master' }}" alt="{{ article.title }}").img-load
-
-                a.blog-index__img(href="{{ article.url }}", title="{{ article.title }}").dharma {{ article.title }}
-
+            |   {% render 'article-card' art: article %}
             |   {% endfor %}
                 
 

@@ -1,0 +1,13 @@
+.article-card__each
+    .article-card__hold
+        .article-card__img
+            a(href="{{ art.url }}", title="{{ art.title }}")
+                img(src="{{ art.image.src | img_url: 'master' }}" alt="{{ art.title }}").img-load
+                
+            .article-card__cat-date 
+                .cat {% for tag in article.tags %} {{ tag }} {% endfor %}
+                .date {{ art.created_at | date: "%d.%m.%y" }}
+
+    
+
+        a.article-card__title(href="{{ art.url }}", title="{{ art.title }}") {{ art.title }}

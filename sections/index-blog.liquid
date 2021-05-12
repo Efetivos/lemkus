@@ -23,8 +23,10 @@
     <div class="blog-index__cult-title">
       <h1 class="t-color dharma">{{ section.settings.title-blog }}</h1><a class="ricosemi" href="{{ shop.url }}/blogs/news">VIEW ALL</a>
     </div>
-    <ul class="blog-index__posts">  {% for article in blog.articles limit: 4 %}
-      <li class="blog-index__each"><a class="blog-index__img" href="{{ article.url }}" title="{{ article.title }}"><img class="img-load" src="{{ article.image.src | img_url: 'master' }}" alt="{{ article.title }}"></a><a class="blog-index__img dharma" href="{{ article.url }}" title="{{ article.title }}">{{ article.title }}</a></li>  {% endfor %}
+    <ul class="blog-index__posts">
+        {% for article in blog.articles limit: 4 %}
+        {% render 'article-card' art: article %}
+        {% endfor %}
     </ul>
   </div>
 </section>
