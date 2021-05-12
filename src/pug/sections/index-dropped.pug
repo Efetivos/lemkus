@@ -22,12 +22,14 @@
 | {% assign dropped_col = collections[section.settings.dropped_index] %}
 section.collect-index
 
-    | {% for item in dropped_col.products limit:6 %}
-    
-    //- calling prod
-    |   {% render 'product-card' prod: item %}
+    h1.dharma {{ section.settings.text_dropped }}
+    .collect-index__hold
+        | {% for item in dropped_col.products limit:6 %}
+        
+        //- calling prod
+        |   {% render 'product-card' prod: item %}
 
-    | {% endfor %}
+        | {% endfor %}
     
 
 
