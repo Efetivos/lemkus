@@ -1,7 +1,7 @@
 
-## Time: 13h00
-Data: 08:30  | 05.12  
-Daily: -0:00  
+## Time: 14h30
+Data: 11:00  | 05.12  
+Daily: -4:30  
   
 ![Screenshot](./cover.png) (https://github.com/Efetivos/gesch)
 
