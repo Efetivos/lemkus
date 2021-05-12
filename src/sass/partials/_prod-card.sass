@@ -1,9 +1,10 @@
 @import './partials/alias-mixins'
-.collect-index__hold
+.collect-index__hold, .soon-collect-index__hold
     display: flex
     flex-wrap: nowrap
 
-
+.soon-collect-index__hold
+    flex-wrap: wrap
 
 .prod-card__each
     --gap: 4.7rem
@@ -31,6 +32,7 @@ ul.prod-card__imgs__hold
 
 
 a.prod-img
+    border: 1px solid var(--dark)
     height: 41.4rem
     width: 100%
 
@@ -65,7 +67,7 @@ li.prod-card__img__each
 .prod-card__img__logo
     left: 2.5rem
     position: absolute
-    top: 3.1rem
+    top: 2.4rem
     width: 4.57rem
     z-index: 2
 
@@ -85,7 +87,7 @@ li.prod-card__img__each
     height: 3.9rem
     justify-content: center
     position: absolute
-    width: 8.4rem
+    width: 8.5rem
     z-index: 2
 
 .prod-card__img__nav svg
@@ -100,6 +102,51 @@ li.prod-card__img__each
 .prod-card-img-next
     right: 2.5rem
 
+
+
+
+
+//- =========================  date  ========================= -//
+//- =========================  date  ========================= -//
+.prod-card__img__date
+    align-items: center
+    border-radius: 50px
+    border: 1px solid var(--dark)
+    cursor: pointer
+    display: flex
+    font-family: var(--recosemi)
+    font-size: 1.6rem
+    height: 3.9rem
+    justify-content: center
+    position: absolute
+    right: 2.5rem
+    top: 1.4rem
+    width: 8.4rem
+    z-index: 1
+
+
+
+
+
+
+
+//- =========================  discount  ========================= -//
+//- =========================  discount  ========================= -//
+.prod-card__img__discount
+    align-items: center
+    border-radius: 50px
+    border: 1px solid var(--dark)
+    cursor: pointer
+    display: flex
+    font-family: var(--recosemi)
+    font-size: 1.6rem
+    height: 3.9rem
+    justify-content: center
+    position: absolute
+    right: 2.5rem
+    top: 1.4rem
+    width: 8.4rem
+    z-index: 1
 
 
 
@@ -146,3 +193,24 @@ li.prod-card__img__each
 .prod-card__prices span
     font-family: var(--recosemi)
     font-size: 2rem
+
+
+
+
+
+//- =========================  notify  ========================= -//
+//- =========================  notify  ========================= -//
+.prod-card__notify
+    width: 40.4rem
+    height: 3.9rem
+    position: absolute
+    background: var(--color)
+    font-family: var(--recosemi)
+    display: flex
+    justify-content: center
+    align-items: center
+    font-size: 1.6rem
+    overflow: hidden
+    border-radius: 50px
+    border: 1px solid var(--dark)
+    bottom: 2.9rem

@@ -61,8 +61,9 @@
 </section>{% assign soon_col = collections[section.settings.soon_index] %}
 <section class="soon-collect-index">
   <div class="soon-collect-index__hold">
-    {% for item in soon_col.products limit:6 %}
+    {% for item in soon_col.products limit:5 %}
       {% render 'product-card' prod: item %}
     {% endfor %}
+    <div class="prod-card__each"><a class="recosemi" href="#">VIEW ALL </a></div>
   </div>
 </section>

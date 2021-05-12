@@ -15,6 +15,10 @@
                         img.img-load(class="test" src="{{  image.src | img_url: 'master' }}" alt="{{ image.src | escape }}")
                     |   {% endfor %}
             .prod-card__img__logo !{logoBrand}
+            .prod-card__img__date
+                span 22JAN
+            .prod-card__img__discount
+                span 40% OFF
             
             .prod-card__img__nav.prod-card-img-prev !{prevArrow} !{prevArrowHover}
             .prod-card__img__nav.prod-card-img-next !{nextArrow} !{nextArrowHover}
@@ -43,3 +47,5 @@
                     | {% if prod.compare_at_price_max != 0 %}
                     span.sale-price {{ prod.compare_at_price_max  | money  }}
                     | {% endif %}
+
+            .prod-card__notify NOTIFY ME
