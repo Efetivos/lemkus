@@ -1,0 +1,53 @@
+
+{% schema %}
+    {
+        "name": "Contact Hours",
+        "settings": [
+            {
+                "type": "text",
+                "id": "ctt_trading",
+                "label": "Subtitle",
+                "default": "TRADING HOURS"
+            },
+            {
+                "type": "text",
+                "id": "ctt_mon_fri",
+                "label": "Monday - Friday:",
+                "default": "08:45 to 17:00"
+            },
+            {
+                "type": "text",
+                "id": "ctt_sat",
+                "label": "Saturdays:",
+                "default": "09:00 to 14:00"
+            },
+            {
+                "type": "text",
+                "id": "ctt_sun",
+                "label": "Sundays:",
+                "default": "Closed"
+            },
+            {
+                "type": "text",
+                "id": "ctt_holi",
+                "label": "Holidays:",
+                "default": "Closed"
+            }
+        ]
+    }
+{% endschema %}
+
+
+
+
+<section class="ctt-hours">
+  <div class="ctt-hours__hold">
+    <div class="ctt-hours__title ctt-subt">{{ section.settings.ctt_trading }}</div>
+    <ul class="ctt-hours__list">
+      <li class="ctt-hours__each"> <span>Monday - Friday:</span><span>{{ section.settings.ctt_mon_fri }}</span></li>
+      <li class="ctt-hours__each"> <span>Saturdays:</span><span>{{ section.settings.ctt_sat }}</span></li>
+      <li class="ctt-hours__each"> <span>Sundays:</span><span>{{ section.settings.ctt_sun }}</span></li>
+      <li class="ctt-hours__each"> <span>Public Holidays:</span><span>{{ section.settings.ctt_holi }}</span></li>
+    </ul>
+  </div>
+</section>

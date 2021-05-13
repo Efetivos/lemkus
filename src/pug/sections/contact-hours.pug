@@ -1,0 +1,68 @@
+.   
+    {% schema %}
+        {
+            "name": "Contact Hours",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "ctt_trading",
+                    "label": "Subtitle",
+                    "default": "TRADING HOURS"
+                },
+                {
+                    "type": "text",
+                    "id": "ctt_mon_fri",
+                    "label": "Monday - Friday:",
+                    "default": "08:45 to 17:00"
+                },
+                {
+                    "type": "text",
+                    "id": "ctt_sat",
+                    "label": "Saturdays:",
+                    "default": "09:00 to 14:00"
+                },
+                {
+                    "type": "text",
+                    "id": "ctt_sun",
+                    "label": "Sundays:",
+                    "default": "Closed"
+                },
+                {
+                    "type": "text",
+                    "id": "ctt_holi",
+                    "label": "Holidays:",
+                    "default": "Closed"
+                }
+            ]
+        }
+    {% endschema %}
+
+
+
+
+section.ctt-hours
+    .ctt-hours__hold
+        .ctt-hours__title.ctt-subt {{ section.settings.ctt_trading }}
+        ul.ctt-hours__list
+
+            li.ctt-hours__each 
+                span Monday - Friday:
+                span {{ section.settings.ctt_mon_fri }}
+        
+            li.ctt-hours__each 
+                span Saturdays:
+                span {{ section.settings.ctt_sat }}
+        
+            li.ctt-hours__each 
+                span Sundays:
+                span {{ section.settings.ctt_sun }}
+        
+            li.ctt-hours__each 
+                span Public Holidays:
+                span {{ section.settings.ctt_holi }}
+
+
+
+
+
+

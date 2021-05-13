@@ -1,0 +1,39 @@
+
+{% schema %}
+    {
+        "name": "Contact Link",
+        "settings": [
+            {
+                "type": "text",
+                "id": "ctt_link_title",
+                "label": "Title",
+                "default": "CONTACT"
+            }
+        ],
+
+        "name": "Links",
+        "blocks": [
+            {
+                "name": "Link",
+                "type": "text",
+                "settings": [
+                    {
+                        "id": "ctt_link",
+                        "type": "text",
+                        "label": "Link:"
+                    }
+                ]
+            }
+        ]
+    }
+{% endschema %}
+
+
+<section class="ctt-links">
+  <div class="ctt-links__hold">
+    <div class="ctt-links___title ctt-subt">{{ section.settings.ctt_link_title }}</div>
+    <ul class="ctt-links__items">{% for block in section.blocks %}
+      <li class="ctt-links__each"><a href="{{ block.settings.ctt_link }}" title="{{ block.settings.ctt_link }}">{{ block.settings.ctt_link }}</a></li>{% endfor %}
+    </ul>
+  </div>
+</section>

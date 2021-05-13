@@ -1,0 +1,48 @@
+.   
+    {% schema %}
+        {
+            "name": "Contact Socials",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "ctt_social_title",
+                    "label": "Title",
+                    "default": "STALK US"
+                }
+            ],
+
+            "name": "Socials",
+            "blocks": [
+                {
+                    "name": "Social",
+                    "type": "text",
+                    "settings": [
+                        {
+                            "id": "ctt_social_text",
+                            "type": "text",
+                            "label": "Social:"
+                        },
+                        {
+                            "id": "ctt_social_link",
+                            "type": "url",
+                            "label": "Link:"
+                        }
+                    ]
+                }
+            ]
+        }
+    {% endschema %}
+
+
+section.ctt-social
+    .ctt-social__hold
+        .ctt-social___title.ctt-subt {{ section.settings.ctt_social_title }}
+        ul.ctt-social__items
+            | {% for block in section.blocks %}
+            li.ctt-social__each
+                a(href="{{ block.settings.ctt_social_link }}", title="{{ block.settings.ctt_social_text }}") {{ block.settings.ctt_social_text }}
+            | {% endfor %}
+
+
+
+

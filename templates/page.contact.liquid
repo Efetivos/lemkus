@@ -1,6 +1,11 @@
 
 <div class="page page-contact" data-barba="container" data-barba-namespace="contact" data-ispage="contact" data-scroll-content>
-  <header>
-    <h1 class="t-serif">Contact Page</h1>
-  </header>  {% render  'myfooter' %}
+  <main class="main-contact">
+      {% section 'contact-title' %}
+      {% section 'contact-location' %}
+      {% section 'contact-ctt' %}
+      {% section 'contact-hours' %}
+      {% section 'contact-socials' %}
+      {% section 'contact-text' %}
+  </main>  {% render  'myfooter' %}
 </div>

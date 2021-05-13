@@ -1,0 +1,39 @@
+
+{% schema %}
+    {
+        "name": "Contact Location",
+        "settings": [
+            {
+                "type": "text",
+                "id": "ctt_loca",
+                "label": "Subtitle",
+                "default": "LOCATION"
+            },
+            {
+                "type": "text",
+                "id": "ctt_address",
+                "label": "Address",
+                "default": "Jack Lemkus Store, 26 St Georges Mall, Cape Town"
+            },
+            {
+                "type": "text",
+                "id": "ctt_txt_btl",
+                "label": "Address",
+                "default": "GET DIRECTIONS"
+            },
+            {
+                "type": "url",
+                "id": "ctt_address_ur",
+                "label": "Link Address"
+            }
+        ]
+    }
+{% endschema %}
+
+
+<section class="ctt-location">
+  <div class="ctt-location__hold">
+    <div class="ctt-location__title ctt-subt">{{ section.settings.ctt_loca }}</div>
+    <p class="ctt-location__address">{{ section.settings.ctt_address }}</p><a class="ctt-location__address" href="{{ section.settings.ctt_address_url }}" title="ADDRESS">{{ section.settings.ctt_txt_btl }}</a>
+  </div>
+</section>

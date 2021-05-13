@@ -1,0 +1,21 @@
+.   
+    {% schema %}
+        {
+            "name": "Contact Title",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "ctt_title",
+                    "label": "Title",
+                    "default": "DROP US A LINE"
+                }
+            ]
+        }
+    {% endschema %}
+
+
+section.ctt-title
+    h1.dharma.e-upper {{ section.settings.ctt_title }}
+
+
+

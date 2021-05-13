@@ -1,0 +1,41 @@
+.   
+    {% schema %}
+        {
+            "name": "Contact Location",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "ctt_loca",
+                    "label": "Subtitle",
+                    "default": "LOCATION"
+                },
+                {
+                    "type": "text",
+                    "id": "ctt_address",
+                    "label": "Address",
+                    "default": "Jack Lemkus Store, 26 St Georges Mall, Cape Town"
+                },
+                {
+                    "type": "text",
+                    "id": "ctt_txt_btl",
+                    "label": "Address",
+                    "default": "GET DIRECTIONS"
+                },
+                {
+                    "type": "url",
+                    "id": "ctt_address_ur",
+                    "label": "Link Address"
+                }
+            ]
+        }
+    {% endschema %}
+
+
+section.ctt-location
+    .ctt-location__hold
+        .ctt-location__title.ctt-subt {{ section.settings.ctt_loca }}
+        p.ctt-location__address {{ section.settings.ctt_address }}
+        a(href="{{ section.settings.ctt_address_url }}", title="ADDRESS").ctt-location__address {{ section.settings.ctt_txt_btl }}
+
+
+
