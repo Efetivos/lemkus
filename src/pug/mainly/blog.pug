@@ -4,10 +4,6 @@
     main
         section.blog-page
 
-    
-            //- LIST
-            |   {% section 'categories-blog' %}
-
 
             //- BLOG
             |   {% paginate blog.articles by 3 %}
@@ -17,61 +13,29 @@
                 .blog-page__list
                     //- only featured
                     |   {% assign count = 0 %}
-                    |   {% for article in blog.articles %}
-                    |   {% if article.tags contains 'Featured' %}
-                    .blog-page__each
-
-                        a(href="{{ article.url }}", title="{{ article.title }}")
-                            img(src="{{ article.image.src | img_url: 'master' }}" alt="{{ article.title }}")
-
-                        .blog-page__each__texts
-                            a(href="{{ article.url }}", title="{{ article.title }}")
-                                h1 {{ article.title }}
-                            .blog-page__each__excerpt
-                                |   {{ article.excerpt }}
-                            span.blog-page__each__author {{ article.author }}
-                    
-
-                    |   {% else %}
-                    
-                    //- not featured
-                    .blog-page__each.regular-post(data-index="0{% assign count = count | plus: 1 %}{{ count}}")
-                        a(href="{{ article.url }}", title="{{ article.title }}")
-                            h1 {{ article.title }}
-                            
-                            .blog-page__each__exc
-                                |   {% if article.excerpt.size > 0 %}
-                                p {{ article.excerpt | truncatewords: 15 }}
-                                |   {% endif %}
-                            .blog-page__each__by-read
-                                span.author BY {{ article.author }}
-                                a(href="{{ article.url }}", title="{{ article.title }}") Read More >
-
-                        a(href="{{ article.url }}", title="{{ article.title }}").blog-page__each__img-regular
-                            img(src="{{ article.image.src | img_url: 'master' }}" alt="{{ article.title }}").img-load
-                    |   {% endif %}
+                    |   {% for article in blog.articles limit: 4 %}
+                    |   {% render 'article-card' art: article %}
                     |   {% endfor %}
 
 
 
                     //- =========================  PAGINATES  ========================= -//
                     //- =========================  PAGINATES  ========================= -//
-                    |   {% if paginate.pages > 1 %}
-                    section.more-art
-                        .more-art__hold
-                        
-                            //- PREVIOUS
-                            |   {% if paginate.previous.is_link %}
-                            a(href="{{ paginate.previous.url }}") OLDER ARTICLES
-                            |   {% endif %}
-
-
-                            //- NEXT
-                            |   {% if paginate.next.is_link %}
-                            a(href="{{ paginate.next.url }}") NEWER ARTICLES
-                            |   {% endif %}
-                    |   {% endif %}
+                    | {% if paginate.pages > 1 %}
+                    | {%- for part in paginate.parts -%}
+                    .main-blog__paginate__each
+                        a(href="{{ part.url }}")
+                            button.e-serif.t-dark.e-rel.e-curp  {{ part.title }}
+                                .line-pagine.line-static.e-gray.e-abs.e-wp
+                                | {%- if part.title == paginate.current_page -%}
+                                .line-pagine.line-active.e-color.e-abs.e-wp
+                                | {%- endif -%}
+                    
+                    | {%- endfor -%}
+                    | {% endif %}
             |   {% endpaginate %}
+
+
 
 
     | {% render  'myfooter' %}
