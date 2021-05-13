@@ -1,0 +1,44 @@
+.   
+    {% schema %}
+        {
+            "name": "LAUNCHES | Featured",
+            "class": "header-laun",
+            "settings": [
+                {
+                    "id": "launch-feat",
+                    "type": "collection",
+                    "label": "Collection"
+                },
+                {
+                    "id": "text_feat",
+                    "type": "text",
+                    "label": "Text Featured",
+                    "default": "FEATURED"
+                }
+            ]
+        }
+    {% endschema %}
+
+
+header.header-laun
+    .header-laun__hold
+        h1.dharma {{ section.settings.text_feat }}
+        
+
+        | {% assign soon_col = collections[section.settings.launch-feat] %}
+        .header-laun__colle
+            .header-laun__colle__hold
+                | {% for item in soon_col.products %}
+                
+                //- calling prod
+                |   {% render 'product-card' prod: item %}
+
+                | {% endfor %}
+                
+        .header-laun__cntrl
+            
+            button(href="#").drag.recosemi DRAG
+            button(href="#").recosemi.scroll-down VIEW ALL 
+        
+
+

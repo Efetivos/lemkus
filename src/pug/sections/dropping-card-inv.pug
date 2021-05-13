@@ -1,16 +1,17 @@
+
 .   
     {% schema %}
         {
-            "name": "MODULE | Dropping Card",
+            "name": "MODULE | Dropping Inverse",
             "class": "dropping-card",
             "settings": [
                 {
-                    "id": "dropping-card",
+                    "id": "dropping_card_inv",
                     "type": "collection",
                     "label": "Collection"
                 },
                 {
-                    "id": "img_logo_brand",
+                    "id": "img_logo_brand_inv",
                     "type": "image_picker",
                     "label": "Image Logo"
                 }
@@ -18,14 +19,15 @@
         }
     {% endschema %}
 
-| {% assign dropping_col = collections[section.settings.dropping-card] %}
-section.dropping-card
-    | {% for product in dropping_col.products limit:1 %}
+| {% assign dropping_col_inv = collections[section.settings.dropping_card_inv] %}
+section.dropping-card.dropping-card-inv
+    | {% for product in dropping_col_inv.products limit:1 %}
     .dropping-card__hold.e-flex
 
         .dropping-card__infos
             .dropping-card__logo 
-                img(src="{{ section.settings.img_logo_brand | img_url: 'master' }}", alt='{{ section.settings.img_logo_brand.alt | escape }}').img-load
+                img(src="{{ section.settings.img_logo_brand_inv | img_url: 'master' }}", alt='{{ section.settings.img_logo_brand_inv.alt | escape }}').img-load
+
             a(href="{{ product.url | within: collection }}").dropping-card__title.dharma {{ product.title }}
             .dropping-card__price.recosemi {{ product.price | money }}
             .prod-card__notify NOTIFY ME

@@ -1,0 +1,30 @@
+.   
+    {% schema %}
+        {
+            "name": "LAUNCHES | Collection",
+            "class": "dropping-card",
+            "settings": [
+                {
+                    "id": "laun_colle_id",
+                    "type": "collection",
+                    "label": "Collection"
+                }
+            ]
+        }
+    {% endschema %}
+
+
+| {% assign laun_colle = collections[section.settings.laun_colle_id] %}
+section.launch-colle
+    .launch-colle__hold.e-flex
+        | {% for item in laun_colle.products %}
+        
+        //- calling prod
+        |   {% render 'product-card' prod: item %}
+
+        | {% endfor %}
+        
+
+
+
+

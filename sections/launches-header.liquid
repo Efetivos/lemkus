@@ -1,0 +1,38 @@
+
+{% schema %}
+    {
+        "name": "LAUNCHES | Featured",
+        "class": "header-laun",
+        "settings": [
+            {
+                "id": "launch-feat",
+                "type": "collection",
+                "label": "Collection"
+            },
+            {
+                "id": "text_feat",
+                "type": "text",
+                "label": "Text Featured",
+                "default": "FEATURED"
+            }
+        ]
+    }
+{% endschema %}
+
+
+<header class="header-laun">
+  <div class="header-laun__hold">
+    <h1 class="dharma">{{ section.settings.text_feat }}</h1>{% assign soon_col = collections[section.settings.launch-feat] %}
+    <div class="header-laun__colle">
+      <div class="header-laun__colle__hold">
+        {% for item in soon_col.products %}
+          {% render 'product-card' prod: item %}
+        {% endfor %}
+      </div>
+    </div>
+    <div class="header-laun__cntrl">
+      <button class="drag recosemi" href="#">DRAG</button>
+      <button class="recosemi scroll-down" href="#">VIEW ALL </button>
+    </div>
+  </div>
+</header>
