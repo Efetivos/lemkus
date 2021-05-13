@@ -1,0 +1,34 @@
+
+{% schema %}
+    {
+        "name": "COOKIES | Table",
+        "blocks": [
+            {
+                "name": "Item",
+                "type": "text",
+                "settings": [
+                    {
+                        "id": "cookie_name",
+                        "type": "text",
+                        "label": "Cookie Name:"
+                    },
+                    {
+                        "id": "cookie_descr",
+                        "type": "text",
+                        "label": "Cookie Description:"
+                    }
+                ]
+            }
+        ]
+    }
+{% endschema %}
+
+
+<section class="cookies-table">
+  <div class="cookies-table__hold">
+    <ul class="cookies-table__items">
+      <li class="cookies-table__title e-color"><span class="dharma">COOKIE NAME</span><span class="dharma">COOKIE DESCRIPTION</span></li>{% for block in section.blocks %}
+      <li class="cookies-table__each"><span class="name">{{ block.settings.cookie_name }}</span><span class="descr">{{ block.settings.cookie_descr }}</span></li>{% endfor %}
+    </ul>
+  </div>
+</section>

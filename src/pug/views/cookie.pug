@@ -1,8 +1,15 @@
 .page.page-cookie(data-ispage="cookie", data-scroll-content)
 
-    .page-cookie__hold.e-hold
-        |   {{ page.content }}
+    main.main-cookie
+        section.page-cookie__hold.e-hold
+            |   {{ page.content }}
 
+
+
+
+        //- =========================  cookie-table  ========================= -//
+        //- =========================  cookie-table  ========================= -//
+        |   {% section 'cookies-table' %}
     
 
     | {% render  'myfooter' %}

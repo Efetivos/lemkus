@@ -1,0 +1,41 @@
+.   
+    {% schema %}
+        {
+            "name": "COOKIES | Table",
+            "blocks": [
+                {
+                    "name": "Item",
+                    "type": "text",
+                    "settings": [
+                        {
+                            "id": "cookie_name",
+                            "type": "text",
+                            "label": "Cookie Name:"
+                        },
+                        {
+                            "id": "cookie_descr",
+                            "type": "text",
+                            "label": "Cookie Description:"
+                        }
+                    ]
+                }
+            ]
+        }
+    {% endschema %}
+
+
+section.cookies-table
+    .cookies-table__hold
+        ul.cookies-table__items
+            li.cookies-table__title.e-color
+                span.dharma COOKIE NAME
+                span.dharma COOKIE DESCRIPTION
+            | {% for block in section.blocks %}
+            li.cookies-table__each
+                span.name {{ block.settings.cookie_name }}
+                span.descr {{ block.settings.cookie_descr }}
+            | {% endfor %}
+
+
+
+

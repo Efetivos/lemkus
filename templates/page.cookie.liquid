@@ -1,4 +1,6 @@
 
 <div class="page page-cookie" data-ispage="cookie" data-scroll-content>
-  <div class="page-cookie__hold e-hold">  {{ page.content }}</div>{% render  'myfooter' %}
+  <main class="main-cookie">
+    <section class="page-cookie__hold e-hold">  {{ page.content }}</section>  {% section 'cookies-table' %}
+  </main>{% render  'myfooter' %}
 </div>
