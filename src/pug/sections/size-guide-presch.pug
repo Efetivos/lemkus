@@ -1,0 +1,45 @@
+.   
+    {% schema %}
+        {
+            "name": "PRE SCHOOL  | Size Guide",
+            "blocks": [
+                {
+                    "name": "Item",
+                    "type": "text",
+                    "settings": [
+                        {
+                            "id": "sg_pres_sneakers_uk",
+                            "type": "text",
+                            "label": "UK:"
+                        },
+                        {
+                            "id": "sg_pres_sneakers_us",
+                            "type": "text",
+                            "label": "US:"
+                        },
+                        {
+                            "id": "sg_pres_sneakers_eur",
+                            "type": "text",
+                            "label": "EUR:"
+                        }
+                    ]
+                }
+            ]
+        }
+    {% endschema %}
+
+
+section.size-guide.mens_sneakers
+    .size-guide__hold
+        .size-guide__title Size Guide: Pre-School Sneakers
+        ul.size-guide__items
+            li.size-guide__cat
+                span UK
+                span US
+                span EU
+            | {% for block in section.blocks %}
+            li.size-guide__each
+                span {{ block.settings.sg_pres_sneakers_uk }}
+                span {{ block.settings.sg_pres_sneakers_us }}
+                span {{ block.settings.sg_pres_sneakers_eur }}
+            | {% endfor %}

@@ -8,6 +8,17 @@
     "theme_support_email": "victor@victor.work"
   },
   {
+    "name": "TOP BAR MESSAGE",
+    "settings": [
+      {
+        "type": "text",
+        "id": "top_bar_text",
+        "label": "Top Bar Message",
+        "default": "Lifetime Guarantee | Free SA Shipping"
+      }
+    ]
+  },
+  {
     "name": "DROPDOWN SNEAKERS",
     "settings": [
       {

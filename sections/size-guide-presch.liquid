@@ -1,0 +1,40 @@
+
+{% schema %}
+    {
+        "name": "PRE SCHOOL  | Size Guide",
+        "blocks": [
+            {
+                "name": "Item",
+                "type": "text",
+                "settings": [
+                    {
+                        "id": "sg_pres_sneakers_uk",
+                        "type": "text",
+                        "label": "UK:"
+                    },
+                    {
+                        "id": "sg_pres_sneakers_us",
+                        "type": "text",
+                        "label": "US:"
+                    },
+                    {
+                        "id": "sg_pres_sneakers_eur",
+                        "type": "text",
+                        "label": "EUR:"
+                    }
+                ]
+            }
+        ]
+    }
+{% endschema %}
+
+
+<section class="size-guide mens_sneakers">
+  <div class="size-guide__hold">
+    <div class="size-guide__title">Size Guide: Pre-School Sneakers</div>
+    <ul class="size-guide__items">
+      <li class="size-guide__cat"><span>UK</span><span>US</span><span>EU</span></li>{% for block in section.blocks %}
+      <li class="size-guide__each"><span>{{ block.settings.sg_pres_sneakers_uk }}</span><span>{{ block.settings.sg_pres_sneakers_us }}</span><span>{{ block.settings.sg_pres_sneakers_eur }}</span></li>{% endfor %}
+    </ul>
+  </div>
+</section>
