@@ -1,0 +1,40 @@
+
+{% schema %}
+    {
+        "name": "ABOUT | Sub-header",
+        "settings": [
+            {
+                "type": "text",
+                "id": "text_sub_title",
+                "label": "Title",
+                "default": "one of the leading retailers in premium sports footwear and apparel in South Africa, which caters to sneaker enthusiasts."
+            },
+            {
+                "type": "text",
+                "id": "text_sub_sub",
+                "label": "Subtitle",
+                "default": "JACK LEMKUS started out selling sporting equipment, hobbies, toys etc. - Brands that were available for the first time in S.A and at JACK LEMKUS between 1935 to late 60’s were brands like Bata Shoes, Converse, Wrangler and Dunlop.Brands such as Adidas and Asics came to JACK LEMKUS in the 70’s. "
+            },
+            {
+                "type": "image_picker",
+                "id": "img_sub",
+                "label": "Image"
+            }
+        ]
+    }
+{% endschema %}
+
+
+
+
+<section class="about-sub">
+  <div class="about-sub__hold">
+    <div class="about-sub__text">
+      <div class="about-sub__title recosemi">{{ section.settings.text_sub_title }}</div>
+      <div class="about-sub__subtitle reco">{{ section.settings.text_sub_sub }}</div>
+    </div>
+    <div class="about-sub__image"> <img class="img-load" src="{{ section.settings.img_sub | img_url: 'master' }}" alt="{{ section.settings.img_sub.alt | escape }}">
+      <div class="about-sub__image__caption"><span>{{ section.settings.img_sub.alt | escape }}</span><span>01</span></div>
+    </div>
+  </div>
+</section>

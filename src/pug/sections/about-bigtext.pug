@@ -1,0 +1,35 @@
+.   
+    {% schema %}
+        {
+            "name": "ABOUT | Big Text",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "big_text",
+                    "label": "Title",
+                    "default": "Nike arrived in the late 70’s/early 80’s"
+                },
+                {
+                    "type": "text",
+                    "id": "big_descr",
+                    "label": "Subtitle",
+                    "default": "Air Jordan following around 1988, making JACK LEMKUS one of the first stores in S.A to stock both brands."
+                }
+            ]
+        }
+    {% endschema %}
+
+
+
+
+section.big-text
+    .big-text__hold
+        .big-text__text
+            .big-text__title.dharma {{ section.settings.big_text }}
+            .big-text__subtitle.reco {{ section.settings.big_descr }}
+
+
+
+
+
+

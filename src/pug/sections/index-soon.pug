@@ -1,7 +1,7 @@
 .   
     {% schema %}
         {
-            "name": "Dropping Soon",
+            "name": "INDEX | Dropping Soon",
             "class": "soon-index",
             "settings": [
                 
@@ -54,7 +54,7 @@ section.soon-index.e-wvw
         .soon-index__coming
             .soon-index__coming__hold.e-wp.e-hp.e-rel
                 .soon-index__coming__img
-                    img(src="{{ section.settings.img_coming | img_url: 'master' }}", alt='').img-load
+                    img(src="{{ section.settings.img_coming | img_url: 'master' }}", alt='{{ section.settings.img_coming.alt | escape }}').img-load
                 .soon-index__coming__texts
                     span.recosemi(style="color:{{ section.settings.color_text_coming }}") {{ section.settings.coming}}
                     a(href="{{ section.settings.url_coming }}", title="{{ section.settings.title_coming }}", style="color:{{ section.settings.color_text_coming }}").dharma {{ section.settings.title_coming }}

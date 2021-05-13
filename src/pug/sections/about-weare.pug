@@ -1,0 +1,39 @@
+.   
+    {% schema %}
+        {
+            "name": "ABOUT | We Are",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "text_title",
+                    "label": "Title",
+                    "default": "We are currently a single concept store located at the entrance of the city of Cape Town CBD occupying 330 square metres stocked with top level sneakers and apparel from some of the biggest brands in the world."
+                },
+                {
+                    "type": "image_picker",
+                    "id": "img_weare",
+                    "label": "Image"
+                }
+            ]
+        }
+    {% endschema %}
+
+
+
+
+section.weare
+    .weare__hold
+        .weare__image 
+            img(src="{{ section.settings.img_weare | img_url: 'master' }}", alt='{{ section.settings.img_weare.alt | escape }}').img-load
+            .weare__image__caption
+                span {{ section.settings.img_weare.alt | escape }}
+                span 01
+
+        .weare__text
+            .weare__title.dharma.e-upper {{ section.settings.text_title }}
+
+
+
+
+
+

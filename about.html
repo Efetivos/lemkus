@@ -1,4 +1,8 @@
 <head><link href="./assets/app.css" rel="stylesheet"></head>
-<div class="page page-about" data-ispage="about" data-scroll-content>
-  <header>About Page</header>{% render  'myfooter' %}
+<div class="page page-about" data-ispage="about" data-scroll-content>  {% section 'about-header' %}
+  <main class="main-about">
+      {% section 'about-subheader' %}
+      {% section 'about-bigtext' %}
+      {% section 'about-weare' %}
+  </main>{% render  'myfooter' %}
 </div><script type="text/javascript" src="./assets/app.bundle.js"></script>
