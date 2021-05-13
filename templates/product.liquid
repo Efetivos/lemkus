@@ -1,4 +1,25 @@
 
+{% assign description = product.description %}
+{% assign details = '' %}
+{% assign shipping = '' %}
+{% assign descr = '' %}
+{% if product.description contains '---' %}
+{% assign description = product.description | split: '---' | first %}
+{% assign description_array = product.description | split: '---' %}
+{% assign productInfoKeys = 'Details|Shipping|Description' | split: '|' %}
+  {% for key in productInfoKeys %}
+  {% assign split_key = key | prepend: '~*~' | append: '~*~' %}
+      {% if product.description contains split_key %}
+          {% if key == 'Details' %}
+              {% assign details = product.description | split: split_key | last | split: '---' | first %}
+          {% elsif key == 'Shipping' %}
+              {% assign shipping = product.description | split: split_key | last | split: '---' | first %}
+          {% elsif key == 'Description' %}
+              {% assign descr = product.description | split: split_key | last | split: '---' | first %}
+          {% endif %}
+      {% endif %}
+  {% endfor %}
+{% endif %}
 <div class="page page-product" data-barba="container" data-barba-namespace="product" data-ispage="product" data-scroll-content>
   <header class="header-prod">
     <div class="header-prod__bread">  {% render 'breadcrumbs' %}</div>
@@ -14,13 +35,34 @@
         </div>
       </div>
       <div class="header-prod__infos">
-        <h1 class="header-prod__title dharmaex e-upper">{{ product.title }}</h1>{% if product.compare_at_price_max != 0 %}<span class="sale-price">{{ product.compare_at_price_max  | money_without_trailing_zeros  }}</span>{% endif %}
-        <div class="regular-price">{{ product.price | money_without_trailing_zeros }}</div>  {% render 'add-to-cart' %}
-        <div class="prod-descr">{{ product.content }}</div>
+        <h1 class="header-prod__title dharmaex e-upper">{{ product.title }}</h1>{% if product.compare_at_price_max != 0 %}<span class="sale-price">{{ product.compare_at_price_max  | money  }}</span>{% endif %}
+        <div class="regular-price">{{ product.price | money }}</div>  {% render 'add-to-cart' %}
+        <div class="prod-descr">
+          <div class="prod-descr__content">{{ descr }} </div>  {% if details != blank %}
+          <div class="ctn-accord">
+            <div class="ctn-accord__item">
+              <div class="trg-acc e-curp">
+                <div class="svg-arrow"></div>
+                <h5 class="click">DETAILS</h5>
+              </div>
+              <div class="hold-content">{{ details }}</div>
+            </div>
+          </div>  {% endif %}
+            {% if shipping != blank %}
+          <div class="ctn-accord">
+            <div class="ctn-accord__item">
+              <div class="trg-acc e-curp">
+                <div class="svg-arrow"></div>
+                <h5 class="click">Shipping / Returns</h5>
+              </div>
+              <div class="hold-content">{{ shipping }} </div>
+            </div>
+          </div>  {% endif %}
+        </div>
       </div>
     </div>
   </header>
   <main class="main-prod">
-    <section class="may-also"><span class="dharma">RECOMMENDED</span>  {% render 'cross-sell' %}</section>
+    <section class="may-also"><span class="dharma">RECOMMENDED</span>  {% render 'cross-sell' %}</section>  {% section 'index-blog' %}
   </main>{% render  'myfooter' %}
 </div>

@@ -1,3 +1,35 @@
+
+| {% assign description = product.description %}
+| {% assign details = '' %}
+| {% assign shipping = '' %}
+| {% assign descr = '' %}
+
+| {% if product.description contains '---' %}
+
+
+| {% assign description = product.description | split: '---' | first %}
+| {% assign description_array = product.description | split: '---' %}
+| {% assign productInfoKeys = 'Details|Shipping|Description' | split: '|' %}
+
+//- assigning keys
+|   {% for key in productInfoKeys %}
+|   {% assign split_key = key | prepend: '~*~' | append: '~*~' %}
+|       {% if product.description contains split_key %}
+|           {% if key == 'Details' %}
+|               {% assign details = product.description | split: split_key | last | split: '---' | first %}
+|           {% elsif key == 'Shipping' %}
+|               {% assign shipping = product.description | split: split_key | last | split: '---' | first %}
+|           {% elsif key == 'Description' %}
+|               {% assign descr = product.description | split: split_key | last | split: '---' | first %}
+|           {% endif %}
+
+|       {% endif %}
+
+|   {% endfor %}
+
+
+| {% endif %}
+
 .page.page-product(data-barba="container", data-barba-namespace="product", data-ispage="product", data-scroll-content)
     header.header-prod
         .header-prod__bread
@@ -27,16 +59,40 @@
 
                 //-  prices
                 | {% if product.compare_at_price_max != 0 %}
-                span.sale-price {{ product.compare_at_price_max  | money_without_trailing_zeros  }}
+                span.sale-price {{ product.compare_at_price_max  | money  }}
                 | {% endif %}
-                .regular-price {{ product.price | money_without_trailing_zeros }}
+                .regular-price {{ product.price | money }}
 
 
                 |   {% render 'add-to-cart' %}
 
                 //-  descrip
                 .prod-descr
-                    | {{ product.content }}
+                    .prod-descr__content {{ descr }} 
+
+                    
+                    //- DESIGN
+                    |   {% if details != blank %}
+                    .ctn-accord
+                        //---- accd
+                        .ctn-accord__item
+                            .trg-acc.e-curp
+                                .svg-arrow !{arrowRight}
+                                h5.click DETAILS
+                            .hold-content {{ details }}
+                    |   {% endif %}
+        
+
+                    //- SIZE
+                    |   {% if shipping != blank %}
+                    .ctn-accord
+                        //---- accd
+                        .ctn-accord__item
+                            .trg-acc.e-curp
+                                .svg-arrow !{arrowRight}
+                                h5.click Shipping / Returns
+                            .hold-content {{ shipping }} 
+                    |   {% endif %}
         
 
     main.main-prod
@@ -48,5 +104,9 @@
             |   {% render 'cross-sell' %}
 
 
+
+        //- =========================  index-blog  ========================= -//
+        //- =========================  index-blog  ========================= -//
+        |   {% section 'index-blog' %}
 
     | {% render  'myfooter' %}
