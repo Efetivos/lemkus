@@ -249,7 +249,7 @@ a(href="{{ shop.url }}", title="{{ shop.title }}").logo-main.e-fixed !{logomain}
 nav.main-menu.no-mobile
     ul
         li
-            .item LAUNCHES
+            a(href= "{{ shop.url }}/pages/launches").item LAUNCHES
 
         each list, index in['SNEAKERS','APPAREL','KIDS','ACCESSORIES']
             li(class=""+list)
