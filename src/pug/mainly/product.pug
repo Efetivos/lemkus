@@ -4,6 +4,14 @@
             |   {% render 'breadcrumbs' %}
         .header-prod__hold
 
+            //- _____ thumbs
+            .header-prod__thumbs
+                .header-prod__thumbs__travel
+                    |   {% for image in product.images %}
+                    .header-prod__thumbs__each
+                        img(src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}" ).img-load
+                    |   {% endfor %}
+
             //- _____ gallery
             .header-prod__gallery
                 .header-prod__gallery__travel
@@ -15,10 +23,9 @@
             //- _____ infos
             .header-prod__infos
                 //-  title
-                h1.t-serif.header-prod__title  {{ product.title }}
+                h1.header-prod__title.dharmaex.e-upper {{ product.title }}
 
                 //-  prices
-                span.indic.price-text PRICE 
                 | {% if product.compare_at_price_max != 0 %}
                 span.sale-price {{ product.compare_at_price_max  | money_without_trailing_zeros  }}
                 | {% endif %}
@@ -37,7 +44,7 @@
 
 
         section.may-also
-            span.t-serif YOU MAY ALSO LIKE
+            span.dharma RECOMMENDED
             |   {% render 'cross-sell' %}
 
 

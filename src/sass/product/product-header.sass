@@ -1,0 +1,21 @@
+@import '../partials/alias-mixins'
+
+header.header-prod
+    padding: 10rem 0 0 0
+
+
+.header-prod__hold
+    @include desk
+        display: grid
+        grid-template-columns: 8vw 45vw 25vw
+
+
+.header-prod__thumbs__each img
+    @include desk
+        height: 100%
+        width: 100%
+        object-fit: cover
+
+
+fieldset.fieldset-qty
+    display: none

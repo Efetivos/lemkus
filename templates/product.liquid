@@ -3,19 +3,24 @@
   <header class="header-prod">
     <div class="header-prod__bread">  {% render 'breadcrumbs' %}</div>
     <div class="header-prod__hold">
+      <div class="header-prod__thumbs">
+        <div class="header-prod__thumbs__travel">  {% for image in product.images %}
+          <div class="header-prod__thumbs__each"><img class="img-load" src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}"></div>  {% endfor %}
+        </div>
+      </div>
       <div class="header-prod__gallery">
         <div class="header-prod__gallery__travel">  {% for image in product.images %}
           <div class="header-prod__gallery__each"><img class="img-load" src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}"></div>  {% endfor %}
         </div>
       </div>
       <div class="header-prod__infos">
-        <h1 class="t-serif header-prod__title"> {{ product.title }}</h1><span class="indic price-text">PRICE </span>{% if product.compare_at_price_max != 0 %}<span class="sale-price">{{ product.compare_at_price_max  | money_without_trailing_zeros  }}</span>{% endif %}
+        <h1 class="header-prod__title dharmaex e-upper">{{ product.title }}</h1>{% if product.compare_at_price_max != 0 %}<span class="sale-price">{{ product.compare_at_price_max  | money_without_trailing_zeros  }}</span>{% endif %}
         <div class="regular-price">{{ product.price | money_without_trailing_zeros }}</div>  {% render 'add-to-cart' %}
         <div class="prod-descr">{{ product.content }}</div>
       </div>
     </div>
   </header>
   <main class="main-prod">
-    <section class="may-also"><span class="t-serif">YOU MAY ALSO LIKE</span>  {% render 'cross-sell' %}</section>
+    <section class="may-also"><span class="dharma">RECOMMENDED</span>  {% render 'cross-sell' %}</section>
   </main>{% render  'myfooter' %}
 </div>
