@@ -4,7 +4,6 @@ const css = require('./sass/app.sass');
 //* --------------- LIBS
 import { gsap } from 'gsap'
 gsap.config({ nullTargetWarn: false });
-import FontFaceObserver from 'fontfaceobserver'
 
 
 
@@ -23,21 +22,11 @@ menu.fixMobile()
 //minicart.init()
 //ajaxify.init()
 preloader.init()
+preloader.font()
 scroll.init()
 
-const fontDharma = new FontFaceObserver('DharmaGothicE-Bold', {
-    weight: 900
-})
 
-Promise.all([
-    fontDharma.load()
-]).then(_ => {
-    console.log({ fontDharma });
-    alert('dharma')
-}).catch(_ => {
-    console.log('catch');
-    console.log({ fontDharma });
-})
+
 
 const { consoleTag } = require('./js/utils/console.js');
 consoleTag()

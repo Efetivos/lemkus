@@ -2,18 +2,161 @@
 
 
 
+//- =========================  BG MENU  ========================= -//
+//- =========================  BG MENU  ========================= -//
+.bg-fixed-els
+    background: var(--soft)
+    border-bottom: 1px solid var(--dark)
+    height: 55px
+    left: 0
+    position: fixed
+    top: 0
+    z-index: 8
+    width: 100vw
+    @include desk
+        height: 5rem
+
+
 //- =========================  LOGO MAIN  ========================= -//
 //- =========================  LOGO MAIN  ========================= -//
 a.logo-main
-    left: calc(50vw - 3.65rem)
+    left: var(--gap)
     position: fixed
-    top: calc(var(--vh) * 3)
-    width: 7.3rem
+    top: 20px
+    width: 100px
     z-index: 9
     @include desk
-        left: calc(50vw - (14.7rem/2))
-        width: 14.7rem
-        top: calc(var(--vh) *  2.8)
+        top: 1.8rem
+        width: 12.6rem
+
+
+
+.cart-counter, .trg-cart
+    display: inline-block
+    z-index: 9
+
+
+.menu-trg
+    @include flex-center
+    border-left: 1px solid var(--dark)
+    box-sizing: border-box
+    height: 55px
+    position: fixed
+    right: 0
+    top: 0
+    width: 65px
+    z-index: 9
+
+
+.menu-trg__hold
+    width: 24px
+
+.menu-trg .line
+    width: 100%
+    height: 1px
+    background: var(--dark)
+
+.menu-trg .line + .line
+    margin: 6px 0 0
+
+
+//- =========================  FIXED LINKS  ========================= -//
+//- =========================  FIXED LINKS  ========================= -//
+.cape-hour , .menu-search-bag , .menu-acc-wish
+    font-family: var(--openbold)
+    text-transform: uppercase
+    z-index: 9
+    @include desk
+        font-size: 1.4rem
+        top: 1.9rem
+
+    button, a, span
+        font-family: var(--openbold)
+
+.menu-search-bag 
+    display: inline-block
+    font-size: 12.1px
+    position: fixed
+    right: 86px
+    top: 21px
+    @include desk
+        font-size: 1.4rem
+        right: var(--gap)
+        top: 1.9rem
+
+button.trg-search
+    margin: 0 16px 0 0
+    padding: 0
+    @include desk
+        margin: 0 2.4rem 0 0
+
+
+
+.menu-acc-wish
+    @include desk
+        right: 18.5rem
+        position: fixed
+
+.menu-acc-wish a
+    @include desk
+        display: inline-block
+
+
+
+.menu-acc-wish a:first-child
+    @include desk
+        margin: 0 2.8rem 0 0
+
+
+
+
+
+
+.cape-hour
+    @include desk
+        display: flex
+        gap: 1rem
+        left: var(--gap)
+        position: fixed
+        top: 1.8rem
+
+
+nav.main-menu
+    @include desk
+        left: 24.7rem
+        position: fixed
+        top: 1.8rem
+        z-index: 9
+
+
+
+
+.main-menu ul
+    @include desk
+        display: flex
+        gap: 3.8rem
+
+
+.main-menu .item
+    @include desk
+        font-size: 1.4rem
+
+
+
+//- =========================  MAIN MENU  ========================= -//
+//- =========================  MAIN MENU  ========================= -//
+nav.main-menu
+
+.main-menu .item
+    font-family: var(--openbold)
+    text-transform: uppercase
+    @include desk
+        cursor: pointer
+
+
+
+
+
 
 
 
@@ -72,37 +215,6 @@ a.logo-main
 
 
 
-.cart-counter, .trg-cart
-    display: inline-block
-
-
-
-
-
-//- =========================  FIXED LINKS  ========================= -//
-//- =========================  FIXED LINKS  ========================= -//
-.cape-hour , .menu-search-bag , .menu-acc-wish
-    font-family: var(--openbold)
-    text-transform: uppercase
-    button, a, span
-        font-family: var(--openbold)
-
-
-
-
-
-
-
-
-//- =========================  MAIN MENU  ========================= -//
-//- =========================  MAIN MENU  ========================= -//
-nav.main-menu
-
-.main-menu .item
-    font-family: var(--openbold)
-    text-transform: uppercase
-    @include desk
-        cursor: pointer
 
 
 
