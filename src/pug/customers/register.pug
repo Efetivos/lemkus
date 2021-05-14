@@ -1,31 +1,35 @@
 
-.page.page-register(data-ispage="register", data-scroll-content)
-    header
-        p Create an Account / 
-        .form-register.e-flex-col
+.page.page-register.page-customer(data-ispage="register", data-scroll-content)
+    header.header-cust
+        .state-form CREATE ACCOUNT
+        .form-register.form-cust
             |{% form 'create_customer' %} {{ form.errors | default_errors }}
             input(type='text' value='' name='customer[first_name]' size='30', placeholder="First Name")
             input(type='text' value='' name='customer[last_name]' size='30', placeholder="Last Name")
             input(type='email' value='' name='customer[email]' size='30', placeholder="Email Address")
             input(type='password' value='' name='customer[password]' size='30', placeholder="Password")
-            input(type='submit' value='Create')
+            button(type="submit").btn-hover
+                span.static SIGN UP
+                span.hover(data-hover="SIGN UP SIGN UP ") SIGN UP SIGN UP 
             |{% endform %} 
 
 
-        section.register-opt.e-flex-col
-            .register-opt__creat.e-flex-col
-                |   {% if shop.customer_accounts_enabled %} 
-                |   {{ 'Log in' | customer_login_link }}
+        .create-forg
+            .create-forg__creat
+                |   {% if shop.customer_accounts_enabled %} {% if customer  %} {% else %}
+                |   {% if shop.customer_accounts_optional %}
+                a(href="{{ shop.url }}/account/login").recosemi.e-upper Already have an account? #[span.underline Login]
+                button.create-forg__forgot Forgot Password?
                 |   {% endif %}
+                |   {% endif %} {% endif %}
 
-            .register-opt__forgot.e-flex-col
-                button.toggle-forgot Forgot password?
-
-                .forgot-form.e-flex-col.js-hidden
-                    |   {% form 'recover_customer_password' %} {{ form.errors | default_errors}}
-                    input(type='email' name='email', placeholder="Email Address").input-cost
-                    input(type='submit' value='Submit').submit-cost
-                    |   {% endform %} 
+            .forgot-form.e-flex-col
+                |   {% form 'recover_customer_password' %} {{ form.errors | default_errors}}
+                input(type='email' name='email', placeholder=" Email Address")
+                button(type="submit").btn-hover
+                    span.static SUBMIT
+                    span.hover(data-hover="SUBMIT SUBMIT ") SUBMIT SUBMIT 
+                |   {% endform %} 
 
 
 

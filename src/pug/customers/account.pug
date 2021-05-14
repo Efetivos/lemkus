@@ -1,25 +1,24 @@
-.page.page-acc( data-ispage="account", data-scroll-content)
-    header
-        button(data-to="orders")  My Orders
-        button(data-to="details")  Account Details
-        p Hello {{ customer.first_name }}, 
-        p Your account details are below.
+.page.page-acc( data-ispage="account", data-scroll-content) 
+    header.header-acc.e-flex-col
+        .state-form MY ACCOUNT
 
 
-    main
-        section
-            p ACCOUNT INFORMATION
-            span {{ customer.name | default: "customer" }}
-            span {{ customer.email }}
+    main.main-acc
+        section.acc-infos
+            .acc-infos__hold.e-hold
+                .indic-sec.t-serif  ACCOUNT INFORMATION
+                span.acc-infos__name {{ customer.name | default: "customer" }}
+                span.acc-infos__email.txt-hvr-blue {{ customer.email }}
 
 
 
 
 
-        section
-                p ORDER HISTORY
-                ul
-                    li
+        section.acc-order
+            .acc-order__hold.e-hold
+                .indic-sec.t-serif  ORDER HISTORY
+                ul.order-list
+                    li.order-list__rank
                         span ORDER
                         span FINANCIAL
                         span DATE
@@ -27,12 +26,13 @@
                         span SUBTOTAL
                     |   {% if customer.orders.size != 0 %}                
                     |   {% for order in customer.orders %}
-                    li
+                    li.order-list__each
+                        //-p {{ order.customer_url }}
                         span {{ order.name | link_to: order.customer_url }}
                         span {{ order.financial_status | capitalize  }}
                         span {{ order.created_at | date: format: 'abbreviated_date' }}
                         span {{ order.fulfillment_status | capitalize  }}
-                        span {{ order.line_items_subtotal_price | money_without_trailing_zeros  }}
+                        span {{ order.line_items_subtotal_price | money  }}
 
                     |   {% endfor %}
                     |   {% else %}
@@ -40,16 +40,25 @@
                     |   {% endif %}
 
 
-        section
-            div
+        section.acc-track
+            .acc-track__hold.e-hold
                 |   {% for line_item in order.line_items %}
                 |   {% if line_item.fulfillment.tracking_number %}
                 span TRACK NUMBER:   
-                    a(href="{{ line_item.fulfillment.tracking_url }}")  {{ line_item.fulfillment.tracking_number }}  
+                    a(href="{{ line_item.fulfillment.tracking_url }}").txt-hvr-blue  {{ line_item.fulfillment.tracking_number }}  
                 |   {% endif %}
                 |   {% endfor %}
         
-        aside
+
+
+        
+        section.acc-wish
+            .acc-wish__hold.e-hold
+                .indic-sec.t-serif WISHLIST
+                P View your wish list #[a(href="{{ shop.url }}/pages/wishlist", target="_blank").txt-hvr-blue here].
+
+        
+        //-aside.e-flex-col
             |   {% if shop.customer_accounts_enabled %}
             |   {% if customer %}
             |   {{ 'Log out'  | customer_logout_link }}

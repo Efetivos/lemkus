@@ -1,0 +1,155 @@
+@import './partials/alias-mixins'
+
+.page-order 
+
+    span
+        font-size: 1.5rem
+        line-height: 140%
+
+    
+    strong + span
+        margin: 0 0 0 0.7rem
+
+    span + span
+        margin: 0.1rem 0 0 0
+
+
+    section
+        margin: 0 0 5rem 0
+        @include desk
+            margin: 0 0 15rem 0
+
+
+    .e-hold:not(.footer__hold)
+        @include desk
+            padding: 0 0 0 13rem
+            width: 83%
+
+
+
+
+
+    p, span
+        @include desk
+            font-size: 2rem
+            line-height: 150%
+
+
+    .dharma
+        border-bottom: 1px solid
+        font-size: 3rem
+        line-height: 150%
+        margin: 0 0 1.4rem 0
+        text-transform: uppercase
+
+a.back-account.btn-hover
+    width: 27.9rem
+    @include desk
+        position: absolute
+        right: 0
+        top: 0.7rem
+    
+
+
+header.header-order
+    padding: 20rem 0 0
+    @include desk
+        padding: 12rem 0 0
+    
+.header-order__hold
+    @include desk
+        display: flex
+        flex-direction: column
+        position: relative
+
+header.header-order h1
+    font-size: 2.5rem
+    @include desk
+        font-size: 4.4rem !important
+    
+main.main-order
+    margin: 3rem 0 0
+    @include desk
+        margin: 0
+
+main.main-order strong
+    display: inline
+    font-weight: 800
+    @include desk
+        font-size: 1.6rem
+
+
+.main-order p span
+    display: inline-block
+    @include desk
+        font-size: 1.6rem
+
+
+
+.order-add__ship-adr
+    margin: 5rem 0 0 0
+    @include desk
+        margin: 0
+    
+
+.order-add__hold
+    @include desk
+        display: flex
+        justify-content: space-between
+
+.order-add__hold > *
+    @include desk
+        width: 47%
+
+.order-add p
+    margin: 0 0 0.8rem 0
+
+
+.page-order p, .page-order span
+    @include desk
+        font-size: 1.6rem
+
+
+
+
+
+
+
+
+//- =========================  ORDER LIST  ========================= -//
+//- =========================  ORDER LIST  ========================= -//
+
+.order-item li
+    border: 1px solid #000
+    padding: 2rem
+    @include desk
+        border: none
+        display: grid
+        font-family: var(--sans)
+        grid-template-columns: 30% 14% 14% 11% 16% 15%
+        padding: 0
+
+    
+    strong + span
+        @include desk
+            margin: 0
+
+.order-item li span, .order-item li p
+    @include desk
+        font-size: 1.6rem
+        font-family: var(--serif)
+
+
+.order-item li + li
+    margin: 0.7rem 0
+
+.order-item li strong
+    @include desk
+        display: none
+
+li.list-cat p
+    font-family: var(--recosemi)
+
+
+.page-order section
+    margin: 0 0 6.4rem

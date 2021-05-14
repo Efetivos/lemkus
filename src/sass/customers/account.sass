@@ -1,0 +1,223 @@
+@import '../partials/alias-mixins'
+@import './partials/alias-mixins'
+.page-acc
+
+header.header-acc
+    padding: 20rem 0 0
+    @include desk
+
+
+.header-acc p
+    text-align: center
+    width: 85%
+    font-size: 1.9rem
+    @include desk
+        font-size: 2.4rem
+
+
+.header-acc p + p
+    margin: 1rem 0 0 0
+    @include desk
+        margin: 3rem 0 0 0
+
+.header-acc p.hello
+    margin: 9rem 0 0
+    @include desk
+        margin: 14rem 0 0
+
+
+
+.header-acc__nav 
+    width: calc(100vw - var(--gap)*2)
+    @include tablet
+        display: flex
+        flex-wrap: wrap
+        gap: 1rem
+        justify-content: space-between
+    @include desk
+        display: flex
+        flex-wrap: wrap
+        gap: 1rem
+        justify-content: space-between
+    
+
+.header-acc__nav > *
+    align-items: center
+    background: #fff
+    border: 0.4px solid #000000
+    color: #000
+    display: flex
+    font-family: var(--serif)
+    font-size: 4rem
+    height: 12.7rem
+    justify-content: center
+    margin: 0 0 5rem 0
+    position: relative
+    text-align: center
+    width: 100%
+    @include tablet
+        font-size: 3.5rem
+        margin: 0 0 2rem
+        width: 48.3%
+    @include desk
+        font-size: 3.5rem
+        height: 16.8rem
+        margin: 0 0 4rem
+        width: 48.3%
+        transition: .25s color ease-out, .25s background-color ease-out
+        cursor: pointer
+        &:hover
+            color: #fff
+            background-color: var(--color)
+    
+
+
+
+
+
+
+
+
+
+
+
+//- =========================  MAIN  ========================= -//
+//- =========================  MAIN  ========================= -//
+
+main.main-acc
+    margin: 6.5rem 0 0 0
+    @include desk
+        margin: 12.5rem 0 0 27.6rem
+
+.main-acc section
+    margin: 0 0 5rem 0
+    @include desk
+        margin: 0 0 6.4rem 0
+
+.main-acc section span
+    font-size: 1.6rem
+    line-height: 140%
+    @include desk
+        font-size: 1.6rem
+        line-height: 140%
+
+
+.main-acc section .e-hold
+    @include desk
+        width: 70%
+
+
+
+.indic-sec
+    border-bottom: 1px solid #000
+    font-family: var(--dharma);
+    font-size: 2rem
+    line-height: 200%
+    margin: 0 0 1.6rem 0
+    width: 100%
+    @include desk
+        font-size: 3rem
+        font-size: 3.3rem
+
+
+span.acc-infos__name
+    font-size: 1.9rem
+    margin: 0 0 0.5rem 0
+
+
+span.acc-infos__email
+    font-family: var(--recosemi)
+
+
+aside
+    @include desk
+        margin: 17rem 0
+aside a
+    font-size: 1.5rem
+    text-decoration: underline
+
+
+aside a + a
+    margin: 2rem 0
+
+
+li.order-list__rank, .order-list__each
+    display: grid
+    grid-template-columns: repeat(5, 1fr)
+
+
+
+
+
+
+
+
+
+
+
+
+//- =========================  ORDER  ========================= -//
+//- =========================  ORDER  ========================= -//
+
+
+.order-list__rank
+    margin: 0 0 1rem 0
+
+.order-list__rank span
+    font-size: 0.9rem !important
+    font-family: var(--recosemi)
+    @include desk
+        font-size: 1.6rem !important
+
+
+.order-list__each + li.order-list__each
+    margin: 1rem 0 0 0
+
+.order-list__each span
+    font-size: 1rem !important
+    @include desk
+        font-size: 1.8rem !important
+
+.order-list__each a
+    text-decoration: underline
+
+
+
+
+
+
+
+
+//- =========================  wish  ========================= -//
+//- =========================  wish  ========================= -//
+
+.acc-wish__hold p a
+    display: inline-block
+    text-decoration: underline
+    transition: .2s color ease-out
+    &:hover
+        color: var(--color)
+
+
+
+
+
+
+
+//- =========================  return  ========================= -//
+//- =========================  return  ========================= -//
+
+.acc-return p
+    padding: 1.5rem 0 0 0
+    line-height: 140%
+    font-size: 1.4rem
+    @include desk
+        font-size: 1.9rem
+        padding: 2.2rem 0 0 0
+
+
+.acc-return h3
+    font-family: var(--serif)
+    font-size: 2rem
+    @include desk
+        font-size: 2.8rem

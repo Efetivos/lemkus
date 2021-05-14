@@ -1,27 +1,25 @@
 
-<div class="page page-register" data-ispage="register" data-scroll-content>
-  <header>
-    <p>Create an Account / </p>
-    <div class="form-register e-flex-col">{% form 'create_customer' %} {{ form.errors | default_errors }}
+<div class="page page-register page-customer" data-ispage="register" data-scroll-content>
+  <header class="header-cust">
+    <div class="state-form">CREATE ACCOUNT</div>
+    <div class="form-register form-cust">{% form 'create_customer' %} {{ form.errors | default_errors }}
       <input type="text" value="" name="customer[first_name]" size="30" placeholder="First Name">
       <input type="text" value="" name="customer[last_name]" size="30" placeholder="Last Name">
       <input type="email" value="" name="customer[email]" size="30" placeholder="Email Address">
       <input type="password" value="" name="customer[password]" size="30" placeholder="Password">
-      <input type="submit" value="Create">{% endform %} 
+      <button class="btn-hover" type="submit"><span class="static">SIGN UP</span><span class="hover" data-hover="SIGN UP SIGN UP ">SIGN UP SIGN UP </span></button>{% endform %} 
     </div>
-    <section class="register-opt e-flex-col">
-      <div class="register-opt__creat e-flex-col">
-          {% if shop.customer_accounts_enabled %} 
-          {{ 'Log in' | customer_login_link }}
-          {% endif %}
+    <div class="create-forg">
+      <div class="create-forg__creat">
+          {% if shop.customer_accounts_enabled %} {% if customer  %} {% else %}
+          {% if shop.customer_accounts_optional %}<a class="recosemi e-upper" href="{{ shop.url }}/account/login">Already have an account? <span class="underline">Login</span></a>
+        <button class="create-forg__forgot">Forgot Password?</button>  {% endif %}
+          {% endif %} {% endif %}
       </div>
-      <div class="register-opt__forgot e-flex-col">
-        <button class="toggle-forgot">Forgot password?</button>
-        <div class="forgot-form e-flex-col js-hidden">  {% form 'recover_customer_password' %} {{ form.errors | default_errors}}
-          <input class="input-cost" type="email" name="email" placeholder="Email Address">
-          <input class="submit-cost" type="submit" value="Submit">  {% endform %} 
-        </div>
+      <div class="forgot-form e-flex-col">  {% form 'recover_customer_password' %} {{ form.errors | default_errors}}
+        <input type="email" name="email" placeholder=" Email Address">
+        <button class="btn-hover" type="submit"><span class="static">SUBMIT</span><span class="hover" data-hover="SUBMIT SUBMIT ">SUBMIT SUBMIT </span></button>  {% endform %} 
       </div>
-    </section>
+    </div>
   </header>{% render  'myfooter' %}
 </div>
