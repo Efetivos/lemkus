@@ -303,6 +303,16 @@ nav.main-menu.no-mobile.el-fix
 //- =========================  COOKIES  ========================= -//
 //- =========================  COOKIES  ========================= -//
 .cookies.e-flex
-    .cookies__hold.e-rel.e-flex-col
-        .cookies__close X
-        .cookies__text This website uses cookies. They improve your navigation and the quality of our site. By navigating, you accept the placement and use of cookies as described in our Privacy Policy.
+    .cookies__hold
+        .cookies__text 
+            p We use cookies to improve your experience. By using this website you agree to our #[a(href="{{ shop.url }}/pages/cookies").underline  Cookie Policy].
+
+        .cookies__btns
+            a(href!="{{ shop.url }}/pages/cookies").btn-hover.cream-v
+                span.static LEARN
+                span.hover(data-hover="LEARN LEARN ") LEARN LEARN 
+                
+            button.cookies__close.btn-hover
+                span.static ACCEPT
+                span.hover(data-hover="ACCEPT ACCEPT ") ACCEPT ACCEPT 
+        

@@ -279,49 +279,45 @@ nav.main-menu
 //- =========================  COOKIES  ========================= -//
 //- =========================  COOKIES  ========================= -//
 .cookies
-    display: none
-    background: var(--color)
+    @include flex-center
+    background: var(--soft)
+    border-top: 1px solid var(--dark)
     bottom: 0
-    left: 0
-    padding: 15px 0 20px
+    padding: 15px 0 
     position: fixed
     width: 100vw
     z-index: 8
+    @include desk
+        border: 1px solid var(--dark)
+        bottom: 1.6rem
+        padding: 2.4rem 0
+        right: 4.1rem
+        width: 31.2rem
+    
 
 
 .cookies__hold
-    width: calc(100% - 20px)
+    @include flex-center-col
+    width: 75%
     @include desk
-        align-items: center
-        flex-direction: row-reverse
+        width: 85%
 
-.cookies__hold > *
-    color: #fff
-    font-family: var(--sans)
+
+
+
+.cookies__text p
+    @include serif
+    font-size: 1.2rem
     text-align: center
 
+.cookies__text p a
+    display: inline-block
+    
+.cookies__btns
+    margin: 20px 0 0 
+    display: flex
+    gap: 15px
 
-.cookies__text
-    font-size: 1.3rem
-    font-weight: 600
-    line-height: 138%
-    @include tablet
-        font-size: 0.8rem
-        width: 70%
-    @include desk
-        font-size: 1.45rem
-        line-height: 1.8rem
-        margin: 0 2rem 0 0
-        width: auto
-
-
-.cookies__close
-    font-size: 23px
-    font-weight: 200
-    padding: 0 0 0.9rem 0
-    @include desk
-        cursor: pointer
-        padding: 0.4rem 1.4rem 0
     
 .zoomywishid.zoomywishid-
     position: absolute
