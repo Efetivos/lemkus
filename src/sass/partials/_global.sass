@@ -3,7 +3,7 @@
 
 // =========================  BUTTON HOVER 
 // =========================  BUTTON HOVER 
-.btn-hover, .btn-hover-dark
+.btn-hover
     align-items: center
     background: var(--color)
     border-radius: 50px
@@ -38,7 +38,7 @@
 
 .btn-hover .hover, .btn-hover-dark .hover
     --space: .5rem
-    --time: 2s
+    --time: 10s
     animation: marquee var(--time) infinite linear
     //clip-path: inset(0% 3.5% 0% 3.5%)
     opacity: 0
@@ -54,8 +54,97 @@
     100%
         transform: translateX(-50%)
 
-.btn-hover-dark
+
+//_______ DARK 
+.dark-v
     background: #000 !important
 
-.btn-hover-dark span
+.dark-v span
     color: #fff !important
+
+//_______ CREAM
+.cream-v
+    background: var(--soft) !important
+
+
+
+
+
+
+//- =========================  nav  ========================= -//
+//- =========================  nav  ========================= -//
+
+.prod-card__img__nav
+    align-items: center
+    background-color: #fff
+    border-radius: 50px
+    border: 1px solid var(--dark)
+    bottom: 8.5rem
+    cursor: pointer
+    display: flex
+    height: 3.9rem
+    justify-content: center
+    position: absolute
+    transition: background-color 0.3s ease-out
+    width: 8.5rem
+    z-index: 2
+
+.prod-card__img__nav svg
+    width: 2.98rem
+
+.prod-card__img__nav svg:last-child
+    position: absolute
+
+.prod-card-img-prev
+    left: 2.5rem
+
+.prod-card-img-next
+    right: 2.5rem
+
+
+
+// hove prev
+.prod-card-img-prev
+    transform: rotate(180deg)
+    &:hover
+        background-color: var(--dark)
+        .arrow path, .arrow-hover path
+            fill: #fff
+        .arrow path
+            transform: translateX(30px)
+            transition: transform 0.3s cubic-bezier(0, 0.41, 0, 0.98)
+        .arrow-hover path
+            transform: translateX(0px)
+            transition: transform 0.5s cubic-bezier(0, 0.41, 0, 0.98)
+            transition-delay: .15s
+    
+    .arrow path
+        transition: fill 0.4s ease-out
+        transition: transform 0 ease-none
+
+    .arrow-hover path
+        transform: translateX(-30px)
+        transition: transform 0 ease-none
+
+
+// hove next
+.prod-card-img-next
+    &:hover
+        background-color: var(--dark)
+        .arrow path, .arrow-hover path
+            fill: #fff
+        .arrow path
+            transform: translateX(30px)
+            transition: transform 0.3s cubic-bezier(0, 0.41, 0, 0.98)
+        .arrow-hover path
+            transform: translateX(0px)
+            transition: transform 0.5s cubic-bezier(0, 0.41, 0, 0.98)
+            transition-delay: .15s
+    
+    .arrow path
+        transition: fill 0.4s ease-out
+        transition: transform 0 ease-none
+
+    .arrow-hover path
+        transform: translateX(-30px)
+        transition: transform 0 ease-none
