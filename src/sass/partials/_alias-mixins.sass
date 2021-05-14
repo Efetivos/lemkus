@@ -114,7 +114,7 @@
 
 
 \:root
-	--gap: 2.5rem
+	--gap: 1.5rem
 	--dark: #191919
 	--gray: #f6f6f6
 	--soft: #fdfbf5
@@ -130,6 +130,8 @@
 	--recosemi: 'RecoletaAlt-SemiBold', serif
 	--recomed: 'RecoletaAlt-Medium', serif
 	--serif: 'RecoletaAlt-Regular', serif
+	@include tablet
+		--gap: 1.5rem
 	@include desk
 		--gap: 2.5rem
 

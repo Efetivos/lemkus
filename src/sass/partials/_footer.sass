@@ -1,16 +1,130 @@
 .footer
-    margin: 10.5rem 0 0 0
-    padding: 0 0 7rem 0
+    background: var(--color)
+    padding: 18.1px 0
     @include desk
-        margin: 9.7rem 0 0
-        padding: 0 0 1rem
+        margin: 64rem 0 0
+        padding: 4.3rem 0 2.9rem
+
+.footer a, .footer span
+    font-family: var(--opensemi)
+    font-size: 14px
+    text-transform: uppercase
+    padding: 0 0 19px 0
+    @include desk
+        font-size: 1.16rem
+        padding: 0 0 1.38rem
+
+
+    
+.footer__hold
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-template: "newsl newsl" "menu customer"  "legal social" "logo logo" "credits credits"
+    @include desk
+        grid-template: "newsl menu legal customer" "logo logo logo logo" "years years credits social"
+        grid-template-columns: 80.5rem 17.7rem 17.7rem 15.5rem
     
 
-.footer__hold
-    display: flex
-    justify-content: space-between
-    flex-wrap: wrap
+
+    
+.footer__customer
+    grid-area: customer
     @include desk
-        border-top: 1px solid #000
-        flex-wrap: nowrap
-        padding: 3.4rem 0 0 0
+        justify-self: flex-end
+
+    
+.footer__legal
+    grid-area: legal
+    margin: 17px 0 0
+    @include desk
+        margin: 0
+
+    
+.footer__menu
+    grid-area: menu
+
+    
+.footer__social
+    grid-area: social
+    margin: 17px 0 0
+    @include desk
+        display: flex
+        gap: 2.2rem
+        grid-column: 3 / 5
+        justify-content: flex-end
+        margin: 0
+
+    
+.footer__logo
+    grid-area: logo
+    margin: 6rem 0 2.5rem
+    width: 100%
+    @include desk
+        margin: 0
+        padding: 1.2rem 0 5.5rem
+
+.footer__logo svg path
+    fill: var(--soft)
+
+
+.footer__credits
+    grid-area: credits
+    @include desk
+        grid-column: 2 / 3
+        transform: translateX(-20.7rem)
+
+    
+.footer__credits a
+    font-family: var(--sans)
+    
+.footer__years
+    display: none
+    grid-area: years
+
+    
+.footer__newsl
+    grid-area: newsl
+    margin: 0 0 4rem
+
+.footer__newsl__text.dharma
+    border: none
+    margin: 0 0 0px 0
+    @include desk
+        margin: 0 0 0.8rem 0
+    
+.footer__newsl__text
+    font-size: 3rem
+    margin: 0 0 1.4rem 0
+
+.footer__newsl form
+    @include desk
+        width: 26.3rem
+
+.footer__newsl fieldset
+    width: 100%
+    position: relative
+
+input#newsl-footer
+    background: transparent
+    border: none
+    border-bottom: 1px solid
+    color: var(--dark)
+    line-height: 34px
+    width: 90%
+    @include tablet
+        line-height: 43px
+        font-size: 16px
+
+input#newsl-footer::placeholder
+    color: inherit
+    
+.footer__newsl fieldset button
+    margin: 0
+    padding: 0
+    position: absolute
+    right: 0
+    top: 10.8px
+
+.footer__newsl fieldset button svg
+    padding: 0
+    width: 22px
