@@ -5,7 +5,7 @@
     <div class="form-login e-flex-col">{% form 'customer_login' %} {{ form.errors | default_errors }}
       <input type="email" name="customer[email]" placeholder="Email">
       <input type="password" name="customer[password]" autocomplete placeholder="Password">
-      <input type="submit" value="Sign In">{% endform %} 
+      <button class="btn-hover-dark" type="submit"><span class="static">SIGN IN</span><span class="hover" data-hover="SIGN IN SIGN IN ">SIGN IN SIGN IN </span></button>{% endform %} 
     </div>
     <section class="login-opt">
       <div class="login-opt__creat">

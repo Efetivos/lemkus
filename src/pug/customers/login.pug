@@ -5,7 +5,11 @@
             |{% form 'customer_login' %} {{ form.errors | default_errors }}
             input(type='email' name='customer[email]', placeholder="Email")
             input(type='password' name='customer[password]', autocomplete placeholder="Password")
-            input(type='submit' value='Sign In')
+            //-input(type='submit' value='Sign In')
+            //-input(type='submit' value='Sign In')
+            button(type="submit").btn-hover-dark
+                span.static SIGN IN
+                span.hover(data-hover="SIGN IN SIGN IN ") SIGN IN SIGN IN 
 
             |{% endform %} 
 

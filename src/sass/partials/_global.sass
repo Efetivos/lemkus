@@ -1,0 +1,61 @@
+@import 'alias-mixins'
+
+
+// =========================  BUTTON HOVER 
+// =========================  BUTTON HOVER 
+.btn-hover, .btn-hover-dark
+    align-items: center
+    background: var(--color)
+    border-radius: 50px
+    border: 1px solid var(--dark)
+    cursor: pointer
+    display: flex
+    font-family: var(--recosemi)
+    font-size: 1.6rem
+    height: 3.9rem
+    justify-content: flex-start
+    overflow: hidden
+    position: relative
+    width: 11.9rem
+    &:hover
+        .static
+            opacity: 0
+            
+        .hover
+            opacity: 1
+
+
+.btn-hover > *, .btn-hover-dark > *
+    position: absolute
+
+.btn-hover .static, .btn-hover-dark .static
+    @include flex-center;
+    height: 100%
+    left: 0
+    opacity: 1
+    top: 0
+    width: 100%
+
+.btn-hover .hover, .btn-hover-dark .hover
+    --space: .5rem
+    --time: 2s
+    animation: marquee var(--time) infinite linear
+    //clip-path: inset(0% 3.5% 0% 3.5%)
+    opacity: 0
+    padding-right: var(--space)
+    white-space: nowrap
+    &:after
+        content: attr(data-hover)
+        padding-left: var(--space)
+
+@keyframes marquee
+    0%
+        transform: translateX(0)
+    100%
+        transform: translateX(-50%)
+
+.btn-hover-dark
+    background: #000 !important
+
+.btn-hover-dark span
+    color: #fff !important
