@@ -1,12 +1,10 @@
-.page.page-login(data-ispage="login", data-scroll-content)
-    header
-        p My account /
-        .form-login.e-flex-col
+.page.page-login.page-customer(data-ispage="login", data-scroll-content)
+    header.header-cust
+        .state-form LOGIN
+        .form-login.form-cust
             |{% form 'customer_login' %} {{ form.errors | default_errors }}
             input(type='email' name='customer[email]', placeholder="Email")
             input(type='password' name='customer[password]', autocomplete placeholder="Password")
-            //-input(type='submit' value='Sign In')
-            //-input(type='submit' value='Sign In')
             button(type="submit").btn-hover
                 span.static SIGN IN
                 span.hover(data-hover="SIGN IN SIGN IN ") SIGN IN SIGN IN 
@@ -14,22 +12,22 @@
             |{% endform %} 
 
 
-        section.login-opt
-            .login-opt__creat
+        .create-forg
+            .create-forg__creat
                 |   {% if shop.customer_accounts_enabled %} {% if customer  %} {% else %}
                 |   {% if shop.customer_accounts_optional %}
-                |       {{ 'Create an account' | customer_register_link }}
+                a(href="{{ shop.url }}/account/register").recosemi.e-upper Don’t have an account? #[span.underline Sign Up]
+                button.create-forg__forgot Forgot Password?
                 |   {% endif %}
                 |   {% endif %} {% endif %}
 
-            .login-opt__forgot
-                button Forgot password?
-
-                .forgot-form.e-flex-col
-                    |   {% form 'recover_customer_password' %} {{ form.errors | default_errors}}
-                    input(type='email' name='email', placeholder=" Email Address")
-                    input(type='submit' value='Submit')
-                    |   {% endform %} 
+            .forgot-form.e-flex-col
+                |   {% form 'recover_customer_password' %} {{ form.errors | default_errors}}
+                input(type='email' name='email', placeholder=" Email Address")
+                button(type="submit").btn-hover
+                    span.static SUBMIT
+                    span.hover(data-hover="SUBMIT SUBMIT ") SUBMIT SUBMIT 
+                |   {% endform %} 
 
 
 

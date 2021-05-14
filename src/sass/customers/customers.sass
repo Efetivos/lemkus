@@ -1,0 +1,94 @@
+@import '../partials/alias-mixins'
+
+
+
+
+//- =========================  SETTERS  ========================= -//
+//- =========================  SETTERS  ========================= -//
+
+.page-customer
+
+.page-customer input
+    background: transparent
+    border: none
+    border-bottom: 1px solid var(--dark)
+    color: var(--dark)
+    font-family: var(--reco)
+    font-size: 1.6rem
+    line-height: 200%
+    width: 100%
+
+.page-customer input + input
+    margin: 2rem 0 0
+
+.page-customer input::placeholder
+    color: inherit
+
+.header-cust
+    @include flex-center-col
+    height: 100vh
+    position: relative
+    width: 100vw
+
+.state-form
+    font-family: var(--dharma)
+    font-size: 4rem
+
+
+
+.errors
+    font-size: 1.6rem
+
+
+
+
+
+
+
+
+
+
+//- =========================  LOGIN PAGE ========================= -//
+//- =========================  LOGIN PAGE ========================= -//
+.form-cust
+    @include flex-center-col
+    width: calc(100vw - var(--gap) * 2)
+    margin: 2.4rem 0 0 0
+    @include desk
+        width: 48.8rem
+
+.form-cust form
+    @include flex-center-col
+    width: 100%
+
+.form-cust button
+    margin: 3.2rem 0 2.4rem 
+
+.create-forg 
+    @include flex-center-col
+
+.create-forg__creat
+    @include flex-center-col
+
+.create-forg__creat span
+    display: inline-block
+
+
+
+.create-forg__creat a, .create-forg__creat button
+    font-size: 1.6rem
+
+.forgot-form form
+    align-items: center
+    display: flex
+    flex-direction: column
+    width: calc(100vw - var(--gap) * 2)
+    @include desk
+        width: 48.8rem
+
+.forgot-form form button
+    margin: 2.4rem 0 0
+
+
+.create-forg__forgot
+    margin: 1.5rem 0

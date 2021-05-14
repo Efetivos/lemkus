@@ -12,6 +12,7 @@ html
 	-webkit-font-smoothing: antialiased
 	box-sizing: border-box
 	color: #000
+	font-size: 1.6rem
 	font-family: var(--serif)
 	font-smooth: always
 	font-smooth: auto
@@ -182,6 +183,9 @@ p
 button 
 	@include clear
 	@include resetbtn 
+	color: var(--dark)
+	cursor: pointer
+	font-family: var(--reco)
 
 picture
 	display: block
@@ -241,3 +245,7 @@ picture
 	right: calc(var(--gap) - 20px)
 	@include desk
 		right: calc(var(--gap) - 0.5rem)
+
+
+.underline
+	text-decoration: underline
