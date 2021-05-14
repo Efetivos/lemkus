@@ -1,17 +1,21 @@
 @import './partials/alias-mixins'
 
 .page-order 
+    header, main
 
-    span
-        font-size: 1.5rem
-        line-height: 140%
 
-    
-    strong + span
-        margin: 0 0 0 0.7rem
+        p, span
+            font-size: 1.5rem
+            line-height: 140%
+            @include desk
+                font-size: 1.6rem
+                line-height: 150%
+            
+        strong + span
+            margin: 0 0 0 0.7rem
 
-    span + span
-        margin: 0.1rem 0 0 0
+        span + span
+            margin: 0.1rem 0 0 0
 
 
     section
@@ -28,11 +32,6 @@
 
 
 
-
-    p, span
-        @include desk
-            font-size: 2rem
-            line-height: 150%
 
 
     header .dharma, main .dharma
@@ -104,10 +103,6 @@ main.main-order strong
 .order-add p
     margin: 0 0 0.8rem 0
 
-
-.page-order p, .page-order span
-    @include desk
-        font-size: 1.6rem
 
 
 

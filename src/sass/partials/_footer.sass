@@ -2,7 +2,7 @@
     background: var(--color)
     padding: 18.1px 0
     @include desk
-        margin: 64rem 0 0
+        margin: 6.4rem 0 0
         padding: 4.3rem 0 2.9rem
 
 .footer a, .footer span
@@ -11,6 +11,7 @@
     text-transform: uppercase
     padding: 0 0 19px 0
     @include desk
+        font-family: var(--sans)
         font-size: 1.16rem
         padding: 0 0 1.38rem
 
@@ -69,6 +70,7 @@
 
 .footer__credits
     grid-area: credits
+    z-index: 1
     @include desk
         grid-column: 2 / 3
         transform: translateX(-20.7rem)
@@ -101,13 +103,13 @@
         width: 26.3rem
 
 .footer__newsl fieldset
-    width: 100%
+    border-bottom: 1px solid
     position: relative
+    width: 100%
 
 input#newsl-footer
     background: transparent
     border: none
-    border-bottom: 1px solid
     color: var(--dark)
     line-height: 34px
     width: 90%
