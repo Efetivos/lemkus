@@ -1,0 +1,115 @@
+
+<div class="menu-dd menu-dd__sneakers el-fix">
+  <div class="menu-dd__hold">
+    <div class="menu-dd__links">
+      <div class="menu-dd__all">
+        <h1 class="dharma">ALL</h1>
+        <ul>  {% for link in linklists[settings.link_all_sneakers].links %}
+          <li> <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a></li>  {% endfor %}
+        </ul>
+      </div>
+      <div class="menu-dd__brands">
+        <h1 class="dharma">BRANDS</h1>
+        <ul>  {% for link in linklists[settings.link_brands_sneakers].links %}
+          <li> <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a></li>  {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <div class="menu-dd__featured">
+      <h1 class="dharma">FEATURED</h1>
+      <div class="menu-dd__featured__hold">
+        <div class="menu-dd__featured__each"><a class="menu-dd__featured__img" href="{{ settings.sneakers-ft1-link }}" title="{{ settings.sneakers-ft1-heading }}"><img src="{{ settings.sneakers-ft1-img | img_url: 'master' }}" alt="#"></a><a class="menu-dd__featured__title" href="{{ settings.sneakers-ft1-link }}" title="{{ settings.sneakers-ft1-heading }}">{{ settings.sneakers-ft1-heading }}</a></div>
+        <div class="menu-dd__featured__each"><a class="menu-dd__featured__img" href="{{ settings.sneakers-ft2-link }}" title="{{ settings.sneakers-ft2-heading }}"><img src="{{ settings.sneakers-ft2-img | img_url: 'master' }}" alt="#"></a><a class="menu-dd__featured__title" href="{{ settings.sneakers-ft2-link }}" title="{{ settings.sneakers-ft2-heading }}">{{ settings.sneakers-ft2-heading }}</a></div>
+        <div class="menu-dd__featured__each"><a class="menu-dd__featured__img" href="{{ settings.sneakers-ft3-link }}" title="{{ settings.sneakers-ft3-heading }}"><img src="{{ settings.sneakers-ft3-img | img_url: 'master' }}" alt="#"></a><a class="menu-dd__featured__title" href="{{ settings.sneakers-ft3-link }}" title="{{ settings.sneakers-ft3-heading }}">{{ settings.sneakers-ft3-heading }}</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="menu-dd menu-dd__kids el-fix">
+  <div class="menu-dd__hold">
+    <div class="menu-dd__links">
+      <div class="menu-dd__all">
+        <h1 class="dharma">ALL</h1>
+        <ul>  {% for link in linklists[settings.link_all_kids].links %}
+          <li> <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a></li>  {% endfor %}
+        </ul>
+      </div>
+      <div class="menu-dd__brands">
+        <h1 class="dharma">BRANDS</h1>
+        <ul>  {% for link in linklists[settings.link_brands_kids].links %}
+          <li> <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a></li>  {% endfor %}
+        </ul>
+      </div>
+      <div class="menu-dd__appa">
+        <h1 class="dharma">APPAREL</h1>
+        <ul>  {% for link in linklists[settings.link_appa_kids].links %}
+          <li> <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a></li>  {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <div class="menu-dd__featured">
+      <h1 class="dharma">FEATURED</h1>
+      <div class="menu-dd__featured__hold">
+        <div class="menu-dd__featured__each"><a class="menu-dd__featured__img" href="{{ settings.kids-ft1-link }}" title="{{ settings.kids-ft1-heading }}"><img src="{{ settings.kids-ft1-img | img_url: 'master' }}" alt="#"></a><a class="menu-dd__featured__title" href="{{ settings.kids-ft1-link }}" title="{{ settings.kids-ft1-heading }}">{{ settings.kids-ft1-heading }}</a></div>
+        <div class="menu-dd__featured__each"><a class="menu-dd__featured__img" href="{{ settings.kids-ft2-link }}" title="{{ settings.kids-ft2-heading }}"><img src="{{ settings.kids-ft2-img | img_url: 'master' }}" alt="#"></a><a class="menu-dd__featured__title" href="{{ settings.kids-ft2-link }}" title="{{ settings.kids-ft2-heading }}">{{ settings.kids-ft2-heading }}</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="menu-dd menu-dd__appa el-fix">
+  <div class="menu-dd__hold">
+    <div class="menu-dd__links">
+      <div class="menu-dd__all">
+        <h1 class="dharma">ALL</h1>
+        <ul>  {% for link in linklists[settings.link_all_appa].links %}
+          <li> <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a></li>  {% endfor %}
+        </ul>
+      </div>
+      <div class="menu-dd__brands">
+        <h1 class="dharma">BRANDS</h1>
+        <ul>  {% for link in linklists[settings.link_brands_appa].links %}
+          <li> <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a></li>  {% endfor %}
+        </ul>
+      </div>
+      <div class="menu-dd__appa">
+        <h1 class="dharma">APPAREL</h1>
+        <ul>  {% for link in linklists[settings.link_appa_appa].links %}
+          <li> <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a></li>  {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <div class="menu-dd__featured">
+      <h1 class="dharma">FEATURED</h1>
+      <div class="menu-dd__featured__hold">
+        <div class="menu-dd__featured__each"><a class="menu-dd__featured__img" href="{{ settings.appa-ft1-link }}" title="{{ settings.appa-ft1-heading }}"><img src="{{ settings.appa-ft1-img | img_url: 'master' }}" alt="#"></a><a class="menu-dd__featured__title" href="{{ settings.appa-ft1-link }}" title="{{ settings.appa-ft1-heading }}">{{ settings.appa-ft1-heading }}</a></div>
+        <div class="menu-dd__featured__each"><a class="menu-dd__featured__img" href="{{ settings.appa-ft2-link }}" title="{{ settings.appa-ft2-heading }}"><img src="{{ settings.appa-ft2-img | img_url: 'master' }}" alt="#"></a><a class="menu-dd__featured__title" href="{{ settings.appa-ft2-link }}" title="{{ settings.appa-ft2-heading }}">{{ settings.appa-ft2-heading }}</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="menu-dd menu-dd__acces el-fix">
+  <div class="menu-dd__hold">
+    <div class="menu-dd__links">
+      <div class="menu-dd__all">
+        <h1 class="dharma">ALL</h1>
+        <ul>  {% for link in linklists[settings.link_all_acces].links %}
+          <li> <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a></li>  {% endfor %}
+        </ul>
+      </div>
+      <div class="menu-dd__brands">
+        <h1 class="dharma">BRANDS</h1>
+        <ul>  {% for link in linklists[settings.link_brands_acces].links %}
+          <li> <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a></li>  {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <div class="menu-dd__featured">
+      <h1 class="dharma">FEATURED</h1>
+      <div class="menu-dd__featured__hold">
+        <div class="menu-dd__featured__each"><a class="menu-dd__featured__img" href="{{ settings.acces-ft1-link }}" title="{{ settings.acces-ft1-heading }}"><img src="{{ settings.acces-ft1-img | img_url: 'master' }}" alt="#"></a><a class="menu-dd__featured__title" href="{{ settings.acces-ft1-link }}" title="{{ settings.acces-ft1-heading }}">{{ settings.acces-ft1-heading }}</a></div>
+        <div class="menu-dd__featured__each"><a class="menu-dd__featured__img" href="{{ settings.acces-ft2-link }}" title="{{ settings.acces-ft2-heading }}"><img src="{{ settings.acces-ft2-img | img_url: 'master' }}" alt="#"></a><a class="menu-dd__featured__title" href="{{ settings.acces-ft2-link }}" title="{{ settings.acces-ft2-heading }}">{{ settings.acces-ft2-heading }}</a></div>
+        <div class="menu-dd__featured__each"><a class="menu-dd__featured__img" href="{{ settings.acces-ft3-link }}" title="{{ settings.acces-ft3-heading }}"><img src="{{ settings.acces-ft3-img | img_url: 'master' }}" alt="#"></a><a class="menu-dd__featured__title" href="{{ settings.acces-ft3-link }}" title="{{ settings.acces-ft3-heading }}">{{ settings.acces-ft3-heading }}</a></div>
+      </div>
+    </div>
+  </div>
+</div>

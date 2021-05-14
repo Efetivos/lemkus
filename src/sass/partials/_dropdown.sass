@@ -1,0 +1,90 @@
+@import './partials/alias-mixins'
+
+
+//- =========================  MENU DROPDOWN  ========================= -//
+//- =========================  MENU DROPDOWN  ========================= -//
+.menu-dd
+    display: none
+    background: var(--soft)
+    left: 0
+    position: fixed
+    top: 4.9rem
+    width: 100vw
+    z-index: 7
+
+
+.menu-dd__hold
+    display: flex
+    height: 100%
+    justify-content: space-between
+    margin: var(--gap)
+    padding: 0 0 2.3rem 0
+    position: relative
+    width: calc(100vw - var(--gap) * 2)
+
+.menu-dd__links
+    @include serif
+    display: flex
+    gap: 9.9rem
+
+.menu-dd__links  ul
+    margin: 2.3rem 0 0
+
+
+.menu-dd__links li + li
+    margin: 1rem 0 0
+
+.menu-dd__links a
+    font-size: 1.6rem
+
+.menu-dd__all a 
+    font-family: var(--recosemi)
+    text-transform: uppercase
+    
+
+.menu-dd__featured
+    width: 57.5rem
+    position: relative
+
+
+.menu-dd__featured__hold
+    display: flex
+    height: 100%
+    justify-content: space-between
+    margin-top: 1.8rem
+
+
+
+
+.menu-dd__featured__each
+    height: 100%
+    position: relative
+    width: 27.9rem
+
+
+
+.menu-dd__featured__img
+    border: 1px solid var(--dark)
+    height: 25.6rem
+
+
+.menu-dd__featured__each img
+    height: 100%
+    object-fit: cover
+    width: 100%
+
+
+.menu-dd__featured__title
+    font-family: var(--recosemi)
+    font-size: 1.6rem
+    margin: 1rem 0 0
+    text-transform: uppercase
+
+
+.menu-dd.menu-dd__sneakers .menu-dd__featured, .menu-dd__acces .menu-dd__featured
+    width: 57.5rem
+    width: 87.5rem
+    
+
+.menu-dd__appa
+    margin: 0 0 0 3.6rem
