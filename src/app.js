@@ -19,6 +19,7 @@ import { scroll } from './js/scroll';
 //___ calling
 menu.init()
 menu.fixMobile()
+menu.topBar()
 //minicart.init()
 //ajaxify.init()
 preloader.init()

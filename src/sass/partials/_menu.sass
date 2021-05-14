@@ -30,7 +30,6 @@ a.logo-main
         width: 12.6rem
 
 
-
 .cart-counter, .trg-cart
     display: inline-block
     z-index: 9
@@ -158,6 +157,64 @@ nav.main-menu
 
 
 
+
+
+//- =========================  TOP BAR  ========================= -//
+//- =========================  TOP BAR  ========================= -//
+.top-bar
+    height: 4rem
+    left: 0
+    position: fixed
+    top: 0
+    width: 100vw
+    z-index: 9
+    display: none
+
+.top-bar__hold
+    @include flex-center
+    height: 100%
+    position: relative
+    width: 100%
+
+.top-bar__text 
+    @include serif
+    font-size: 1.4rem
+    text-align: center
+
+.top-bar__close
+    cursor: pointer
+    height: 2rem
+    position: absolute
+    right: var(--gap)
+    width: 2rem
+    &:hover
+        svg g
+            fill: #fff
+
+        svg path
+            fill: var(--dark)
+        
+
+
+.top-bar__close svg
+    width: 80%
+    height: 80%
+
+.top-bar__close svg g
+    transition: .3s fill ease-out
+
+.top-bar__close svg path
+    transition: .3s fill ease-out
+
+
+.is-topbar
+    display: block
+
+.is-topbar .top-bar
+    display: block
+    
+.is-topbar .el-fix
+    transform: translateY(4rem)
 
 
 //- =========================  MENU DROPDOWN  ========================= -//
