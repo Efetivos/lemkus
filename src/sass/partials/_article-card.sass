@@ -3,37 +3,66 @@
 .article-card__each
     border-bottom: 1px solid var(--dark)
     padding: 0 0 5rem 0
-    width: 31.5rem
+    width: 100%
+    @include tablet
+        margin: 1.8rem 0 0
+        width: 49%
+    @include desk
+        width: 31.5rem
+
+
+
+.article-card__each + .article-card__each
+    margin: 1.8rem 0 0
+
+
 
 .article-card__img
     border: 1px solid var(--dark)
-    height: 39.8rem
+    height: 42.8rem
     position: relative
     width: 100%
+    @include desk
+        height: 39.8rem
+
+
 
 .article-card__img a
     height: 100%
     position: relative
     width: 100%
 
+
+
 .article-card__img img
     height: 100%
     object-fit: cover
     width: 100%
 
+
+
 .article-card__cat-date
+    --dark: #191919
+    --soft: #f6f6f6
     background: var(--soft)
     border-radius: 50px
     border: 1px solid var(--dark)
     display: flex
     font-family: var(--recosemi)
-    padding: 0.8rem 3rem
+    padding: .8rem 1.4rem
     position: absolute
-    right: 2rem
-    top: 1.4rem
+    right: 1.3rem
+    top: 1.1rem
+    @include desk
+        right: 2rem
+        padding: 0.8rem 3rem
+        top: 1.4rem
 
 a.article-card__title
     font-family: var(--dharma)
-    font-size: 3rem
-    margin: 1.5rem 0 0
+    font-size: 2.6rem
+    margin: 1.1rem 0 0
     text-transform: uppercase
+    @include desk
+        font-size: 3rem
+        margin: 1.5rem 0 0

@@ -25,7 +25,7 @@ preloader.init()
 preloader.font()
 scroll.init()
 
-if($('.page-about').length > 0 || $('.page-contact').length > 0 ) {
+if($('.page-about').length > 0 || $('.page-contact').length > 0 || $('.page-blog').length > 0  ) {
     gsap.set('html', { '--dark':'#f6f6f6', '--soft': '#191919' })
 }
 

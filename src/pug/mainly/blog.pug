@@ -1,13 +1,18 @@
 .page.page-blog(data-ispage="blog", data-scroll-content)
-    header
+    header.header-blog
+        .header-blog__hold.e-hold
+            button.btn-hover.cream-v
+                span.static FILTER SEARCH
+                span.hover(data-hover="FILTER SEARCH FILTER SEARCH ") FILTER SEARCH FILTER SEARCH  
 
-    main
+
+    main.main-blog
         section.blog-page
 
 
             //- BLOG
             |   {% paginate blog.articles by 3 %}
-            .blog-page__hold
+            .blog-page__hold.e-hold
 
 
                 .blog-page__list
@@ -19,20 +24,22 @@
 
 
 
-                    //- =========================  PAGINATES  ========================= -//
-                    //- =========================  PAGINATES  ========================= -//
-                    | {% if paginate.pages > 1 %}
-                    | {%- for part in paginate.parts -%}
-                    .main-blog__paginate__each
-                        a(href="{{ part.url }}")
-                            button.e-serif.t-dark.e-rel.e-curp  {{ part.title }}
-                                .line-pagine.line-static.e-gray.e-abs.e-wp
-                                | {%- if part.title == paginate.current_page -%}
-                                .line-pagine.line-active.e-color.e-abs.e-wp
-                                | {%- endif -%}
-                    
-                    | {%- endfor -%}
-                    | {% endif %}
+                //- =========================  PAGINATES  ========================= -//
+                //- =========================  PAGINATES  ========================= -//
+                .blog-page__paginate
+                    .blog-page__paginate__hold
+                        | {% if paginate.pages > 1 %}
+                        | {%- for part in paginate.parts -%}
+                        .blog-page__paginate__each
+                            a(href="{{ part.url }}")
+                                button.e-serif.t-dark.e-rel.e-curp  {{ part.title }}
+                                    .line-pagine.line-static.e-gray.e-abs.e-wp
+                                    | {%- if part.title == paginate.current_page -%}
+                                    .line-pagine.line-active.e-color.e-abs.e-wp
+                                    | {%- endif -%}
+                        
+                        | {%- endfor -%}
+                        | {% endif %}
             |   {% endpaginate %}
 
 

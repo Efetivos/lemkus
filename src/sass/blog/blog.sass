@@ -1,0 +1,56 @@
+@import '../partials/alias-mixins'
+
+
+
+.page-blog .footer 
+    background: var(--soft)
+
+.page-blog .footer__logo svg path
+    fill: var(--dark)
+
+
+
+//- =========================  HEADER  ========================= -//
+//- =========================  HEADER  ========================= -//
+header.header-blog
+    padding: 75px 0 0
+
+.header-blog__hold
+    display: flex
+    justify-content: flex-end
+
+.header-blog .btn-hover
+    width: 18.2rem
+
+
+
+
+main.main-blog
+    margin: 1.6rem 0 0
+
+.blog-page__list
+    @include tablet
+        display: flex
+        flex-wrap: wrap
+        gap: 1rem
+        justify-content: space-between
+
+
+
+
+
+//- =========================  PAGINATE  ========================= -//
+//- =========================  PAGINATE  ========================= -//
+.blog-page__paginate
+    margin: 4rem 0 4.2rem
+
+.blog-page__paginate__hold
+    align-items: center
+    border-radius: 50px
+    border: 1px solid var(--dark)
+    display: flex
+    font-size: 2rem
+    gap: 1.9rem
+    justify-content: center
+    padding: 0.8rem 0
+    width: 100%
