@@ -41,25 +41,25 @@
 
 
 section.ctt-hours
-    .ctt-hours__hold
+    .ctt-hours__hold.e-hold
         .ctt-hours__title.ctt-subt {{ section.settings.ctt_trading }}
         ul.ctt-hours__list
 
             li.ctt-hours__each 
                 span Monday - Friday:
-                span {{ section.settings.ctt_mon_fri }}
+                span.underline {{ section.settings.ctt_mon_fri }}
         
             li.ctt-hours__each 
                 span Saturdays:
-                span {{ section.settings.ctt_sat }}
+                span.underline {{ section.settings.ctt_sat }}
         
             li.ctt-hours__each 
                 span Sundays:
-                span {{ section.settings.ctt_sun }}
+                span.underline {{ section.settings.ctt_sun }}
         
             li.ctt-hours__each 
                 span Public Holidays:
-                span {{ section.settings.ctt_holi }}
+                span.underline {{ section.settings.ctt_holi }}
 
 
 

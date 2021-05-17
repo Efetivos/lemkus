@@ -1,8 +1,91 @@
 @import '../partials/alias-mixins'
 
+
+
+.page-contact .footer 
+    background: var(--soft)
+
+.page-contact .footer__logo svg path
+    fill: var(--dark)
+
+
+
 .ctt-subt
     font-family: var(--dharma)
-    font-size: 4rem
+    font-size: 3rem
+    line-height: 0.93
+    text-transform: uppercase
+    @include desk
+        font-size: 4rem
+        line-height: 1
 
 .ctt-text__svg svg path
     fill: var(--color)
+
+
+//- =========================  HEADER  ========================= -//
+//- =========================  HEADER  ========================= -//
+.ctt-title
+    padding-top: 75px
+    @include desk
+        padding-top: 8.2rem
+        position: relative
+
+section.ctt-title
+    border-bottom: 1px solid var(--dark)
+    padding: 75px 0 1.1rem 0 !important
+
+
+main.main-contact section
+    padding: 2.2rem 0
+    border-bottom: 1px solid var(--dark)
+
+
+.page-contact p
+    line-height: 1.57
+
+
+p.ctt-location__address
+    width: 13.5rem
+    margin: 1.1rem 0 0
+
+
+
+/* =============== contact */
+/* =============== contact */
+ul.ctt-links__items
+    margin: 1.7rem 0 0
+    font-size: 1.4rem
+    line-height: 1.5
+
+
+a.ctt-location__address
+    width: 17.6rem
+    margin: 2rem 0 0
+
+
+ul.ctt-hours__list
+    margin: 1.7rem 0 0
+    font-size: 1.4rem
+    line-height: 1.5
+
+
+li.ctt-hours__each
+    display: grid
+    grid-template-columns: 1fr 1fr
+
+
+ul.ctt-social__items
+    margin: 1.7rem 0 0
+    font-size: 1.4rem
+    line-height: 1.5
+
+
+.ctt-text__text
+    font-size: 1.4rem
+    line-height: 1.6
+
+
+section.ctt-text
+    border: none !important
+    margin: 0 0 0.7rem 0
