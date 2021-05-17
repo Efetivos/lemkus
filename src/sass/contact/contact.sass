@@ -9,6 +9,10 @@
     fill: var(--dark)
 
 
+main.main-contact .e-hold
+    @include desk
+        margin: 0
+        width: 100%
 
 .ctt-subt
     font-family: var(--dharma)
@@ -20,26 +24,44 @@
         line-height: 1
 
 .ctt-text__svg svg path
-    fill: var(--color)
+    fill: var(--dark)
+
 
 
 //- =========================  HEADER  ========================= -//
 //- =========================  HEADER  ========================= -//
-.ctt-title
-    padding-top: 75px
+
+
+main.main-contact
     @include desk
-        padding-top: 8.2rem
-        position: relative
+        display: grid
+        grid-template-columns: 51.6vw 25vw 23.4vw
+        grid-template-areas: "title location ctt" "title hours socials" "text text text"
+        padding: 4.7rem 0 0
+
+.main-contact section
+    padding: 2.2rem 0
+    border-bottom: 1px solid var(--dark)
+    @include desk
+        border: none
+        padding: 0
+
+
+
 
 section.ctt-title
     border-bottom: 1px solid var(--dark)
     padding: 75px 0 1.1rem 0 !important
+    position: relative
+    @include desk
+        padding: 0 !important
+        border: none !important
 
 
-main.main-contact section
-    padding: 2.2rem 0
-    border-bottom: 1px solid var(--dark)
 
+.ctt-title__hold .big-t
+    @include desk
+        margin: 0 0 0 1.5rem
 
 .page-contact p
     line-height: 1.57
@@ -81,11 +103,67 @@ ul.ctt-social__items
     line-height: 1.5
 
 
-.ctt-text__text
-    font-size: 1.4rem
-    line-height: 1.6
-
 
 section.ctt-text
     border: none !important
-    margin: 0 0 0.7rem 0
+    @include desk
+        margin: 0 0 0.7rem 0
+
+        
+
+
+.ctt-text__hold.e-hold
+    @include desk
+        display: flex
+        justify-content: space-between
+
+
+.ctt-text__text
+    font-size: 1.4rem
+    line-height: 1.6
+    @include desk
+        font-size: 1.6rem
+        line-height: 1.38
+        width: 70.6rem
+
+.ctt-text__svg.no-mobile
+    @include desk
+        margin: -1.6rem 3.3rem 0 0
+
+@include desk
+    div#shopify-section-contact-title
+        grid-area: title
+        padding: 3.7rem 0 0
+
+    div#shopify-section-contact-location
+        border-bottom: 1px solid var(--dark)
+        border-left: 1px solid var(--dark)
+        grid-area: location
+        height: 26.7rem
+        padding: 3.6rem 0 0 2.6rem
+
+    div#shopify-section-contact-ctt
+        border-bottom: 1px solid var(--dark)
+        border-left: 1px solid var(--dark)
+        grid-area: ctt
+        height: 26.7rem
+        padding: 3.6rem 0 0 2.6rem
+
+    div#shopify-section-contact-hours
+        border-left: 1px solid var(--dark)
+        grid-area: hours
+        height: 23.8rem
+        padding: 3.1rem 0 0 2.6rem
+
+    div#shopify-section-contact-socials
+        border-left: 1px solid var(--dark)
+        grid-area: socials
+        height: 23.8rem
+        padding: 3.1rem 0 0 2.6rem
+
+    div#shopify-section-contact-text
+        border-top: 1px solid var(--dark)
+        grid-area: text
+        padding: 5.3rem 0 0 2.5rem
+        position: relative
+        z-index: 1
