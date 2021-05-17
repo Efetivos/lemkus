@@ -1,0 +1,211 @@
+@import '../partials/alias-mixins'
+.page-about
+
+.page-about .footer 
+    background: var(--soft)
+
+.page-about .footer__logo svg path
+    fill: var(--dark)
+
+
+
+
+
+
+
+
+
+
+
+//- =========================  SETTERS  ========================= -//
+//- =========================  SETTERS  ========================= -//
+
+.big-t
+    font-size: 8rem
+    line-height: 0.78
+    text-transform: uppercase
+    @include desk
+        font-size: 30rem
+        letter-spacing: -0.45rem
+
+.txt
+    font-size: 1.4rem
+    line-height: 1.29
+    @include desk
+        font-size: 1.6rem
+        line-height: 1.35
+
+.mid-t
+    font-size: 3rem
+    line-height: 0.93
+    text-transform: uppercase
+    @include desk
+        font-size: 4rem
+        line-height: 1
+
+.caption
+    font-size: 1.2rem
+    margin: 0.6rem 0 0
+
+img.soft-border
+
+    border: 1px solid var(--dark)
+    height: 100%
+    object-fit: cover
+    width: 100%
+
+
+
+
+
+
+
+
+
+
+
+//- =========================  elements  ========================= -//
+//- =========================  elements  ========================= -//
+header.about-header
+    padding-top: 75px
+    @include desk
+        padding-top: 8.2rem
+        position: relative
+
+.about-header__hold .big-t
+    @include desk
+        margin: 0 0 0 -1rem
+
+.about-header__image
+    margin: 1.6rem 0 0 0
+    width: 100%
+    @include desk
+        margin: -0.2rem 0 0
+
+
+.about-header__image img
+    height: 17.6rem
+    @include tablet
+        height: 35rem
+    @include desk
+        height: 67.1rem
+    
+
+
+.about-header__svg
+    @include desk
+        position: absolute
+        right: 0
+        top: 41.3rem
+
+
+.caption
+    display: flex
+    justify-content: space-between
+    margin: 0.1rem 0 0 0
+
+
+main.main-about
+    margin: 3rem 0 0
+    @include desk
+        margin: 6.6rem 0 0
+
+
+
+/*=========== sub */
+/*=========== sub */
+.about-sub__title
+    margin: 0 0 2rem
+
+
+
+.about-sub__subtitle
+    @include desk
+        margin: 2.5rem 0 0
+
+
+.about-sub__hold
+    @include desk
+        display: flex
+        justify-content: space-between
+
+
+.about-sub__text
+    margin: 0 0 2.8rem
+    @include desk
+        margin: 6rem 0 0 10.1rem
+        width: 34.9rem
+
+
+
+.about-sub__image
+    @include desk
+        width: 66rem
+
+
+.about-sub__image img
+    height: 20.2rem
+    @include tablet
+        height: 35rem
+    @include desk
+        height: 39rem
+
+
+/*=========== bigtext */
+/*=========== bigtext */
+
+section.big-text
+    margin: 4.9rem 0 0
+    @include desk
+        margin: 6.6rem 0 0
+        position: relative
+
+
+
+
+.big-text__text .big-t
+    @include desk
+        margin: 0 0 0 -1rem
+
+
+.big-text__subtitle
+    margin: 1.9rem 0 2.6rem
+    @include desk
+        bottom: -0.7rem
+        position: absolute
+        right: 8rem
+        width: 35.9rem
+
+
+
+
+
+
+
+/*=========== weare */
+/*=========== weare */
+section.weare
+    margin: 2rem 0 0
+    @include desk
+        margin: 4.5rem 0 0
+
+
+.weare__image img
+    height: 17.7rem
+    @include tablet
+        height: 35rem
+    @include desk
+        height: 67.1rem
+
+.weare__title
+    @include desk
+        width: 90rem
+
+
+.weare__text
+    margin: 3.4rem 0 2.1rem
+    @include desk
+        margin: 7.1rem 0 2.1rem
+
+
+

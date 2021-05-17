@@ -23,14 +23,14 @@
 
 section.weare
     .weare__hold
-        .weare__image 
-            img(src="{{ section.settings.img_weare | img_url: 'master' }}", alt='{{ section.settings.img_weare.alt | escape }}').img-load
-            .weare__image__caption
+        .weare__image
+            img(src="{{ section.settings.img_weare | img_url: 'master' }}", alt='{{ section.settings.img_weare.alt | escape }}').img-load.soft-border 
+            .weare__image__caption.caption
                 span {{ section.settings.img_weare.alt | escape }}
                 span 01
 
         .weare__text
-            .weare__title.dharma.e-upper {{ section.settings.text_title }}
+            .weare__title.dharma.e-upper.mid-t {{ section.settings.text_title }}
 
 
 

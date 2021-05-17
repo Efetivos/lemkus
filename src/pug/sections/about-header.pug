@@ -24,13 +24,13 @@
 
 header.about-header
     .about-header__hold
-        .about-header__text.dharma {{ section.settings.about_title }}
+        .about-header__text.dharma.big-t {{ section.settings.about_title }}
         .about-header__image 
-            img(src="{{ section.settings.img_header | img_url: 'master' }}", alt='{{ section.settings.img_header.alt | escape }}').img-load
-            .about-header__image__caption
+            img(src="{{ section.settings.img_header | img_url: 'master' }}", alt='{{ section.settings.img_header.alt | escape }}').img-load.soft-border
+            .about-header__image__caption.caption
                 span {{ section.settings.img_header.alt | escape }}
                 span 01
-        .about-header__svg !{svgScrollDown}
+        .about-header__svg.no-mobile !{svgScrollDown}
 
 
 

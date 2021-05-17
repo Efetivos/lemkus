@@ -1,5 +1,4 @@
 @import '../partials/alias-mixins'
-@import './partials/alias-mixins'
 .page-acc
 
 header.header-acc
@@ -44,8 +43,8 @@ header.header-acc
 .header-acc__nav > *
     align-items: center
     background: #fff
-    border: 0.4px solid #000000
-    color: #000
+    border: 0.4px solid var(--dark)
+    color: var(--dark)
     display: flex
     font-family: var(--serif)
     font-size: 4rem
@@ -109,7 +108,7 @@ main.main-acc
 
 
 .indic-sec
-    border-bottom: 1px solid #000
+    border-bottom: 1px solid var(--dark)
     font-family: var(--dharma);
     font-size: 2rem
     line-height: 200%

@@ -19,14 +19,15 @@ import { scroll } from './js/scroll';
 //___ calling
 menu.init()
 menu.fixMobile()
-menu.topBar()
 //minicart.init()
 //ajaxify.init()
 preloader.init()
 preloader.font()
 scroll.init()
 
-
+if($('.page-about').length > 0 ) {
+    gsap.set('html', { '--dark':'#f6f6f6', '--soft': '#191919' })
+}
 
 
 const { consoleTag } = require('./js/utils/console.js');

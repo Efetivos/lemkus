@@ -26,6 +26,7 @@ class Menu {
             close: this.qs('.cookies__close')
         }
         this.onClick()
+        $('.top-bar').length > 0 ? this.topBar() : null
 
 
     }

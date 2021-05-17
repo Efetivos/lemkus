@@ -13,7 +13,13 @@
                     "type": "text",
                     "id": "text_sub_sub",
                     "label": "Subtitle",
-                    "default": "JACK LEMKUS started out selling sporting equipment, hobbies, toys etc. - Brands that were available for the first time in S.A and at JACK LEMKUS between 1935 to late 60’s were brands like Bata Shoes, Converse, Wrangler and Dunlop.Brands such as Adidas and Asics came to JACK LEMKUS in the 70’s. "
+                    "default": "JACK LEMKUS started out selling sporting equipment, hobbies, toys etc. - Brands that were available for the first time in S.A and at JACK LEMKUS between 1935 to late 60’s were brands like Bata Shoes, Converse, Wrangler and Dunlop. "
+                },
+                {
+                    "type": "text",
+                    "id": "text_sub_sub2",
+                    "label": "Subtitle",
+                    "default": "Brands such as Adidas and Asics came to JACK LEMKUS in the 70’s. "
                 },
                 {
                     "type": "image_picker",
@@ -30,11 +36,12 @@
 section.about-sub
     .about-sub__hold
         .about-sub__text
-            .about-sub__title.recosemi {{ section.settings.text_sub_title }}
-            .about-sub__subtitle.reco {{ section.settings.text_sub_sub }}
-        .about-sub__image 
-            img(src="{{ section.settings.img_sub | img_url: 'master' }}", alt='{{ section.settings.img_sub.alt | escape }}').img-load
-            .about-sub__image__caption
+            .about-sub__title.recosemi.txt.e-upper {{ section.settings.text_sub_title }}
+            .about-sub__subtitle.reco.txt {{ section.settings.text_sub_sub }}
+            .about-sub__subtitle.reco.txt {{ section.settings.text_sub_sub2 }}
+        .about-sub__image
+            img(src="{{ section.settings.img_sub | img_url: 'master' }}", alt='{{ section.settings.img_sub.alt | escape }}').img-load.soft-border 
+            .about-sub__image__caption.caption
                 span {{ section.settings.img_sub.alt | escape }}
                 span 01
 
