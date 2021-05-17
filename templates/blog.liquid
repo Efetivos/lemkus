@@ -6,11 +6,11 @@
     </div>
   </header>
   <main class="main-blog">
-    <section class="blog-page">  {% paginate blog.articles by 3 %}
+    <section class="blog-page">  {% paginate blog.articles by 6 %}
       <div class="blog-page__hold e-hold">
         <div class="blog-page__list">
             {% assign count = 0 %}
-            {% for article in blog.articles limit: 4 %}
+            {% for article in blog.articles  %}
             {% render 'article-card' art: article %}
             {% endfor %}
         </div>

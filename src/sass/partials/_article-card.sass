@@ -7,14 +7,20 @@
     @include tablet
         margin: 1.8rem 0 0
         width: 49%
-    @include desk
-        width: 31.5rem
 
 
 
 .article-card__each + .article-card__each
     margin: 1.8rem 0 0
+    @include desk
+        margin: 0
 
+
+
+
+.article-card__each:nth-child(6)
+    @include desk
+        grid-column: span 2 / 4
 
 
 .article-card__img
@@ -54,9 +60,14 @@
     right: 1.3rem
     top: 1.1rem
     @include desk
-        right: 2rem
-        padding: 0.8rem 3rem
-        top: 1.4rem
+        padding: 1.1rem 2.8rem
+        top: 1.2rem
+        right: 1.8rem
+
+
+.article-card__cat-date .cat
+    text-transform: uppercase
+
 
 a.article-card__title
     font-family: var(--dharma)

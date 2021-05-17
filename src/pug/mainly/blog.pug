@@ -11,14 +11,14 @@
 
 
             //- BLOG
-            |   {% paginate blog.articles by 3 %}
+            |   {% paginate blog.articles by 6 %}
             .blog-page__hold.e-hold
 
 
                 .blog-page__list
                     //- only featured
                     |   {% assign count = 0 %}
-                    |   {% for article in blog.articles limit: 4 %}
+                    |   {% for article in blog.articles  %}
                     |   {% render 'article-card' art: article %}
                     |   {% endfor %}
 

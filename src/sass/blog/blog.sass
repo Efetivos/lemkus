@@ -14,12 +14,16 @@
 //- =========================  HEADER  ========================= -//
 header.header-blog
     padding: 75px 0 0
-
+    @include desk
+        padding: 6.9rem 0 0
+        
 .header-blog__hold
     display: flex
     justify-content: flex-end
 
 .header-blog .btn-hover
+    --dark: #191919
+    --soft: #f6f6f6
     width: 18.2rem
 
 
@@ -27,6 +31,8 @@ header.header-blog
 
 main.main-blog
     margin: 1.6rem 0 0
+    @include desk
+        margin: 1.9rem 0 0
 
 .blog-page__list
     @include tablet
@@ -34,15 +40,23 @@ main.main-blog
         flex-wrap: wrap
         gap: 1rem
         justify-content: space-between
+    @include desk
+        display: grid
+        gap: 2.6rem 1.9rem
+        grid-template-columns: repeat(4, 1fr)
 
 
-
+.blog
 
 
 //- =========================  PAGINATE  ========================= -//
 //- =========================  PAGINATE  ========================= -//
 .blog-page__paginate
     margin: 4rem 0 4.2rem
+    @include desk
+        display: flex
+        justify-content: flex-end
+        margin: 2.8rem 0 0
 
 .blog-page__paginate__hold
     align-items: center
@@ -54,3 +68,6 @@ main.main-blog
     justify-content: center
     padding: 0.8rem 0
     width: 100%
+    @include desk
+        padding: .8rem 2.6rem
+        width: auto
