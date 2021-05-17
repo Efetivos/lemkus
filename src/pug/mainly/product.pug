@@ -65,7 +65,7 @@
             //- _____ infos
             .header-prod__infos
                 //-  title
-                h1.header-prod__title.dharmaex.e-upper {{ product.title }}
+                h1.header-prod__title.dharmaex.e-upper {{ product.title }} {{ product.metafields..date_acf.date_acf }} {{ product.metafields.descr.descr }}  
 
                 //-  prices
                 | {% if product.compare_at_price_max != 0 %}

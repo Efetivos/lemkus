@@ -39,7 +39,7 @@
         </div>
       </div>
       <div class="header-prod__infos">
-        <h1 class="header-prod__title dharmaex e-upper">{{ product.title }}</h1>{% if product.compare_at_price_max != 0 %}<span class="sale-price">{{ product.compare_at_price_max  | money  }}</span>{% endif %}
+        <h1 class="header-prod__title dharmaex e-upper">{{ product.title }} {{ product.metafields..date_acf.date_acf }} {{ product.metafields.descr.descr }}  </h1>{% if product.compare_at_price_max != 0 %}<span class="sale-price">{{ product.compare_at_price_max  | money  }}</span>{% endif %}
         <div class="regular-price">{{ product.price | money }}</div>  {% render 'add-to-cart' %}
         <div class="prod-descr">
           <div class="prod-descr__content">{{ descr }} </div>  {% if details != blank %}
