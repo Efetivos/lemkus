@@ -34,8 +34,12 @@
 
 
 <div class="size-guide womens_sneakers">
+  <div class="size-guide__close"></div>
   <div class="size-guide__hold">
-    <div class="size-guide__title">Size Guide: Womens Sneakers</div>
+    <div class="size-guide__title-close"> 
+      <div class="guide">Size Guide: Mens Sneakers</div>
+      <div class="close-guid"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20"><g fill="none" stroke="var(--soft)"><circle cx="10" cy="10" r="10" stroke="none"/><circle cx="10" cy="10" r="9.5"/></g><path fill="var(--soft)" d="M14.218 6.736l-.823-.823-3.264 3.263-3.263-3.263-.823.823 3.263 3.263-3.263 3.264.823.823 3.263-3.264 3.263 3.263.823-.823-3.263-3.263z"/></svg></div>
+    </div>
     <ul class="size-guide__items">
       <li class="size-guide__cat"><span>UK</span><span>US</span><span>EU</span></li>{% for block in section.blocks %}
       <li class="size-guide__each"><span>{{ block.settings.sg_womens_sneakers_uk }}</span><span>{{ block.settings.sg_womens_sneakers_us }}</span><span>{{ block.settings.sg_womens_sneakers_eur }}</span></li>{% endfor %}
