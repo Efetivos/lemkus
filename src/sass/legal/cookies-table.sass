@@ -1,5 +1,17 @@
 @import '../partials/alias-mixins'
 
+
+main.main-cookie
+    padding: 50px 0 0
+
+
+
+div#shopify-section-cookies-table
+    margin: 5rem 0 7rem 0
+
+
+
+
 .cookies-table li
     display: flex
     width: 100%
@@ -8,36 +20,36 @@
 .cookies-table li > *
     width: 50%
     padding: 0 0 0 2.3rem
-    font-size: 2.4rem
+
+
+.cookies-table__items li span
+    padding: 7px 13px
+    font-size: 16px
+    @include desk
+        padding: 1rem 2rem
+        font-size: 1.6rem
+
+
+.cookies-table__items li span + span
+    border-left: 1px solid var(--dark)
 
 
 
+.cookies-table__items
+    border: 1px solid var(--dark)
 
 
+.cookies-table li + li
+    border-top: 1px solid var(--dark)
 
 
+.cookies-table__each span:first-child
+    font-family: var(--recosemi)
 
 
+.cookies-table__title span
+    font-size: 21px !important
+    @include desk
+        font-size: 2.4rem !important
 
 
-//- =========================  SIZE GUIDE  ========================= -//
-//- =========================  SIZE GUIDE  ========================= -//
-.size-guide__title
-    background: var(--dark)
-    color: #fff
-    font-family: var(--dharma)
-    font-size: 2rem
-
-.size-guide__cat
-    background: var(--color)
-    font-family: var(--dharma)
-
-.size-guide li
-    display: flex
-    width: 100%
-
-
-.size-guide li > *
-    font-size: 2.4rem
-    padding: 0 0 0 2.3rem
-    width: 50%

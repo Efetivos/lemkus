@@ -17,6 +17,8 @@
     overflow: scroll
     position: relative
     width: 100%
+    @include desk
+        align-items: center
 
 
 .size-guide__close
@@ -35,6 +37,9 @@
     position: relative
     width: 94%
     z-index: 1
+    @include desk
+        padding: 0
+        width: 37.5rem
 
 
 ul.size-guide__items
@@ -49,6 +54,12 @@ ul.size-guide__items
     justify-content: space-between
     padding: 9px 16px
 
+.size-guide__title
+    background: var(--dark)
+    color: #fff
+    font-family: var(--dharma)
+    font-size: 2rem
+
 
 .guide
     color: #fff
@@ -61,6 +72,7 @@ ul.size-guide__items
     font-size: 24px
     padding: 10px 0
     text-align: center
+    width: 50%
 
 
 .size-guide__each span
@@ -71,7 +83,13 @@ ul.size-guide__items
 
 .size-guide li
     border-bottom: 1px solid var(--dark)
+    display: flex
+    width: 100%
 
 
 .size-guide li span + span
     border-left: 1px solid var(--dark)
+
+.size-guide__cat
+    background: var(--color)
+    font-family: var(--dharma)

@@ -27,6 +27,7 @@ class Menu {
         }
         this.onClick()
         $('.top-bar').length > 0 ? this.topBar() : null
+        $('.size-guide').length > 0 ? this.sizeGuide() : null
 
 
     }
@@ -106,6 +107,30 @@ class Menu {
             $(that.topbar).remove()
         })
     }
+
+
+
+
+
+
+
+    //? - =========================  TOP BAR  ========================= -//
+    //? - =========================  TOP BAR  ========================= -//
+    sizeGuide() {
+        let that = this
+        this.guide = {
+            el: $('.size-guide').closest('.shopify-section'),
+            close: this.qsa('.close-guid, .size-guide__close')
+        }
+
+        console.log(this.guide);
+        $(this.guide.close).click(function(){
+            $(this).closest('.shopify-section').remove()
+        })
+    }
+
+
+
 
 
 
