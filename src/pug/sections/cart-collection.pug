@@ -2,8 +2,8 @@
 | {% assign cart_colle = collections[settings.cart_colle] %}
 section.cart-colle
 
-    h1.dharma {{ settings.text_dropped }}
-    .cart-colle__hold
+    .cart-colle__text.dharma {{ settings.text_cart_colle }}
+    .cart-colle__hold.mini-card
         | {% for item in cart_colle.products limit:4 %}
         
         //- calling prod

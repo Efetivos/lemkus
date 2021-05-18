@@ -7,7 +7,7 @@ a(href="{{ item.url | within: collections.all }}").item-img
 a(href="{{ item.url }}").item-title {{ item.product.title }}
 
 //- ___variant
-p.item-size Size: {{ item.variant.title }}
+p.item-size Size: #[span.recosemi {{ item.variant.title }}]
 
 //- ___remove
 - var removeIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="20px" viewBox="0 0 20 20"><g fill="none" stroke="var(--dark)"><circle cx="10" cy="10" r="10" stroke="none"/><circle cx="10" cy="10" r="9.5"/></g><path fill="var(--dark)" d="M14.218 6.736l-.823-.823-3.264 3.263-3.263-3.263-.823.823 3.263 3.263-3.263 3.264.823.823 3.263-3.264 3.263 3.263.823-.823-3.263-3.263z"/></svg>'

@@ -9,16 +9,19 @@ form(action="/cart" method="post" novalidate).cart
 
     .cart__infos
     
-        .cart__infos__shipping 
-            span Shipping
-            span Calculated at checkout
         
         .cart__infos__estimated
-            span.estimated ESTIMATED TOTAL 
-            span.subtotal {{ cart.total_price | money }}
+            span.grad.recosemi Grand Total INCL. VAT
+            span.subtotal.recosemi {{ cart.total_price | money }}
 
-        button(type="submit" name="checkout").btn-checkout Checkout
+        .cart__infos__btns
+            button(type="submit" name="checkout").btn-checkout.btn-hover
+                span.static Proceed to Checkout
+                span.hover(data-hover="Proceed to Checkout Proceed to Checkout ") Proceed to Checkout Proceed to Checkout 
 
+            a(href="{{ shop.url }}").btn-checkout.btn-hover.cream-v
+                span.static Continue shopping
+                span.hover(data-hover="Continue shopping Continue shopping ") Continue shopping Continue shopping 
 
 |   {% else %}
 

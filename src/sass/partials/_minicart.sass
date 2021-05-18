@@ -77,6 +77,19 @@
     font-family: var(--opensemi)
 
 
+
+
+
+
+
+
+
+
+
+
+//- =========================  CART ITEM  ========================= -//
+//- =========================  CART ITEM  ========================= -//
+
 form.cart
     margin: 2.7rem 0 0
 
@@ -92,6 +105,8 @@ li.cart__each
     grid-template-areas: "img title remove" "img size ." "img price qty"
     grid-template-columns: 11.5rem 13.1rem 10rem
     padding: 15px 0
+    @include tablet
+        grid-template-columns: 11.5rem 45rem auto
 
 
 li.cart__each + li.cart__each
@@ -112,6 +127,9 @@ p.item-size
     grid-area: size
     margin: -1.3rem 0 0
 
+p.item-size span
+    display: inline-block
+
 button.item-remove
     align-self: flex-start
     grid-area: remove
@@ -120,6 +138,7 @@ button.item-remove
 p.item-price
     align-self: flex-end
     grid-area: price
+    font-family: var(--recosemi)
 
 p.item-total-price
     grid-area: total-price
@@ -147,3 +166,58 @@ fieldset.item-qty
 
 fieldset.item-qty button
     padding: 15%
+
+
+
+
+
+
+
+
+
+
+
+
+//- =========================  CART INFOS  ========================= -//
+//- =========================  CART INFOS  ========================= -//
+.cart__infos__estimated
+    border-top: 1px solid var(--dark)
+    border-bottom: 1px solid var(--dark)
+    display: flex
+    justify-content: space-between
+    padding: 1.2rem 0
+    text-transform: uppercase
+
+.cart__infos__btns
+    margin: 3rem 0
+
+.cart__infos__btns > *
+    width: 100%
+    text-transform: uppercase
+
+.cart__infos__btns a
+    margin: 1.8rem 0 0
+
+
+
+
+
+
+
+
+//- =========================  CART COLLECTION  ========================= -//
+//- =========================  CART COLLECTION  ========================= -//
+
+
+section.cart-colle
+    margin: 3.3rem 0 0
+
+
+
+.cart-colle__hold
+    display: flex
+
+
+.cart-colle__text
+    margin: 0 0 0 var(--gap)
+    font-size: 3rem
