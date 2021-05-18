@@ -19,6 +19,22 @@
     ]
   },
   {
+      "name": "CART COLLECTION",
+      "settings": [
+          {
+              "id": "cart_colle",
+              "type": "collection",
+              "label": "Collection"
+          },
+          {
+              "id": "text_cart_colle",
+              "type": "text",
+              "label": "Text",
+              "default": "ANYTHING ELSE?"
+          }
+      ]
+  },
+  {
     "name": "DROPDOWN SNEAKERS",
     "settings": [
       {

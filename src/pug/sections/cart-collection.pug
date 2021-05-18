@@ -1,0 +1,35 @@
+.   
+    {% schema %}
+        {
+            "name": "INDEX | Just Dropped",
+            "class": "dropped-index",
+            "settings": [
+                {
+                    "id": "dropped_index",
+                    "type": "collection",
+                    "label": "Collection"
+                },
+                {
+                    "id": "text_dropped",
+                    "type": "text",
+                    "label": "Text Dropped",
+                    "default": "JUST DROPPED"
+                }
+            ]
+        }
+    {% endschema %}
+
+| {% assign dropped_col = collections[section.settings.dropped_index] %}
+section.collect-index
+
+    h1.dharma {{ section.settings.text_dropped }}
+    .collect-index__hold
+        | {% for item in dropped_col.products limit:6 %}
+        
+        //- calling prod
+        |   {% render 'product-card' prod: item %}
+
+        | {% endfor %}
+    
+
+

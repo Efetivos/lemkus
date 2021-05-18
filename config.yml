@@ -4,3 +4,4 @@ development:
   store: lemkus-staging.myshopify.com
   ignore_files:
     - /config/settings_data.json
+    - /config/settings_schema.json
