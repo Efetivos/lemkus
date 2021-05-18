@@ -47,20 +47,44 @@
 //- =========================  CART PAGE  ========================= -//
 //- =========================  CART PAGE  ========================= -//
 .page-cart
+    padding: 73px 0 0
     overflow-x: hidden
+    @include desk
+        padding: 4.9rem 0 0
+
+
+.cart-colle__hold
+    @include desk
+        flex-direction: column
+
 .page-cart__content
     @include desk
         display: flex
+        flex-direction: row-reverse
         justify-content: space-between
 
+div#shopify-section-cart-collection
+    @include desk
+        width: 25%
 
 .page-cart__content > *
     @include desk
         width: 45%
 
 
-.page.page-cart
-    padding: 73px 0 0
+
+.page-cart__items
+    @include desk
+        width: 75%
+
+
+
+.page-cart__items__hold
+    @include desk
+        width: 100%
+        margin: 0
+        padding: 1.3rem 2.9% 0
+
 
 
 .page-cart__items__bag-close
@@ -70,6 +94,8 @@
 
 .page-cart__items__bag-close .dharma
     font-size: 3rem
+    @include desk
+        font-size: 3.9rem
 
 
 .page-cart__items__bag-close .e-sans
@@ -92,6 +118,8 @@
 
 form.cart
     margin: 2.7rem 0 0
+    @include desk
+        margin: 0.9rem 0 0
 
 
 li.cart__each img
@@ -107,6 +135,8 @@ li.cart__each
     padding: 15px 0
     @include tablet
         grid-template-columns: 11.5rem 45rem auto
+    @include desk
+        grid-template-columns: 12.4% 79.7% 7.8%
 
 
 li.cart__each + li.cart__each
@@ -121,11 +151,16 @@ a.item-title
     font-family: var(--dharma)
     font-size: 2.4rem
     grid-area: title
+    @include desk
+        font-size: 2.8rem
 
 p.item-size
     font-size: 1.2rem
     grid-area: size
     margin: -1.3rem 0 0
+    @include desk
+        font-size: 1.6rem
+        margin: -0.9rem 0 0
 
 p.item-size span
     display: inline-block
@@ -139,6 +174,8 @@ p.item-price
     align-self: flex-end
     grid-area: price
     font-family: var(--recosemi)
+    @include desk
+        font-size: 1.6rem
 
 p.item-total-price
     grid-area: total-price
@@ -163,9 +200,12 @@ fieldset.item-qty
     height: 30px
     justify-content: space-around
     width: 100%
+    @include desk
+        height: 2.3rem
 
 fieldset.item-qty button
     padding: 15%
+
 
 
 
@@ -187,16 +227,28 @@ fieldset.item-qty button
     justify-content: space-between
     padding: 1.2rem 0
     text-transform: uppercase
+    @include desk
+        padding: 1.9rem 0
+    
 
 .cart__infos__btns
     margin: 3rem 0
+    @include desk
+        display: flex
+        justify-content: space-between
+        padding: 1.5rem 0 0
+        border-top: 1px solid var(--dark)
 
 .cart__infos__btns > *
     width: 100%
     text-transform: uppercase
+    @include desk
+        width: 25.8%
 
 .cart__infos__btns a
     margin: 1.8rem 0 0
+    @include desk
+        margin: 0
 
 
 
@@ -211,13 +263,73 @@ fieldset.item-qty button
 
 section.cart-colle
     margin: 3.3rem 0 0
+    @include desk
+        border-right: 1px solid var(--dark)
+        margin: 0
+        padding: 1.3rem 0 0
 
 
 
 .cart-colle__hold
     display: flex
+    @include desk
+        margin: 0.7rem 0 0
 
 
 .cart-colle__text
     margin: 0 0 0 var(--gap)
     font-size: 3rem
+    @include desk
+        font-size: 4rem
+
+
+
+
+
+
+
+
+
+
+
+
+
+//- =========================  CART FS  ========================= -//
+//- =========================  CART FS  ========================= -//
+@include desk
+    .page.page-cart
+        height: 100vh
+        overflow: hidden
+        width: 100vw
+
+
+    .page-cart__items__hold
+        height: 100%
+
+
+    form.cart
+        display: flex
+        flex-direction: column
+        height: 85vh
+        justify-content: space-between
+        position: relative
+
+
+    ul.cart__items
+        height: 61vh
+        overflow: scroll
+
+    .cart-colle__hold.mini-card
+        margin: -1px
+
+    .cart-colle__hold.mini-card
+        height: 86.4vh
+        overflow: scroll
+
+    .cart-colle__text.dharma
+        border-bottom: 1px solid var(--dark)
+        margin: 0
+        text-indent: var(--gap)
+        padding: 0 0 0.9rem 0
+        position: relative
+        z-index: 2
