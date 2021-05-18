@@ -1,8 +1,11 @@
 .page.page-404(data-ispage="404", data-scroll-content)
-    header
-        span 404
-        p It looks like that page does not exist. Please check the URL and try again.
-        a(href="{{ shop.url }}", data-barba-prevent) GO BACK
+    header.header-404.e-wvw.e-hvh.e-flex-col
+        .header-404__hold.e-flex-col
+            span.big-t 404 ERROR
+            p.e-upper.recosemi Sorry, page not found
+            a(href="{{ shop.url }}", title="ADDRESS").header-404__btn.btn-hover
+                span.static RETURN HOME
+                span.hover(data-hover="RETURN HOME RETURN HOME ") RETURN HOME RETURN HOME  
 
 
-    | {% render  'myfooter' %}
+    //-| {% render  'myfooter' %}
