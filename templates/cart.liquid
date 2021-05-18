@@ -1,7 +1,13 @@
 
 <div class="page page-cart" data-ispage="cart" data-scroll-content>
   <div class="page-cart__content" data-cartcounter="{{ cart.item_count }}">
-      {% section 'cart-collection' %}
-      {% render 'cart-content' %}
-  </div>{% render  'myfooter' %}
+    <div class="page-cart__items">
+      <div class="page-cart__items__hold e-hold">
+        <div class="page-cart__items__bag-close">
+          <div class="dharma">YOUR BAG </div>
+          <div class="e-sans">CLOSE</div>
+        </div>  {% render 'cart-content' %}
+      </div>
+    </div>  {% section 'cart-collection' %}
+  </div>
 </div>

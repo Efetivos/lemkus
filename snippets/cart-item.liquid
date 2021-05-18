@@ -1,8 +1,10 @@
 <a class="item-img" href="{{ item.url | within: collections.all }}"><img src="{{ item | img_url: 'master' }}" alt="{{ item.title | escape }}"></a><a class="item-title" href="{{ item.url }}">{{ item.product.title }}</a>
-<p class="item-size">Size {{ item.variant.title }}</p>
-<button class="item-remove" href="/cart/change?line={{ forloop.index }}&amp;amp;quantity=0" data-line="{{ forloop.index }}" data-id="{{ item.variant.id }}">Remove</button>
+<p class="item-size">Size: {{ item.variant.title }}</p>
+<button class="item-remove" href="/cart/change?line={{ forloop.index }}&amp;amp;quantity=0" data-line="{{ forloop.index }}" data-id="{{ item.variant.id }}"><svg xmlns="http://www.w3.org/2000/svg" width="20px" viewBox="0 0 20 20"><g fill="none" stroke="var(--dark)"><circle cx="10" cy="10" r="10" stroke="none"/><circle cx="10" cy="10" r="9.5"/></g><path fill="var(--dark)" d="M14.218 6.736l-.823-.823-3.264 3.263-3.263-3.263-.823.823 3.263 3.263-3.263 3.264.823.823 3.263-3.264 3.263 3.263.823-.823-3.263-3.263z"/></svg></button>
 <p class="item-price">{{ item.price | money }}</p>
-<p class="item-qty">Qty {{ item.quantity }}</p>
-<input type="number" name="updates[]" id="updates_{{ item.key }}" value="{{ item.quantity }}" min="0">  {% if item.original_line_price != item.line_price %}
+<fieldset class="item-qty"><input class="js-qty-field" type="number" id="Quantity" name="quantity" value="1" min="1" {% if product.variants.size == 1 %} max="{{ product.variants.first.inventory_quantity }}" {% endif %}>
+  <button class="js-qty-btn disabled quantity-button minus" type="button" disabled="disabled">-</button><span class="quantity-text js-qty-text">1</span>
+  <button class="js-qty-btn quantity-button plus" type="button">+</button>
+</fieldset>  {% if item.original_line_price != item.line_price %}
 <p class="item-price-dis">{{ item.original_line_price | money }}</p>  {% endif %}
-<p class="item-total-price">{{ item.line_price | money }}</p>  {% for discount in item.discounts %}{{ discount.title }}{% endfor %}
+  {% for discount in item.discounts %}{{ discount.title }}{% endfor %}

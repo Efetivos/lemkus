@@ -1,15 +1,20 @@
 .page.page-cart(data-ispage="cart", data-scroll-content)
     .page-cart__content(data-cartcounter="{{ cart.item_count }}")
+
+        //- =========================  CONTENT  ========================= -//
+        //- =========================  CONTENT  ========================= -//
+        .page-cart__items
+            .page-cart__items__hold.e-hold
+                .page-cart__items__bag-close
+                    .dharma YOUR BAG 
+                    .e-sans CLOSE
+                |   {% render 'cart-content' %}
+
     
         //- =========================  COLLECTION  ========================= -//
         //- =========================  COLLECTION  ========================= -//
         |   {% section 'cart-collection' %}
 
 
-        //- =========================  CONTENT  ========================= -//
-        //- =========================  CONTENT  ========================= -//
-        |   {% render 'cart-content' %}
-
-
-    | {% render  'myfooter' %}
+    //-| {% render  'myfooter' %}
 

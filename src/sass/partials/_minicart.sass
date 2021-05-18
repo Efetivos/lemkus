@@ -32,3 +32,118 @@
 .is-minicart .minicart__fader
     visibility: visible
     opacity: .48
+
+
+
+
+
+
+
+
+
+
+
+
+//- =========================  CART PAGE  ========================= -//
+//- =========================  CART PAGE  ========================= -//
+.page-cart
+    overflow-x: hidden
+.page-cart__content
+    @include desk
+        display: flex
+        justify-content: space-between
+
+
+.page-cart__content > *
+    @include desk
+        width: 45%
+
+
+.page.page-cart
+    padding: 73px 0 0
+
+
+.page-cart__items__bag-close
+    display: flex
+    justify-content: space-between
+
+
+.page-cart__items__bag-close .dharma
+    font-size: 3rem
+
+
+.page-cart__items__bag-close .e-sans
+    font-size: 1.3rem
+    font-family: var(--opensemi)
+
+
+form.cart
+    margin: 2.7rem 0 0
+
+
+li.cart__each img
+    width: 10.2rem
+    height: 10.2rem
+    border: 1px solid var(--dark)
+
+
+li.cart__each
+    display: grid
+    grid-template-areas: "img title remove" "img size ." "img price qty"
+    grid-template-columns: 11.5rem 13.1rem 10rem
+    padding: 15px 0
+
+
+li.cart__each + li.cart__each
+    border-top: 1px solid var(--dark)
+
+
+
+a.item-img
+    grid-area: img
+
+a.item-title
+    font-family: var(--dharma)
+    font-size: 2.4rem
+    grid-area: title
+
+p.item-size
+    font-size: 1.2rem
+    grid-area: size
+    margin: -1.3rem 0 0
+
+button.item-remove
+    align-self: flex-start
+    grid-area: remove
+    justify-self: end
+
+p.item-price
+    align-self: flex-end
+    grid-area: price
+
+p.item-total-price
+    grid-area: total-price
+
+input#Quantity 
+    border: none !important
+    height: 0
+    margin: 0
+    overflow: hidden
+    padding: 0
+    position: absolute
+    visibility: hidden
+    width: 0
+
+fieldset.item-qty
+    align-items: center
+    align-self: flex-end
+    border-radius: 50px
+    border: 1px solid var(--dark)
+    display: flex
+    grid-area: qty
+    height: 30px
+    justify-content: space-around
+    width: 100%
+
+fieldset.item-qty button
+    padding: 15%

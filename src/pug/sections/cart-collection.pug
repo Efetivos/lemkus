@@ -1,30 +1,10 @@
-.   
-    {% schema %}
-        {
-            "name": "INDEX | Just Dropped",
-            "class": "dropped-index",
-            "settings": [
-                {
-                    "id": "dropped_index",
-                    "type": "collection",
-                    "label": "Collection"
-                },
-                {
-                    "id": "text_dropped",
-                    "type": "text",
-                    "label": "Text Dropped",
-                    "default": "JUST DROPPED"
-                }
-            ]
-        }
-    {% endschema %}
 
-| {% assign dropped_col = collections[section.settings.dropped_index] %}
-section.collect-index
+| {% assign cart_colle = collections[settings.cart_colle] %}
+section.cart-colle
 
-    h1.dharma {{ section.settings.text_dropped }}
-    .collect-index__hold
-        | {% for item in dropped_col.products limit:6 %}
+    h1.dharma {{ settings.text_dropped }}
+    .cart-colle__hold
+        | {% for item in cart_colle.products limit:4 %}
         
         //- calling prod
         |   {% render 'product-card' prod: item %}
