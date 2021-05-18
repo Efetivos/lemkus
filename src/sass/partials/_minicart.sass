@@ -1,47 +1,4 @@
 @import './partials/alias-mixins'
-.minicart__fader
-    background: #C4C4C4
-    height: 100vh
-    left: 0
-    opacity: 0
-    visibility: hidden
-    position: fixed
-    top: 0
-    width: 100vw
-    z-index: 10
-    transition: .6s opacity ease-out
-
-.minicart
-    background: var(--color)
-    height: calc(var(--vh) * 100)
-    overflow: hidden
-    overflow-y: auto
-    position: fixed
-    right: 0
-    top: 0
-    z-index: 10
-    transform: translateX(100%)
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)
-    width: 100vw
-    @include desk
-        width: 79.1rem
-
-.is-minicart .minicart
-    transform: translateX(0%)
-
-.is-minicart .minicart__fader
-    visibility: visible
-    opacity: .48
-
-
-
-
-
-
-
-
-
-
 
 
 //- =========================  CART PAGE  ========================= -//
@@ -334,3 +291,103 @@ section.cart-colle
         padding: 0 0 0.9rem 0
         position: relative
         z-index: 2
+
+
+
+
+
+
+
+
+
+
+
+
+
+//- =========================  minicart  ========================= -//
+//- =========================  minicart  ========================= -//
+
+.minicart__fader
+    background: #000
+    height: 100vh
+    left: 0
+    opacity: 0
+    visibility: hidden
+    position: fixed
+    top: 0
+    width: 100vw
+    z-index: 10
+    transition: .6s opacity ease-out
+
+.minicart
+    background: var(--soft)
+    height: calc(var(--vh) * 100)
+    overflow: hidden
+    overflow-y: auto
+    position: fixed
+    right: 0
+    top: 0
+    z-index: 10
+    transform: translateX(100%)
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)
+    width: 100vw
+    @include desk
+        height: 100vh
+        overflow: hidden
+        width: 94.4rem
+
+.is-minicart .minicart
+    transform: translateX(0%)
+
+.is-minicart .minicart__fader
+    visibility: visible
+    opacity: .48
+
+
+.minicart .page-cart__items
+    @include desk
+        width: 60.1rem
+
+.minicart div#shopify-section-cart-collection
+    @include desk
+        width: 34.2rem
+
+.minicart .cart-colle__hold.mini-card
+    height: 93.3vh
+
+
+
+.minicart li.cart__each
+    @include desk
+        grid-template-columns: 11.8rem 36rem
+
+
+
+.minicart .page-cart__items__hold
+    @include desk
+        padding: 1.3rem 3.9% 0
+
+
+.minicart .mini-card .prod-card__title a
+    @include desk
+        font-size: 2.8rem
+
+
+.minicart .cart__infos__estimated
+    @include desk
+        font-size: 1.6rem
+
+
+.minicart .cart__infos__btns>*
+    @include desk
+        width: 24rem
+
+
+.minicart form.cart
+    @include desk
+        height: 92vh
+
+span.empty-bag
+    font-size: 1.9rem
+    font-family: var(--serif)
+    margin: 4vh 0 0

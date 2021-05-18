@@ -25,7 +25,7 @@ form(action="/cart" method="post" novalidate).cart
 
 |   {% else %}
 
-span.your-bag Your bag is empty
-a(href="{{ shop.url }}/").browse BROWSE NEW IN
+span.empty-bag Your bag is empty
+//-a(href="{{ shop.url }}/").browse BROWSE NEW IN
 
 |   {% endif %}

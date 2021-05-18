@@ -33,7 +33,7 @@ class Minicart {
     //? _____________________ fetch drawer
     insertCart() {
         let that = this
-        let cart_url = 'https://sleau.myshopify.com/cart' //STORY DOMAIN
+        let cart_url = 'https://lemkus-staging.myshopify.com/cart' //STORY DOMAIN
 
 
         fetch(cart_url).then(function (response) {
