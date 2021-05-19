@@ -7,16 +7,58 @@
     align-items: center
     display: flex
     justify-content: space-between
+    @include desk
+        display: grid
+        grid-template-areas: "bread btn-filter qty sort"
+
+
 
 header.header-coll
     padding: 73px 0 18px
+    @include desk
+        padding: 6.4rem 0 1.2rem
+
+
+
+nav.header-coll__bread
+    @include desk
+        grid-area: bread
+
+.breadcrumbs > *
+    @include desk
+        font-size: 1.5rem
 
 .header-coll__qty
     font-size: 1.2rem
+    @include desk
+        grid-area: qty
+
+
+    
+
+.header-coll__btn-filter
+    @include desk
+        transform: translateX(22.1rem)
+
 
 .header-coll__btn-filter button
     height: 3.6rem
     width: 10.8rem
+    @include desk
+        grid-area: btn
+        width: 17.6rem
+        height: 3.9rem
+
+
+
+.header-coll__sort-by
+    @include desk
+        grid-area: sort
+        transform: translateX(-4.6rem)
+
+
+.header-coll__sort-by span
+    display: inline-block
 
 
 .header-coll__sort-by select
@@ -26,6 +68,11 @@ header.header-coll
     font-size: 1.2rem
     text-transform: uppercase
     width: 9.5rem
+    @include desk
+        font-size: 1.4rem
+        width: 11.5rem
+
+
 
 .header-coll__sort-by select option
     font-size: 1.2rem
@@ -35,6 +82,13 @@ header.header-coll
 
 
 
+
+.header-coll__qty
+    @include desk
+        display: flex
+        font-size: 1.4rem
+        margin: 0 0 0 32rem
+        transform: translateX(4.6rem)
 
 
 
@@ -52,7 +106,7 @@ header.header-coll
     @include desk
         display: flex
         justify-content: flex-end
-        margin: 2.8rem 0 0
+        margin: 2.8rem var(--gap) 0 0
 
 .colle__paginate__hold
     align-items: center

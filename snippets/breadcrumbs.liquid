@@ -1,5 +1,2 @@
-  {% unless template == 'index' or template == 'cart' or template == 'list-collections' %}
-<nav class="breadcrumbs e-flex" role="navigation" aria-label="breadcrumbs"><a href="{{ shop.url }}">HOME /</a><a href="{{ shop.url }}/collections/all">SHOP ALL /</a>  {% for collection in product.collections %}
-    {% unless collection.title == 'Homepage' %}<a class="e-upper" href="{{ collection.url }}">{{ collection.title }} /</a>  {% endunless %}
-    {% endfor %}<span>{{ product.title }}</span>
-</nav>  {% endunless %}
+
+<nav class="breadcrumbs e-flex" role="navigation" aria-label="breadcrumbs"><a href="{{ shop.url }}">Home | </a>{% assign collectionAllTags = collection.tags %}<span>{{collection.title}} |  </span><span class="recosemi">Lastest {{collection.title}}</span></nav>
