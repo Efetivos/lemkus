@@ -20,7 +20,11 @@
       {% endif %}
   {% endfor %}
 {% endif %}
-<div class="page page-product" data-barba="container" data-barba-namespace="product" data-ispage="product" data-scroll-content>
+  {% section 'size-guide-mens' %}
+  {% section 'size-guide-womens' %}
+  {% section 'size-guide-toddler' %}
+  {% section 'size-guide-presch' %}
+<div class="page page-product {% if product.metafields.drop.drop_month %}dropsoon-product{% endif %}" data-barba="container" data-barba-namespace="product" data-ispage="product" data-scroll-content>
   <header class="header-prod">
     <div class="header-prod__bread">  {% render 'breadcrumbs' %}</div>
     <div class="header-prod__hold">
@@ -35,7 +39,7 @@
         </div>
       </div>
       <div class="header-prod__infos">
-        <h1 class="header-prod__title dharmaex e-upper">{{ product.title }} {{ product.metafields..date_acf.date_acf }} {{ product.metafields.descr.descr }}  </h1>{% if product.compare_at_price_max != 0 %}<span class="sale-price">{{ product.compare_at_price_max  | money  }}</span>{% endif %}
+        <h1 class="header-prod__title dharmaex e-upper">{{ product.title }}  </h1>{% if product.compare_at_price_max != 0 %}<span class="sale-price">{{ product.compare_at_price_max  | money  }}</span>{% endif %}
         <div class="regular-price">{{ product.price | money }}</div>  {% render 'add-to-cart' %}
         <div class="prod-descr">
           <div class="prod-descr__content">{{ descr }} </div>  {% if details != blank %}
@@ -57,6 +61,16 @@
               </div>
               <div class="hold-content">{{ shipping }} </div>
             </div>
+          </div>  {% endif %}
+            {% if product.metafields.drop.drop_month %}
+            {% assign drop_day = product.metafields.drop.drop_day %}
+            {% assign drop_month = product.metafields.drop.drop_month %}
+            {% assign drop_hour = product.metafields.drop.drop_hour %}
+          <div class="countdown" data-day="{{ drop_day }}" data-month="{{ drop_month }}" data-hour="{{ drop_hour }}">
+            <ul class="countdown__hold">
+              <li class="countdown__numbers"><span class="countdown__days">00</span><span class="countdown__hours">00</span><span class="countdown__mins">00</span><span class="countdown__secs">00</span></li>
+              <li class="countdown__infos"><span class="infos__days">DAYS</span><span class="infos__hours">HOURS</span><span class="infos__mins">MINS</span><span class="infos__secs">SECS</span></li>
+            </ul>
           </div>  {% endif %}
         </div>
       </div>

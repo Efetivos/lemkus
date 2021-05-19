@@ -13,7 +13,7 @@
                     input(type='search' name='q' placeholder="Search by product, category or keyword" value='{{ search.terms | escape }}')
                     input(type="hidden" name="type" value="product") 
                     button(type='submit').submit !{searchIcon}
-                    button(type="button").erase-search !{closeGuide}
+                    a(href="{{ shop.url }}/search", title="Search").erase-search !{closeGuide}
             
             |   {% if search.results.size > 0 %}
             .header-search__count

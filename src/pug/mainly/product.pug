@@ -34,13 +34,13 @@
 
 //- =========================  size-guide  ========================= -//
 //- =========================  size-guide  ========================= -//
-    |   {% section 'size-guide-mens' %}
-    |   {% section 'size-guide-womens' %}
-    |   {% section 'size-guide-toddler' %}
-    |   {% section 'size-guide-presch' %}
+|   {% section 'size-guide-mens' %}
+|   {% section 'size-guide-womens' %}
+|   {% section 'size-guide-toddler' %}
+|   {% section 'size-guide-presch' %}
 
 
-.page.page-product(data-barba="container", data-barba-namespace="product", data-ispage="product", data-scroll-content)
+.page.page-product(data-barba="container", data-barba-namespace="product", data-ispage="product", data-scroll-content,  class!="{% if product.metafields.drop.drop_month %}dropsoon-product{% endif %}")
     header.header-prod
         .header-prod__bread
             |   {% render 'breadcrumbs' %}
@@ -65,7 +65,7 @@
             //- _____ infos
             .header-prod__infos
                 //-  title
-                h1.header-prod__title.dharmaex.e-upper {{ product.title }} {{ product.metafields..date_acf.date_acf }} {{ product.metafields.descr.descr }}  
+                h1.header-prod__title.dharmaex.e-upper {{ product.title }}  
 
                 //-  prices
                 | {% if product.compare_at_price_max != 0 %}
@@ -104,6 +104,25 @@
                             .hold-content {{ shipping }} 
                     |   {% endif %}
         
+
+                    //- COUNTDOWN
+                    |   {% if product.metafields.drop.drop_month %}
+                    |   {% assign drop_day = product.metafields.drop.drop_day %}
+                    |   {% assign drop_month = product.metafields.drop.drop_month %}
+                    |   {% assign drop_hour = product.metafields.drop.drop_hour %}
+                    .countdown(data-day="{{ drop_day }}", data-month="{{ drop_month }}", data-hour="{{ drop_hour }}")
+                        ul.countdown__hold
+                            li.countdown__numbers
+                                span.countdown__days 00
+                                span.countdown__hours 00
+                                span.countdown__mins 00
+                                span.countdown__secs 00
+                            li.countdown__infos
+                                span.infos__days DAYS
+                                span.infos__hours HOURS
+                                span.infos__mins MINS
+                                span.infos__secs SECS
+                    |   {% endif %}
 
     main.main-prod
 
