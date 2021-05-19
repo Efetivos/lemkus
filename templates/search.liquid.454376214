@@ -1,0 +1,37 @@
+
+<div class="page page-seach page-search" data-ispage="seach" data-scroll-content>
+  <div class="header-search">
+    <div class="header-search__hold e-hold">
+      <div class="header-search__bar">
+        <form action="/search" method="get" role="search">
+          <input class="dharma" type="search" name="q" placeholder="LOOKING FOR SOMETHING" value="{{ search.terms | escape }}">
+          <input type="hidden" name="type" value="product">
+          <button type="submit">►</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <main class="main-collection">
+      {% if search.performed %}
+      {% assign searchsize = search.results.size %}
+    <section class="products">
+      <p class="search-terms">SEARCH RESULTS FOR: <span class="t-bold">{{ search.terms | upcase  }} </span></p>
+      <div class="hold_search {% if searchsize > 0 %} products__hold {% else %}{% endif %}">  {% for item in search.results %}
+        <div class="collection-decor">{{ collection.title }}</div>  {% render 'product-card' prod: item %}
+          {% else %}
+        <div class="no-result-search">
+          <p>Your search for "{{ search.terms }}" did not yield any results.</p>
+        </div>
+        <div class="may-also"><span>BUT YOU MAY LIKE</span>
+          <nav class="cross-sell">
+            <div>
+                {% for product in collections.search.products limit:4 %}
+                {% render 'product-card' prod: product %}
+                {% endfor %}
+            </div>
+          </nav>
+        </div>  {% endfor %}
+      </div>
+    </section>  {% endif %}
+  </main>{% render  'myfooter' %}
+</div>

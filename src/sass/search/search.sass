@@ -1,0 +1,124 @@
+@import '../partials/alias-mixins'
+
+.page.page-search
+    overflow-x: hidden
+
+
+
+header.header-search
+    padding: 73px 0 18px
+    @include desk
+        padding: 8.4rem 0 2.7rem
+
+
+
+
+
+.header-search__bar
+    width: 100%
+
+.header-search__bar .dharma
+    font-size: 3rem
+    @include desk
+        font-size: 4rem
+        
+
+
+.header-search__bar form
+    margin: 1.4rem 0 0 0
+    position: relative
+    width: 100%
+    @include desk
+        margin: 2.1rem 0 0
+
+
+
+
+.header-search__bar form input[type="search"]
+    background: transparent
+    border: none
+    font-family: var(--reco)
+    font-size: 1.2rem
+    line-height: 2.3rem
+    padding: 0 3.1rem
+    width: 100%
+    @include desk
+        font-size: 1.7rem
+        line-height: 2.3rem
+
+
+.header-search__bar form button.submit
+    height: 1.6rem
+    left: 0
+    position: absolute
+    top: 0.2rem
+    width: 1.6rem
+    @include desk
+        top: 0.4rem
+        
+
+
+.header-search__bar form button.submit svg
+    width: 100%
+
+
+button.erase-search
+    height: 2rem
+    position: absolute
+    right: 0
+    width: 2rem
+    @include desk
+        top: 0.27rem
+
+
+button.erase-search svg path
+    -webkit-text-stroke: var(--dark)
+    fill: var(--dark)
+
+
+.header-search__bar form:after
+    
+    background: var(--dark)
+    bottom: -0.6rem
+    content: ''
+    height: 2px
+    left: 0
+    position: absolute
+    width: 100%
+    @include desk
+        bottom: -0.8rem
+
+
+.header-search__count
+    margin: 2.7rem 0 0
+    font-size: 1.2rem
+    @include desk
+        margin: 5.2rem 0 0
+        font-size: 1.6rem
+
+
+
+
+
+
+
+
+
+
+//- =========================  PRODUCTS  ========================= -//
+//- =========================  PRODUCTS  ========================= -//
+main.main-search
+    margin: 0 0 4rem 0
+    @include desk
+        margin: 0 0 8rem 0
+        min-height: 25vh
+
+.search-empty
+    min-height: 75vh
+    @include desk
+        min-height: 25vh
+        margin: 4rem 0 0  0
+
+
+
+    
