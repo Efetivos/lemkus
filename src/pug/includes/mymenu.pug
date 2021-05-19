@@ -14,7 +14,7 @@ a(href="{{ shop.url }}", title="{{ shop.title }}").logo-main.el-fix !{logomain}
 
 
 .menu-search-bag.el-fix
-    button(arial-label="SEARCH").trg-search SEARCH
+    a(href="{{ shop.url }}/search", title="search").trg-search SEARCH
     .trg-cart BAG (#[span.cart-counter  {{ cart.item_count }}])
 
 .menu-acc-wish.no-mobile.el-fix
@@ -71,25 +71,6 @@ nav.main-menu.no-mobile.el-fix
 
 
 
-
-//-div
-    form(action='/search' method='get' role='search')
-        input(type='search' name='q' placeholder="SEARCH" value='{{ search.terms | escape }}')
-        input(type="hidden" name="type" value="product") 
-        button(type='submit') ►
-
-
-        ul.menu-fs__shop__link.hide-drop
-            |{% for link in linklists.menu-collections.links %}
-            li
-                a(href="{{link.url}}", alt="{{ link.title }}").e-upper.lined {{link.title}}
-            |{% endfor %}
-
-        ul.menu-fs__links__list
-            |{% for link in linklists.main-menu.links %}
-            li 
-                a(href="{{link.url}}", alt="{{ link.title }}").lined  {{link.title}}
-            |{% endfor %}
 
 
 
