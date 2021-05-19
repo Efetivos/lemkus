@@ -1,0 +1,69 @@
+@import '../partials/alias-mixins'
+
+.page.page-collection
+    overflow-x: hidden
+
+.header-coll__hold
+    align-items: center
+    display: flex
+    justify-content: space-between
+
+header.header-coll
+    padding: 73px 0 18px
+
+.header-coll__qty
+    font-size: 1.2rem
+
+.header-coll__btn-filter button
+    height: 3.6rem
+    width: 10.8rem
+
+
+.header-coll__sort-by select
+    background: none
+    border: none
+    font-family: var(--recosemi)
+    font-size: 1.2rem
+    text-transform: uppercase
+    width: 9.5rem
+
+.header-coll__sort-by select option
+    font-size: 1.2rem
+    text-transform: uppercase
+
+
+
+
+
+
+
+
+
+
+
+
+//- =========================  PAGINATE  ========================= -//
+//- =========================  PAGINATE  ========================= -//
+
+//- =========================  PAGINATE  ========================= -//
+//- =========================  PAGINATE  ========================= -//
+.colle__paginate
+    margin: 4rem 0 4.2rem
+    @include desk
+        display: flex
+        justify-content: flex-end
+        margin: 2.8rem 0 0
+
+.colle__paginate__hold
+    align-items: center
+    border-radius: 50px
+    border: 1px solid var(--dark)
+    display: flex
+    font-size: 2rem
+    gap: 1.9rem
+    justify-content: center
+    padding: 0.8rem 0
+    width: 92%
+    @include desk
+        padding: .8rem 2.6rem
+        width: auto

@@ -1,9 +1,0 @@
-{% assign cart_colle = collections[settings.cart_colle] %}
-<section class="cart-colle">
-  <h1 class="dharma">{{ settings.text_cart_colle }}</h1>
-  <div class="cart-colle__hold">
-    {% for item in cart_colle.products limit:4 %}
-      {% render 'product-card' prod: item %}
-    {% endfor %}
-  </div>
-</section>

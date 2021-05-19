@@ -1,6 +1,6 @@
-## Time: 45h30
-Data: 05:00  | 05.19  
-Daily: -6:00  
+## Time: 46h00
+Data: 06:00  | 05.19  
+Daily: -5:00  
   
 ![Screenshot](./cover.png) (https://github.com/Efetivos/gesch)
 
