@@ -218,6 +218,34 @@ a(href="{{ collection.url }}", alt="{{ collection.title }}") {{ collection.title
 
 
 </br></br></br>
+# Metafields ACF (Accentuate Custom Fields)
+
+> https://apps.shopify.com/accentuate   
+> https://help.accentuate.io/  
+
+```bash
+    //- COUNTDOWN
+    |   {% if product.metafields.drop.drop_month %}
+    |   {% assign drop_day = product.metafields.drop.drop_day %}
+    |   {% assign drop_month = product.metafields.drop.drop_month %}
+    |   {% assign drop_hour = product.metafields.drop.drop_hour %}
+    .countdown(data-day="{{ drop_day }}", data-month="{{ drop_month }}", data-hour="{{ drop_hour }}")
+        ul.countdown__hold
+            li.countdown__numbers
+                span.countdown__days 00
+                span.countdown__hours 00
+                span.countdown__mins 00
+                span.countdown__secs 00
+            li.countdown__infos
+                span.infos__days DAYS
+                span.infos__hours HOURS
+                span.infos__mins MINS
+                span.infos__secs SECS
+    |   {% endif %}
+```
+
+
+</br></br></br>
 # Metafields
 
 > https://shopify.dev/docs/themes/liquid/reference/objects/metafield  
@@ -290,6 +318,15 @@ a(href="{{ product.url | within: collection }}")
     |   {% endfor %}
 ```
 
+
+
+### Diplaying Discount
+```bash 
+    |   {% elsif prod.compare_at_price_max > prod.price %}
+    .prod-card__img__discount
+        span {{ prod.compare_at_price_min | minus: prod.price | times: 100.0 |  divided_by: prod.compare_at_price_min | money_without_currency | times: 100 | replace: '.0', ''}}% OFF
+    |   {% endif %}
+```
 
 
 

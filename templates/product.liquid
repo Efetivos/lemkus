@@ -40,7 +40,10 @@
       </div>
       <div class="header-prod__infos">
         <h1 class="header-prod__title dharmaex e-upper">{{ product.title }}  </h1>{% if product.compare_at_price_max != 0 %}<span class="sale-price">{{ product.compare_at_price_max  | money  }}</span>{% endif %}
-        <div class="regular-price">{{ product.price | money }}</div>  {% render 'add-to-cart' %}
+        <div class="regular-price">{{ product.price | money }}</div>  {% if product.compare_at_price_max > product.price %}
+              {{ product.compare_at_price_min | minus: product.price | times: 100.0 |  divided_by: product.compare_at_price_min | money_without_currency | times: 100 | replace: '.0', ''}}
+          {% endif %}
+          {% render 'add-to-cart' %}
         <div class="prod-descr">
           <div class="prod-descr__content">{{ descr }} </div>  {% if details != blank %}
           <div class="ctn-accord">

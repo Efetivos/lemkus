@@ -15,10 +15,15 @@
                         img(src="{{  image.src | img_url: 'master' }}" alt="{{ image.src | escape }}").img-load
                     |   {% endfor %}
             .prod-card__img__logo !{logoBrand}
+            
+            //- =========================  DATE OR DISCOUNT
+            |   {% if prod.metafields.drop.drop_month %}
             .prod-card__img__date
-                span 22JAN
+                span {{ prod.metafields.drop.drop_day }} {{ prod.metafields.drop.drop_month }}
+            |   {% elsif prod.compare_at_price_max > prod.price %}
             .prod-card__img__discount
-                span 40% OFF
+                span {{ prod.compare_at_price_min | minus: prod.price | times: 100.0 |  divided_by: prod.compare_at_price_min | money_without_currency | times: 100 | replace: '.0', ''}}% OFF
+            |   {% endif %}
             
             .prod-card__img__nav.prod-card-img-prev !{prevArrow} !{prevArrowHover}
             .prod-card__img__nav.prod-card-img-next !{nextArrow} !{nextArrowHover}
@@ -35,7 +40,6 @@
                 |   {% endfor %}
             
 
-    
 
         .prod-card__infos
         
@@ -48,6 +52,19 @@
                     span.sale-price {{ prod.compare_at_price_max  | money  }}
                     | {% endif %}
 
+
+            
+            
+            
+            
+            
+            
+            
+            //- =========================  NOTIFY  ========================= -//
+            //- =========================  NOTIFY  ========================= -//
+            
+            |   {% if prod.metafields.drop.drop_month %}
             .prod-card__notify.btn-hover
                 span.static NOTIFY ME
                 span.hover(data-hover="NOTIFY ME NOTIFY ME NOTIFY ME NOTIFY ME NOTIFY ME ") NOTIFY ME NOTIFY ME NOTIFY ME NOTIFY ME NOTIFY ME 
+            |   {% endif %}
