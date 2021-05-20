@@ -24,7 +24,7 @@ section.collect-index
 
     h1.collect-index__title.dharma {{ section.settings.text_dropped }}
     .collect-index__hold.colle-cards
-        | {% for item in dropped_col.products limit: 3 %}
+        | {% for item in dropped_col.products limit: 6 %}
         
         //- calling prod
         |   {% render 'product-card' prod: item %}
