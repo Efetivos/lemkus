@@ -19,7 +19,7 @@ section.dropping-card
         display: flex
         height: 100%
 
-.dropping-card .dropping-card__hold
+.dropping-card-regular .dropping-card__hold
     @include desk
         flex-direction: row-reverse
 
@@ -144,6 +144,8 @@ a.dropping-card__title
     width: 100%
 
 
-.dropping-card .prod-card__notify
+.dropping-card__notify
     margin: 5.9rem 0 1.1rem
     width: 14.6rem
+    @include desk
+        margin: 3rem 0 1.1rem

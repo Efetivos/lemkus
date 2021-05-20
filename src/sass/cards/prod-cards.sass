@@ -77,22 +77,26 @@ li.prod-card__img__each
 //- =========================  date  ========================= -//
 //- =========================  date  ========================= -//
 .prod-card__img__date
-    align-items: center
+    @include flex-center
     background: #fff
     border-radius: 50px
     border: 1px solid var(--dark)
     cursor: pointer
-    display: flex
     font-family: var(--recosemi)
     font-size: 1.6rem
     height: 3.9rem
-    justify-content: center
     position: absolute
     right: 2.5rem
     text-transform: uppercase
     top: 1.4rem
     width: 8.4rem
     z-index: 1
+    @include desk
+        font-size: 1.6rem
+        height: 3.9rem
+        right: 2rem
+        top: 1.3rem
+        width: 11.6rem
 
 
 
@@ -103,21 +107,23 @@ li.prod-card__img__each
 //- =========================  discount  ========================= -//
 //- =========================  discount  ========================= -//
 .prod-card__img__discount
-    align-items: center
+    @include flex-center;
     background: #fff
     border-radius: 50px
     border: 1px solid var(--dark)
     cursor: pointer
-    display: flex
     font-family: var(--recosemi)
     font-size: 1.6rem
     height: 3.9rem
-    justify-content: center
     position: absolute
     right: 2.5rem
     top: 1.4rem
     width: 8.4rem
     z-index: 1
+    @include desk
+        right: 2rem
+        top: 1.3rem
+        width: 11.6rem
 
 
 

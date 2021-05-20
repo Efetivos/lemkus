@@ -7,25 +7,44 @@ section.blog-index
 
 .blog-index__cult-title
     margin: 1.6rem 0 0
+    @include desk
+        align-items: flex-end
+        display: flex
+        justify-content: space-between
+        margin: -0.2rem 0 0
 
 
 .blog-index__cult-title h1
     font-size: 8rem
+    @include desk
+        font-size: 30rem
+        margin: 0 0 0 -0.8rem
 
+a.view-all-blog.no-mobile
+    @include desk
+        margin: 0 0 5.9rem 0
+        width: 13.5rem
 
 
 ul.blog-index__posts
     display: flex
     gap: 1.6rem
+    @include desk
+        margin: -3.2rem 0 0
+        justify-content: space-between
 
 
 .blog-index__posts .article-card__each
     flex-shrink: 0
     width: 27.3rem
+    @include desk
+        width: 31.5rem
 
 
 .blog-index__posts .article-card__img
     height: 34.4rem
+    @include desk
+        height: 39.8rem
 
 
 .blog-index__posts .article-card__each
