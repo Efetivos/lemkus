@@ -21,12 +21,12 @@
 <section class="blog-index">
   <div class="blog-index__hold e-hold">
     <div class="blog-index__cult-title">
-      <h1 class="t-color dharma">{{ section.settings.title-blog }}</h1><a class="ricosemi" href="{{ shop.url }}/blogs/news">VIEW ALL</a>
+      <h1 class="t-color dharma">{{ section.settings.title-blog }}</h1><a class="view-all-blog btn-hover no-mobile" href="{{ shop.url }}/blogs/news"><span class="static">VIEW ALL</span><span class="hover" data-hover="VIEW ALL VIEW ALL ">VIEW ALL VIEW ALL </span></a>
     </div>
     <ul class="blog-index__posts">
         {% for article in blog.articles limit: 4 %}
         {% render 'article-card' art: article %}
         {% endfor %}
-    </ul>
+    </ul><a class="view-all-blog btn-hover no-desk" href="{{ shop.url }}/blogs/news"><span class="static">VIEW ALL</span><span class="hover" data-hover="VIEW ALL VIEW ALL ">VIEW ALL VIEW ALL </span></a>
   </div>
 </section>

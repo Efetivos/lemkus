@@ -4,50 +4,53 @@
 
 section.dropping-card
     position: relative
+    margin: -1px 0 0
+    border-top: 1px solid var(--dark)
+    border-bottom: 1px solid var(--dark)
 
 
 .dropping-card__hold
-    width: 100%
     height: 100%
     position: relative
+    width: 100%
 
 
 .dropping-card__bg
-    position: absolute
-    left: 0
-    top: 0
     height: 100%
+    left: 0
+    position: absolute
+    top: 0
     width: 100%
 
 
 .dropping-card__infos
-    position: relative
-    z-index: 1
+    align-items: center
     display: flex
     flex-direction: column
-    align-items: center
+    position: relative
+    z-index: 1
 
 
-.dropping-card__img.no-mobile
+.dropping-card__img
     position: relative
     z-index: 1
 
 
 .dropping-card__logo
+    align-items: center
+    display: flex
+    height: 4rem
+    justify-content: center
     margin: 91px 0 0.4rem
     width: 4rem
-    height: 4rem
-    display: flex
-    align-items: center
-    justify-content: center
 
 
 .dropping-card__logo img
-    width: 100%
     object-fit: contain
+    width: 100%
 
 
-a.dropping-card__title.dharma
+a.dropping-card__title
     font-size: 4rem
     margin: 0 0 0.6rem
 
@@ -57,16 +60,19 @@ a.dropping-card__title.dharma
 
 
 .dropping-card__infos__img
-    width: 85%
     position: relative
+    width: 85%
+    @include tablet
+        width: 50%
+        
 
 
 .dropping-card__infos__img img
-    width: 100%
     height: 100%
     object-fit: contain
+    width: 100%
 
 
 .dropping-card .prod-card__notify
-    width: 14.6rem
     margin: 5.9rem 0 1.1rem
+    width: 14.6rem

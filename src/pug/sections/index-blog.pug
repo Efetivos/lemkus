@@ -23,7 +23,10 @@ section.blog-index
     .blog-index__hold.e-hold
         .blog-index__cult-title
             h1.t-color.dharma {{ section.settings.title-blog }}
-            a(href="{{ shop.url }}/blogs/news").ricosemi VIEW ALL
+            a(href="{{ shop.url }}/blogs/news").view-all-blog.btn-hover.no-mobile
+                    span.static VIEW ALL
+                    span.hover(data-hover="VIEW ALL VIEW ALL ") VIEW ALL VIEW ALL 
+
         
         
         
@@ -36,5 +39,8 @@ section.blog-index
             |   {% render 'article-card' art: article %}
             |   {% endfor %}
                 
+        a(href="{{ shop.url }}/blogs/news").view-all-blog.btn-hover.no-desk
+                span.static VIEW ALL
+                span.hover(data-hover="VIEW ALL VIEW ALL ") VIEW ALL VIEW ALL 
 
 

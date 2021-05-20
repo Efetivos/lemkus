@@ -18,13 +18,27 @@
     }
 {% endschema %}
 {% assign dropping_col = collections[section.settings.dropping-card] %}
-<section class="dropping-card">{% for product in dropping_col.products limit:1 %}
-  <div class="dropping-card__hold e-flex">
+<section class="dropping-card dropping-card-regular">{% for product in dropping_col.products limit:1 %}
+  <div class="dropping-card__hold">
+    <div class="dropping-card__bg" style="background:#eaeaea"></div>
     <div class="dropping-card__infos">
       <div class="dropping-card__logo"> <img class="img-load" src="{{ section.settings.img_logo_brand | img_url: 'master' }}" alt="{{ section.settings.img_logo_brand.alt | escape }}"></div><a class="dropping-card__title dharma" href="{{ product.url | within: collection }}">{{ product.title }}</a>
       <div class="dropping-card__price recosemi">{{ product.price | money }}</div>
-      <div class="prod-card__notify">NOTIFY ME</div>
+      <div class="dropping-card__infos__img no-desk"><a href="{{ product.url | within: collection }}"> <img class="img-load" src="{{  product.featured_image.src  | img_url: 'master' }}" alt="{{ product.src | escape }}"></a></div>
+      <div class="dropping-card__count">
+          {% if product.metafields.drop.drop_month %}
+          {% assign drop_day = product.metafields.drop.drop_day %}
+          {% assign drop_month = product.metafields.drop.drop_month %}
+          {% assign drop_hour = product.metafields.drop.drop_hour %}
+        <div class="countdown" data-day="{{ drop_day }}" data-month="{{ drop_month }}" data-hour="{{ drop_hour }}">
+          <ul class="countdown__hold">
+            <li class="countdown__numbers"><span class="countdown__days">00</span><span class="countdown__hours">00</span><span class="countdown__mins">00</span><span class="countdown__secs">00</span></li>
+            <li class="countdown__infos"><span class="infos__days">DAYS</span><span class="infos__hours">HOURS</span><span class="infos__mins">MINS</span><span class="infos__secs">SECS</span></li>
+          </ul>
+        </div>  {% endif %}
+      </div>
+      <div class="prod-card__notify btn-hover"><span class="static">NOTIFY ME</span><span class="hover" data-hover="NOTIFY ME NOTIFY ME ">NOTIFY ME NOTIFY ME </span></div>
     </div>
-    <div class="dropping-card__img"><a href="{{ product.url | within: collection }}"> <img class="img-load" src="{{  product.featured_image.src  | img_url: 'master' }}" alt="{{ product.src | escape }}"></a></div>
+    <div class="dropping-card__img no-mobile"><a href="{{ product.url | within: collection }}"> <img class="img-load" src="{{  product.featured_image.src  | img_url: 'master' }}" alt="{{ product.src | escape }}"></a></div>
   </div>{% endfor %}
 </section>

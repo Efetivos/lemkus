@@ -15,7 +15,7 @@
 
 {% assign laun_colle = collections[section.settings.laun_colle_id] %}
 <section class="launch-colle">
-  <div class="launch-colle__hold e-flex">
+  <div class="launch-colle__hold colle-cards">
     {% for item in laun_colle.products %}
       {% render 'product-card' prod: item %}
     {% endfor %}
