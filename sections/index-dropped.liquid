@@ -20,9 +20,9 @@
 {% endschema %}
 {% assign dropped_col = collections[section.settings.dropped_index] %}
 <section class="collect-index">
-  <h1 class="dharma">{{ section.settings.text_dropped }}</h1>
-  <div class="collect-index__hold">
-    {% for item in dropped_col.products limit:6 %}
+  <h1 class="collect-index__title dharma">{{ section.settings.text_dropped }}</h1>
+  <div class="collect-index__hold colle-cards">
+    {% for item in dropped_col.products limit: 3 %}
       {% render 'product-card' prod: item %}
     {% endfor %}
   </div>

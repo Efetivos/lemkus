@@ -1,18 +1,22 @@
 @import '../partials/alias-mixins'
 
 
-
+.page.page-index
+    overflow-x: hidden
 
 
 header.header-index
-    display: grid
     align-items: flex-end
+    display: grid
     margin: 0
+    padding: 7.6rem 0 0
 
 
 .header-index__hold
     position: relative
-    height: 76vh
+    height: 28.4rem
+    @include desk
+        height: 76vh
 
 
 .header-index__imgs
@@ -27,8 +31,8 @@ header.header-index
 
 
 .header-index__imgs img
-    height: 100%
     width: 100%
+    height: 100%
     object-fit: cover
 
 .header-index__imgs__each:not(:first-child)
@@ -57,9 +61,15 @@ header.header-index
 
 
 .header-index__hl__texts
+    margin: 2rem 0 0 2rem
     position: absolute
     top: 0
     z-index: 1
 
 .header-index__hl__texts a
-    font-size: 9rem
+    font-size: 4.5rem
+    @include desk
+        font-size: 9rem
+
+.header-index__hl__texts span
+    font-size: 1.2rem

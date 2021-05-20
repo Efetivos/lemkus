@@ -50,7 +50,7 @@
 
 section.soon-index.e-wvw
     .soon-index__hold.e-hold
-        h1.dharma {{ section.settings.text_soon }}
+        h1.soon-index__title.dharma {{ section.settings.text_soon }}
         .soon-index__coming
             .soon-index__coming__hold.e-wp.e-hp.e-rel
                 .soon-index__coming__img
@@ -62,7 +62,7 @@ section.soon-index.e-wvw
 
 | {% assign soon_col = collections[section.settings.soon_index] %}
 section.soon-collect-index
-    .soon-collect-index__hold
+    .soon-collect-index__hold.colle-cards
         | {% for item in soon_col.products limit:5 %}
         
         //- calling prod

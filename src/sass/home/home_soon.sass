@@ -1,7 +1,16 @@
 @import '../partials/alias-mixins'
 
 .soon-index
+    border-top: 1px solid var(--dark)
+    margin: -1px 0 0
+    padding: 1.6rem 0
     position: relative
+
+
+.soon-index__hold
+    @include mobile
+        display: flex
+        flex-direction: column-reverse
 
     
 .soon-index__coming
@@ -11,7 +20,8 @@
 
 
 .soon-index__coming__img
-    height: 100%
+    border: 1px solid var(--dark)
+    height: 28.6rem
     width: 100%
 
 
@@ -25,6 +35,30 @@
     position: absolute
     top: 0
     z-index: 1
+    margin: 2rem 0 0 2rem
 
 .soon-index__coming__texts a
-    font-size: 9rem
+    font-size: 4.5rem
+    line-height: 90%
+    margin: 0.6rem 0 0
+    width: 70%
+    @include desk
+        font-size: 9rem
+
+.soon-index__coming__texts span 
+    font-size: 1.2rem
+
+.page-index .dropping-card-regular .dropping-card__infos
+    @include desk
+        width: 43.55rem
+
+.page-index .dropping-card__bg
+    @include desk
+        width: 93.1rem
+
+
+h1.soon-index__title
+    font-size: 8rem
+    white-space: nowrap
+    margin: 1.6rem 0 0
+
