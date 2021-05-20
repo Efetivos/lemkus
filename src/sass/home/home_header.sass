@@ -10,19 +10,22 @@ header.header-index
     display: grid
     margin: 0
     padding: 7.6rem 0 0
+    @include desk
+        padding: 25.5rem 0 0
 
 
 .header-index__hold
     position: relative
     height: 28.4rem
     @include desk
-        height: 76vh
+        height: auto
 
 
 .header-index__imgs
     width: 100%
     height: 100%
     position: relative
+    border: 1px solid var(--dark)
 
 
 .header-index__imgs__each
@@ -60,16 +63,30 @@ header.header-index
     width: 100%
 
 
+
+.header-index__imgs, .header-index__hl__img
+    @include desk
+        height: 54.4rem
+
+
 .header-index__hl__texts
     margin: 2rem 0 0 2rem
     position: absolute
     top: 0
     z-index: 1
+    @include desk
+        margin: 4.4rem 0 0 3rem
 
 .header-index__hl__texts a
     font-size: 4.5rem
     @include desk
         font-size: 9rem
+        margin: 1.9rem 0 0
+        width: 61%
+        letter-spacing: 0.12rem
+        line-height: 0.84
 
 .header-index__hl__texts span
     font-size: 1.2rem
+    @include desk
+        font-size: 1.6rem

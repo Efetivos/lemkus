@@ -3,6 +3,8 @@
 
 main.main-index
     margin: 1.3rem 0 0
+    @include desk
+        margin: 3.3rem 0 0
 
 section.cols_index
     height: auto
@@ -15,11 +17,16 @@ section.cols_index
 h1.collect-index__title
     font-size: 8rem
     margin: 0 0 0 var(--gap)
+    @include desk
+        font-size: 30rem
+        margin: 0 0 0 2.2rem
 
 
 ul.cols_index__items
     display: flex
     flex-wrap: nowrap
+    @include desk
+        height: 46.3rem
 
 
 li.cols_index__each
@@ -58,5 +65,11 @@ li.cols_index__each + li.cols_index__each
     left: 2rem
     position: absolute
     @include desk
-        bottom: 2rem
-        font-size: 7.2rem
+        bottom: 2.4rem
+        font-size: 6rem
+        left: 2.9rem
+
+
+
+.cols_index__drag
+    padding: 5rem 0px
