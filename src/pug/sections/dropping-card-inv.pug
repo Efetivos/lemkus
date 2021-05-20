@@ -22,10 +22,10 @@
 | {% assign dropping_col_inv = collections[section.settings.dropping_card_inv] %}
 section.dropping-card.dropping-card-inv
     | {% for product in dropping_col_inv.products limit:1 %}
-    .dropping-card__hold.e-flex
+    .dropping-card__hold
 
         //- BG
-        .dropping-card__bg(style="background:#e3e7eb")
+        .dropping-card__bg(style="background:#eaeaea")
 
         .dropping-card__infos
             //- CARD
@@ -67,8 +67,8 @@ section.dropping-card.dropping-card-inv
 
 
             .prod-card__notify.btn-hover
-                    span.static NOTIFY
-                    span.hover(data-hover="NOTIFY NOTIFY ") NOTIFY NOTIFY 
+                    span.static NOTIFY ME
+                    span.hover(data-hover="NOTIFY ME NOTIFY ME ") NOTIFY ME NOTIFY ME 
 
 
 
