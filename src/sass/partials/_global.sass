@@ -217,3 +217,63 @@ li.countdown__infos span
 
 li.countdown__infos span + span
     border-left: 1px solid var(--dark)
+
+
+
+
+
+
+
+
+
+
+
+
+
+//- =========================  DRAG  ========================= -//
+//- =========================  DRAG  ========================= -//
+
+
+button.drag.recosemi
+    align-items: center
+    background: #fff
+    border-radius: 50px
+    border: 1px solid var(--dark)
+    cursor: w-resize
+    display: flex
+    font-size: 1.6rem
+    height: 3.9rem
+    justify-content: center
+    position: absolute
+    transform: translateX(8.1rem)
+    width: 10.6rem
+    z-index: 1
+
+
+.drag__cntrl
+    align-items: center
+    display: flex
+    position: relative
+    width: 100%
+
+
+.drag__cntrl__lines
+    height: 1px
+    position: relative
+    width: 100%
+
+
+.drag-line
+    background: var(--dark)
+    height: 100%
+    width: 100%
+
+
+.drag-line.line-static
+    opacity: .1
+
+
+.drag-line.line-dyna
+    position: absolute
+    top: 0
+    width: 10%
