@@ -41,7 +41,7 @@
                     "id": "text_soon",
                     "type": "text",
                     "label": "Text soon",
-                    "default": "DROPPPING SOON"
+                    "default": "DROPPING SOON"
                 }
             ]
         }
@@ -55,9 +55,27 @@ section.soon-index.e-wvw
             .soon-index__coming__hold.e-wp.e-hp.e-rel
                 .soon-index__coming__img
                     img(src="{{ section.settings.img_coming | img_url: 'master' }}", alt='{{ section.settings.img_coming.alt | escape }}').img-load
+
+
                 .soon-index__coming__texts
                     span.recosemi(style="color:{{ section.settings.color_text_coming }}") {{ section.settings.coming}}
                     a(href="{{ section.settings.url_coming }}", title="{{ section.settings.title_coming }}", style="color:{{ section.settings.color_text_coming }}").dharma {{ section.settings.title_coming }}
+
+
+                .soon-index__coming__count 
+                    .countdown(data-day="{{ drop_day }}", data-month="{{ drop_month }}", data-hour="{{ drop_hour }}")
+                        ul.countdown__hold
+                            li.countdown__numbers
+                                span.countdown__days 00
+                                span.countdown__hours 00
+                                span.countdown__mins 00
+                                span.countdown__secs 00
+                            li.countdown__infos
+                                span.infos__days DAYS
+                                span.infos__hours HOURS
+                                span.infos__mins MINS
+                                span.infos__secs SECS
+                
         
 
 | {% assign soon_col = collections[section.settings.soon_index] %}
@@ -70,7 +88,7 @@ section.soon-collect-index
 
         | {% endfor %}
         .prod-card__each
-            a(href="#").recosemi VIEW ALL 
+            a(href="#").view-all-card-soon.recosemi VIEW ALL 
         
 
 

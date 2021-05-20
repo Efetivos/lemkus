@@ -5,12 +5,13 @@
     margin: -1px 0 0
     padding: 1.6rem 0 0
     position: relative
+    @include desk
+        border: none
 
 
 .soon-index__hold
-    @include mobile
-        display: flex
-        flex-direction: column-reverse
+    display: flex
+    flex-direction: column-reverse
 
     
 .soon-index__coming
@@ -23,6 +24,8 @@
     border: 1px solid var(--dark)
     height: 28.6rem
     width: 100%
+    @include desk
+        height: 54.4rem
 
 
 .soon-index__coming__img img
@@ -36,6 +39,9 @@
     top: 0
     z-index: 1
     margin: 2rem 0 0 2rem
+    @include desk
+        left: 1rem
+        top: 2.5rem
 
 .soon-index__coming__texts a
     font-size: 4.5rem
@@ -44,9 +50,12 @@
     width: 70%
     @include desk
         font-size: 9rem
+        margin: 1.3rem 0 0
 
 .soon-index__coming__texts span 
     font-size: 1.2rem
+    @include desk
+        font-size: 1.6rem
 
 .page-index .dropping-card-regular .dropping-card__infos
     @include desk
@@ -59,6 +68,21 @@
 
 h1.soon-index__title
     font-size: 8rem
-    white-space: nowrap
     margin: 1.6rem 0 0
+    white-space: nowrap
+    @include desk
+        font-size: 30rem
+        margin: 0.1rem 0 0 -0.9rem
 
+.soon-index__coming__count
+    @include desk
+        position: absolute
+        right: var(--gap)
+        top: 4.5rem
+        --dark: #fff
+
+
+a.view-all-card-soon
+    @include desk
+        font-size: 4rem
+        text-decoration: underline
