@@ -7,12 +7,21 @@ section.dropping-card
     margin: -1px 0 0
     border-top: 1px solid var(--dark)
     border-bottom: 1px solid var(--dark)
+    @include desk
+        height: 58.6rem
 
 
 .dropping-card__hold
     height: 100%
     position: relative
     width: 100%
+    @include desk
+        display: flex
+        height: 100%
+
+.dropping-card .dropping-card__hold
+    @include desk
+        flex-direction: row-reverse
 
 
 .dropping-card__bg
@@ -29,11 +38,57 @@ section.dropping-card
     flex-direction: column
     position: relative
     z-index: 1
+    @include desk
+        width: 33.3%
+
+.dropping-card-inv .dropping-card__infos
+    border-right: 1px solid var(--dark)
+
+.dropping-card-regular .dropping-card__infos
+    border-left: 1px solid var(--dark)
+
+
+
+.dropping-card__bg
+    @include desk
+        width: 66.66%
+
+
+.dropping-card-regular .dropping-card__bg
+    @include desk
+        left: 0
+
+
+.dropping-card-inv .dropping-card__bg
+    @include desk
+        right: 0
+        left: auto
 
 
 .dropping-card__img
     position: relative
     z-index: 1
+
+
+.dropping-card__img.no-mobile
+    width: 66.66%
+    display: flex
+    align-items: center
+    justify-content: center
+
+
+.dropping-card__img.no-mobile a
+    position: relative
+    height: 100%
+    width: 80%
+
+
+.dropping-card__img.no-mobile img
+    width: 100%
+    height: 100%
+    object-fit: contain
+    object-position: 50% -5rem
+
 
 
 .dropping-card__logo
@@ -43,6 +98,11 @@ section.dropping-card
     justify-content: center
     margin: 91px 0 0.4rem
     width: 4rem
+    @include desk
+        height: 8.8rem
+        justify-content: flex-start
+        margin: 4rem 0 .4rem
+        width: 8.8rem
 
 
 .dropping-card__logo img
@@ -53,10 +113,21 @@ section.dropping-card
 a.dropping-card__title
     font-size: 4rem
     margin: 0 0 0.6rem
+    @include desk
+        font-family: var(--dharmaex)
+        font-size: 9rem
+        line-height: 87%
+        margin: 2.2rem 0 2rem
+        text-align: center
+        text-transform: uppercase
+        width: 84%
 
 
 .dropping-card__price
     font-size: 1.6rem
+    @include desk
+        font-size: 2rem
+        margin: 0 0 2.3rem 0
 
 
 .dropping-card__infos__img

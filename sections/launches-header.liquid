@@ -25,7 +25,7 @@
     <h1 class="dharma">{{ section.settings.text_feat }}</h1>{% assign soon_col = collections[section.settings.launch-feat] %}
     <div class="header-laun__colle">
       <div class="header-laun__colle__hold">
-        {% for item in soon_col.products %}
+        {% for item in soon_col.products limit: 5 %}
           {% render 'product-card' prod: item %}
         {% endfor %}
       </div>
