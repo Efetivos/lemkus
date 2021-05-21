@@ -62,8 +62,11 @@ header.header-prod
 
 .header-prod__thumbs__each
     @include desk
-        border: 1px solid var(--dark)
         width: 100%
+
+
+.header-prod__thumbs__each:first-child
+    border: 1px solid var(--dark)
 
 
 
@@ -118,6 +121,7 @@ header.header-prod
     @include desk
         height: auto
         width: 100%
+        border: 1px solid var(--dark)
 
 
 
@@ -389,3 +393,13 @@ main.main-prod
         margin: 0.5rem 0 0
         background: #fff !important
         width: 18.3rem
+
+
+.cross-sell__hold.colle-cards
+    @include desk
+        display: flex
+
+.cross-sell__hold.colle-cards .prod-card__each
+    @include desk
+        flex-shrink: 0
+        width: calc(33.333vw + 1px)
