@@ -3,6 +3,7 @@ form(action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCar
 
     //- =========================  variants  ========================= -//
     .ctn-variants
+        |   {% assign has_stock = 0 %}
         |   {% if product.variants.size > 1 %}
         //-  variants sizess
         |   {% for variant in product.variants %}
@@ -11,10 +12,11 @@ form(action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCar
         fieldset.fieldset-var
             input(type="radio", name="id" id="variant-{{ forloop.index }}" value="{{ variant.id }}", data-inventory-qty="{{ variant.inventory_quantity }}", class="{% unless variant.available %}disabled{% endunless %}").js-variant-radio
             label(for="variant-{{ forloop.index }}") {{ variant.title }}
+        |   {% if variant.inventory_quantity != 0 %} {% assign has_stock = variant.inventory_quantity %} {% endif %}
         |   {% else %}
         fieldset.fieldset-var
             input(type="radio" disabled="disabled").disabled
-            label(for="variant-{{ forloop.index }}") {{ variant.title }}
+            label(for="variant-{{ forloop.index }}") {{ variant.title }} 
         |   {% endif %}
         |   {% endfor %}
         |   {% else %}
@@ -35,14 +37,14 @@ form(action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCar
     //- =========================  add to cart  ========================= -//
     div.add-cart-btns
         //- _______ btn add to cart
-        |   {% if product.variants.size > 1 %}
+        |   {% if has_stock > 0 %}
         button(class="{% if product.variants.size > 1 %}disabled{% endif %}" type="submit" name="add" id="add-to-cart-button").btn-hover
-            span.static ADD TO BAG
-            span.hover(data-hover="ADD TO BAG ADD TO BAG ") ADD TO BAG ADD TO BAG 
+            span.static ADD TO BAG 
+            span.hover(data-hover="ADD TO BAG ADD TO BAG ADD TO BAG ADD TO BAG ") ADD TO BAG ADD TO BAG ADD TO BAG ADD TO BAG 
         |    {% else %}
         button(class="sold-out").btn-hover
             span.static SOLD OUT
-            span.hover(data-hover="SOLD OUT SOLD OUT ") SOLD OUT SOLD OUT 
+            span.hover(data-hover="SOLD OUT SOLD OUT SOLD OUT SOLD OUT ") SOLD OUT SOLD OUT SOLD OUT SOLD OUT 
         |    {% endif %}
 
         a(href="{{ shop.url }}/pages/wishlist").btn-wishlist.btn-hover.cream-v

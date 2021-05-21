@@ -55,7 +55,7 @@
       <div class="soon-index__coming__hold e-wp e-hp e-rel">
         <div class="soon-index__coming__img"><img class="img-load" src="{{ section.settings.img_coming | img_url: 'master' }}" alt="{{ section.settings.img_coming.alt | escape }}"></div>
         <div class="soon-index__coming__texts"><span class="recosemi" style="color:{{ section.settings.color_text_coming }}">{{ section.settings.coming}}</span><a class="dharma" href="{{ section.settings.url_coming }}" title="{{ section.settings.title_coming }}" style="color:{{ section.settings.color_text_coming }}">{{ section.settings.title_coming }}</a></div>
-        <div class="soon-index__coming__count"> 
+        <div class="soon-index__coming__count no-mobile">
           <div class="countdown" data-day="{{ drop_day }}" data-month="{{ drop_month }}" data-hour="{{ drop_hour }}">
             <ul class="countdown__hold">
               <li class="countdown__numbers"><span class="countdown__days">00</span><span class="countdown__hours">00</span><span class="countdown__mins">00</span><span class="countdown__secs">00</span></li>

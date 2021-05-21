@@ -10,7 +10,7 @@
         .prod-card__imgs
             a(href="{{ prod.url | within: collection }}").prod-img
                 ul.prod-card__imgs__hold
-                    |   {% for image in prod.images %}
+                    |   {% for image in prod.images limit: 2 %}
                     li.prod-card__img__each 
                         img(src="{{  image.src | img_url: 'master' }}" alt="{{ image.src | escape }}").img-load
                     |   {% endfor %}

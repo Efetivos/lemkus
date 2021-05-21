@@ -20,17 +20,29 @@
       </div>
       <div class="header-prod__infos">
         <div class="header-prod__infos__hold e-hold">
-          <h1 class="header-prod__title dharmaex e-upper">{{ product.title }}  </h1>
+          <h1 class="header-prod__title dharmaex e-upper">{{ product.title }}  </h1>  {% if fields.descr.colors != blank %}
           <ul class="header-prod__colors">
                {% for value in fields.descr.colors.colors %} 
             <li>{{ value }}</li>  {% endfor %}  
-          </ul>
+          </ul>  {% endif %}
           <div class="header-prod__prices-guides">
             <div class="{% if product.compare_at_price_max != 0 %} is-sale {% endif %} header-prod__prices"><span class="regular-price">{{ product.price | money }}</span>{% if product.compare_at_price_max != 0 %}<span class="sale-price">{{ product.compare_at_price_max  | money  }}</span>{% endif %}</div>
             <div class="header-prod__guide"><a class="recosemi e-upper underline" href="#">SIZE GUIDE</a></div>
-          </div>  {% render 'add-to-cart' %}
+          </div>  {% if product.metafields.drop.drop_month %}
+            {% assign drop_day = product.metafields.drop.drop_day %}
+            {% assign drop_month = product.metafields.drop.drop_month %}
+            {% assign drop_hour = product.metafields.drop.drop_hour %}
+          <div class="countdown" data-day="{{ drop_day }}" data-month="{{ drop_month }}" data-hour="{{ drop_hour }}">
+            <ul class="countdown__hold">
+              <li class="countdown__numbers"><span class="countdown__days">00</span><span class="countdown__hours">00</span><span class="countdown__mins">00</span><span class="countdown__secs">00</span></li>
+              <li class="countdown__infos"><span class="infos__days">DAYS</span><span class="infos__hours">HOURS</span><span class="infos__mins">MINS</span><span class="infos__secs">SECS</span></li>
+            </ul>
+          </div>  {% endif %}
+            {% render 'add-to-cart' %}
+            {% if product.metafields.drop.drop_month %}
+          <div class="prod-card__notify btn-hover"><span class="static">NOTIFY ME</span><span class="hover" data-hover="NOTIFY ME NOTIFY ME NOTIFY ME NOTIFY ME NOTIFY ME ">NOTIFY ME NOTIFY ME NOTIFY ME NOTIFY ME NOTIFY ME </span></div>  {% endif %}
           <div class="prod-descr">
-            <div class="prod-descr__content">{{ fields.descr.description }} </div>
+            <div class="prod-descr__content">{{ fields.descr.description }} </div>  {% if fields.descr.details != blank %}
             <div class="ctn-accord">
               <div class="ctn-accord__item">
                 <div class="trg-acc e-curp">
@@ -39,7 +51,8 @@
                 </div>
                 <div class="hold-content">{{ fields.descr.details }}</div>
               </div>
-            </div>
+            </div>  {% endif %}
+              {% if fields.descr.shipping != blank %}
             <div class="ctn-accord">
               <div class="ctn-accord__item">
                 <div class="trg-acc e-curp">
@@ -48,15 +61,6 @@
                 </div>
                 <div class="hold-content">{{ fields.descr.shipping }} </div>
               </div>
-            </div>  {% if product.metafields.drop.drop_month %}
-              {% assign drop_day = product.metafields.drop.drop_day %}
-              {% assign drop_month = product.metafields.drop.drop_month %}
-              {% assign drop_hour = product.metafields.drop.drop_hour %}
-            <div class="countdown" data-day="{{ drop_day }}" data-month="{{ drop_month }}" data-hour="{{ drop_hour }}">
-              <ul class="countdown__hold">
-                <li class="countdown__numbers"><span class="countdown__days">00</span><span class="countdown__hours">00</span><span class="countdown__mins">00</span><span class="countdown__secs">00</span></li>
-                <li class="countdown__infos"><span class="infos__days">DAYS</span><span class="infos__hours">HOURS</span><span class="infos__mins">MINS</span><span class="infos__secs">SECS</span></li>
-              </ul>
             </div>  {% endif %}
           </div>
         </div>
