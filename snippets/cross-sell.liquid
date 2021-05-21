@@ -1,7 +1,7 @@
 
   {% assign $id =  product.id %}
   {% for collection in product.collections limit:1 %}
-<section class="dropping-card dropping-card-regular">  {% for product in collections[collection.title].products limit:1 %}
+<section class="dropping-card dropping-card-regular no-mobile">  {% for product in collections[collection.title].products limit:1 %}
   <div class="dropping-card__hold">
     <div class="dropping-card__bg" style="background:#eaeaea"></div>
     <div class="dropping-card__infos">

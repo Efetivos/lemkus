@@ -2,23 +2,24 @@ form(action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCar
 
 
     //- =========================  variants  ========================= -//
-    |   {% if product.variants.size > 1 %}
-    //-  variants sizess
-    |   {% for variant in product.variants %}
-    |   {% if variant.available %}
+    .ctn-variants
+        |   {% if product.variants.size > 1 %}
+        //-  variants sizess
+        |   {% for variant in product.variants %}
+        |   {% if variant.available %}
 
-    fieldset.fieldset-var
-        input(type="radio", name="id" id="variant-{{ forloop.index }}" value="{{ variant.id }}", data-inventory-qty="{{ variant.inventory_quantity }}", class="{% unless variant.available %}disabled{% endunless %}").js-variant-radio
-        label(for="variant-{{ forloop.index }}") {{ variant.title }}
-    |   {% else %}
-    fieldset.fieldset-var
-        input(type="radio" disabled="disabled").disabled
-        label(for="variant-{{ forloop.index }}") {{ variant.title }}
-    |   {% endif %}
-    |   {% endfor %}
-    |   {% else %}
-    input(type="hidden" name="id" value="{{ product.variants.first.id }}")
-    |   {% endif %}
+        fieldset.fieldset-var
+            input(type="radio", name="id" id="variant-{{ forloop.index }}" value="{{ variant.id }}", data-inventory-qty="{{ variant.inventory_quantity }}", class="{% unless variant.available %}disabled{% endunless %}").js-variant-radio
+            label(for="variant-{{ forloop.index }}") {{ variant.title }}
+        |   {% else %}
+        fieldset.fieldset-var
+            input(type="radio" disabled="disabled").disabled
+            label(for="variant-{{ forloop.index }}") {{ variant.title }}
+        |   {% endif %}
+        |   {% endfor %}
+        |   {% else %}
+        input(type="hidden" name="id" value="{{ product.variants.first.id }}")
+        |   {% endif %}
 
 
     //- =========================  quantity   ========================= -//

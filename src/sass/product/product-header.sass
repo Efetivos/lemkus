@@ -1,39 +1,18 @@
 @import '../partials/alias-mixins'
-
-header.header-prod
-    padding: 10rem 0 0 0
-
-
-.header-prod__hold
-    @include desk
-        display: grid
-        grid-template-columns: 8vw 45vw 25vw
+.page-product
+    overflow-y: hidden
 
 
-.header-prod__thumbs__each img
-    @include desk
-        height: 100%
-        width: 100%
-        object-fit: cover
-
-
+//- =========================  ADD TO CART  ========================= -//
+//- =========================  ADD TO CART  ========================= -//
 fieldset.fieldset-qty
     display: none
-
-
-//- =========================  ADD TO CART  ========================= -//
-//- =========================  ADD TO CART  ========================= -//
 #AddToCartForm
 
     fieldset.fieldset-var
         display: inline-block
 
     
-    fieldset input[type="radio"]:checked + label
-        color: var(--color)
-        border-bottom: 1px solid var(--color)
-
-
     input[type="radio"]
         @include not-visible
 
@@ -52,3 +31,244 @@ fieldset.fieldset-qty
 .disabled
     pointer-events: none
     opacity: 0.2
+
+
+
+
+//- =========================  HEADER  ========================= -//
+//- =========================  HEADER  ========================= -//
+header.header-prod
+    padding: 55px 0 0
+
+
+.header-prod__hold
+    @include desk
+        display: grid
+        grid-template-columns: 8vw 45vw 25vw
+
+
+.header-prod__thumbs__each img
+    @include desk
+        height: 100%
+        width: 100%
+        object-fit: cover
+
+.header-prod__gallery
+    border-bottom: 1px solid var(--dark)
+    height: 38.3rem
+    position: relative
+    width: 100vw
+    @include desk
+        height: auto
+        width: auto
+        border: none
+
+
+
+.header-prod__gallery__travel
+    display: flex
+    height: 100%
+    position: relative
+    @include desk
+        display: block
+        height: auto
+
+
+.header-prod__gallery__each
+    flex-shrink: 0
+    height: 100%
+    width: 100vw
+    @include desk
+        width: 100%
+        height: auto
+
+
+.header-prod__gallery__each img
+    height: 100%
+    object-fit: cover
+    width: 100%
+
+
+.header-prod__swipe-count
+    margin: -2.9rem 0 0
+
+
+.header-prod__swipe-count__hold span
+    display: flex
+    font-family: var(--recosemi)
+    font-size: 1.4rem
+    justify-content: space-between
+
+
+.header-prod__count
+    display: inline-flex
+
+.header-prod__swipe-count__hold.e-hold
+    display: flex
+    justify-content: space-between
+
+
+
+
+
+
+
+
+
+
+
+
+
+//- =========================  PRODUCT INFOS  ========================= -//
+//- =========================  PRODUCT INFOS  ========================= -//
+.header-prod__infos
+    margin: 1.8rem 0 0
+
+h1.header-prod__title
+    font-size: 4rem
+
+ul.header-prod__colors
+    display: flex
+    margin: 0.3rem 0 0
+
+ul.header-prod__colors li
+    font-family: var(--recosemi)
+    font-size: 1.4rem
+    text-transform: uppercase
+
+ul.header-prod__colors li + li:before
+    content: "/"
+    padding: 0 0.25rem
+
+.header-prod__prices-guides
+    align-items: flex-end
+    display: flex
+    justify-content: space-between
+    margin: 2rem 0 0
+
+.header-prod__prices
+    display: flex
+    font-family: var(--recosemi)
+    font-size: 2.2rem
+
+.header-prod__prices span.regular-price
+    margin: 0 1.5rem 0 0
+
+.header-prod__prices span.sale-price
+    font-size: 1.3rem
+    margin: 0.7rem 0 0
+    text-decoration: line-through
+
+.header-prod__guide
+    font-size: 1.4rem
+    margin: 0 0 0.2rem 0
+
+.is-sale span.regular-price
+    color: var(--red)
+
+form#AddToCartForm
+    margin: 2.5rem 0 0
+
+.ctn-variants
+    display: flex
+    flex-wrap: wrap
+    gap: 1.4rem 1.8rem
+
+
+#AddToCartForm label
+    align-items: center
+    border-radius: 50px
+    border: 1px solid var(--dark)
+    display: flex
+    font-size: 1.4rem
+    height: 2.5rem
+    justify-content: center
+    width: 7.2rem
+
+#AddToCartForm fieldset input[type=radio]:checked+label
+    background: var(--dark)
+    border: 1px solid var(--dark)
+    color: #fff
+
+
+
+.add-cart-btns
+    margin: 2.5rem 0 0
+
+
+.add-cart-btns > *
+    width: 100%
+
+
+a.btn-wishlist
+    margin: 1.4rem 0 0
+
+
+.prod-descr
+    border-top: 1px solid var(--dark)
+    margin: 2.6rem 0 0
+    padding: 2.2rem 0 0
+
+
+.prod-descr__content p
+    font-size: 1.4rem
+    line-height: 143%
+
+
+.prod-descr__content
+    margin: 0 0 1.7rem
+
+
+.ctn-accord
+    position: relative
+
+
+.trg-acc
+    align-items: center
+    border-bottom: 1px solid var(--dark)
+    display: flex
+    font-size: 1.4rem
+    justify-content: space-between
+
+
+.trg-acc h5
+    line-height: 215%
+
+
+.hold-content
+    font-size: 1.4rem
+    padding: 1.5rem 0 0
+    line-height: 143%
+
+
+.hold-content p
+    font-size: 1.4rem
+    line-height: 143%
+
+
+.hold-content p strong
+    font-family: var(--recosemi)
+
+
+.ctn-accord + .ctn-accord
+    margin: 3.3rem 0 0
+
+
+
+
+
+
+
+
+
+
+
+
+//- =========================  MAIN  ========================= -//
+//- =========================  MAIN  ========================= -//
+main.main-prod
+    margin: 3rem 0 0
+
+
+.may-also__hold.dharma
+    font-size: 8rem

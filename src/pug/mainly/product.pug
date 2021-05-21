@@ -45,81 +45,81 @@
             //- =========================  INFOS  ========================= -//
             
             .header-prod__infos
+                .header-prod__infos__hold.e-hold
 
-
-                //-  title
-                h1.header-prod__title.dharmaex.e-upper {{ product.title }}  
-                ul.header-prod__colors 
-                    |   {% for value in fields.descr.colors.colors %} 
-                    li {{ value }}
-                    |   {% endfor %}  
-                
-
-
-
- 
-                //-  prices & guides
-                .header-prod__prices-guides
-                    div(class="{% if product.compare_at_price_max != 0 %} is-sale {% endif %}").header-prod__prices
-                        span.regular-price {{ product.price | money }}
-                        | {% if product.compare_at_price_max != 0 %}
-                        span.sale-price {{ product.compare_at_price_max  | money  }}
-                        | {% endif %}
-                    .header-prod__prices
-                        a(href="#").recosemi.e-upper.underline SIZE GUIDE
-
-
-                |   {% render 'add-to-cart' %}
-
-                //-  descrip
-                .prod-descr
-                    .prod-descr__content {{ fields.descr.description }} 
-
+                    //-  title
+                    h1.header-prod__title.dharmaex.e-upper {{ product.title }}  
+                    ul.header-prod__colors 
+                        |   {% for value in fields.descr.colors.colors %} 
+                        li {{ value }}
+                        |   {% endfor %}  
                     
-                    //- DESIGN
-                    .ctn-accord
-                        //---- accd
-                        .ctn-accord__item
-                            .trg-acc.e-curp
-                                h5.click.recosemi DETAILS
-                                .svg-arrow +
-                            .hold-content {{ fields.descr.details }}
-        
-                    //- SIZE
-                    .ctn-accord
-                        //---- accd
-                        .ctn-accord__item
-                            .trg-acc.e-curp
-                                h5.click.recosemi SHIPPING / RETURNS
-                                .svg-arrow +
-                            .hold-content {{ fields.descr.shipping }} 
-        
 
-                    //- COUNTDOWN
-                    |   {% if product.metafields.drop.drop_month %}
-                    |   {% assign drop_day = product.metafields.drop.drop_day %}
-                    |   {% assign drop_month = product.metafields.drop.drop_month %}
-                    |   {% assign drop_hour = product.metafields.drop.drop_hour %}
-                    .countdown(data-day="{{ drop_day }}", data-month="{{ drop_month }}", data-hour="{{ drop_hour }}")
-                        ul.countdown__hold
-                            li.countdown__numbers
-                                span.countdown__days 00
-                                span.countdown__hours 00
-                                span.countdown__mins 00
-                                span.countdown__secs 00
-                            li.countdown__infos
-                                span.infos__days DAYS
-                                span.infos__hours HOURS
-                                span.infos__mins MINS
-                                span.infos__secs SECS
-                    |   {% endif %}
+
+
+    
+                    //-  prices & guides
+                    .header-prod__prices-guides
+                        div(class="{% if product.compare_at_price_max != 0 %} is-sale {% endif %}").header-prod__prices
+                            span.regular-price {{ product.price | money }}
+                            | {% if product.compare_at_price_max != 0 %}
+                            span.sale-price {{ product.compare_at_price_max  | money  }}
+                            | {% endif %}
+                        .header-prod__guide
+                            a(href="#").recosemi.e-upper.underline SIZE GUIDE
+
+
+                    |   {% render 'add-to-cart' %}
+
+                    //-  descrip
+                    .prod-descr
+                        .prod-descr__content {{ fields.descr.description }} 
+
+                        
+                        //- DESIGN
+                        .ctn-accord
+                            //---- accd
+                            .ctn-accord__item
+                                .trg-acc.e-curp
+                                    h5.click.recosemi DETAILS
+                                    .svg-arrow +
+                                .hold-content {{ fields.descr.details }}
+            
+                        //- SIZE
+                        .ctn-accord
+                            //---- accd
+                            .ctn-accord__item
+                                .trg-acc.e-curp
+                                    h5.click.recosemi SHIPPING / RETURNS
+                                    .svg-arrow +
+                                .hold-content {{ fields.descr.shipping }} 
+            
+
+                        //- COUNTDOWN
+                        |   {% if product.metafields.drop.drop_month %}
+                        |   {% assign drop_day = product.metafields.drop.drop_day %}
+                        |   {% assign drop_month = product.metafields.drop.drop_month %}
+                        |   {% assign drop_hour = product.metafields.drop.drop_hour %}
+                        .countdown(data-day="{{ drop_day }}", data-month="{{ drop_month }}", data-hour="{{ drop_hour }}")
+                            ul.countdown__hold
+                                li.countdown__numbers
+                                    span.countdown__days 00
+                                    span.countdown__hours 00
+                                    span.countdown__mins 00
+                                    span.countdown__secs 00
+                                li.countdown__infos
+                                    span.infos__days DAYS
+                                    span.infos__hours HOURS
+                                    span.infos__mins MINS
+                                    span.infos__secs SECS
+                        |   {% endif %}
 
     main.main-prod
 
 
 
         section.may-also
-            span.dharma RECOMMENDED
+            .may-also__hold.e-hold.dharma.t-color RECOMMENDED
             |   {% render 'cross-sell' %}
 
 
