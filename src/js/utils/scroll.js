@@ -1,5 +1,6 @@
 
 import { gsap } from 'gsap'
+import { accordion } from './accordion'
 class Smooth {
     constructor() {
     }
@@ -59,6 +60,14 @@ class Smooth {
         //}
 
 
+
+
+        if (this.isPage === 'product') {
+            if (!this.once) {
+                accordion.init(this.contentPage)
+                this.once = true
+            }
+        }
 
         this.requestAnimationFrame()
     }

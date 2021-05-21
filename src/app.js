@@ -12,7 +12,8 @@ import { menu } from './js/utils_global/menu';
 import { minicart } from './js/utils_shopify/minicart';
 import { ajaxify } from './js/utils_shopify/ajaxify';
 import { preloader } from './js/utils/preloader';
-import { scroll } from './js/scroll';
+import { scroll } from './js/utils/scroll';
+import { accordion_menu } from './js/utils/accordion-menu';
 
 
 
@@ -32,3 +33,7 @@ if($('.page-about').length > 0 || $('.page-contact').length > 0 || $('.page-blog
 history.scrollRestoration = "manual"
 const { consoleTag } = require('./js/utils/console.js');
 consoleTag()
+
+
+
+accordion_menu.init(document.querySelector('body'))
