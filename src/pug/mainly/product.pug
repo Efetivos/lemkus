@@ -30,14 +30,14 @@
 
 | {% endif %}
 
-
+|   {% assign fields = product.metafields %}
 
 //- =========================  size-guide  ========================= -//
 //- =========================  size-guide  ========================= -//
-|   {% section 'size-guide-mens' %}
-|   {% section 'size-guide-womens' %}
-|   {% section 'size-guide-toddler' %}
-|   {% section 'size-guide-presch' %}
+    |   {% section 'size-guide-mens' %}
+    |   {% section 'size-guide-womens' %}
+    |   {% section 'size-guide-toddler' %}
+    |   {% section 'size-guide-presch' %}
 
 
 .page.page-product(data-barba="container", data-barba-namespace="product", data-ispage="product", data-scroll-content,  class!="{% if product.metafields.drop.drop_month %}dropsoon-product{% endif %}")
@@ -83,31 +83,26 @@
 
                 //-  descrip
                 .prod-descr
-                    .prod-descr__content {{ descr }} 
+                    .prod-descr__content {{ fields.descr.description }} 
 
                     
                     //- DESIGN
-                    |   {% if details != blank %}
                     .ctn-accord
                         //---- accd
                         .ctn-accord__item
                             .trg-acc.e-curp
                                 .svg-arrow !{arrowRight}
                                 h5.click DETAILS
-                            .hold-content {{ details }}
-                    |   {% endif %}
+                            .hold-content {{ fields.descr.details }}
         
-
                     //- SIZE
-                    |   {% if shipping != blank %}
                     .ctn-accord
                         //---- accd
                         .ctn-accord__item
                             .trg-acc.e-curp
                                 .svg-arrow !{arrowRight}
                                 h5.click Shipping / Returns
-                            .hold-content {{ shipping }} 
-                    |   {% endif %}
+                            .hold-content {{ fields.descr.shipping }} 
         
 
                     //- COUNTDOWN
