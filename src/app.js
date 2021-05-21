@@ -29,6 +29,6 @@ if($('.page-about').length > 0 || $('.page-contact').length > 0 || $('.page-blog
     gsap.set('html', { '--dark':'#f6f6f6', '--soft': '#191919' })
 }
 
-
+history.scrollRestoration = "manual"
 const { consoleTag } = require('./js/utils/console.js');
 consoleTag()

@@ -25,8 +25,8 @@
                 span {{ prod.compare_at_price_min | minus: prod.price | times: 100.0 |  divided_by: prod.compare_at_price_min | money_without_currency | times: 100 | replace: '.0', ''}}% OFF
             |   {% endif %}
             
-            .prod-card__img__nav.prod-card-img-prev !{prevArrow} !{prevArrowHover}
-            .prod-card__img__nav.prod-card-img-next !{nextArrow} !{nextArrowHover}
+            //-.prod-card__img__nav.prod-card-img-prev !{prevArrow} !{prevArrowHover}
+            //-.prod-card__img__nav.prod-card-img-next !{nextArrow} !{nextArrowHover}
             .sizes
                 |   {% assign sizes = '' %}
                 |   {% for variant in prod.variants %}
@@ -41,7 +41,7 @@
             
 
 
-        .prod-card__infos
+        .prod-card__infos(class!="{% if prod.compare_at_price_max > prod.price %}card-sale{% endif %}")
         
             .prod-card__title
                 a(href="{{ prod.url | within: collection }}").title-prod.dharma {{ prod.title }}
