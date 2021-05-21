@@ -32,19 +32,45 @@ fieldset.fieldset-qty
     pointer-events: none
     opacity: 0.2
 
-
+.breadcrumbs-prod
+    justify-content: flex-start
+    margin: 0 0 0 var(--gap)
 
 
 //- =========================  HEADER  ========================= -//
 //- =========================  HEADER  ========================= -//
 header.header-prod
     padding: 55px 0 0
+    @include desk
+        padding: 7.5rem 0 0
 
 
 .header-prod__hold
     @include desk
         display: grid
-        grid-template-columns: 8vw 45vw 25vw
+        grid-template-columns: 8rem 64.1rem auto
+        margin: 2.2rem 0 0 var(--gap)
+
+
+
+
+.header-prod__thumbs
+    @include desk
+        width: 8rem
+
+
+
+.header-prod__thumbs__each
+    @include desk
+        border: 1px solid var(--dark)
+        width: 100%
+
+
+
+
+.header-prod__thumbs__each + .header-prod__thumbs__each
+    @include desk
+        margin: 0.7rem 0 0
 
 
 .header-prod__thumbs__each img
@@ -53,15 +79,26 @@ header.header-prod
         width: 100%
         object-fit: cover
 
+
+
+
+
+
+/*==== gallery */
+.header-prod__gallery
+    @include desk
+        margin: 0 0 0 1rem
+
+
 .header-prod__gallery
     border-bottom: 1px solid var(--dark)
     height: 38.3rem
     position: relative
     width: 100vw
     @include desk
+        border: none
         height: auto
         width: auto
-        border: none
 
 
 
@@ -79,8 +116,16 @@ header.header-prod
     height: 100%
     width: 100vw
     @include desk
-        width: 100%
         height: auto
+        width: 100%
+
+
+
+
+.header-prod__gallery__each + .header-prod__gallery__each
+    @include desk
+        margin: 1.4rem 0 0
+
 
 
 .header-prod__gallery__each img
@@ -123,20 +168,40 @@ header.header-prod
 //- =========================  PRODUCT INFOS  ========================= -//
 .header-prod__infos
     margin: 1.8rem 0 0
+    @include desk
+        margin: 0 0 0
+
+
+
+
+.header-prod__infos__hold
+    @include desk
+        margin: 0 0 0 5.6rem
+        width: 100%
+        width: 53.9rem
+
 
 h1.header-prod__title
     font-size: 4rem
+    @include desk
+        font-size: 9rem
+        margin: -0.9rem 0 0 0
 
 ul.header-prod__colors
     display: flex
     margin: 0.3rem 0 0
+    @include desk
+        margin: 0.1rem 0 0
 
-ul.header-prod__colors li
+.header-prod__colors li
     font-family: var(--recosemi)
     font-size: 1.4rem
     text-transform: uppercase
+    @include desk
+        font-size: 1.6rem
 
-ul.header-prod__colors li + li:before
+
+.header-prod__colors li + li:before
     content: "/"
     padding: 0 0.25rem
 
@@ -145,23 +210,37 @@ ul.header-prod__colors li + li:before
     display: flex
     justify-content: space-between
     margin: 2rem 0 0
+    @include desk
+        margin: 2.4rem 0 0
 
 .header-prod__prices
     display: flex
     font-family: var(--recosemi)
     font-size: 2.2rem
+    @include desk
+        font-size: 3rem
 
 .header-prod__prices span.regular-price
     margin: 0 1.5rem 0 0
+    @include desk
+        margin: 0 2.1rem 0 0
 
 .header-prod__prices span.sale-price
     font-size: 1.3rem
     margin: 0.7rem 0 0
     text-decoration: line-through
+    @include desk
+        font-size: 1.6rem
+        margin: 1.1rem 0 0
 
 .header-prod__guide
     font-size: 1.4rem
     margin: 0 0 0.2rem 0
+    @include desk
+        font-size: 1.8rem
+
+
+
 
 .is-sale span.regular-price
     color: var(--red)
@@ -173,6 +252,8 @@ form#AddToCartForm
     display: flex
     flex-wrap: wrap
     gap: 1.4rem 1.8rem
+    @include desk
+        gap: 0.6rem 0.5rem
 
 
 #AddToCartForm label
@@ -194,6 +275,12 @@ form#AddToCartForm
 
 .add-cart-btns
     margin: 2.5rem 0 0
+    @include desk
+        align-items: center
+        display: flex
+        gap: 0.9rem
+        justify-content: space-between
+        margin: 3rem 0 0
 
 
 .add-cart-btns > *
@@ -202,21 +289,37 @@ form#AddToCartForm
 
 a.btn-wishlist
     margin: 1.4rem 0 0
+    @include desk
+        margin: 0
+        width: 37.4%
+
+
+
+button#add-to-cart-button
+    @include desk
+        width: 61.8%
 
 
 .prod-descr
     border-top: 1px solid var(--dark)
     margin: 2.6rem 0 0
     padding: 2.2rem 0 0
-
-
-.prod-descr__content p
-    font-size: 1.4rem
-    line-height: 143%
+    @include desk
+        margin: 2.9rem 0 0
+        padding: 2.9rem 0 0
 
 
 .prod-descr__content
     margin: 0 0 1.7rem
+    @include desk
+        margin: 0 0 4.1rem
+
+
+.prod-descr__content p, .prod-descr__content > *
+    font-size: 1.4rem
+    line-height: 143%
+    @include desk
+        font-size: 1.6rem
 
 
 .ctn-accord
@@ -229,6 +332,8 @@ a.btn-wishlist
     display: flex
     font-size: 1.4rem
     justify-content: space-between
+    @include desk
+        font-size: 1.6rem
 
 
 .trg-acc h5
@@ -239,11 +344,14 @@ a.btn-wishlist
     font-size: 1.4rem
     padding: 1.5rem 0 0
     line-height: 143%
+    font-size: 1.6rem
 
 
-.hold-content p
+.hold-content p, .hold-content > *
     font-size: 1.4rem
     line-height: 143%
+    @include desk
+        font-size: 1.6rem
 
 
 .hold-content p strong
@@ -272,3 +380,12 @@ main.main-prod
 
 .may-also__hold.dharma
     font-size: 8rem
+    @include desk
+        font-size: 30rem
+        margin: 0 0 0 1.6rem
+
+.page-product .dropping-card__notify
+    @include desk
+        margin: 0.5rem 0 0
+        background: #fff !important
+        width: 18.3rem
