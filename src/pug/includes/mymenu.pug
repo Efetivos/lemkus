@@ -2,9 +2,31 @@
 
 .bg-fixed-els.el-fix
 
+
+
+
+
+//- =========================  top bar  ========================= -//
+//- =========================  top bar  ========================= -//
+    - var closeTopBar = '<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20"><g fill="none" stroke="var(--soft)"><circle cx="10" cy="10" r="10" stroke="none"/><circle cx="10" cy="10" r="9.5"/></g><path fill="var(--soft)" d="M14.218 6.736l-.823-.823-3.264 3.263-3.263-3.263-.823.823 3.263 3.263-3.263 3.264.823.823 3.263-3.264 3.263 3.263.823-.823-3.263-3.263z"/></svg>'
+    .top-bar.e-dark
+        .top-bar__hold
+            .top-bar__text
+                span {{ settings.top_bar_text }}
+
+            .top-bar__close.e-flex !{closeTopBar}
+
+
+
+
+
+
+
+
+//- =========================  LOGO MAIN  ========================= -//
+//- =========================  LOGO MAIN  ========================= -//
+
 a(href="{{ shop.url }}", title="{{ shop.title }}").logo-main.el-fix !{logomain}
-
-
 
 //- =========================  FIXED LINKS  ========================= -//
 //- =========================  FIXED LINKS  ========================= -//
@@ -39,7 +61,6 @@ nav.main-menu.no-mobile.el-fix
         li
             a(href= "{{ link.url }}").item {{ link.title }}
 
-
         |   {% endfor %}
 
 
@@ -48,26 +69,127 @@ nav.main-menu.no-mobile.el-fix
 
 
 
+
+
+
+
+
+
+//- =========================  MENU FS  ========================= -//
+//- =========================  MENU FS  ========================= -//
+
 .menu-trg.no-desk.el-fix
     .menu-trg__hold 
         .line.line-0
         .line.line-1
         .line.line-2
 
+nav.menu-fs.no-desk.el-fix
+    .menu-fs__hold
 
+        //- home
+        .menu-fs__menu.menu__home
+            a(href="{{ shop.url}}").menu-fs__title HOME
+        //- launches
+        .menu-fs__menu.menu__launches
+            a(href="{{ shop.url}}/pages/launches").menu-fs__title LAUNCHES
 
+        //- sneakers
+        .menu-fs__menu.menu__sneakers
+            .menu-fs__title SNEAKERS
+            .menu-fs__drop
+                span.dharma ALL
+                ul
+                    |   {% for link in linklists[settings.link_all_sneakers].links %}
+                    li 
+                        a(href= "{{ link.url }}", title="{{ link.title }}") {{ link.title }}
+                    |   {% endfor %}
+                span.dharma BRANDS
+                ul
+                    |   {% for link in linklists[settings.link_brands_sneakers].links %}
+                    li 
+                        a(href= "{{ link.url }}", title="{{ link.title }}") {{ link.title }}
+                    |   {% endfor %}
+        
+        
+            
+        //- kids
+        .menu-fs__menu.menu__kids
+            .menu-fs__title KIDS
+            .menu-fs__drop
+                span.dharma ALL
+                ul
+                    |   {% for link in linklists[settings.link_all_kids].links %}
+                    li 
+                        a(href= "{{ link.url }}", title="{{ link.title }}") {{ link.title }}
+                    |   {% endfor %}
+                span.dharma BRANDS
+                ul
+                    |   {% for link in linklists[settings.link_brands_kids].links %}
+                    li 
+                        a(href= "{{ link.url }}", title="{{ link.title }}") {{ link.title }}
+                    |   {% endfor %}
+                span.dharma APPAREL
+                ul
+                    |   {% for link in linklists[settings.link_appa_kids].links %}
+                    li 
+                        a(href= "{{ link.url }}", title="{{ link.title }}") {{ link.title }}
+                    |   {% endfor %}
+        
+        
+        
+        
+            
+        //- appa
+        .menu-fs__menu.menu__appa
+            .menu-fs__title APPAREL
+            .menu-fs__drop
+                span.dharma ALL
+                ul
+                    |   {% for link in linklists[settings.link_all_appa].links %}
+                    li 
+                        a(href= "{{ link.url }}", title="{{ link.title }}") {{ link.title }}
+                    |   {% endfor %}
+                span.dharma BRANDS
+                ul
+                    |   {% for link in linklists[settings.link_brands_appa].links %}
+                    li 
+                        a(href= "{{ link.url }}", title="{{ link.title }}") {{ link.title }}
+                    |   {% endfor %}
+                span.dharma APPAREL
+                ul
+                    |   {% for link in linklists[settings.link_appa_appa].links %}
+                    li 
+                        a(href= "{{ link.url }}", title="{{ link.title }}") {{ link.title }}
+                    |   {% endfor %}
+        
+        
+        
+            
+        //- acces
+        .menu-fs__menu.menu__acces
+            .menu-fs__title ACCESORIES
+            .menu-fs__drop
+                span.dharma ALL
+                ul
+                    |   {% for link in linklists[settings.link_all_acces].links %}
+                    li 
+                        a(href= "{{ link.url }}", title="{{ link.title }}") {{ link.title }}
+                    |   {% endfor %}
+                span.dharma BRANDS
+                ul
+                    |   {% for link in linklists[settings.link_brands_acces].links %}
+                    li 
+                        a(href= "{{ link.url }}", title="{{ link.title }}") {{ link.title }}
+                    |   {% endfor %}
 
+    
+        //- links
+        |   {% for link in linklists.main-menu.links %}
+        .menu-fs__menu.menu__nav
+            a(href= "{{ link.url }}").menu-fs__title {{ link.title }}
+        |   {% endfor %}
 
-
-//- =========================  top bar  ========================= -//
-//- =========================  top bar  ========================= -//
-    - var closeTopBar = '<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20"><g fill="none" stroke="var(--soft)"><circle cx="10" cy="10" r="10" stroke="none"/><circle cx="10" cy="10" r="9.5"/></g><path fill="var(--soft)" d="M14.218 6.736l-.823-.823-3.264 3.263-3.263-3.263-.823.823 3.263 3.263-3.263 3.264.823.823 3.263-3.264 3.263 3.263.823-.823-3.263-3.263z"/></svg>'
-    .top-bar.e-dark
-        .top-bar__hold
-            .top-bar__text
-                span {{ settings.top_bar_text }}
-
-            .top-bar__close.e-flex !{closeTopBar}
 
 
 

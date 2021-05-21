@@ -29,3 +29,60 @@
     <div class="line line-2"></div>
   </div>
 </div>
+<nav class="menu-fs no-desk el-fix">
+  <div class="menu-fs__hold">
+    <div class="menu-fs__menu menu__home"><a class="menu-fs__title" href="{{ shop.url}}">HOME</a></div>
+    <div class="menu-fs__menu menu__launches"><a class="menu-fs__title" href="{{ shop.url}}/pages/launches">LAUNCHES</a></div>
+    <div class="menu-fs__menu menu__sneakers">
+      <div class="menu-fs__title">SNEAKERS</div>
+      <div class="menu-fs__drop"><span class="dharma">ALL</span>
+        <ul>  {% for link in linklists[settings.link_all_sneakers].links %}
+          <li> <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a></li>  {% endfor %}
+        </ul><span class="dharma">BRANDS</span>
+        <ul>  {% for link in linklists[settings.link_brands_sneakers].links %}
+          <li> <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a></li>  {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <div class="menu-fs__menu menu__kids">
+      <div class="menu-fs__title">KIDS</div>
+      <div class="menu-fs__drop"><span class="dharma">ALL</span>
+        <ul>  {% for link in linklists[settings.link_all_kids].links %}
+          <li> <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a></li>  {% endfor %}
+        </ul><span class="dharma">BRANDS</span>
+        <ul>  {% for link in linklists[settings.link_brands_kids].links %}
+          <li> <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a></li>  {% endfor %}
+        </ul><span class="dharma">APPAREL</span>
+        <ul>  {% for link in linklists[settings.link_appa_kids].links %}
+          <li> <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a></li>  {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <div class="menu-fs__menu menu__appa">
+      <div class="menu-fs__title">APPAREL</div>
+      <div class="menu-fs__drop"><span class="dharma">ALL</span>
+        <ul>  {% for link in linklists[settings.link_all_appa].links %}
+          <li> <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a></li>  {% endfor %}
+        </ul><span class="dharma">BRANDS</span>
+        <ul>  {% for link in linklists[settings.link_brands_appa].links %}
+          <li> <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a></li>  {% endfor %}
+        </ul><span class="dharma">APPAREL</span>
+        <ul>  {% for link in linklists[settings.link_appa_appa].links %}
+          <li> <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a></li>  {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <div class="menu-fs__menu menu__acces">
+      <div class="menu-fs__title">ACCESORIES</div>
+      <div class="menu-fs__drop"><span class="dharma">ALL</span>
+        <ul>  {% for link in linklists[settings.link_all_acces].links %}
+          <li> <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a></li>  {% endfor %}
+        </ul><span class="dharma">BRANDS</span>
+        <ul>  {% for link in linklists[settings.link_brands_acces].links %}
+          <li> <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a></li>  {% endfor %}
+        </ul>
+      </div>
+    </div>  {% for link in linklists.main-menu.links %}
+    <div class="menu-fs__menu menu__nav"><a class="menu-fs__title" href="{{ link.url }}">{{ link.title }}</a></div>  {% endfor %}
+  </div>
+</nav>
