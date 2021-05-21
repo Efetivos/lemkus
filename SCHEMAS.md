@@ -338,6 +338,20 @@ a(href="{{ product.url | within: collection }}")
 
 
 
+### Listing Blog Articles and Counter
+```bash 
+
+    h1 {{ blog.articles_count }}
+    |   {% for tag in blog.all_tags %}
+    |   {% assign count = 0 %} {% for article in blogs[blog.handle].articles %} {% if article.tags contains tag %} {% capture count %}{{ count | plus: 1 }}{% endcapture %} {% endif %} {% endfor %} 
+    a(href="{{ shop.url}}/blogs/{{ blog.handle }}/tagged/{{ tag | handleize }}", title="{{ blog.title }} tagged {{ tag | escape }}")
+        span.tag-name.dharma {{ tag }}
+        span.tag-counter ({{ count }})
+    |   {% endfor %}
+```
+
+
+
 
 </br></br></br>
 # Add to Cart

@@ -1,0 +1,78 @@
+@import './partials/alias-mixins'
+
+
+
+//- =========================  MENUBLOG  ========================= -//
+//- =========================  MENUBLOG  ========================= -//
+.menu-blog
+    background: var(--soft)
+    height: calc(var(--vh) * 100)
+    left: 0
+    position: fixed
+    transform: translateX(100%)
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)
+    width: 100vw
+    z-index: 7
+    @include desk
+        height: 100vh
+        overflow: hidden
+
+.menu-blog__back
+    position: absolute
+    right: var(--gap)
+    top: 75px
+
+.menu-blog__back button.btn-hover
+    background: var(--dark) !important
+
+.menu-blog__back button.btn-hover span
+    color: var(--soft)
+
+
+//  ELEMENTS 
+ul.menu-blog__hold
+    padding: calc(var(--vh) * 24) 0 0 var(--gap)
+    @include desk
+        letter-spacing: -0.4rem
+        padding: 10.9rem 0 0 var(--gap)
+
+li.menu-blog__each
+    align-items: flex-start
+    display: flex
+    font-family: var(--dharma)
+    font-size: 10rem
+    text-transform: uppercase
+    @include desk
+        font-size: 30rem
+        margin: -5rem 0 0
+
+li.menu-blog__each + li.menu-blog__each
+    margin: -1.8rem 0 0
+    @include desk
+        margin: -5rem 0 0
+    
+
+span.tag-counter
+    font-family: var(--recosemi)
+    font-size: 2rem
+    margin: 0.8rem 0 0 1.5rem
+    @include desk
+        font-size: 3rem
+        margin: 2.6rem 0 0 8rem
+
+
+li.menu-blog__each:first-child 
+    a, span
+        color: var(--color)
+
+
+.is-menublog
+    overflow: hidden
+
+.is-menublog .menu-blog
+    transform: translateX(0%)
+
+.is-menublog .menu-blog__fader
+    visibility: visible
+    opacity: .48
+        

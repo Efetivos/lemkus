@@ -42,10 +42,7 @@ class AccordionMenu {
                     //--------- entrada
                     gsap.from($(this).closest('.menu-fs__menu').find('.menu-fs__drop'), time, { height: 0, ease: 'power3.inOut' })
                     gsap.set($(this).closest('.menu-fs__menu').find('.menu-fs__drop'), { height: 'auto' });
-                    gsap.to($(this).closest('.menu-fs__menu').find('.menu-fs__drop'), .2, { delay: time - .15, autoAlpha: 1, onComplete: function () {
-                            animating = false
-                        }
-                    });
+                    gsap.to($(this).closest('.menu-fs__menu').find('.menu-fs__drop'), .2, { delay: time - .15, autoAlpha: 1, onComplete: ()=> animating = false   });
 
                 }//close else
             } //close animating

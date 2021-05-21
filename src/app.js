@@ -14,11 +14,13 @@ import { ajaxify } from './js/utils_shopify/ajaxify';
 import { preloader } from './js/utils/preloader';
 import { scroll } from './js/utils/scroll';
 import { accordion_menu } from './js/utils/accordion-menu';
+import { menu_blog } from './js/utils_global/menu_blog';
 
 
 
 //___ calling
 menu.init()
+menu_blog.init()
 menu.fixMobile()
 minicart.init()
 ajaxify.init()
