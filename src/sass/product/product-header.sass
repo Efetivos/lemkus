@@ -19,3 +19,36 @@ header.header-prod
 
 fieldset.fieldset-qty
     display: none
+
+
+//- =========================  ADD TO CART  ========================= -//
+//- =========================  ADD TO CART  ========================= -//
+#AddToCartForm
+
+    fieldset.fieldset-var
+        display: inline-block
+
+    
+    fieldset input[type="radio"]:checked + label
+        color: var(--color)
+        border-bottom: 1px solid var(--color)
+
+
+    input[type="radio"]
+        @include not-visible
+
+
+
+    input.disabled + label
+        opacity: .2
+        pointer-events: none
+
+
+    label
+        font-size: 2.8rem
+        cursor: pointer
+
+
+.disabled
+    pointer-events: none
+    opacity: 0.2

@@ -1,34 +1,4 @@
 
-| {% assign description = product.description %}
-| {% assign details = '' %}
-| {% assign shipping = '' %}
-| {% assign descr = '' %}
-
-| {% if product.description contains '---' %}
-
-
-| {% assign description = product.description | split: '---' | first %}
-| {% assign description_array = product.description | split: '---' %}
-| {% assign productInfoKeys = 'Details|Shipping|Description' | split: '|' %}
-
-//- assigning keys
-|   {% for key in productInfoKeys %}
-|   {% assign split_key = key | prepend: '~*~' | append: '~*~' %}
-|       {% if product.description contains split_key %}
-|           {% if key == 'Details' %}
-|               {% assign details = product.description | split: split_key | last | split: '---' | first %}
-|           {% elsif key == 'Shipping' %}
-|               {% assign shipping = product.description | split: split_key | last | split: '---' | first %}
-|           {% elsif key == 'Description' %}
-|               {% assign descr = product.description | split: split_key | last | split: '---' | first %}
-|           {% endif %}
-
-|       {% endif %}
-
-|   {% endfor %}
-
-
-| {% endif %}
 
 |   {% assign fields = product.metafields %}
 
@@ -43,11 +13,11 @@
 .page.page-product(data-barba="container", data-barba-namespace="product", data-ispage="product", data-scroll-content,  class!="{% if product.metafields.drop.drop_month %}dropsoon-product{% endif %}")
     header.header-prod
         .header-prod__bread
-            |   {% render 'breadcrumbs' %}
+            |   {% render 'breadcrumbs-prod' %}
         .header-prod__hold
 
             //- _____ thumbs
-            .header-prod__thumbs
+            .header-prod__thumbs.no-mobile
                 .header-prod__thumbs__travel
                     |   {% for image in product.images %}
                     .header-prod__thumbs__each
@@ -61,22 +31,42 @@
                     .header-prod__gallery__each
                         img(src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}" ).img-load
                     |   {% endfor %}
-                
-            //- _____ infos
+
+                .header-prod__swipe-count.no-desk
+                    .header-prod__swipe-count__hold.e-hold
+                        span.header-prod__swipe.recosemi SWIPE
+                        .header-prod__count
+                            span.count-dyna 1
+                            span.count-static /4
+
+
+
+            //- =========================  INFOS  ========================= -//
+            //- =========================  INFOS  ========================= -//
+            
             .header-prod__infos
+
+
                 //-  title
                 h1.header-prod__title.dharmaex.e-upper {{ product.title }}  
+                ul.header-prod__colors 
+                    |   {% for value in fields.descr.colors.colors %} 
+                    li {{ value }}
+                    |   {% endfor %}  
+                
 
-                //-  prices
-                | {% if product.compare_at_price_max != 0 %}
-                span.sale-price {{ product.compare_at_price_max  | money  }}
-                | {% endif %}
-                .regular-price {{ product.price | money }}
 
 
-                |   {% if product.compare_at_price_max > product.price %}
-                |       {{ product.compare_at_price_min | minus: product.price | times: 100.0 |  divided_by: product.compare_at_price_min | money_without_currency | times: 100 | replace: '.0', ''}}
-                |   {% endif %}
+ 
+                //-  prices & guides
+                .header-prod__prices-guides
+                    div(class="{% if product.compare_at_price_max != 0 %} is-sale {% endif %}").header-prod__prices
+                        span.regular-price {{ product.price | money }}
+                        | {% if product.compare_at_price_max != 0 %}
+                        span.sale-price {{ product.compare_at_price_max  | money  }}
+                        | {% endif %}
+                    .header-prod__prices
+                        a(href="#").recosemi.e-upper.underline SIZE GUIDE
 
 
                 |   {% render 'add-to-cart' %}
@@ -91,8 +81,8 @@
                         //---- accd
                         .ctn-accord__item
                             .trg-acc.e-curp
-                                .svg-arrow !{arrowRight}
-                                h5.click DETAILS
+                                h5.click.recosemi DETAILS
+                                .svg-arrow +
                             .hold-content {{ fields.descr.details }}
         
                     //- SIZE
@@ -100,8 +90,8 @@
                         //---- accd
                         .ctn-accord__item
                             .trg-acc.e-curp
-                                .svg-arrow !{arrowRight}
-                                h5.click Shipping / Returns
+                                h5.click.recosemi SHIPPING / RETURNS
+                                .svg-arrow +
                             .hold-content {{ fields.descr.shipping }} 
         
 

@@ -244,6 +244,13 @@ a(href="{{ collection.url }}", alt="{{ collection.title }}") {{ collection.title
     |   {% endif %}
 ```
 
+> Repeatable fields  
+> https://help.accentuate.io/article/24-repeatable-fields
+```bash
+    |   {% for value in product.metafields.namespace.spec_title %} 
+    li {{ value }}: {{ product.metafields.namespace.spec_value[forloop.index0] }} 
+    |   {% endfor %} 
+```
 
 </br></br></br>
 # Metafields

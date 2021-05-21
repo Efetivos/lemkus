@@ -1,31 +1,9 @@
-
-{% assign description = product.description %}
-{% assign details = '' %}
-{% assign shipping = '' %}
-{% assign descr = '' %}
-{% if product.description contains '---' %}
-{% assign description = product.description | split: '---' | first %}
-{% assign description_array = product.description | split: '---' %}
-{% assign productInfoKeys = 'Details|Shipping|Description' | split: '|' %}
-  {% for key in productInfoKeys %}
-  {% assign split_key = key | prepend: '~*~' | append: '~*~' %}
-      {% if product.description contains split_key %}
-          {% if key == 'Details' %}
-              {% assign details = product.description | split: split_key | last | split: '---' | first %}
-          {% elsif key == 'Shipping' %}
-              {% assign shipping = product.description | split: split_key | last | split: '---' | first %}
-          {% elsif key == 'Description' %}
-              {% assign descr = product.description | split: split_key | last | split: '---' | first %}
-          {% endif %}
-      {% endif %}
-  {% endfor %}
-{% endif %}
   {% assign fields = product.metafields %}
 <div class="page page-product {% if product.metafields.drop.drop_month %}dropsoon-product{% endif %}" data-barba="container" data-barba-namespace="product" data-ispage="product" data-scroll-content>
   <header class="header-prod">
-    <div class="header-prod__bread">  {% render 'breadcrumbs' %}</div>
+    <div class="header-prod__bread">  {% render 'breadcrumbs-prod' %}</div>
     <div class="header-prod__hold">
-      <div class="header-prod__thumbs">
+      <div class="header-prod__thumbs no-mobile">
         <div class="header-prod__thumbs__travel">  {% for image in product.images %}
           <div class="header-prod__thumbs__each"><img class="img-load" src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}"></div>  {% endfor %}
         </div>
@@ -34,20 +12,29 @@
         <div class="header-prod__gallery__travel">  {% for image in product.images %}
           <div class="header-prod__gallery__each"><img class="img-load" src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}"></div>  {% endfor %}
         </div>
+        <div class="header-prod__swipe-count no-desk">
+          <div class="header-prod__swipe-count__hold e-hold"><span class="header-prod__swipe recosemi">SWIPE</span>
+            <div class="header-prod__count"><span class="count-dyna">1</span><span class="count-static">/4</span></div>
+          </div>
+        </div>
       </div>
       <div class="header-prod__infos">
-        <h1 class="header-prod__title dharmaex e-upper">{{ product.title }}  </h1>{% if product.compare_at_price_max != 0 %}<span class="sale-price">{{ product.compare_at_price_max  | money  }}</span>{% endif %}
-        <div class="regular-price">{{ product.price | money }}</div>  {% if product.compare_at_price_max > product.price %}
-              {{ product.compare_at_price_min | minus: product.price | times: 100.0 |  divided_by: product.compare_at_price_min | money_without_currency | times: 100 | replace: '.0', ''}}
-          {% endif %}
-          {% render 'add-to-cart' %}
+        <h1 class="header-prod__title dharmaex e-upper">{{ product.title }}  </h1>
+        <ul class="header-prod__colors">
+             {% for value in fields.descr.colors.colors %} 
+          <li>{{ value }}</li>  {% endfor %}  
+        </ul>
+        <div class="header-prod__prices-guides">
+          <div class="{% if product.compare_at_price_max != 0 %} is-sale {% endif %} header-prod__prices"><span class="regular-price">{{ product.price | money }}</span>{% if product.compare_at_price_max != 0 %}<span class="sale-price">{{ product.compare_at_price_max  | money  }}</span>{% endif %}</div>
+          <div class="header-prod__prices"><a class="recosemi e-upper underline" href="#">SIZE GUIDE</a></div>
+        </div>  {% render 'add-to-cart' %}
         <div class="prod-descr">
           <div class="prod-descr__content">{{ fields.descr.description }} </div>
           <div class="ctn-accord">
             <div class="ctn-accord__item">
               <div class="trg-acc e-curp">
-                <div class="svg-arrow"></div>
-                <h5 class="click">DETAILS</h5>
+                <h5 class="click recosemi">DETAILS</h5>
+                <div class="svg-arrow">+</div>
               </div>
               <div class="hold-content">{{ fields.descr.details }}</div>
             </div>
@@ -55,8 +42,8 @@
           <div class="ctn-accord">
             <div class="ctn-accord__item">
               <div class="trg-acc e-curp">
-                <div class="svg-arrow"></div>
-                <h5 class="click">Shipping / Returns</h5>
+                <h5 class="click recosemi">SHIPPING / RETURNS</h5>
+                <div class="svg-arrow">+</div>
               </div>
               <div class="hold-content">{{ fields.descr.shipping }} </div>
             </div>

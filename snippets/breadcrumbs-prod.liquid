@@ -1,0 +1,5 @@
+  {% unless template == 'index' or template == 'cart' or template == 'list-collections' %}
+<nav class="breadcrumbs no-mobile e-flex" role="navigation" aria-label="breadcrumbs"><a href="{{ shop.url }}">HOME | </a><a href="{{ shop.url }}/collections/all">SHOP ALL | </a>  {% for collection in product.collections %}
+    {% unless collection.title == 'Homepage' %}<a class="e-upper" href="{{ collection.url }}">{{ collection.title }} | </a>  {% endunless %}
+    {% endfor %}<span class="recosemi">{{ product.title }}</span>
+</nav>  {% endunless %}

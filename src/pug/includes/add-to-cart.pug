@@ -4,12 +4,9 @@ form(action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCar
     //- =========================  variants  ========================= -//
     |   {% if product.variants.size > 1 %}
     //-  variants sizess
-    span.indic.select-text SELECT SIZE
     |   {% for variant in product.variants %}
     |   {% if variant.available %}
 
-    
-    
     fieldset.fieldset-var
         input(type="radio", name="id" id="variant-{{ forloop.index }}" value="{{ variant.id }}", data-inventory-qty="{{ variant.inventory_quantity }}", class="{% unless variant.available %}disabled{% endunless %}").js-variant-radio
         label(for="variant-{{ forloop.index }}") {{ variant.title }}
@@ -35,9 +32,21 @@ form(action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCar
     
 
     //- =========================  add to cart  ========================= -//
-    div
+    div.add-cart-btns
         //- _______ btn add to cart
-        <button class="e-black t-white {% if product.variants.size > 1 %}disabled{% endif %}" type="submit" name="add" id="add-to-cart-button"> ADD TO YOUR BAG </button>
+        |   {% if product.variants.size > 1 %}
+        button(class="{% if product.variants.size > 1 %}disabled{% endif %}" type="submit" name="add" id="add-to-cart-button").btn-hover
+            span.static ADD TO BAG
+            span.hover(data-hover="ADD TO BAG ADD TO BAG ") ADD TO BAG ADD TO BAG 
+        |    {% else %}
+        button(class="sold-out").btn-hover
+            span.static SOLD OUT
+            span.hover(data-hover="SOLD OUT SOLD OUT ") SOLD OUT SOLD OUT 
+        |    {% endif %}
+
+        a(href="{{ shop.url }}/pages/wishlist").btn-wishlist.btn-hover.cream-v
+            span.static WISHLIST
+            span.hover(data-hover="WISHLIST WISHLIST ") WISHLIST WISHLIST 
 
     //- =========================  wishlist button   ========================= -//
         | {% render 'ZooomyListWishlistProduct' %}

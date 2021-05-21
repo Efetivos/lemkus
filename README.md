@@ -1,6 +1,6 @@
-## Time: 58h00
-Data: 06:00  | 05.21  
-Daily: -5:00  
+## Time: 60h00
+Data: 08:00  | 05.21  
+Daily: -3:00  
   
 ![Screenshot](./cover.png) (https://github.com/Efetivos/gesch)
 
@@ -12,6 +12,7 @@ Daily: -5:00
 - ![ffffff](https://via.placeholder.com/15/ffffff/000000?text=+) `#ffffff`
 - ![fec333](https://via.placeholder.com/15/fec333/000000?text=+) `#fec333`
 - ![e6cac6](https://via.placeholder.com/15/e6cac6/000000?text=+) `#e6cac6`
+- ![bf2020](https://via.placeholder.com/15/bf2020/000000?text=+) `#bf2020`
 
 ###	 Infos site
 ```bash 
@@ -24,6 +25,7 @@ Daily: -5:00
 	--white: #ffffff
 	--color: #fec333
 	--pink: #e6cac6
+	--red: #bf2020
 	--dharma: 'DharmaGothicE-Bold', condensed, sans-serif
 	--dharmaex: 'DharmaGothicE-ExBold', condensed, sans-serif
 	--sans: 'OpenSans-Regular', sans-serif
