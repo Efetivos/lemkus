@@ -50,15 +50,15 @@ class Menu {
         let that = this
         //____ open menu
         $(this.menu.trg).click(function(){
-            $(that.menu.main).toggleClass('active-menu')
+            $(that.body).toggleClass('is-menufs')
         });
 
 
         //____ close menu
-        $(this.menu.close).add(this.menu.links).click(function(){
-            $(that.menu.main).toggleClass('active-menu')
-            console.log('to-close');
-        });
+        //$(this.menu.close).add(this.menu.links).click(function(){
+        //    $(that.menu.main).toggleClass('is-menufs')
+        //    console.log('to-close');
+        //});
 
 
         
