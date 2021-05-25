@@ -7,6 +7,10 @@
     position: fixed
     width: 100vw
     z-index: 11
+    @include desk
+        top: 11.5rem
+        width: 45.43rem
+        z-index: 7
 
 .filter-prod
     height: 100%
@@ -14,9 +18,23 @@
     width: 100%
 
 
+.filter-prod__hold
+    @include desk
+        width: calc(100% - var(--gap)*2)
+
 .filter-prod__back
     border-bottom: 1px solid var(--dark)
     height: 55px
+
+
+
+
+.filter-prod__title-clear
+    @include desk
+        align-items: center
+        display: flex
+        justify-content: space-between
+        padding: 2.1rem 0 0
 
 
 ul.filter-prod__actives
@@ -25,6 +43,10 @@ ul.filter-prod__actives
     gap: 0.9rem 1.2rem
     padding: 0.9rem 0
     padding: 1.6rem 0
+
+span.dharma.txt-filtes
+    @include desk
+        font-size: 4rem
 
 
 li.filter-prod__actives__each
@@ -38,6 +60,8 @@ li.filter-prod__actives__each
     padding: 0.4rem 1rem
     padding: 0.5rem 1.2rem
     text-transform: uppercase
+    @include desk
+        padding: .5rem 0.8rem
 
 
 .removeit
@@ -54,12 +78,22 @@ button.clear-all
     font-family: var(--recosemi)
     font-size: 1.4rem
     text-decoration: underline
+    @include desk
+        font-size: 1.6rem
+        margin: -1.15rem 0 0
+
+.filter-prod__back button.btn-hover
+    @include tablet
+        font-size: 1.2rem
+        height: 2.5rem
+        width: 10.4rem
 
 
 
-
-
-
+.filter-prod__hold__all
+    height: calc(var(--vh)*61)
+    overflow: hidden
+    overflow-y: scroll
 
 
 //- =========================  EEACH  
@@ -69,7 +103,6 @@ button.clear-all
 
 .filter-prod__each__cat
     align-items: center
-    border-bottom: 1px solid var(--dark)
     border-top: 1px solid var(--dark)
     display: flex
     font-family: var(--recosemi)
@@ -78,5 +111,50 @@ button.clear-all
     padding: 1.7rem 0
 
 ul.filter-prod__items
-    height: 0
+    height: auto
+    max-height: calc(var(--vh) * 35)
     overflow: hidden
+    overflow-y: scroll
+
+.filter-prod__items::-webkit-scrollbar
+	background-color: rgba(0,0,0,0.05)
+	border-radius: 10px
+	width: 3px
+
+.filter-prod__items::-webkit-scrollbar-thumb
+	background-color: var(--color)
+	border-radius: 50px
+
+.filter-prod__items::-webkit-scrollbar-track
+	border-radius: 10px
+
+li.filter-prod__each
+    display: flex
+    align-items: center
+    gap: 1.3rem
+    font-size: 1.4rem
+    font-family: var(--reco)
+
+    
+
+li.filter-prod__each + li.filter-prod__each
+    margin: 2.2rem 0
+
+
+
+.check
+    width: 1.8rem
+    height: 1.8rem
+    display: flex
+    align-items: center
+    justify-content: center
+    border: 1px solid rgba(0, 0, 0, .2)
+    border-radius: 50%
+
+
+.check svg
+    width: 48%
+
+
+.cat-filter-active
+    padding-bottom: 1.7rem

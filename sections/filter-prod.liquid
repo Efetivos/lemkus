@@ -45,9 +45,9 @@
       <li class="filter-prod__actives__each"><span class="name">UK 7</span>
         <div class="removeit"><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20"><g fill="none" stroke="var(--soft)"><circle cx="10" cy="10" r="10" stroke="none"/><circle cx="10" cy="10" r="9.5"/></g><path fill="var(--soft)" d="M14.218 6.736l-.823-.823-3.264 3.263-3.263-3.263-.823.823 3.263 3.263-3.263 3.264.823.823 3.263-3.264 3.263 3.263.823-.823-3.263-3.263z"/></svg></div>
       </li>
-      <button class="clear-all">CLEAR ALL</button>
+      <button class="clear-all no-desk">CLEAR ALL</button>
     </ul>
-    <div class="filter-prod__hold">{% for block in section.blocks %}
+    <div class="filter-prod__hold__all">{% for block in section.blocks %}
       <div class="filter-prod__each">
         <div class="filter-prod__each__cat"><span class="cat-title">{{ block.settings.cat_title }}</span>
           <div class="expand">+ </div>
