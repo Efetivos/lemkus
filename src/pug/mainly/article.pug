@@ -24,7 +24,7 @@
                     .recosemi {{ fields.read_time }}
                     
             
-                li.header-article__infos__each
+                li.header-article__infos__each.no-mobile
                     button.btn-hover
                         span.static SHARE
                         span.hover(data-hover="SHARE SHARE ") SHARE SHARE 
@@ -112,7 +112,7 @@
             //- =========================  IMAGES TEXT  ========================= -//
             //- =========================  IMAGES TEXT  ========================= -//
             |   {% if fields.imgs_text_left != blank %}
-            section.img-text.e-flex
+            section.img-text
                 .img-text__img
                     img(src="{{ fields.imgs_text_left[0].src }}" alt="{{ image.alt }}").img-load 
                 .img-text__text
@@ -127,12 +127,12 @@
             //- =========================  IMAGES TEXT 2  ========================= -//
             //- =========================  IMAGES TEXT 2  ========================= -//
             |   {% if fields.imgs_text_right != blank %}
-            section.img-text.e-flex
+            section.img-text.img-text-right
+                .img-text__img
+                    img(src="{{ fields.imgs_text_right[0].src }}" alt="{{ image.alt }}").img-load 
                 .img-text__text
                     .heading {{ fields.image_text_heading_right }}
                     .parag {{ fields.image_text_parag_right }}
-                .img-text__img
-                    img(src="{{ fields.imgs_text_right[0].src }}" alt="{{ image.alt }}").img-load 
             |   {% endif %}
 
 

@@ -20,7 +20,7 @@
           <div class="reco">Read Time</div>
           <div class="recosemi">{{ fields.read_time }}</div>
         </li>
-        <li class="header-article__infos__each">
+        <li class="header-article__infos__each no-mobile">
           <button class="btn-hover"><span class="static">SHARE</span><span class="hover" data-hover="SHARE SHARE ">SHARE SHARE </span></button>
         </li>
       </ul>
@@ -58,7 +58,7 @@
         <div class="parag">{{ fields.parag3 }}</div>
       </section>  {% endif %}
         {% if fields.imgs_text_left != blank %}
-      <section class="img-text e-flex">
+      <section class="img-text">
         <div class="img-text__img"><img class="img-load" src="{{ fields.imgs_text_left[0].src }}" alt="{{ image.alt }}"></div>
         <div class="img-text__text">
           <div class="heading">{{ fields.image_text_heading }}</div>
@@ -66,12 +66,12 @@
         </div>
       </section>  {% endif %}
         {% if fields.imgs_text_right != blank %}
-      <section class="img-text e-flex">
+      <section class="img-text img-text-right">
+        <div class="img-text__img"><img class="img-load" src="{{ fields.imgs_text_right[0].src }}" alt="{{ image.alt }}"></div>
         <div class="img-text__text">
           <div class="heading">{{ fields.image_text_heading_right }}</div>
           <div class="parag">{{ fields.image_text_parag_right }}</div>
         </div>
-        <div class="img-text__img"><img class="img-load" src="{{ fields.imgs_text_right[0].src }}" alt="{{ image.alt }}"></div>
       </section>  {% endif %}
         {% if fields.quote != blank %}
       <section class="quote">
