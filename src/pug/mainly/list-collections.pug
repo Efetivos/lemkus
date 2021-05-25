@@ -3,18 +3,43 @@
 
     //- =========================  HEADER  ========================= -//
     //- =========================  HEADER  ========================= -//
+    header.header-coll 
+        .header-coll__hold.e-hold
+            .header-coll__bread.no-mobile
+                | {% render 'breadcrumbs' %}
+            .header-coll__qty
+                span.no-mobile Results | 
+                span.e-upper.recosemi {{ collection.products_count }} PRODUCTS
+
+
+            .header-coll__btn-filter.no-desk
+                button.btn-hover.trg-filter
+                    span.static FILTERS
+                    span.hover(data-hover="FILTERS FILTERS ") FILTERS FILTERS 
+                
+
+
+            .header-coll__btn-filter.no-mobile
+                button.btn-hover.trg-filter
+                    span.static SHOW FILTERS
+                    span.hover(data-hover="SHOW FILTERS SHOW FILTERS ") SHOW FILTERS SHOW FILTERS 
     
-    |   {% section 'collection-filter' %}
+            .header-coll__sort-by
+                span.no-mobile Sort by:  
+                select#SortBy(name='SortBy')
+                    |   {% for option in collection.sort_options %}
+                    <option value="{{ option.value }}" {% if option.value == collection.sort_by %}selected{% endif %}>{{ option.name }}</option>
+                    |         {% endfor %}
+
 
     main.main-collection
-        .e-wvw.e-hvh.e-flex 
-            h1 TRILLA
         
         //- =========================  PRODUCTS  ========================= -//
         //- =========================  PRODUCTS  ========================= -//
+        
+        | {% paginate collection.products by 18 %}
         section.products
-            .products__hold
-                .collection-decor  {{ collection.title }}
+            .products__hold.colle-cards
                 |   {% for product in collection.products %}
 
                 //- calling prod
@@ -24,12 +49,26 @@
                 p No products in this collection
                 |   {% endfor %}
 
-        //-
-            |   {% paginate collection.products by 3 %}
-            |   {% if paginate.pages > 1 %}
-            |   {{ paginate | default_pagination }}
-            |   {% endif %}
-            |   {% endpaginate %}
+
+
+
+            //- =========================  PAGINATES  ========================= -//
+            //- =========================  PAGINATES  ========================= -//
+            .colle__paginate
+                .colle__paginate__hold.e-hold
+                    | {% if paginate.pages > 1 %}
+                    | {%- for part in paginate.parts -%}
+                    .colle__paginate__each
+                        a(href="{{ part.url }}")
+                            button.e-serif.t-dark.e-rel.e-curp  {{ part.title }}
+                                .line-pagine.line-static.e-gray.e-abs.e-wp
+                                | {%- if part.title == paginate.current_page -%}
+                                .line-pagine.line-active.e-color.e-abs.e-wp
+                                | {%- endif -%}
+                    
+                    | {%- endfor -%}
+                    | {% endif %}
+        |   {% endpaginate %}
 
     | {% render  'myfooter' %}
 

@@ -1,0 +1,71 @@
+
+{% schema %}
+    {
+        "name": "FILTER | Tags",
+        "blocks": [
+            {
+                "name": "CATEGORY",
+                "type": "tags",
+                "settings": [
+                    {
+                        "id": "cat_title",
+                        "type": "text",
+                        "label": "FILTERS CATEGORY"
+                    },
+                    {
+                        "id": "each_filter",
+                        "type": "text",
+                        "label": "Filters",
+                        "info": "Insert filters name, separated by comma and space (, ). i.e: 'Adidas, Air, Jordan, Nike' "
+                    }
+                ]
+            }
+        ]
+    }
+{% endschema %}
+
+<section class="filter-prod">
+  <div class="filter-prod__hold e-rel">
+    <div class="filter-prod__title-clear"> <span class="dharma txt-filtes">FILTERS </span>
+      <button class="clear-all">CLEAR ALL</button>
+    </div>
+    <ul class="filter-prod__actives">
+      <li class="filter-prod__actives__each"><span class="name">Nike</span>
+        <svg class="removeit">&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;100%&quot; viewBox=&quot;0 0 20 20&quot;&gt;&lt;g fill=&quot;none&quot; stroke=&quot;var(--soft)&quot;&gt;&lt;circle cx=&quot;10&quot; cy=&quot;10&quot; r=&quot;10&quot; stroke=&quot;none&quot;/&gt;&lt;circle cx=&quot;10&quot; cy=&quot;10&quot; r=&quot;9.5&quot;/&gt;&lt;/g&gt;&lt;path fill=&quot;var(--soft)&quot; d=&quot;M14.218 6.736l-.823-.823-3.264 3.263-3.263-3.263-.823.823 3.263 3.263-3.263 3.264.823.823 3.263-3.264 3.263 3.263.823-.823-3.263-3.263z&quot;/&gt;&lt;/svg&gt;</svg>
+      </li>
+      <li class="filter-prod__actives__each"><span class="name">Nike Air Force 1 mid</span>
+        <svg class="removeit">&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;100%&quot; viewBox=&quot;0 0 20 20&quot;&gt;&lt;g fill=&quot;none&quot; stroke=&quot;var(--soft)&quot;&gt;&lt;circle cx=&quot;10&quot; cy=&quot;10&quot; r=&quot;10&quot; stroke=&quot;none&quot;/&gt;&lt;circle cx=&quot;10&quot; cy=&quot;10&quot; r=&quot;9.5&quot;/&gt;&lt;/g&gt;&lt;path fill=&quot;var(--soft)&quot; d=&quot;M14.218 6.736l-.823-.823-3.264 3.263-3.263-3.263-.823.823 3.263 3.263-3.263 3.264.823.823 3.263-3.264 3.263 3.263.823-.823-3.263-3.263z&quot;/&gt;&lt;/svg&gt;</svg>
+      </li>
+      <li class="filter-prod__actives__each"><span class="name">UK 9</span>
+        <svg class="removeit">&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;100%&quot; viewBox=&quot;0 0 20 20&quot;&gt;&lt;g fill=&quot;none&quot; stroke=&quot;var(--soft)&quot;&gt;&lt;circle cx=&quot;10&quot; cy=&quot;10&quot; r=&quot;10&quot; stroke=&quot;none&quot;/&gt;&lt;circle cx=&quot;10&quot; cy=&quot;10&quot; r=&quot;9.5&quot;/&gt;&lt;/g&gt;&lt;path fill=&quot;var(--soft)&quot; d=&quot;M14.218 6.736l-.823-.823-3.264 3.263-3.263-3.263-.823.823 3.263 3.263-3.263 3.264.823.823 3.263-3.264 3.263 3.263.823-.823-3.263-3.263z&quot;/&gt;&lt;/svg&gt;</svg>
+      </li>
+      <li class="filter-prod__actives__each"><span class="name">UK 7</span>
+        <svg class="removeit">&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;100%&quot; viewBox=&quot;0 0 20 20&quot;&gt;&lt;g fill=&quot;none&quot; stroke=&quot;var(--soft)&quot;&gt;&lt;circle cx=&quot;10&quot; cy=&quot;10&quot; r=&quot;10&quot; stroke=&quot;none&quot;/&gt;&lt;circle cx=&quot;10&quot; cy=&quot;10&quot; r=&quot;9.5&quot;/&gt;&lt;/g&gt;&lt;path fill=&quot;var(--soft)&quot; d=&quot;M14.218 6.736l-.823-.823-3.264 3.263-3.263-3.263-.823.823 3.263 3.263-3.263 3.264.823.823 3.263-3.264 3.263 3.263.823-.823-3.263-3.263z&quot;/&gt;&lt;/svg&gt;</svg>
+      </li>
+      <button class="clear-all">CLEAR ALL</button>
+    </ul>
+    <div class="filter-prod__hold">{% for block in section.blocks %}
+      <div class="filter-prod__cat">{{ block.settings.cat_title }}</div>
+      <ul class="filter-prod__items">
+          {% assign filter = block.settings.each_filter | split: ", " %}
+          {% for member in filter %}
+        <li class="filter-prod__each">{{ member }}</li>  {% endfor %}
+      </ul>{% endfor %}
+    </div>
+  </div>
+</section>
+<nav class="filter-prod no-desk el-fix">
+  <div class="filter-prod__hold"> 
+    <div class="filter-prod__menu menu__sneakers">
+      <div class="filter-prod__title">SNEAKERS</div>
+      <div class="filter-prod__drop"><span class="dharma">ALL</span>
+        <ul>  {% for link in linklists[settings.link_all_sneakers].links %}
+          <li> <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a></li>  {% endfor %}
+        </ul><span class="dharma">BRANDS</span>
+        <ul>  {% for link in linklists[settings.link_brands_sneakers].links %}
+          <li> <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a></li>  {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

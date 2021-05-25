@@ -1,0 +1,93 @@
+.   
+    {% schema %}
+        {
+            "name": "FILTER | Tags",
+            "blocks": [
+                {
+                    "name": "CATEGORY",
+                    "type": "tags",
+                    "settings": [
+                        {
+                            "id": "cat_title",
+                            "type": "text",
+                            "label": "FILTERS CATEGORY"
+                        },
+                        {
+                            "id": "each_filter",
+                            "type": "text",
+                            "label": "Filters",
+                            "info": "Insert filters name, separated by comma and space (, ). i.e: 'Adidas, Air, Jordan, Nike' "
+                        }
+                    ]
+                }
+            ]
+        }
+    {% endschema %}
+
+- var removeSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20"><g fill="none" stroke="var(--soft)"><circle cx="10" cy="10" r="10" stroke="none"/><circle cx="10" cy="10" r="9.5"/></g><path fill="var(--soft)" d="M14.218 6.736l-.823-.823-3.264 3.263-3.263-3.263-.823.823 3.263 3.263-3.263 3.264.823.823 3.263-3.264 3.263 3.263.823-.823-3.263-3.263z"/></svg>'
+section.filter-prod
+    .filter-prod__hold.e-rel
+        //- head
+        .filter-prod__title-clear 
+            span.dharma.txt-filtes FILTERS 
+            button.clear-all CLEAR ALL
+
+        //- actives
+        ul.filter-prod__actives
+            li.filter-prod__actives__each
+                span.name Nike
+                svg.removeit #{removeSvg}
+            li.filter-prod__actives__each
+                span.name Nike Air Force 1 mid
+                svg.removeit #{removeSvg}
+            li.filter-prod__actives__each
+                span.name UK 9
+                svg.removeit #{removeSvg}
+            li.filter-prod__actives__each
+                span.name UK 7
+                svg.removeit #{removeSvg}
+
+
+            button.clear-all CLEAR ALL
+
+
+        .filter-prod__hold
+            | {% for block in section.blocks %}
+            .filter-prod__cat {{ block.settings.cat_title }}
+            ul.filter-prod__items
+                |   {% assign filter = block.settings.each_filter | split: ", " %}
+                |   {% for member in filter %}
+                li.filter-prod__each {{ member }}
+                |   {% endfor %}
+            | {% endfor %}
+
+
+        
+
+
+
+
+
+
+//- =========================  FILTER PROD  ========================= -//
+//- =========================  FILTER PROD  ========================= -//
+
+nav.filter-prod.no-desk.el-fix
+    .filter-prod__hold 
+
+        //- sneakers
+        .filter-prod__menu.menu__sneakers
+            .filter-prod__title SNEAKERS
+            .filter-prod__drop
+                span.dharma ALL
+                ul
+                    |   {% for link in linklists[settings.link_all_sneakers].links %}
+                    li 
+                        a(href= "{{ link.url }}", title="{{ link.title }}") {{ link.title }}
+                    |   {% endfor %}
+                span.dharma BRANDS
+                ul
+                    |   {% for link in linklists[settings.link_brands_sneakers].links %}
+                    li 
+                        a(href= "{{ link.url }}", title="{{ link.title }}") {{ link.title }}
+                    |   {% endfor %}

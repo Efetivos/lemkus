@@ -14,7 +14,7 @@
         <select id="SortBy" name="SortBy">
             {% for option in collection.sort_options %}<option value="{{ option.value }}" {% if option.value == collection.sort_by %}selected{% endif %}>{{ option.name }}</option>        {% endfor %}</select>
       </div>
-    </div>
+    </div>{% section 'filter-prod' %}
   </header>
   <main class="main-collection">{% paginate collection.products by 18 %}
     <section class="products">

@@ -45,6 +45,7 @@
   {% render 'mydropdown' %}
   {% render 'menufs' %}
   {% if template == 'blog' %} {% render 'menu-blog' %} {% endif %}
+  {% if template == 'collection' %} {% section 'filter-prod' %} {% endif %}
   
   <main role="main">
     <div data-scroll>
