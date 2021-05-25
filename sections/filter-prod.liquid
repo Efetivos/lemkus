@@ -64,18 +64,3 @@
     </div>
   </div>
 </div>
-<nav class="filter-prod no-desk el-fix">
-  <div class="filter-prod__hold"> 
-    <div class="filter-prod__menu menu__sneakers">
-      <div class="filter-prod__title">SNEAKERS</div>
-      <div class="filter-prod__drop"><span class="dharma">ALL</span>
-        <ul>  {% for link in linklists[settings.link_all_sneakers].links %}
-          <li> <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a></li>  {% endfor %}
-        </ul><span class="dharma">BRANDS</span>
-        <ul>  {% for link in linklists[settings.link_brands_sneakers].links %}
-          <li> <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a></li>  {% endfor %}
-        </ul>
-      </div>
-    </div>
-  </div>
-</nav>

@@ -1,6 +1,7 @@
 
 import { gsap } from 'gsap'
 import { accordion } from './accordion'
+import { accordion_filters } from './accordion-filters';
 class Smooth {
     constructor() {
     }
@@ -61,13 +62,25 @@ class Smooth {
 
 
 
+        // ______________ shop
+        if (this.isPage === 'collection') {
+            if (!this.once) {
+                accordion_filters.init()
+                this.once = true
+            }
+        }
 
+
+        // ______________ PRODUCT
         if (this.isPage === 'product') {
             if (!this.once) {
                 accordion.init(this.contentPage)
                 this.once = true
             }
         }
+
+
+
 
         this.requestAnimationFrame()
     }

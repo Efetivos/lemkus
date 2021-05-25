@@ -71,34 +71,3 @@
                         .filter-item {{ item }}
                     |   {% endfor %}
             | {% endfor %}
-
-
-        
-
-
-
-
-
-
-//- =========================  FILTER PROD  ========================= -//
-//- =========================  FILTER PROD  ========================= -//
-
-nav.filter-prod.no-desk.el-fix
-    .filter-prod__hold 
-
-        //- sneakers
-        .filter-prod__menu.menu__sneakers
-            .filter-prod__title SNEAKERS
-            .filter-prod__drop
-                span.dharma ALL
-                ul
-                    |   {% for link in linklists[settings.link_all_sneakers].links %}
-                    li 
-                        a(href= "{{ link.url }}", title="{{ link.title }}") {{ link.title }}
-                    |   {% endfor %}
-                span.dharma BRANDS
-                ul
-                    |   {% for link in linklists[settings.link_brands_sneakers].links %}
-                    li 
-                        a(href= "{{ link.url }}", title="{{ link.title }}") {{ link.title }}
-                    |   {% endfor %}
