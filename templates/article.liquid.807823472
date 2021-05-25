@@ -18,7 +18,7 @@
         </li>
         <li class="header-article__infos__each">
           <div class="reco">Read Time</div>
-          <div class="recosemi">{{ fields.read_time }}</div>
+          <div class="recosemi">4 MIN</div>
         </li>
         <li class="header-article__infos__each">
           <button class="btn-hover"><span class="static">SHARE</span><span class="hover" data-hover="SHARE SHARE ">SHARE SHARE </span></button>
@@ -27,10 +27,17 @@
       <div class="header-article__img"><img class="img-load" src="{{ article.image.src | img_url: 'master' }}" alt="{{ article.title }}"></div>
     </div>
   </header>
-  <main class="main-article">  {% if fields.heading_1 != blank %}
-    <section class="full-width-img"> 
-      <div class="heading">{{ fields.heading_1 }}</div>
-      <div class="parag">{{ fields.parag1 }}</div>
-    </section>  {% endif %}
+  <main class="main-article">
+    <section class="module1">
+       {{ fields.full_image.filename }}
+        {% if fields.full_image != blank %}
+      <h1>OI</h1>
+      <ul class="module1__imgs">
+           {% for value in fields.full_image %} 
+        <li class="module1__imgs__each"> <img class="img-load" src="{{ value.src }}" alt="{{ article.title }}"></li>  {% endfor %}  
+      </ul>  {% endif %}
+    </section>  {% for multi_images in fields.full_image %} 
+      {% for image in multi_images %} <img src="{{ image.src }}" alt="{{ image.alt }}"/>  {% endfor %}
+      {% endfor %}
   </main>{% render  'myfooter' %}
 </div>
