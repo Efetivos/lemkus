@@ -28,7 +28,57 @@
     </div>
   </header>
   <main class="main-article">
-    <div class="main-article__hold e-hold">  {% if fields.embed != blank %}
+    <div class="main-article__hold e-hold">  {% if fields.full_image != blank %}
+      <section class="full-width-img"> 
+        <ul class="full-width-img__imgs">
+             {% for multi_images in fields.full_image %} 
+            {% for image in multi_images %} 
+          <li class="full-width-img__imgs__each"> <img class="img-load" src="{{ image.src }}" alt="{{ image.alt }}"></li>  {% endfor %}
+            {% endfor %}
+        </ul>
+      </section>  {% endif %}
+        {% if fields.heading_1 != blank %}
+      <section class="title-text1">
+        <div class="heading">{{ fields.heading_1 }}</div>
+        <div class="parag">{{ fields.parag1 }}</div>
+      </section>  {% endif %}
+        {% if fields.imgs_side1 != blank %}
+      <section class="side-side e-flex">
+        <div class="side-side__1"><img class="img-load" src="{{ fields.imgs_side1[0].src }}" alt="{{ image.alt }}"></div>
+        <div class="side-side__2"><img class="img-load" src="{{ fields.imgs_side2[0].src }}" alt="{{ image.alt }}"></div>
+      </section>  {% endif %}
+        {% if fields.heading_2 != blank %}
+      <section class="title-text2">
+        <div class="heading">{{ fields.heading_2 }}</div>
+        <div class="parag">{{ fields.parag2 }}</div>
+      </section>  {% endif %}
+        {% if fields.heading_3 != blank %}
+      <section class="title-text3">
+        <div class="heading">{{ fields.heading_3 }}</div>
+        <div class="parag">{{ fields.parag3 }}</div>
+      </section>  {% endif %}
+        {% if fields.imgs_text_left != blank %}
+      <section class="img-text e-flex">
+        <div class="img-text__img"><img class="img-load" src="{{ fields.imgs_text_left[0].src }}" alt="{{ image.alt }}"></div>
+        <div class="img-text__text">
+          <div class="heading">{{ fields.image_text_heading }}</div>
+          <div class="parag">{{ fields.image_text_parag }}</div>
+        </div>
+      </section>  {% endif %}
+        {% if fields.imgs_text_right != blank %}
+      <section class="img-text e-flex">
+        <div class="img-text__text">
+          <div class="heading">{{ fields.image_text_heading_right }}</div>
+          <div class="parag">{{ fields.image_text_parag_right }}</div>
+        </div>
+        <div class="img-text__img"><img class="img-load" src="{{ fields.imgs_text_right[0].src }}" alt="{{ image.alt }}"></div>
+      </section>  {% endif %}
+        {% if fields.quote != blank %}
+      <section class="quote">
+        <div class="quote recosemi">{{ fields.quote }}</div>
+        <div class="quote-author">{{ fields.quote_author }}</div>
+      </section>  {% endif %}
+        {% if fields.embed != blank %}
       <section class="embed"> 
         <ul class="embed__ifram">  {% for iframe in fields.embed %} 
           <li class="embed__ifram__each"> {{ iframe }}</li>  {% endfor %}
