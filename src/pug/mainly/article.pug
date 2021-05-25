@@ -34,37 +34,137 @@
 
 
     main.main-article
+        .main-article__hold.e-hold
 
 
-        //- =========================  FULL WIDTH  ========================= -//
-        //- =========================  FULL WIDTH  ========================= -//
-        
-            |   {% if fields.full_image != blank %}
-            section.full-width-img 
-                //-  colors
-                ul.full-width-img__imgs 
-                    |   {% for multi_images in fields.full_image %} 
-                    |   {% for image in multi_images %} 
-                    li.full-width-img__imgs__each 
-                        img(src="{{ image.src }}" alt="{{ image.alt }}").img-load 
+            //- =========================  FULL WIDTH  ========================= -//
+            //- =========================  FULL WIDTH  ========================= -//
+            
+                |   {% if fields.full_image != blank %}
+                section.full-width-img 
+                    //-  colors
+                    ul.full-width-img__imgs 
+                        |   {% for multi_images in fields.full_image %} 
+                        |   {% for image in multi_images %} 
+                        li.full-width-img__imgs__each 
+                            img(src="{{ image.src }}" alt="{{ image.alt }}").img-load 
+                        
+                        |   {% endfor %}
+                        |   {% endfor %}
                     
-                    |   {% endfor %}
+                |   {% endif %}
+
+
+
+
+                //- =========================  HEADING TEXT 1  ========================= -//
+                //- =========================  HEADING TEXT 1  ========================= -//
+                |   {% if fields.heading_1 != blank %}
+                section.title-text1
+                    .heading {{ fields.heading_1 }}
+                    .parag {{ fields.parag1 }}
+                |   {% endif %}
+
+
+
+
+
+                //- =========================  IMAGES SIDE BY SIDE  ========================= -//
+                //- =========================  IMAGES SIDE BY SIDE  ========================= -//
+                |   {% if fields.imgs_side1 != blank %}
+                section.side-side.e-flex
+                    .side-side__1
+                        img(src="{{ fields.imgs_side1[0].src }}" alt="{{ image.alt }}").img-load 
+                    .side-side__2
+                        img(src="{{ fields.imgs_side2[0].src }}" alt="{{ image.alt }}").img-load 
+                |   {% endif %}
+
+
+
+
+
+
+                //- =========================  HEADING TEXT 2  ========================= -//
+                //- =========================  HEADING TEXT 2  ========================= -//
+                |   {% if fields.heading_2 != blank %}
+                section.title-text2
+                    .heading {{ fields.heading_2 }}
+                    .parag {{ fields.parag2 }}
+                |   {% endif %}
+
+
+
+
+
+
+                //- =========================  HEADING TEXT 3  ========================= -//
+                //- =========================  HEADING TEXT 3  ========================= -//
+                |   {% if fields.heading_3 != blank %}
+                section.title-text3
+                    .heading {{ fields.heading_3 }}
+                    .parag {{ fields.parag3 }}
+                |   {% endif %}
+
+
+
+
+
+                //- =========================  IMAGES TEXT  ========================= -//
+                //- =========================  IMAGES TEXT  ========================= -//
+                |   {% if fields.imgs_text_left != blank %}
+                section.img-text.e-flex
+                    .img-text__img
+                        img(src="{{ fields.imgs_text_left[0].src }}" alt="{{ image.alt }}").img-load 
+                    .img-text__text
+                        .heading {{ fields.image_text_heading }}
+                        .parag {{ fields.image_text_parag }}
+                |   {% endif %}
+
+
+
+
+
+                //- =========================  IMAGES TEXT 2  ========================= -//
+                //- =========================  IMAGES TEXT 2  ========================= -//
+                |   {% if fields.imgs_text_right != blank %}
+                section.img-text.e-flex
+                    .img-text__text
+                        .heading {{ fields.image_text_heading_right }}
+                        .parag {{ fields.image_text_parag_right }}
+                    .img-text__img
+                        img(src="{{ fields.imgs_text_right[0].src }}" alt="{{ image.alt }}").img-load 
+                |   {% endif %}
+
+
+
+
+
+
+                //- =========================  QUOTE  ========================= -//
+                //- =========================  QUOTE  ========================= -//
+                |   {% if fields.quote != blank %}
+                section.quote
+                    .quote.recosemi {{ fields.quote }}
+                    .quote-author {{ fields.quote_author }}
+                |   {% endif %}
+
+
+
+
+
+
+            //- =========================  EMBED  ========================= -//
+            //- =========================  EMBED  ========================= -//
+            |   {% if fields.embed != blank %}
+            section.embed 
+                //-  colors
+                ul.embed__ifram
+                    |   {% for iframe in fields.embed %} 
+                    li.embed__ifram__each  {{ iframe }}
+                    
                     |   {% endfor %}
                 
             |   {% endif %}
-
-
-
-
-        //- =========================  HEADING TEXT 1  ========================= -//
-        //- =========================  HEADING TEXT 1  ========================= -//
-        |   {% if fields.heading_1 != blank %}
-        section.full-width-img 
-            .heading {{ fields.heading_1 }}
-            .parag {{ fields.parag1 }}
-        |   {% endif %}
-
-
 
 
 
