@@ -1,0 +1,82 @@
+@import './partials/alias-mixins'
+
+
+#shopify-section-filter-prod
+    background: var(--soft)
+    height: calc(var(--vh) * 100)
+    position: fixed
+    width: 100vw
+    z-index: 11
+
+.filter-prod
+    height: 100%
+    position: relative
+    width: 100%
+
+
+.filter-prod__back
+    border-bottom: 1px solid var(--dark)
+    height: 55px
+
+
+ul.filter-prod__actives
+    display: flex
+    flex-wrap: wrap
+    gap: 0.9rem 1.2rem
+    padding: 0.9rem 0
+    padding: 1.6rem 0
+
+
+li.filter-prod__actives__each
+    align-items: center
+    background: var(--dark)
+    border-radius: 50px
+    color: var(--soft)
+    display: flex
+    font-family: var(--reco)
+    gap: 1.5rem
+    padding: 0.4rem 1rem
+    padding: 0.5rem 1.2rem
+    text-transform: uppercase
+
+
+.removeit
+    width: 1.3rem
+
+
+li.filter-prod__actives__each span
+    color: var(--soft)
+    font-size: 1.4rem
+    text-transform: uppercase
+
+
+button.clear-all
+    font-family: var(--recosemi)
+    font-size: 1.4rem
+    text-decoration: underline
+
+
+
+
+
+
+
+
+//- =========================  EEACH  
+
+.filter-prod__each + .filter-prod__each
+    margin: -1px 0 0
+
+.filter-prod__each__cat
+    align-items: center
+    border-bottom: 1px solid var(--dark)
+    border-top: 1px solid var(--dark)
+    display: flex
+    font-family: var(--recosemi)
+    font-size: 1.4rem
+    justify-content: space-between
+    padding: 1.7rem 0
+
+ul.filter-prod__items
+    height: 0
+    overflow: hidden

@@ -25,10 +25,16 @@
     {% endschema %}
 
 - var removeSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20"><g fill="none" stroke="var(--soft)"><circle cx="10" cy="10" r="10" stroke="none"/><circle cx="10" cy="10" r="9.5"/></g><path fill="var(--soft)" d="M14.218 6.736l-.823-.823-3.264 3.263-3.263-3.263-.823.823 3.263 3.263-3.263 3.264.823.823 3.263-3.264 3.263 3.263.823-.823-3.263-3.263z"/></svg>'
-section.filter-prod
-    .filter-prod__hold.e-rel
+- checkSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 6.481 5.363"> <path fill="var(--dark)" d="M5.83.25L5.406.7 2.448 3.838l-.887-.887-.437-.437-.874.874.437.437 1.337 1.337.45.45.437-.463 3.395-3.6.424-.449z" transform="translate(-.249 -.25)"/></svg>'
+.filter-prod
+    .filter-prod__back.no-desk.e-flex
+        button.btn-hover
+            span.static BACK
+            span.hover(data-hover="BACK BACK ") BACK BACK 
+    .filter-prod__hold.e-hold.e-rel
         //- head
-        .filter-prod__title-clear 
+
+        .filter-prod__title-clear.no-mobile
             span.dharma.txt-filtes FILTERS 
             button.clear-all CLEAR ALL
 
@@ -36,16 +42,16 @@ section.filter-prod
         ul.filter-prod__actives
             li.filter-prod__actives__each
                 span.name Nike
-                svg.removeit #{removeSvg}
+                .removeit !{removeSvg}
             li.filter-prod__actives__each
                 span.name Nike Air Force 1 mid
-                svg.removeit #{removeSvg}
+                .removeit !{removeSvg}
             li.filter-prod__actives__each
                 span.name UK 9
-                svg.removeit #{removeSvg}
+                .removeit !{removeSvg}
             li.filter-prod__actives__each
                 span.name UK 7
-                svg.removeit #{removeSvg}
+                .removeit !{removeSvg}
 
 
             button.clear-all CLEAR ALL
@@ -53,12 +59,17 @@ section.filter-prod
 
         .filter-prod__hold
             | {% for block in section.blocks %}
-            .filter-prod__cat {{ block.settings.cat_title }}
-            ul.filter-prod__items
-                |   {% assign filter = block.settings.each_filter | split: ", " %}
-                |   {% for member in filter %}
-                li.filter-prod__each {{ member }}
-                |   {% endfor %}
+            .filter-prod__each
+                .filter-prod__each__cat
+                    span.cat-title {{ block.settings.cat_title }}
+                    .expand + 
+                ul.filter-prod__items
+                    |   {% assign filter = block.settings.each_filter | split: ", " %}
+                    |   {% for item in filter %}
+                    li.filter-prod__each 
+                        .check !{checkSvg}
+                        .filter-item {{ item }}
+                    |   {% endfor %}
             | {% endfor %}
 
 
