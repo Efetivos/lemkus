@@ -64,6 +64,7 @@ ul.header-article__infos
         grid-template-columns: auto auto auto auto 15rem
         margin: 0
         padding: 1.1rem 0 0.2rem
+        position: relative
 
 
 li.header-article__infos__each
@@ -96,12 +97,68 @@ li.header-article__infos__each.no-mobile
     width: 100%
 
 
+.share-btns
+    position: relative
+
+.share-btns__buttons
+    display: flex
+    gap: 0.6rem
+    position: absolute !important
+    top: 0
+    transform: translateX(-9rem)
+
+.share-btns__buttons a
+    border-radius: 50%
+    border: 1px solid var(--dark)
+    height: 3.9rem
+    width: 3.9rem
+    overflow: hidden
+    transition: .25s background ease-out
+    &:hover
+        background: var(--dark)
+
+        svg path
+            fill: var(--soft)
 
 
 
 
+.move
+    --space: .5rem
+    --time: 2s
+    align-items: center
+    display: inline-flex
+    height: 3.9rem
+    justify-content: flex-start
+    &:hover
+        animation: marquee_share var(--time) infinite linear
+        
+
+.move svg
+    flex-shrink: 0
+    height: auto
+    margin: -0.3rem 0 0 0
+    padding: 0.9rem
+    width: 3.9rem
+
+        
+
+.move svg + svg
+    margin: -0.3rem -1rem 0 0
+
+.move svg path
+    transition: .25s fill ease-out
+    
+circle.circ-path
+    display: none
 
 
+
+@keyframes marquee_share
+    0%
+        transform: translateX(0)
+    100%
+        transform: translateX(-50%)
 
 
 
@@ -224,3 +281,5 @@ section.embed li
 
 section.embed iframe
     height: 54.2vw
+
+

@@ -1,4 +1,7 @@
 
+- var ttIcon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112.197 112.197" style="enable-background:new 0 0 112.197 112.197"><circle class="circ-path" cx="56.099" cy="56.098" r="56.098"/><path d="M90.461 40.316a26.753 26.753 0 01-7.702 2.109 13.445 13.445 0 005.897-7.417 26.843 26.843 0 01-8.515 3.253 13.396 13.396 0 00-9.79-4.233c-7.404 0-13.409 6.005-13.409 13.409 0 1.051.119 2.074.349 3.056-11.144-.559-21.025-5.897-27.639-14.012a13.351 13.351 0 00-1.816 6.742c0 4.651 2.369 8.757 5.965 11.161a13.314 13.314 0 01-6.073-1.679l-.001.17c0 6.497 4.624 11.916 10.757 13.147a13.362 13.362 0 01-3.532.471c-.866 0-1.705-.083-2.523-.239 1.706 5.326 6.657 9.203 12.526 9.312a26.904 26.904 0 01-16.655 5.74c-1.08 0-2.15-.063-3.197-.188a37.929 37.929 0 0020.553 6.025c24.664 0 38.152-20.432 38.152-38.153 0-.581-.013-1.16-.039-1.734a27.192 27.192 0 006.692-6.94z"/></svg>'
+- var fbIcon = '<svg width="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 112.196 112.196" style="enable-background:new 0 0 112.196 112.196"><circle class="circ-path" cx="56.098" cy="56.098" r="56.098"/><path d="M70.201 58.294h-10.01v36.672H45.025V58.294h-7.213V45.406h7.213v-8.34c0-5.964 2.833-15.303 15.301-15.303l11.234.047v12.51h-8.151c-1.337 0-3.217.668-3.217 3.513v7.585h11.334l-1.325 12.876z"/></svg>'
+- var pinIcon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 291.319 291.319" style="enable-background:new 0 0 291.319 291.319"><path class="circ-path" d="M145.659 0c80.45 0 145.66 65.219 145.66 145.66 0 80.45-65.21 145.659-145.66 145.659S0 226.109 0 145.66C0 65.219 65.21 0 145.659 0z"/><path d="M150.066 63.781c-51.327 0-77.19 35.632-77.19 65.337 0 17.989 7.028 33.993 22.122 39.956 2.467.974 4.698.036 5.408-2.613l2.203-8.403c.728-2.613.446-3.541-1.548-5.826-4.361-4.962-7.128-11.398-7.128-20.511 0-26.428 20.42-50.089 53.175-50.089 29.014 0 44.945 17.161 44.945 40.075 0 30.152-13.783 55.606-34.248 55.606-11.289 0-19.755-9.04-17.042-20.156 3.241-13.237 9.541-27.539 9.541-37.107 0-8.548-4.743-15.704-14.575-15.704-11.553 0-20.829 11.571-20.829 27.074 0 9.878 3.45 16.551 3.45 16.551l-13.901 56.998c-4.124 16.906-.61 37.644-.319 39.738.182 1.238 1.821 1.529 2.567.601 1.065-1.347 14.821-17.798 19.5-34.239 1.329-4.652 7.602-28.75 7.602-28.75 3.751 6.946 14.721 13.046 26.383 13.046 34.712 0 58.273-30.652 58.273-71.674-.011-31.015-27.14-59.91-68.389-59.91z"/></svg>'
 |   {% assign fields = article.metafields.post %}
 .page.page-article( data-ispage="article", data-scroll-content)
     //-header
@@ -24,10 +27,17 @@
                     .recosemi {{ fields.read_time }}
                     
             
-                li.header-article__infos__each.no-mobile
+                li.header-article__infos__each.no-mobile.share-btns
                     button.btn-hover
                         span.static SHARE
                         span.hover(data-hover="SHARE SHARE ") SHARE SHARE 
+                    .share-btns__buttons
+                        - var list = []
+                        - list.push({href: "https://twitter.com/share?text={{ page_title }}&url={{ shop.url }}{{ article.url }}&hashtags=SleauDown,SleauShop",  icon: ttIcon})
+                        - list.push({href: "https://www.facebook.com/sharer/sharer.php?u={{ shop.url }}{{ article.url }}",  icon: fbIcon})
+                        each item, index in list
+                            a(href=""+item.href, target="_blank") 
+                                .move !{item.icon} !{item.icon} !{item.icon} !{item.icon} !{item.icon} !{item.icon} !{item.icon} !{item.icon}
 
             .header-article__img
                 img(src="{{ article.image.src | img_url: 'master' }}" alt="{{ article.title }}").img-load
