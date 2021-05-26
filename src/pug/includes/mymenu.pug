@@ -8,13 +8,15 @@
 
 //- =========================  top bar  ========================= -//
 //- =========================  top bar  ========================= -//
-    - var closeTopBar = '<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20"><g fill="none" stroke="var(--soft)"><circle cx="10" cy="10" r="10" stroke="none"/><circle cx="10" cy="10" r="9.5"/></g><path fill="var(--soft)" d="M14.218 6.736l-.823-.823-3.264 3.263-3.263-3.263-.823.823 3.263 3.263-3.263 3.264.823.823 3.263-3.264 3.263 3.263.823-.823-3.263-3.263z"/></svg>'
-    .top-bar.e-dark
-        .top-bar__hold
-            .top-bar__text
-                span {{ settings.top_bar_text }}
+- var closeTopBar = '<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20"><g fill="none" stroke="var(--soft)"><circle cx="10" cy="10" r="10" stroke="none"/><circle cx="10" cy="10" r="9.5"/></g><path fill="var(--soft)" d="M14.218 6.736l-.823-.823-3.264 3.263-3.263-3.263-.823.823 3.263 3.263-3.263 3.264.823.823 3.263-3.264 3.263 3.263.823-.823-3.263-3.263z"/></svg>'
+|   {% if settings.is_topbar %}
+.top-bar.e-dark
+    .top-bar__hold
+        .top-bar__text
+            span {{ settings.top_bar_text }}
 
-            .top-bar__close.e-flex !{closeTopBar}
+        .top-bar__close.e-flex !{closeTopBar}
+|   {% endif %}
 
 
 

@@ -11,6 +11,12 @@
     "name": "TOP BAR MESSAGE",
     "settings": [
       {
+        "type": "checkbox",
+        "id": "is_topbar",
+        "label": "Top Bar",
+        "default": false
+      },
+      {
         "type": "text",
         "id": "top_bar_text",
         "label": "Top Bar Message",
@@ -19,85 +25,97 @@
     ]
   },
   {
-      "name": "POPUP NEWSLETTER",
-      "settings": [
-          {
-              "id": "popup_subt_newsl",
-              "type": "text",
-              "label": "Text",
-              "default": "NEWSLETTER"
-          },
-          {
-              "id": "popup_title_newsl",
-              "type": "text",
-              "label": "Text",
-              "default": "JOIN THE COMMUNITY"
-          },
-          {
-              "id": "popup_text_newsl",
-              "type": "text",
-              "label": "Text"
-          },
-          {
-            "type": "image_picker",
-            "id": "popup_img_newsl",
-            "label": "Image"
-          }
-      ]
+    "name": "POPUP NEWSLETTER",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "is_popup_newsl",
+        "label": "Display Newsletter Pop up?",
+        "default": false
+      },
+      {
+        "id": "popup_subt_newsl",
+        "type": "text",
+        "label": "Text",
+        "default": "NEWSLETTER"
+      },
+      {
+        "id": "popup_title_newsl",
+        "type": "text",
+        "label": "Text",
+        "default": "JOIN THE COMMUNITY"
+      },
+      {
+        "id": "popup_text_newsl",
+        "type": "text",
+        "label": "Text"
+      },
+      {
+        "type": "image_picker",
+        "id": "popup_img_newsl",
+        "label": "Image"
+      }
+    ]
   },
   {
-      "name": "POPUP SALE",
-      "settings": [
-          {
-              "id": "popup_subt_sale",
-              "type": "text",
-              "label": "Text",
-              "default": "SALE"
-          },
-          {
-              "id": "popup_title_sale",
-              "type": "text",
-              "label": "Text",
-              "default": "JOIN THE COMMUNITY"
-          },
-          {
-              "id": "popup_text_sale",
-              "type": "text",
-              "label": "Text"
-          },
-          {
-              "id": "popup_textlink_sale",
-              "type": "text",
-              "label": "Link text",
-              "default": "SHOP NOW"
-          },
-          {
-              "id": "popup_link_sale",
-              "type": "url",
-              "label": "Link"
-          },
-          {
-            "type": "image_picker",
-            "id": "popup_img_sale",
-            "label": "Image"
-          }
-      ]
+    "name": "POPUP SALE",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "is_popup_sale",
+        "label": "Display Sale Pop up?",
+        "default": false
+      },
+      {
+        "id": "popup_subt_sale",
+        "type": "text",
+        "label": "Text",
+        "default": "SALE"
+      },
+      {
+        "id": "popup_title_sale",
+        "type": "text",
+        "label": "Text",
+        "default": "JOIN THE COMMUNITY"
+      },
+      {
+        "id": "popup_text_sale",
+        "type": "text",
+        "label": "Text"
+      },
+      {
+        "id": "popup_textlink_sale",
+        "type": "text",
+        "label": "Link text",
+        "default": "SHOP NOW"
+      },
+      {
+        "id": "popup_link_sale",
+        "type": "url",
+        "label": "Link"
+      },
+      {
+        "type": "image_picker",
+        "id": "popup_img_sale",
+        "label": "Image"
+      }
+    ]
   },
   {
-      "name": "CART COLLECTION",
-      "settings": [
-          {
-              "id": "cart_colle",
-              "type": "collection",
-              "label": "Collection"
-          },
-          {
-              "id": "text_cart_colle",
-              "type": "text",
-              "label": "Text",
-              "default": "ANYTHING ELSE?"
-          }
-      ]
+    "name": "CART COLLECTION",
+    "settings": [
+      {
+        "id": "cart_colle",
+        "type": "collection",
+        "label": "Collection"
+      },
+      {
+        "id": "text_cart_colle",
+        "type": "text",
+        "label": "Text",
+        "default": "ANYTHING ELSE?"
+      }
+    ]
   },
   {
     "name": "DROPDOWN SNEAKERS",

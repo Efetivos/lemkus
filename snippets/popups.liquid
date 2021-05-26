@@ -1,4 +1,4 @@
-
+  {% if settings.is_popup_newsl %}
 <div class="popup popup-newsl">
   <div class="popup__fader e-abs"> </div>
   <div class="popup__hold">
@@ -18,7 +18,8 @@
       </div>
     </div>
   </div>
-</div>
+</div>  {% endif %}
+  {% if settings.is_popup_sale %}
 <div class="popup popup-sale">
   <div class="popup__fader e-abs"> </div>
   <div class="popup__hold">
@@ -30,4 +31,4 @@
       <div class="popup__text">{{ settings.popup_text_sale }}</div><a class="popup__btn btn-hover" href="{{ settings.popup_link_sale }}"><span class="static">{{ settings.popup_textlink_sale }}</span><span class="hover" data-hover="{{ settings.popup_textlink_sale }} {{ settings.popup_textlink_sale }} ">{{ settings.popup_textlink_sale }} {{ settings.popup_textlink_sale }} </span></a>
     </div>
   </div>
-</div>
+</div>  {% endif %}
