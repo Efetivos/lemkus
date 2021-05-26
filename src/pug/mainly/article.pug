@@ -13,7 +13,7 @@
             
                 li.header-article__infos__each
                     .reco Date
-                    .recosemi {{ article.date }}
+                    .recosemi {{ article.created_at | date: "%d.%m.%y" }}
             
                 li.header-article__infos__each
                     .reco Author
@@ -166,14 +166,21 @@
                 
             |   {% endif %}
 
-                
 
 
+
+
+
+
+
+        //- =========================  ARITCLE PRODUCTS  ========================= -//
+        //- =========================  ARITCLE PRODUCTS  ========================= -//
+        |   {% section 'article-products' %}
 
 
 
         //- =========================  BLOG  ========================= -//
         //- =========================  BLOG  ========================= -//
-        |   {% section 'index-blog' %}
+        |   {% section 'art-blog' %}
 
     | {% render  'myfooter' %}

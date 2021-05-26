@@ -1,28 +1,28 @@
 
 {% schema %}
     {
-        "name": "INDEX | Blog",
-        "class": "blog-index",
+        "name": "ARTICLE | More Posts",
+        "class": "art-blog",
         "settings": [
             {
-                "id": "blog-index",
+                "id": "art-blog",
                 "type": "blog",
-                "label": "Blog"
+                "label": "Posts"
             },
             {
-                "id": "title-blog",
+                "id": "title-art",
                 "type": "text",
-                "label": "Title Blog",
-                "default": "CULTURE"
+                "label": "Title",
+                "default": "MORE POSTS"
             }
         ]
     }
 {% endschema %}
-{% assign blog = blogs[section.settings.blog-index] %}
+{% assign art = blogs[section.settings.art-blog] %}
 <section class="blog-index">
   <div class="blog-index__hold e-hold">
     <div class="blog-index__cult-title">
-      <h1 class="t-color dharma">{{ section.settings.title-blog }}</h1><a class="view-all-blog btn-hover no-mobile" href="{{ shop.url }}/blogs/news"><span class="static">VIEW ALL</span><span class="hover" data-hover="VIEW ALL VIEW ALL ">VIEW ALL VIEW ALL </span></a>
+      <h1 class="dharma">{{ section.settings.title-art }}</h1><a class="view-all-blog btn-hover no-mobile" href="{{ shop.url }}/blogs/news"><span class="static">VIEW ALL</span><span class="hover" data-hover="VIEW ALL VIEW ALL ">VIEW ALL VIEW ALL </span></a>
     </div>
     <ul class="blog-index__posts">
         {% for article in blog.articles limit: 4 %}

@@ -10,7 +10,7 @@
         </li>
         <li class="header-article__infos__each">
           <div class="reco">Date</div>
-          <div class="recosemi">{{ article.date }}</div>
+          <div class="recosemi">{{ article.created_at | date: "%d.%m.%y" }}</div>
         </li>
         <li class="header-article__infos__each">
           <div class="reco">Author</div>
@@ -84,6 +84,7 @@
           <li class="embed__ifram__each"> {{ iframe }}</li>  {% endfor %}
         </ul>
       </section>  {% endif %}
-    </div>  {% section 'index-blog' %}
+    </div>  {% section 'article-products' %}
+      {% section 'art-blog' %}
   </main>{% render  'myfooter' %}
 </div>

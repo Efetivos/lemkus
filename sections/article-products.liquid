@@ -1,0 +1,23 @@
+
+{% schema %}
+    {
+        "name": "ARTICLE | Products",
+        "class": "prods-article",
+        "settings": [
+            {
+                "id": "articles_prod",
+                "type": "collection",
+                "label": "Collection"
+            }
+        ]
+    }
+{% endschema %}
+{% assign article_cols = collections[section.settings.articles_prod] %}
+<section class="collect-index">
+  <h1 class="collect-index__title dharma">{{ section.settings.text_dropped }}</h1>
+  <div class="collect-index__hold colle-cards">
+    {% for item in article_cols.products limit: 3 %}
+      {% render 'product-card' prod: item %}
+    {% endfor %}
+  </div>
+</section>
