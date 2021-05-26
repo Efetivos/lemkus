@@ -19,6 +19,66 @@
     ]
   },
   {
+      "name": "POPUP NEWSLETTER",
+      "settings": [
+          {
+              "id": "popup_subt_newsl",
+              "type": "text",
+              "label": "Text",
+              "default": "NEWSLETTER"
+          },
+          {
+              "id": "popup_title_newsl",
+              "type": "text",
+              "label": "Text",
+              "default": "JOIN THE COMMUNITY"
+          },
+          {
+              "id": "popup_text_newsl",
+              "type": "text",
+              "label": "Text"
+          },
+          {
+            "type": "image_picker",
+            "id": "popup_img_sale",
+            "label": "Image"
+          }
+      ]
+  },
+  {
+      "name": "POPUP SALE",
+      "settings": [
+          {
+              "id": "popup_subt_sale",
+              "type": "text",
+              "label": "Text",
+              "default": "SALE"
+          },
+          {
+              "id": "popup_title_sale",
+              "type": "text",
+              "label": "Text",
+              "default": "JOIN THE COMMUNITY"
+          },
+          {
+              "id": "popup_text_sale",
+              "type": "text",
+              "label": "Text"
+          },
+          {
+              "id": "popup_textlink_sale",
+              "type": "text",
+              "label": "Link text",
+              "default": "SHOP NOW"
+          },
+          {
+              "id": "popup_link_sale",
+              "type": "url",
+              "label": "Link"
+          }
+      ]
+  },
+  {
       "name": "CART COLLECTION",
       "settings": [
           {
