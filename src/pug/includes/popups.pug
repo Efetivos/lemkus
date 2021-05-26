@@ -1,18 +1,18 @@
 
-- var closeTopPopup = '<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20"><g fill="none" stroke="var(--soft)"><circle cx="10" cy="10" r="10" stroke="none"/><circle cx="10" cy="10" r="9.5"/></g><path fill="var(--soft)" d="M14.218 6.736l-.823-.823-3.264 3.263-3.263-3.263-.823.823 3.263 3.263-3.263 3.264.823.823 3.263-3.264 3.263 3.263.823-.823-3.263-3.263z"/></svg>'
+- var closeTopPopup = '<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 20 20"><g fill="none" stroke="var(--dark)"><circle cx="10" cy="10" r="10" stroke="none"/><circle cx="10" cy="10" r="9.5"/></g><path fill="var(--dark)" d="M14.218 6.736l-.823-.823-3.264 3.263-3.263-3.263-.823.823 3.263 3.263-3.263 3.264.823.823 3.263-3.264 3.263 3.263.823-.823-3.263-3.263z"/></svg>'
 
 //- =========================  POPUP NEWSL  ========================= -//
 //- =========================  POPUP NEWSL  ========================= -//
-.popup
+.popup.popup-newsl
     .popup__fader.e-abs 
     .popup__hold
         .popup__img
-            img(src="{{ settings.kids-ft1-img | img_url: 'master' }}", alt='#')
+            img(src="{{ settings.popup_img_newsl | img_url: 'master' }}", alt='#')
 
         .popup__texts.e-rel
             .popup__close !{closeTopPopup}
             .popup__subt.recosemi {{ settings.popup_subt_newsl }}
-            .popup__title.dharma {{ settings.popup_title_newsl }}
+            .popup__title {{ settings.popup_title_newsl }}
             .popup__text {{ settings.popup_text_newsl }}
             .popup__form 
                 form
@@ -23,7 +23,7 @@
 
 //- =========================  POPUP SALE  ========================= -//
 //- =========================  POPUP SALE  ========================= -//
-.popup
+.popup.popup-sale
     .popup__fader.e-abs 
     .popup__hold
         .popup__img
@@ -32,7 +32,7 @@
         .popup__texts.e-rel
             .popup__close !{closeTopPopup}
             .popup__subt.recosemi {{ settings.popup_subt_sale }}
-            .popup__title.dharma {{ settings.popup_title_sale }}
+            .popup__title {{ settings.popup_title_sale }}
             .popup__text {{ settings.popup_text_sale }}
             
             a(href="{{ settings.popup_link_sale }}").popup__btn.btn-hover

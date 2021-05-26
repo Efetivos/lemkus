@@ -40,7 +40,7 @@
           },
           {
             "type": "image_picker",
-            "id": "popup_img_sale",
+            "id": "popup_img_newsl",
             "label": "Image"
           }
       ]
@@ -75,6 +75,11 @@
               "id": "popup_link_sale",
               "type": "url",
               "label": "Link"
+          },
+          {
+            "type": "image_picker",
+            "id": "popup_img_sale",
+            "label": "Image"
           }
       ]
   },
