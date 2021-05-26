@@ -5,11 +5,18 @@
     text-transform: uppercase
     font-size: 3rem
     line-height: 0.95
+    @include desk
+        font-size: 4rem
 
 .parag , .parag > *
     font-size: 1.4rem
     line-height: 1.43
     margin: 1.2rem 0 0
+    @include desk
+        font-size: 1.6rem
+        line-height: 1.38
+        margin: 2.3rem 0 0
+    
 
 
 
@@ -29,12 +36,19 @@
 //- =========================  HEADER  ========================= -//
 header.header-article
     padding: 70px 0 0
+    @include desk
+        padding: 8.1rem 0 0
+    
 
 
 .header-article__title
     font-family: var(--dharma)
     font-size: 8rem
     line-height: .78
+    @include desk
+        font-size: 30rem
+        margin: 0 0 0 -0.4rem
+        letter-spacing: -0.45rem
 
 
 ul.header-article__infos
@@ -45,6 +59,11 @@ ul.header-article__infos
     margin: 1rem 0
     padding: 1.1rem 0
     row-gap: 0.8rem
+    @include desk
+        display: grid
+        grid-template-columns: auto auto auto auto 15rem
+        margin: 0
+        padding: 1.1rem 0 0.2rem
 
 
 li.header-article__infos__each
@@ -58,11 +77,17 @@ li.header-article__infos__each > *
 ul.header-article__infos .recosemi
     text-transform: uppercase
 
+li.header-article__infos__each.no-mobile
+    @include desk
+        justify-self: end
 
 .header-article__img
     height: 32.6rem
     margin: 1.3rem 0 0
     position: relative
+    @include desk
+        margin: 2.9rem 0 0
+        height: 66.9rem
 
 
 .header-article__img img
@@ -86,14 +111,51 @@ ul.header-article__infos .recosemi
 /*====  side side*/
 main.main-article
     margin: 3.2rem 0 0
+    @include desk
+        margin: 0
 
 
 main.main-article section
     margin: 3.6rem 0
+    @include desk
+        margin: 6.2rem 0
 
+
+
+
+
+/*===== img-text */
+
+section.img-text
+    @include desk
+        display: flex
+        justify-content: space-between
 
 .title-text1 .parag
     margin: 2.3rem 0 0
+
+
+.img-text__text
+    @include desk
+        width: 63.2rem
+
+
+.img-text__text .heading
+    margin: 2.4rem 0 0
+    @include desk
+        margin: 0
+
+
+.img-text__img
+    @include desk
+        width: 63rem
+        height: 40rem
+
+.img-text-right
+    @include desk
+        flex-direction: row-reverse
+
+
 
 
 
@@ -102,31 +164,45 @@ main.main-article section
 /*====  side side*/
 section.side-side
     flex-direction: column
+    @include desk
+        flex-direction: row
+        justify-content: space-between
 
 
-section.side-side .side-side__2
+.side-side .side-side__2
     margin: 1.2rem 0 0
+    @include desk
+        margin: 0
 
 
-.img-text__text .heading
-    margin: 2.4rem 0 0
+
+.side-side > *
+    @include desk
+        width: 47.9%
+        height: 66.8rem
 
 
 
 /* === fullwidth img */
-section.full-width-img li
+.full-width-img li
     margin: 1.2rem 0
+    @include desk
+        margin: var(--gap) 0
 
 
 
 /* === quote */
 section.quote
     padding: 0 1.7rem
+    @include desk
+        padding: 0 4rem
 
 
-section.quote .recosemi p
+.quote .recosemi p
     font-size: 1.8rem
     line-height: 1.35
+    @include desk
+        font-size: 2.2rem
 
 
 .quote-author
@@ -134,10 +210,17 @@ section.quote .recosemi p
 
 
 
+.quote-author p
+    @include desk
+        font-size: 1.6rem
+
+
 /* === embed */
 section.embed li
     margin: 2.4rem 0 0
+    @include desk
+        margin: var(--gap) 0 0
 
 
 section.embed iframe
-    height: 53.6vw
+    height: 53.9vw

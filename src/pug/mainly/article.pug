@@ -166,22 +166,14 @@
                 
             |   {% endif %}
 
+                
 
 
 
-        //-
-            section
-            |   {{ article.content }}
-                    
-            section
-                |   {% if blog.next_article %}
-                a(href="{{ blog.next_article.url }}", title="{{ blog.next_article.title }}")
-                    img(src="{{ blog.next_article.image.src | img_url: 'master' }}" alt="{{ blog.next_article.title }}").img-load
-                    span {{ blog.next_article.title }}
-                |   {% else %}
-                a(href="{{ blog.previous_article.url }}", title="{{ blog.previous_article.title }}")
-                    img(src="{{ blog.previous_article.image.src | img_url: 'master' }}" alt="{{ blog.previous_article.title }}").img-load
-                    span {{ blog.next_article.title }}
-                |   {% endif %}
+
+
+        //- =========================  BLOG  ========================= -//
+        //- =========================  BLOG  ========================= -//
+        |   {% section 'index-blog' %}
 
     | {% render  'myfooter' %}
