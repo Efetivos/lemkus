@@ -15,6 +15,7 @@ import { preloader } from './js/utils/preloader';
 import { scroll } from './js/utils/scroll';
 import { accordion_menu } from './js/utils/accordion-menu';
 import { menu_blog } from './js/utils_global/menu_blog';
+import { dropdown } from './js/utils/dropdown';
 
 
 
@@ -27,6 +28,7 @@ ajaxify.init()
 preloader.init()
 preloader.font()
 scroll.init()
+dropdown.init()
 
 if($('.page-about').length > 0 || $('.page-contact').length > 0 || $('.page-blog').length > 0  ) {
     gsap.set('html', { '--dark':'#f6f6f6', '--soft': '#191919' })

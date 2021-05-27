@@ -4,14 +4,16 @@
 //- =========================  MENU DROPDOWN  ========================= -//
 //- =========================  MENU DROPDOWN  ========================= -//
 .menu-dd
-    display: block
-    display: none
     background: var(--soft)
+    display: block
     left: 0
     position: fixed
     top: 4.9rem
+    transform: translateY(-100%)
+    transition: transform .8s cubic-bezier(0, 0.79, 0.2, 1)
     width: 100vw
-    z-index: 7
+    z-index: 6
+
 
 
 .menu-dd__hold
@@ -87,3 +89,21 @@
     width: 87.5rem
     
 
+.menu-dd__fader
+    background: rgba(0, 0, 0, .75)
+    height: 100vh
+    left: 0
+    opacity: 0
+    position: fixed
+    top: 0
+    transition: opacity .4s ease-out
+    width: 100vw
+    z-index: 6
+
+
+.dd-active
+    transform: translateY(0%)
+    z-index: 7
+
+.is-dropd .menu-dd__fader
+    opacity: 1
