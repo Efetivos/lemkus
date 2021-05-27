@@ -48,7 +48,6 @@ class Dropdown {
                 that.trg_active = $(this).data('trgdd')
                 $(that.dd.els).eq(thisIndex).addClass('dd-active')
                 $(that.body).addClass('is-dropd')
-                console.log(that.trg_active )
             }, function () {
                 let thisIndex = $(that.dd.trg).index(this)
                 
@@ -59,6 +58,8 @@ class Dropdown {
                         //console.log("that.dd_active: " + that.dd_active);
                         $(that.dd.els).eq(thisIndex).removeClass('dd-active')
                         $(that.body).removeClass('is-dropd')
+                    } else {
+                        $(that.body).addClass('is-dropd')
                     }
                 }, 100);
             })
@@ -69,7 +70,6 @@ class Dropdown {
         $(this.dd.els).hover(
             function () {
                 $(that.body).addClass($(this).data('dd'))
-                $(that.body).addClass('is-dropd')
             }, function () {
                 let thisIndex = $(that.dd.els).index(this)
                 $(that.body).removeClass($(this).data('dd'))
