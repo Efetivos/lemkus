@@ -38,9 +38,11 @@ class Preloader {
         ]).then(_ => {
             console.log({ fontDharma });
             window.dispatchEvent(new Event('resize'))
+            $('.preloader-master').remove()
         }).catch(_ => {
             console.log('catch');
             window.dispatchEvent(new Event('resize'))
+            $('.preloader-master').remove()
         })
     }
 }

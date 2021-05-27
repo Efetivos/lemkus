@@ -52,10 +52,6 @@ class Dropdown {
             }, function () {
                 let thisIndex = $(that.dd.trg).index(this)
                 
-                //if($("#myDiv:hover").length != 0){
-                //} else{
-                //}
-                
                 
                 setTimeout(function () {
                     if (!$(that.body).hasClass(''+that.trg_active)) {
@@ -63,7 +59,7 @@ class Dropdown {
                         //console.log("that.dd_active: " + that.dd_active);
                         $(that.dd.els).eq(thisIndex).removeClass('dd-active')
                         $(that.body).removeClass('is-dropd')
-                    } else { console.log('same ') }
+                    }
                 }, 100);
             })
 
@@ -73,10 +69,10 @@ class Dropdown {
         $(this.dd.els).hover(
             function () {
                 $(that.body).addClass($(this).data('dd'))
+                $(that.body).addClass('is-dropd')
             }, function () {
                 let thisIndex = $(that.dd.els).index(this)
                 $(that.body).removeClass($(this).data('dd'))
-                $(that.body).removeClass('is-dropd')
                 $(that.dd.trg).eq(thisIndex).trigger('mouseleave')
             })
 

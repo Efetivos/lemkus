@@ -94,9 +94,11 @@
     height: 100vh
     left: 0
     opacity: 0
+    pointer-events: none
     position: fixed
     top: 0
     transition: opacity .4s ease-out
+    visibility: hidden
     width: 100vw
     z-index: 6
 
@@ -107,3 +109,5 @@
 
 .is-dropd .menu-dd__fader
     opacity: 1
+    pointer-events: auto
+    visibility: visible

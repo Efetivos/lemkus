@@ -1,4 +1,5 @@
 
+<div class="preloader-master e-wvw e-hvh e-fixed e-soft"></div>
 <div class="bg-fixed-els el-fix"></div>  {% if settings.is_topbar %}
 <div class="top-bar e-dark">
   <div class="top-bar__hold">
@@ -13,18 +14,10 @@
 <nav class="main-menu no-mobile el-fix">
   <ul>
     <li><a class="item" href="{{ shop.url }}/pages/launches">LAUNCHES</a></li>
-    <li class="trg-dd" data-trgdd="is-SNEAKERS">
-      <div class="item">SNEAKERS</div>
-    </li>
-    <li class="trg-dd" data-trgdd="is-APPAREL">
-      <div class="item">APPAREL</div>
-    </li>
-    <li class="trg-dd" data-trgdd="is-KIDS">
-      <div class="item">KIDS</div>
-    </li>
-    <li class="trg-dd" data-trgdd="is-ACCESSORIES">
-      <div class="item">ACCESSORIES</div>
-    </li>  {% for link in linklists.main-menu.links %}
+    <li class="trg-dd" data-trgdd="is-sneakers"><a class="e-upper item" href="{{ shop.url }}/collections/sneakers">sneakers</a></li>
+    <li class="trg-dd" data-trgdd="is-apparel"><a class="e-upper item" href="{{ shop.url }}/collections/apparel">apparel</a></li>
+    <li class="trg-dd" data-trgdd="is-kids"><a class="e-upper item" href="{{ shop.url }}/collections/kids">kids</a></li>
+    <li class="trg-dd" data-trgdd="is-accessories"><a class="e-upper item" href="{{ shop.url }}/collections/accessories">accessories</a></li>  {% for link in linklists.main-menu.links %}
     <li><a class="item" href="{{ link.url }}">{{ link.title }}</a></li>  {% endfor %}
   </ul>
 </nav>

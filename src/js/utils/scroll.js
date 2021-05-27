@@ -2,6 +2,7 @@
 import { gsap } from 'gsap'
 import { accordion } from './accordion'
 import { accordion_filters } from './accordion-filters';
+import { add_to_cart } from './add-to-cart';
 class Smooth {
     constructor() {
     }
@@ -74,6 +75,7 @@ class Smooth {
         // ______________ PRODUCT
         if (this.isPage === 'product') {
             if (!this.once) {
+                add_to_cart.init(this.contentPage)
                 accordion.init(this.contentPage)
                 this.once = true
             }
