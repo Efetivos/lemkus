@@ -28,6 +28,38 @@ fieldset.fieldset-qty
         cursor: pointer
 
 
+svg.loading
+    left: 50%
+    overflow: visible
+    position: absolute
+    transform: translateX(-50%)
+    transition: .15s opacity ease-out
+    width: 2rem
+    opacity: 0
+
+
+.loading circle
+    stroke-width: 2.3px
+    stroke-dasharray: 0.8
+
+.loading-item
+    .add-to-cart-btn span
+        opacity: 0 !important
+        transition: 0s opacity ease-out !important
+    .add-to-cart-btn svg
+        animation: spinning 0.75s infinite linear
+        opacity: 1 !important
+
+
+@keyframes spinning
+	0%
+		transform: rotate(0deg)
+	100%
+		transform: rotate(360deg)
+
+
+
+
 .disabled
     pointer-events: none
     opacity: 0.2

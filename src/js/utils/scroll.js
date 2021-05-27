@@ -1,5 +1,6 @@
 
 import { gsap } from 'gsap'
+import { ajaxify } from '../utils_shopify/ajaxify';
 import { accordion } from './accordion'
 import { accordion_filters } from './accordion-filters';
 import { add_to_cart } from './add-to-cart';
@@ -75,6 +76,8 @@ class Smooth {
         // ______________ PRODUCT
         if (this.isPage === 'product') {
             if (!this.once) {
+                ajaxify.init()
+                ajaxify.onClick(this.contentPage)
                 add_to_cart.init(this.contentPage)
                 accordion.init(this.contentPage)
                 this.once = true

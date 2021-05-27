@@ -10,7 +10,6 @@ gsap.config({ nullTargetWarn: false });
 //___ instancing
 import { menu } from './js/utils_global/menu';
 import { minicart } from './js/utils_shopify/minicart';
-import { ajaxify } from './js/utils_shopify/ajaxify';
 import { preloader } from './js/utils/preloader';
 import { scroll } from './js/utils/scroll';
 import { accordion_menu } from './js/utils/accordion-menu';
@@ -24,7 +23,6 @@ menu.init()
 menu_blog.init()
 menu.fixMobile()
 minicart.init()
-ajaxify.init()
 preloader.init()
 preloader.font()
 scroll.init()

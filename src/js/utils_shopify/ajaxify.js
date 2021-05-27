@@ -25,7 +25,10 @@ class Ajaxify {
 
             that.fecthItem(el)
         });
-
+        
+        $('.add-cart-btns').click(function(){
+            $(this).addClass('loading-item')
+        })
 
     }
 
