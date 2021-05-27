@@ -57,7 +57,7 @@ nav.main-menu.no-mobile.el-fix
             a(href= "{{ shop.url }}/pages/launches").item LAUNCHES
 
         each list, index in['SNEAKERS','APPAREL','KIDS','ACCESSORIES']
-            li(class="is-"+list).trg-dd
+            li(data-trgdd="is-"+list).trg-dd
                 .item=list
         |   {% for link in linklists.main-menu.links %}
         li
