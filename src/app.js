@@ -20,6 +20,7 @@ import { dropdown } from './js/utils/dropdown';
 
 //___ calling
 menu.init()
+menu.verifySO()
 menu_blog.init()
 menu.fixMobile()
 minicart.init()
