@@ -154,5 +154,41 @@ class Menu {
             document.documentElement.style.setProperty('--vw', `${vw}px`)
         })
     }
+
+
+    
+
+    //? - =========================  VERIFY SO  ========================= -//
+    //? - =========================  VERIFY SO  ========================= -//
+
+
+    //? - =========================  FIX MOBILE  ========================= -//
+    //? - =========================  FIX MOBILE  ========================= -//
+    verifySO() {
+        function isMacintosh() {
+            return navigator.platform.indexOf('Mac') > -1
+        }
+        let isMac = isMacintosh()
+        if (isMac) { $('body').addClass('is-mac') } //verify mac
+        if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
+            $('html').addClass('is-firefox')
+        }
+        let isIOS = /iPad|iPhone|iPod/.test(navigator.platform) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
+
+        if (isIOS && window.innerWidth < 980) {
+            $('html').addClass('is-ios')
+        }
+
+        if (navigator.userAgent.search("Safari") >= 0 && navigator.userAgent.search("Chrome") < 0) {
+            $('html').addClass('is-safari')
+        }
+
+        
+        if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
+            $('html').addClass('is-firefox')
+        }
+
+    }
+    
 }
 export const menu = new Menu()
