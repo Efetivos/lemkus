@@ -1,1 +1,69 @@
 @import 'alias-mixins'
+
+
+//dropping cards
+.is-safari .dropping-card-regular .dropping-card__infos
+    @include desk
+        width: calc(45.6rem + 1px)
+
+//launches
+.is-safari .header-laun__colle__hold .prod-card__each + .prod-card__each
+    margin: 0 0 0 var(--gap)
+
+//blog
+.is-safari ul.blog-index__posts
+    @include mobile
+        display: inline-flex
+
+.is-safari .blog-index__posts .article-card__each + .article-card__each
+    @include mobile
+        margin: 0 0 0 2.5rem !important
+
+
+//pagination
+.is-safari .blog-page__paginate__each + .blog-page__paginate__each
+    margin: 0 0 0 1.9rem
+
+.is-safari .colle__paginate__each + .colle__paginate__each
+    margin: 0 0 0 1.9rem
+
+
+.is-safari .card-sale .regular-price
+    margin: 0 1rem 0 0 
+    @include desk
+        margin: 0 1.6rem 0 0 
+
+
+//filter collections
+.is-safari .removeit
+    margin: 0 0 0 1rem
+
+.is-safari li.filter-prod__actives__each
+    margin: 1rem  1.5rem 0 0
+
+.is-safari .filter-prod__each .check
+    margin: 0 1.3rem 0 0
+
+
+//sizes product page
+.is-safari .ctn-variants fieldset
+    margin: 0.9rem 1.4rem 0 0
+    @include desk
+        margin: 1.5rem 1.7rem 0 0
+
+
+.is-safari button#add-to-cart-button
+    @include desk
+        width: 59.6%
+
+
+//menu dd
+.is-safari .menu-dd__links > *
+    @include desk
+        margin: 0 12rem 0 0
+
+
+//erase search
+.is-safari .erase-search
+    top: 0.1rem
+

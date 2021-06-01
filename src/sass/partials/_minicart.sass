@@ -114,8 +114,8 @@ a.item-title
 p.item-size
     font-size: 1.2rem
     grid-area: size
-    margin: -1.3rem 0 0
     @include desk
+        margin: -1.3rem 0 0
         font-size: 1.6rem
         margin: -0.9rem 0 0
 
@@ -279,6 +279,9 @@ section.cart-colle
 
     .cart-colle__hold.mini-card
         margin: -1px
+        @include mobile
+            height: auto
+            padding: 0 0 5rem 0
 
     .cart-colle__hold.mini-card
         height: 86.4vh

@@ -1,8 +1,8 @@
-## Time: 90h30
-Data: 12:30  | 05.01  
-Daily: -02:00  
+## Time: 91h30
+Data: 13:30  | 05.01  
+Daily: -01:00  
   
-![Screenshot](./cover.png) (https://github.com/Efetivos/gesch)
+![Screenshot](./cover.png) (https://github.com/Efetivos/lemkus)
 
 
 ### Colors:
