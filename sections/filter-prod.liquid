@@ -50,7 +50,10 @@
     <div class="filter-prod__hold__all">{% for block in section.blocks %}
       <div class="filter-prod__each">
         <div class="filter-prod__each__cat"><span class="cat-title">{{ block.settings.cat_title }}</span>
-          <div class="expand">+ </div>
+          <div class="plus-accd">
+            <div class="plus-accd__line indic-static"></div>
+            <div class="plus-accd__line indic-rotate"></div>
+          </div>
         </div>
         <ul class="filter-prod__items">
             {% assign filter = block.settings.each_filter | split: ", " %}

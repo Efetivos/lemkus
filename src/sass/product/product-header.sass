@@ -400,10 +400,31 @@ button#add-to-cart-button
 
 
 
+.plus-accd
+    width: 0.9rem
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: center
+    transform: rotate(180deg)
+    transition: transform .8s cubic-bezier(0.16, 1, 0.3, 1)
+
+.plus-accd__line
+    width: 100%
+    background: var(--dark)
+    height: 1px
+    position: absolute
+
+.indic-rotate
+    transform: rotate(90deg)
+    transition: transform .8s cubic-bezier(0.16, 1, 0.3, 1)
 
 
+.active-accd .plus-accd, .cat-filter-active .plus-accd
+    transform: rotate(0deg)
 
-
+.active-accd .indic-rotate, .cat-filter-active .indic-rotate
+    transform: rotate(0deg)
 
 
 

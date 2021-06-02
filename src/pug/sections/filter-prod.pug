@@ -62,7 +62,9 @@
             .filter-prod__each
                 .filter-prod__each__cat
                     span.cat-title {{ block.settings.cat_title }}
-                    .expand + 
+                    .plus-accd
+                        .plus-accd__line.indic-static
+                        .plus-accd__line.indic-rotate
                 ul.filter-prod__items
                     |   {% assign filter = block.settings.each_filter | split: ", " %}
                     |   {% for item in filter %}
