@@ -30,6 +30,12 @@ ul.prod-card__imgs__hold
     position: relative
     width: 100%
 
+    
+    &:hover
+        .prod-card__img__each:not(:first-child)
+            opacity: 1
+
+
 
 a.prod-img
     border: 1px solid var(--dark)
@@ -45,12 +51,13 @@ li.prod-card__img__each
     left: 0
     position: absolute
     top: 0
+    opacity: 0
+    transition: .5s opacity ease-out
 
     
 
 .prod-card__img__each:first-child
     position: relative
-    z-index: 1
 
 .prod-card__img__each img
     height: 100%
@@ -76,7 +83,7 @@ li.prod-card__img__each
 
 //- =========================  date  ========================= -//
 //- =========================  date  ========================= -//
-.prod-card__img__date
+.prod-card__img__date, .prod-card__soldout
     @include flex-center
     background: #fff
     border-radius: 50px
@@ -98,7 +105,9 @@ li.prod-card__img__each
         top: 1.3rem
         width: 11.6rem
 
-
+.prod-card__soldout
+    @include mobile
+        width: 7rem
 
 
 
@@ -132,13 +141,14 @@ li.prod-card__img__each
 //- =========================  sizes  ========================= -//
 
 .sizes
-    display: flex
     flex-wrap: wrap
     gap: 1.8rem
     height: 5.8rem
     margin: 1.3rem 0 0 0
     overflow: hidden
     opacity: 0
+    @include desk
+        display: flex !important
 
 .sizes span
     font-family: var(--recosemi)
@@ -160,6 +170,9 @@ li.prod-card__img__each
     height: 5.8rem
     margin: -5.8rem 0
     z-index: 1
+
+.prod-card__title
+
 
 .prod-card__title a
     font-size: 4rem
@@ -190,7 +203,48 @@ li.prod-card__img__each
     width: 40.4rem
     height: 3.9rem
     bottom: 2.9rem
+    @include desk
+        opacity: 0
+        bottom: 4.5rem
 
 .prod-card__img__nav .hover
     --time: 10s
 
+
+
+
+
+
+
+
+
+
+
+
+//- =========================  REGULAR ========================= -//
+//- =========================  REGULAR ========================= -//
+.card-variant
+    &:hover
+        .sizes
+            opacity: 1 !important
+            
+        .prod-card__title, .prod-card__prices
+            opacity: 0
+
+
+
+
+
+
+
+
+//- =========================  DROPPING HOVER  ========================= -//
+//- =========================  DROPPING HOVER  ========================= -//
+.card-drop 
+    &:hover
+        .prod-card__notify
+            opacity: 1
+
+        .prod-card__title, .prod-card__prices
+            opacity: 0
+            

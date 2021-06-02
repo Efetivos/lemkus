@@ -5,7 +5,17 @@
 - var nextArrowHover = '<svg class="next-svg-hover arrow-hover" xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 29.778 18.028"><path fill="#191919" d="M26.433 8.468a15.8 15.8 0 0 1-7.578-6.361c-.116-.19-.123-.314.055-.467q.878-.755 1.736-1.534c.276-.252.329.005.427.162.592.95 1.148 1.921 1.833 2.812a16.987 16.987 0 0 0 6.377 5.044c.261.122.568.182.481.592-.093.438.2.954-.476 1.243a16.124 16.124 0 0 0-6.566 5.225 19.573 19.573 0 0 0-1.607 2.564c-.157.293-.262.392-.547.119-.49-.47-1.007-.915-1.53-1.349-.273-.226-.312-.394-.1-.721a15.689 15.689 0 0 1 6.378-5.684c.388-.194.782-.378 1.173-.566l-.031-.137a15.162 15.162 0 0 0-1.881.177 31.871 31.871 0 0 1-6.96.614c-5.665-.029-11.33-.017-17 0-.472 0-.606-.126-.556-.579.064-.578-.24-1.359.121-1.687.318-.286 1.082-.085 1.651-.085 5.518 0 11.036.014 16.554-.01a26.661 26.661 0 0 1 5.644.521A13.19 13.19 0 0 0 26 8.592c.139.008.293.066.433-.124"/></svg>'
 
 
-.prod-card__each
+|   {% assign has_stock = 0 %}
+|   {% if prod.variants.size > 1 %}
+|   {% for variant in prod.variants %}
+|   {% if variant.available %}
+|   {% if variant.inventory_quantity != 0 %} {% assign has_stock = variant.inventory_quantity %} {% endif %}
+|   {% else %}
+|   {% endif %}
+|   {% endfor %}
+|   {% else %}
+|   {% endif %}
+.prod-card__each(class!="{% if prod.metafields.drop.drop_month %}card-drop{% elsif prod.variants.size > 1 %}card-variant{% endif %}") 
     .prod-card__hold
         .prod-card__imgs
             a(href="{{ prod.url | within: collection }}").prod-img
@@ -20,9 +30,12 @@
             |   {% if prod.metafields.drop.drop_month %}
             .prod-card__img__date
                 span {{ prod.metafields.drop.drop_day }} {{ prod.metafields.drop.drop_month }}
-            |   {% elsif prod.compare_at_price_max > prod.price %}
+            |   {% elsif prod.compare_at_price_max > prod.price and has_stock > 0 %}
             .prod-card__img__discount
-                span {{ prod.compare_at_price_min | minus: prod.price | times: 100.0 |  divided_by: prod.compare_at_price_min | money_without_currency | times: 100 | replace: '.0', ''}}% OFF
+                span {{ prod.compare_at_price_min | minus: prod.price | times: 100.0 |  divided_by: prod.compare_at_price_min | money_without_currency | times: 100 | replace: '.0', ''}}% OFF {{  }}
+            |   {% else %}
+            .prod-card__soldout
+                span SOLD OUT
             |   {% endif %}
             
             //-.prod-card__img__nav.prod-card-img-prev !{prevArrow} !{prevArrowHover}

@@ -5,7 +5,7 @@
 //- =========================  COLLECTION CARD  ========================= -//
 //- =========================  COLLECTION CARD  ========================= -//
 
-.colle-cards .prod-card__img__discount, .colle-cards .prod-card__img__nav, .sizes
+.colle-cards .prod-card__img__nav, .sizes
     @include mobile
         display: none
 
@@ -83,7 +83,7 @@
         margin: -1px 0 0 -1px
 
 
-.colle-cards .prod-card__img__date
+.colle-cards .prod-card__img__date, .colle-cards .prod-card__soldout, .colle-cards .prod-card__img__discount
     display: flex !important
     font-size: 1rem
     top: 0.9rem
@@ -97,3 +97,6 @@
         top: 1.3rem
         width: 11.6rem
 
+.colle-cards .prod-card__soldout
+    @include mobile
+        width: 7rem
