@@ -1,5 +1,6 @@
 
 import { gsap } from 'gsap'
+import { index } from '../pages';
 import { ajaxify } from '../utils_shopify/ajaxify';
 import { accordion } from './accordion'
 import { accordion_filters } from './accordion-filters';

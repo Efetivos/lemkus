@@ -31,6 +31,7 @@ a.logo-main
     z-index: 9
     @include desk
         top: 1.8rem
+        transition: width 0.8s cubic-bezier(0.16, 1.08, 0.38, 0.98)
         width: 12.6rem
 
 a.logo-main svg path
@@ -63,6 +64,8 @@ a.logo-main svg path
 
 .menu-trg .line + .line
     margin: 6px 0 0
+
+
 
 
 //- =========================  FIXED LINKS  ========================= -//
@@ -530,3 +533,32 @@ a.popup__btn
 .popup__form  fieldset button svg
     padding: 0
     width: 22px
+
+
+
+
+
+
+
+
+
+
+
+
+//- =========================  IS TOP HOME  ========================= -//
+//- =========================  IS TOP HOME  ========================= -//
+
+
+.cape-hour
+    @include desk
+        display: none
+
+.is-top-home a.logo-main
+    @include desk
+        left: calc(var(--gap) - 0rem)
+        top: 6.3rem
+        width: 131.7rem
+
+.is-top-home .cape-hour
+    @include desk
+        display: inline-flex

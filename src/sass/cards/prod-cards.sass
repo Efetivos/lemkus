@@ -224,12 +224,13 @@ li.prod-card__img__each
 //- =========================  REGULAR ========================= -//
 //- =========================  REGULAR ========================= -//
 .card-variant
-    &:hover
-        .sizes
-            opacity: 1 !important
-            
-        .prod-card__title, .prod-card__prices
-            opacity: 0
+    @include desk
+        &:hover
+            .sizes
+                opacity: 1 !important
+                
+            .prod-card__title, .prod-card__prices
+                opacity: 0
 
 
 
@@ -241,10 +242,11 @@ li.prod-card__img__each
 //- =========================  DROPPING HOVER  ========================= -//
 //- =========================  DROPPING HOVER  ========================= -//
 .card-drop 
-    &:hover
-        .prod-card__notify
-            opacity: 1
+    @include desk
+        &:hover
+            .prod-card__notify
+                opacity: 1
 
-        .prod-card__title, .prod-card__prices
-            opacity: 0
-            
+            .prod-card__title, .prod-card__prices
+                opacity: 0
+                
