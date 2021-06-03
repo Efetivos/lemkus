@@ -25,14 +25,14 @@ class Index {
     //? - =========================  ONSCROLL  ========================= -//
     //? - =========================  ONSCROLL  ========================= -//
     onScroll(scrolled) {
-        if($(window).width() > 1024) {
-            if(scrolled < this.vh * 0.02) {
-                $(this.body).addClass('is-top-home')
-            } else {
-                $(this.body).hasClass('is-top-home') ? $(this.body).removeClass('is-top-home') : null
-                
-            }
-        }
+        //if($(window).width() > 1024) {
+        //    if(scrolled < this.vh * 0.02) {
+        //        $(this.body).addClass('is-top-home')
+        //    } else {
+        //        $(this.body).hasClass('is-top-home') ? $(this.body).removeClass('is-top-home') : null
+        //        
+        //    }
+        //}
     }
 
 
