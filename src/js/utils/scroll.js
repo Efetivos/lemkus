@@ -1,6 +1,7 @@
 
 import { gsap } from 'gsap'
 import { index } from '../pages';
+import DragSlider from '../utils_global/sliders';
 import { ajaxify } from '../utils_shopify/ajaxify';
 import { accordion } from './accordion'
 import { accordion_filters } from './accordion-filters';
@@ -136,6 +137,30 @@ class Smooth {
         window.removeEventListener('scroll', this.scroll, { passive: true })
     }
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //? - =========================  verify drag  ========================= -//
+    //? - =========================  verify drag  ========================= -//
+    verifyDrag() {
+        //mobile
+        this.slider = this.contentPage.querySelectorAll('.js-slider') || null
+        if($(window).width() < 1025 && this.slider.length > 0) {
+            this.slider.forEach((el) => {
+                new DragSlider(el)
+            })
+        }
+
+
+    }
+    
     init() {
         //this.contentPage = contentPage
         //this.isPage = isPage
@@ -170,6 +195,7 @@ class Smooth {
 
         this.rAF = null
         this.on()
+        this.verifyDrag()
     }
 }
 

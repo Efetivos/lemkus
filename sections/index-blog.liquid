@@ -19,12 +19,12 @@
     }
 {% endschema %}
 {% assign blog = blogs[section.settings.blog-index] %}
-<section class="blog-index">
+<section class="blog-index js-slider">
   <div class="blog-index__hold e-hold">
     <div class="blog-index__cult-title">
       <h1 class="t-color dharma">{{ section.settings.title-blog }}</h1><a class="view-all-blog btn-hover no-mobile" href="{{ shop.url }}/blogs/news"><span class="static">VIEW ALL</span><span class="hover" data-hover="VIEW ALL VIEW ALL ">VIEW ALL VIEW ALL </span></a>
     </div>
-    <ul class="blog-index__posts">
+    <ul class="blog-index__posts js-slider__holder">
         {% for article in blog.articles limit: 4 %}
         {% render 'article-card' art: article %}
         {% endfor %}
