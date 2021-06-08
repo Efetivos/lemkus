@@ -16,7 +16,9 @@
     @include tablet
         grid-template-columns: repeat(3, 33.33vw)
     @include desk
-        grid-template-columns: repeat(3, 33.33vw)
+        //grid-template-columns: repeat(3, 33.33vw)
+        grid-template-columns: repeat(3,33.36vw)
+        margin: 0 0 0 -1px
     
 
 
@@ -100,3 +102,7 @@
 .colle-cards .prod-card__soldout
     @include mobile
         width: 7rem
+.colle-cards .prod-card__img__date span, .colle-cards .prod-card__img__discount span, .colle-cards .prod-card__soldout span
+    @include desk
+        display: block
+        margin: 0.075rem 0 0 0

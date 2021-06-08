@@ -6,7 +6,7 @@
         padding: 4.3rem 0 2.9rem
 
 .footer a, .footer span
-    font-family: var(--opensemi)
+    font-family: var(--sans)
     font-size: 14px
     text-transform: uppercase
     padding: 0 0 19px 0
@@ -99,6 +99,8 @@
     margin: 0 0 1.4rem 0
 
 .footer__newsl form
+    @include mobile
+        margin: .5rem 0 0
     @include desk
         width: 26.3rem
 
@@ -113,6 +115,8 @@ input#newsl-footer
     color: var(--dark)
     line-height: 34px
     width: 90%
+    @include mobile
+        margin: 0 0 0 -0.2rem
     @include tablet
         line-height: 43px
         font-size: 16px
