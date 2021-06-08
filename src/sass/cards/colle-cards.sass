@@ -13,6 +13,9 @@
 .colle-cards
     display: grid
     grid-template-columns: 1fr 1fr
+    @include mobile
+        margin: 0 0 0 -1px
+        width: calc( 100vw + 3px )
     @include tablet
         grid-template-columns: repeat(3, 33.33vw)
     @include desk
