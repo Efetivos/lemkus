@@ -10,7 +10,7 @@
             .header-search__bar
                 span.dharma LOOKING FOR SOMETHING?
                 form(action='/search' method='get' role='search')
-                    input(type='search' name='q' placeholder="Search by product, category or keyword" value='{{ search.terms | escape }}')
+                    input(type='search' autocomplete="off" name='q' placeholder="Search by product, category or keyword" value='{{ search.terms | escape }}')
                     input(type="hidden" name="type" value="product") 
                     button(type='submit').submit !{searchIcon}
                     a(href="{{ shop.url }}/search", title="Search").erase-search !{closeGuide}

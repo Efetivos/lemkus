@@ -30,7 +30,7 @@ scroll.init()
 dropdown.init()
 
 if($('.page-about').length > 0 || $('.page-contact').length > 0 || $('.page-blog').length > 0  ) {
-    gsap.set('html', { '--dark':'#f6f6f6', '--soft': '#191919' })
+    gsap.set('html', { '--dark':'#fdfbf5', '--soft': '#191919' })
 }
 
 history.scrollRestoration = "manual"

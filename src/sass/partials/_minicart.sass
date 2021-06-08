@@ -114,6 +114,7 @@ a.item-title
 p.item-size
     font-size: 1.2rem
     grid-area: size
+    font-family: var(--reco)
     @include desk
         margin: -1.3rem 0 0
         font-size: 1.6rem
@@ -185,6 +186,7 @@ fieldset.item-qty button
     padding: 1.2rem 0
     text-transform: uppercase
     @include desk
+        border-bottom: none
         padding: 1.9rem 0
     
 
@@ -196,6 +198,8 @@ fieldset.item-qty button
         justify-content: space-between
         padding: 1.5rem 0 0
         border-top: 1px solid var(--dark)
+        margin: 0rem 0 3rem
+        padding: 2.3rem 0 0
 
 .cart__infos__btns > *
     width: 100%
@@ -342,6 +346,8 @@ section.cart-colle
 .minicart__hold
     @include mobile
         padding: 25px 0 0
+    @include desk
+        border-left: 1px solid var(--dark)
 
 .is-minicart .minicart
     transform: translateX(0%)

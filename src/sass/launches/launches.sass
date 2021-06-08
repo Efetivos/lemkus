@@ -8,12 +8,15 @@
 header.header-laun
     @include desk
         margin: 0 0 4.1rem 0
+        height: 100vh
 
 
 
 .header-laun__colle
     margin: 10.5rem 0 0
     padding: 0 33.5rem
+    @include desk
+        margin: 14.5vh 0 0
 
 
 .header-laun__hold
@@ -30,14 +33,24 @@ h1.header-laun__title
     position: absolute
     top: 13.4rem
     white-space: nowrap
+    @include desk
+        top: 13vh
 
 
 .header-laun .prod-card__each
     background: var(--soft)
+    @include desk
+        height: 70.5vh
+        width: 59.53vh
 
+.header-laun .prod-card__each .sizes
+    @include desk
+        margin: 3.8vh 0 0 
 
 .header-laun__cntrl-view
     margin: 4.9rem 0 0
+    @include desk
+        margin: 4.3vh 0 0
 
 
 .header-laun__cntrl-view__hold
@@ -48,3 +61,16 @@ h1.header-laun__title
 
 button.scroll-down
     width: 15.8rem
+
+
+.header-laun__colle a.prod-img
+    @include desk
+        height: 52.578vh
+
+.main-launches
+    @include mobile
+        margin: 42px 0 0
+
+.main-launches .dropping-card-regular .dropping-card__infos
+    @include desk
+        width: 45.65rem

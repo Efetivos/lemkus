@@ -1,9 +1,9 @@
 |   {% unless template == 'index' or template == 'cart' or template == 'list-collections' %}
 nav.breadcrumbs.breadcrumbs-prod(role="navigation" aria-label="breadcrumbs").no-mobile.e-flex
-    a(href="{{ shop.url }}") HOME | 
-    a(href="{{ shop.url }}/collections/all") SHOP ALL | 
+    a(href="{{ shop.url }}") HOME   |   
+    a(href="{{ shop.url }}/collections/all") SHOP ALL   |   
     |   {% for collection in product.collections %}
-    a(href="{{ collection.url }}") {{ collection.title }} | 
+    a(href="{{ collection.url }}") {{ collection.title }}   |   
     |   {% endfor %}
     span.recosemi {{ product.title }}
 |   {% endunless %}

@@ -225,7 +225,8 @@ h1.header-prod__title
     font-size: 4rem
     @include desk
         font-size: 9rem
-        margin: -0.9rem 0 0 0
+        line-height: 80%
+        margin: 0.1rem 0 0
 
 ul.header-prod__colors
     display: flex
@@ -402,11 +403,12 @@ button#add-to-cart-button
 
 
 .ctn-accord + .ctn-accord
-    margin: 3.3rem 0 0
+    margin: -1.2rem 0 0
     @include desk
         margin: -1.5rem 0 0
 
 .active-accd .hold-content
+    padding: 1.5rem 0 3rem
     @include desk
         padding: 1.5rem 0 3rem
 
@@ -444,6 +446,8 @@ button#add-to-cart-button
 //- =========================  MAIN  ========================= -//
 main.main-prod
     margin: 3rem 0 0
+    @include mobile
+        margin: 0
 
 
 .may-also__hold.dharma
@@ -451,6 +455,8 @@ main.main-prod
     @include desk
         font-size: 30rem
         margin: 0 0 0 1.6rem
+    @include mobile
+        margin-bottom: 0.7rem
 
 .page-product .dropping-card__notify
     @include desk
@@ -493,6 +499,8 @@ main.main-prod
     bottom: auto
     margin: 1.7rem 0 0
     width: 100%
+    @include mobile
+        margin: 2.3rem 0 0
 
 button.sold-out
     background: var(--dark)

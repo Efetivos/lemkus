@@ -4,6 +4,11 @@
 //dropping cards
 .is-safari .dropping-card-regular .dropping-card__infos
     @include desk
+        width: calc(45.7rem + 1px)
+
+
+.is-safari .main-launches .dropping-card-regular .dropping-card__infos
+    @include desk
         width: calc(45.6rem + 1px)
 
 //launches
@@ -72,7 +77,13 @@
     @include desk
         margin: 0 1.8rem 0 0
 
-
+//sort by
 .is-safari .header-coll__sort-by select
     @include desk
         width: 18.5rem
+
+//item mini cart
+.is-safari .minicart li.cart__each
+    @include desk
+        grid-template-columns: 11.8rem 36rem
+        padding: 0 0.1rem 0 0
