@@ -301,10 +301,12 @@ form#AddToCartForm
     border-radius: 50px
     border: 1px solid var(--dark)
     display: flex
+    font-family: var(--recosemi)
     font-size: 1.4rem
     height: 2.5rem
     justify-content: center
     width: 7.2rem
+
 
 #AddToCartForm fieldset input[type=radio]:checked+label
     background: var(--dark)
@@ -401,8 +403,12 @@ button#add-to-cart-button
 
 .ctn-accord + .ctn-accord
     margin: 3.3rem 0 0
+    @include desk
+        margin: -1.5rem 0 0
 
-
+.active-accd .hold-content
+    @include desk
+        padding: 1.5rem 0 3rem
 
 .plus-accd
     width: 0.9rem
