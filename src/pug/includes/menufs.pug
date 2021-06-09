@@ -113,3 +113,10 @@ nav.menu-fs.no-desk.el-fix
         .menu-fs__menu.menu__nav
             a(href= "{{ link.url }}").menu-fs__title {{ link.title }}
         |   {% endfor %}
+
+    
+        //- links
+        .menu-fs__others
+            |   {% for link in linklists.menu-mobothers.links %}
+            a(href= "{{ link.url }}") {{ link.title }}
+            |   {% endfor %}

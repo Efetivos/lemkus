@@ -61,5 +61,6 @@
       </div>
     </div>  {% for link in linklists.menu-mobile.links %}
     <div class="menu-fs__menu menu__nav"><a class="menu-fs__title" href="{{ link.url }}">{{ link.title }}</a></div>  {% endfor %}
+    <div class="menu-fs__others">  {% for link in linklists.menu-mobothers.links %}<a href="{{ link.url }}">{{ link.title }}</a>  {% endfor %}</div>
   </div>
 </nav>
