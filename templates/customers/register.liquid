@@ -13,7 +13,7 @@
       <div class="create-forg__creat">
           {% if shop.customer_accounts_enabled %} {% if customer  %} {% else %}
           {% if shop.customer_accounts_optional %}<a class="recosemi e-upper" href="{{ shop.url }}/account/login">Already have an account? <span class="underline">Login</span></a>
-        <button class="create-forg__forgot">Forgot Password?</button>  {% endif %}
+        <button class="create-forg__forgot underline">Forgot Password?</button>  {% endif %}
           {% endif %} {% endif %}
       </div>
       <div class="forgot-form e-flex-col">  {% form 'recover_customer_password' %} {{ form.errors | default_errors}}

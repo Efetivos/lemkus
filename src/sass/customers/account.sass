@@ -84,9 +84,9 @@ header.header-acc
 //- =========================  MAIN  ========================= -//
 
 main.main-acc
-    margin: 6.5rem 0 0 0
+    margin: 3rem 0 0 0
     @include desk
-        margin: 12.5rem 0 0 27.6rem
+        margin: 5rem 0 0 27.6rem
 
 .main-acc section
     margin: 0 0 5rem 0
@@ -109,13 +109,12 @@ main.main-acc
 
 .indic-sec
     border-bottom: 1px solid var(--dark)
-    font-family: var(--dharma);
-    font-size: 2rem
+    font-family: var(--dharma)
+    font-size: 3rem
     line-height: 200%
     margin: 0 0 1.6rem 0
     width: 100%
     @include desk
-        font-size: 3rem
         font-size: 3.3rem
 
 
@@ -143,6 +142,8 @@ aside a + a
 li.order-list__rank, .order-list__each
     display: grid
     grid-template-columns: repeat(5, 1fr)
+    @include mobile
+        grid-template-columns: .75fr .95fr 1.25fr 1fr 1fr
 
 
 
@@ -163,7 +164,7 @@ li.order-list__rank, .order-list__each
     margin: 0 0 1rem 0
 
 .order-list__rank span
-    font-size: 0.9rem !important
+    font-size: 1rem !important
     font-family: var(--recosemi)
     @include desk
         font-size: 1.6rem !important
@@ -173,9 +174,9 @@ li.order-list__rank, .order-list__each
     margin: 1rem 0 0 0
 
 .order-list__each span
-    font-size: 1rem !important
+    font-size: 1.2rem !important
     @include desk
-        font-size: 1.8rem !important
+        font-size: 1.6rem !important
 
 .order-list__each a
     text-decoration: underline
@@ -189,6 +190,10 @@ li.order-list__rank, .order-list__each
 
 //- =========================  wish  ========================= -//
 //- =========================  wish  ========================= -//
+
+.acc-wish__hold p
+    @include desk
+        font-size: 1.6rem
 
 .acc-wish__hold p a
     display: inline-block

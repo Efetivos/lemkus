@@ -1,5 +1,8 @@
 @import 'alias-mixins'
 
+.is-safari input
+    border-radius: 0
+    -webkit-appearance: none
 
 //dropping cards
 .is-safari .dropping-card-regular .dropping-card__infos
@@ -87,3 +90,8 @@
     @include desk
         grid-template-columns: 11.8rem 36rem
         padding: 0 0.1rem 0 0
+
+
+.is-safari .page-customer input
+    padding-left: 0
+    
