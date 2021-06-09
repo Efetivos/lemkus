@@ -5,7 +5,7 @@
     <div class="form-login form-cust">{% form 'customer_login' %} {{ form.errors | default_errors }}
       <input type="email" name="customer[email]" placeholder="Email">
       <input type="password" name="customer[password]" autocomplete placeholder="Password">
-      <button class="btn-hover" type="submit"><span class="static">SIGN IN</span><span class="hover" data-hover="SIGN IN SIGN IN ">SIGN IN SIGN IN </span></button>{% endform %} 
+      <button class="btn-hover" type="submit"><span class="static">SIGN IN</span><span class="hover" data-hover="SIGN IN    SIGN IN    ">SIGN IN    SIGN IN    </span></button>{% endform %} 
     </div>
     <div class="create-forg">
       <div class="create-forg__creat">
@@ -16,7 +16,7 @@
       </div>
       <div class="forgot-form e-flex-col">  {% form 'recover_customer_password' %} {{ form.errors | default_errors}}
         <input type="email" name="email" placeholder=" Email Address">
-        <button class="btn-hover" type="submit"><span class="static">SUBMIT</span><span class="hover" data-hover="SUBMIT SUBMIT ">SUBMIT SUBMIT </span></button>  {% endform %} 
+        <button class="btn-hover" type="submit"><span class="static">SUBMIT</span><span class="hover" data-hover="SUBMIT    SUBMIT    ">SUBMIT    SUBMIT    </span></button>  {% endform %} 
       </div>
     </div>
   </header>{% render  'myfooter' %}

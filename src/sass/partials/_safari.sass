@@ -55,10 +55,18 @@
 
 //sizes product page
 .is-safari .ctn-variants fieldset
-    margin: 0.9rem 1.4rem 0 0
+    margin: 0.9rem 1.89rem 0 0
     @include desk
-        margin: 1.5rem 1.7rem 0 0
+        margin: 1.5rem 2.13rem 0 0
 
+.is-safari .ctn-variants fieldset:nth-child(4n)
+    @include mobile
+        margin: 0.9rem 0 0 0
+
+
+.is-safari .ctn-variants fieldset:nth-child(6n)
+    @include desk
+        margin: 1.5rem 0 0 0
 
 .is-safari button#add-to-cart-button
     @include desk
