@@ -216,8 +216,11 @@ class Menu {
                 majorVersion = parseInt(navigator.appVersion, 10);
             }
 
-
-            console.log("Safari Version: "+fullVersion);
+            console.log(parseFloat(fullVersion))
+            console.log(parseInt(fullVersion))
+            if(parseFloat(fullVersion) > 14) {
+                $('html').addClass('is-new-safari')
+            }
 
         }
 
