@@ -67,7 +67,7 @@ svg.loading
 .breadcrumbs-prod
     justify-content: flex-start
     margin: 0 0 0 var(--gap)
-    text-transform: uppercase
+    text-transform: capitalize
 
 
 //- =========================  HEADER  ========================= -//
@@ -98,7 +98,7 @@ header.header-prod
         width: 100%
 
 
-.header-prod__thumbs__each:first-child
+.header-prod__thumbs__each:first-child img
     border: 1px solid var(--dark)
 
 
@@ -156,7 +156,6 @@ header.header-prod
     @include desk
         height: auto
         width: 100%
-        border: 1px solid var(--dark)
 
 
 
@@ -171,6 +170,8 @@ header.header-prod
     height: 100%
     object-fit: cover
     width: 100%
+    @include desk
+        border: 1px solid var(--dark)
 
 
 .header-prod__swipe-count
@@ -336,7 +337,8 @@ a.btn-wishlist
         margin: 0
         width: 37.4%
 
-
+.swym-button-bar
+    display: none !important
 
 button#add-to-cart-button
     @include desk
@@ -472,9 +474,11 @@ main.main-prod
 .cross-sell__hold.colle-cards .prod-card__each
     @include desk
         flex-shrink: 0
-        width: calc(33.333vw + 1px)
+        width: calc(33.433vw)
 
-
+.main-prod .dropping-card-regular .dropping-card__infos
+    @include desk
+        width: 45.54rem
 
 
 

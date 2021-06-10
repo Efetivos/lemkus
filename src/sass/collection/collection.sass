@@ -4,11 +4,10 @@
     overflow-x: hidden
 
 .header-coll__hold
-    align-items: center
-    display: flex
-    justify-content: space-between
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-template-areas: "filters qty" "filters sort"
     @include desk
-        display: grid
         grid-template-areas: "bread btn-filter qty sort"
 
 .page-collection footer.footer
@@ -32,8 +31,15 @@ nav.header-coll__bread
 
 .header-coll__qty
     font-size: 1.2rem
+    grid-area: qty
+    @include mobile
+        justify-self: flex-end
+        margin: 0 0 0.6rem 0
     @include desk
-        grid-area: qty
+        display: flex
+        font-size: 1.4rem
+        margin: 0 0 0 32rem
+        transform: translateX(-1.4rem)
 
 
     
@@ -44,6 +50,8 @@ nav.header-coll__bread
         //transform: translateX(2.6rem)
         
 
+.header-coll__btn-filter.no-desk
+    grid-area: filters
 
 .header-coll__btn-filter button
     height: 3.6rem
@@ -56,8 +64,10 @@ nav.header-coll__bread
 
 
 .header-coll__sort-by
+    grid-area: sort
+    @include mobile
+        justify-self: flex-end
     @include desk
-        grid-area: sort
         //transform: translateX(-4.6rem)
 
 
@@ -69,9 +79,9 @@ nav.header-coll__bread
     background: none
     border: none
     font-family: var(--recosemi)
-    font-size: 1.2rem
+    font-size: 1.6rem
     text-transform: uppercase
-    width: 9.5rem
+    width: 20.5rem
     @include desk
         font-size: 1.4rem
         width: 17.5rem
@@ -86,13 +96,6 @@ nav.header-coll__bread
 
 
 
-
-.header-coll__qty
-    @include desk
-        display: flex
-        font-size: 1.4rem
-        margin: 0 0 0 32rem
-        transform: translateX(-1.4rem)
 
 
 
