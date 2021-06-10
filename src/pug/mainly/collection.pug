@@ -60,9 +60,9 @@
 
             //- =========================  PAGINATES  ========================= -//
             //- =========================  PAGINATES  ========================= -//
+            | {% if paginate.pages > 1 %}
             .colle__paginate
                 .colle__paginate__hold.e-hold
-                    | {% if paginate.pages > 1 %}
                     | {%- for part in paginate.parts -%}
                     .colle__paginate__each
                         a(href="{{ part.url }}")
@@ -73,7 +73,7 @@
                                 | {%- endif -%}
                     
                     | {%- endfor -%}
-                    | {% endif %}
+            | {% endif %}
         |   {% endpaginate %}
 
     | {% render  'myfooter' %}
