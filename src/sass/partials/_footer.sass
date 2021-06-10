@@ -20,7 +20,7 @@
 .footer__hold
     display: grid
     grid-template-columns: 1fr 1fr
-    grid-template: "newsl newsl" "menu customer"  "legal social" "logo logo" "credits credits"
+    grid-template: "newsl newsl" "menu customer"  "legal social" "logo logo" "credits credits" "right right"
     @include desk
         grid-template: "newsl menu legal customer" "logo logo logo logo" "years years credits social"
         grid-template-columns: 80.5rem 17.7rem 17.7rem 15.5rem
@@ -75,6 +75,12 @@
         grid-column: 2 / 3
         transform: translateX(-20.7rem)
 
+.footer__year-rights
+    @include mobile
+            grid-area: right
+            margin: -2.5rem 0 0 0
+.footer__year-rights span
+    white-space: nowrap
     
 .footer__credits a
     font-family: var(--sans)

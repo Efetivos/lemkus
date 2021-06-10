@@ -12,7 +12,7 @@ class Menu {
             this.qs = (s, o = doc) => o.querySelector(s)
 
 
-        this.menu =  {
+        this.menu = {
             main: this.qs('.menu-fs'),
             close: this.qs('.menu-fs__close'),
             trg: this.qs('.menu-trg'),
@@ -49,7 +49,7 @@ class Menu {
     onClick() {
         let that = this
         //____ open menu
-        $(this.menu.trg).click(function(){
+        $(this.menu.trg).click(function () {
             $(that.body).toggleClass('is-menufs')
         });
 
@@ -61,16 +61,16 @@ class Menu {
         //});
 
 
-        
+
         //____ open shop dropdown
-        $(this.menu.shop_trg).click(function(){
+        $(this.menu.shop_trg).click(function () {
             $(that.menu.dropd_shop).toggleClass('hide-drop')
         });
 
 
-        
+
         //____ dismiss cookies
-        $(this.cookies.close).click(function(){
+        $(this.cookies.close).click(function () {
             gsap.set(that.cookies.el, { duration: 1, autoAlpha: 0, onComplete: () => $(that.cookies.el).remove() })
         });
     }
@@ -102,7 +102,7 @@ class Menu {
         }
 
         $(this.body).addClass('is-topbar')
-        $(this.topbar.close).click(function(){
+        $(this.topbar.close).click(function () {
             $(that.body).removeClass('is-topbar')
             $(that.topbar).remove()
         })
@@ -124,7 +124,7 @@ class Menu {
         }
 
         console.log(this.guide);
-        $(this.guide.close).click(function(){
+        $(this.guide.close).click(function () {
             $(this).closest('.shopify-section').remove()
         })
     }
@@ -156,7 +156,7 @@ class Menu {
     }
 
 
-    
+
 
     //? - =========================  VERIFY SO  ========================= -//
     //? - =========================  VERIFY SO  ========================= -//
@@ -181,14 +181,52 @@ class Menu {
 
         if (navigator.userAgent.search("Safari") >= 0 && navigator.userAgent.search("Chrome") < 0) {
             $('html').addClass('is-safari')
+
+            
+            var nVer = navigator.appVersion;
+            var nAgt = navigator.userAgent;
+            var browserName = navigator.appName;
+            var fullVersion = '' + parseFloat(navigator.appVersion);
+            var majorVersion = parseInt(navigator.appVersion, 10);
+            var nameOffset, verOffset, ix;
+            if ((verOffset = nAgt.indexOf("Safari")) != -1) {
+                browserName = "Safari";
+                fullVersion = nAgt.substring(verOffset + 7);
+                if ((verOffset = nAgt.indexOf("Version")) != -1)
+                    fullVersion = nAgt.substring(verOffset + 8);
+            }
+            // In most other browsers, "name/version" is at the end of userAgent 
+            else if ((nameOffset = nAgt.lastIndexOf(' ') + 1) <
+                (verOffset = nAgt.lastIndexOf('/'))) {
+                browserName = nAgt.substring(nameOffset, verOffset);
+                fullVersion = nAgt.substring(verOffset + 1);
+                if (browserName.toLowerCase() == browserName.toUpperCase()) {
+                    browserName = navigator.appName;
+                }
+            }
+            // trim the fullVersion string at semicolon/space if present
+            if ((ix = fullVersion.indexOf(";")) != -1)
+                fullVersion = fullVersion.substring(0, ix);
+            if ((ix = fullVersion.indexOf(" ")) != -1)
+                fullVersion = fullVersion.substring(0, ix);
+
+            majorVersion = parseInt('' + fullVersion, 10);
+            if (isNaN(majorVersion)) {
+                fullVersion = '' + parseFloat(navigator.appVersion);
+                majorVersion = parseInt(navigator.appVersion, 10);
+            }
+
+
+            console.log("Safari Version: "+fullVersion);
+
         }
 
-        
+
         if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
             $('html').addClass('is-firefox')
         }
 
     }
-    
+
 }
 export const menu = new Menu()

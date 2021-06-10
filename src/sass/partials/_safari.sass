@@ -5,25 +5,24 @@
     -webkit-appearance: none
 
 //dropping cards
-.is-safari .dropping-card-regular .dropping-card__infos
-    @include desk
-        width: calc(45.7rem + 1px)
-
 
 .is-safari .main-launches .dropping-card-regular .dropping-card__infos
     @include desk
-        width: calc(45.6rem + 1px)
+        width: 45.55rem
 
 .is-safari .dropping-card-regular .dropping-card__infos
     @include desk
         width: calc(45.3rem + 1px)
 
 
-
-
-.is-safari .main-prod .dropping-card__bg
+//dropping cards product page
+.is-mac .main-prod .dropping-card__infos
     @include desk
-        width: 66.76%
+        width: 45.4rem !important
+
+.is-mac .main-prod .dropping-card__bg
+    @include desk
+        width: 66.8%
 
 .is-safari .cross-sell__hold.colle-cards .prod-card__each
     @include desk
@@ -118,3 +117,9 @@
 .is-safari .page-customer input
     padding-left: 0
     
+
+
+//footer newsl 
+.is-safari input#newsl-footer
+    @include mobile
+        margin: 0 0 0 -.75rem
