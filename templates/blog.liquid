@@ -6,26 +6,23 @@
     </div>
   </header>
   <main class="main-blog">
-    <section class="blog-page">  {% paginate blog.articles by 6 %}
+    <section class="blog-page">  {% paginate blog.articles by 11 %}
       <div class="blog-page__hold e-hold">
         <div class="blog-page__list">
             {% assign count = 0 %}
             {% for article in blog.articles  %}
             {% render 'article-card' art: article %}
             {% endfor %}
-        </div>
+        </div>{% if paginate.pages > 1 %}
         <div class="blog-page__paginate">
-          <div class="blog-page__paginate__hold">
-            {% if paginate.pages > 1 %}
-            {%- for part in paginate.parts -%}
+          <div class="blog-page__paginate__hold">{%- for part in paginate.parts -%}
             <div class="blog-page__paginate__each"><a href="{{ part.url }}">
                 <button class="e-serif t-dark e-rel e-curp"> {{ part.title }}
                   <div class="line-pagine line-static e-gray e-abs e-wp"></div>{%- if part.title == paginate.current_page -%}
                   <div class="line-pagine line-active e-color e-abs e-wp"></div>{%- endif -%}
                 </button></a></div>{%- endfor -%}
-            {% endif %}
           </div>
-        </div>
+        </div>{% endif %}
       </div>  {% endpaginate %}
     </section>
   </main>{% render  'myfooter' %}

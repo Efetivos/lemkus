@@ -2,8 +2,9 @@
 <div class="article-card__each">
   <div class="article-card__hold">
     <div class="article-card__img"><a href="{{ art.url }}" title="{{ art.title }}"><img class="img-load" src="{{ art.image.src | img_url: 'master' }}" alt="{{ art.title }}"></a>
-      <div class="article-card__cat-date"> 
-        <div class="cat">{% for tag in art.tags %}{{ tag }}{% endfor %} - </div>
+      <div class="article-card__cat-date">
+           {% if art.tags.size > 0 %}
+        <div class="cat">{% for tag in art.tags %}{{ tag }}{% endfor %} - </div>  {% endif %}
         <div class="date">{{ art.created_at | date: "%d.%m.%y" }}</div>
       </div>
     </div><a class="article-card__title" href="{{ art.url }}" title="{{ art.title }}">{{ art.title }}</a>

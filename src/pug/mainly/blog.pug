@@ -10,7 +10,7 @@
         section.blog-page
 
             //- BLOG
-            |   {% paginate blog.articles by 6 %}
+            |   {% paginate blog.articles by 11 %}
             .blog-page__hold.e-hold
 
 
@@ -25,9 +25,9 @@
 
                 //- =========================  PAGINATES  ========================= -//
                 //- =========================  PAGINATES  ========================= -//
+                | {% if paginate.pages > 1 %}
                 .blog-page__paginate
                     .blog-page__paginate__hold
-                        | {% if paginate.pages > 1 %}
                         | {%- for part in paginate.parts -%}
                         .blog-page__paginate__each
                             a(href="{{ part.url }}")
@@ -38,7 +38,7 @@
                                     | {%- endif -%}
                         
                         | {%- endfor -%}
-                        | {% endif %}
+                | {% endif %}
             |   {% endpaginate %}
 
 

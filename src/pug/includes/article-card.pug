@@ -5,7 +5,9 @@
                 img(src="{{ art.image.src | img_url: 'master' }}" alt="{{ art.title }}").img-load
                 
             .article-card__cat-date 
+                |   {% if art.tags.size > 0 %}
                 .cat {% for tag in art.tags %}{{ tag }}{% endfor %} - 
+                |   {% endif %}
                 .date {{ art.created_at | date: "%d.%m.%y" }}
 
     
