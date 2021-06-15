@@ -8,15 +8,21 @@
                 "id": "articles_prod",
                 "type": "collection",
                 "label": "Collection"
+            },
+            {
+                "type": "checkbox",
+                "id": "is_drag_art",
+                "label": "Is one draggable row?",
+                "default": false
             }
         ]
     }
 {% endschema %}
 {% assign article_cols = collections[section.settings.articles_prod] %}
-<section class="collect-index">
+<section class="collect-index {% if section.settings.is_drag_art %}js-slider-section{% endif%}">
   <h1 class="collect-index__title dharma">{{ section.settings.text_dropped }}</h1>
-  <div class="collect-index__hold colle-cards">
-    {% for item in article_cols.products limit: 3 %}
+  <div class="collect-index__hold colle-cards {% if section.settings.is_drag_art %}js-slider-section__holder{% endif%}">
+    {% for item in article_cols.products limit: 5 %}
       {% render 'product-card' prod: item %}
     {% endfor %}
   </div>

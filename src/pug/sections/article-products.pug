@@ -8,17 +8,23 @@
                     "id": "articles_prod",
                     "type": "collection",
                     "label": "Collection"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "is_drag_art",
+                    "label": "Is one draggable row?",
+                    "default": false
                 }
             ]
         }
     {% endschema %}
 
 | {% assign article_cols = collections[section.settings.articles_prod] %}
-section.collect-index
+section.collect-index(class="{% if section.settings.is_drag_art %}js-slider-section{% endif%}")
 
     h1.collect-index__title.dharma {{ section.settings.text_dropped }}
-    .collect-index__hold.colle-cards
-        | {% for item in article_cols.products limit: 3 %}
+    .collect-index__hold.colle-cards(class="{% if section.settings.is_drag_art %}js-slider-section__holder{% endif%}")
+        | {% for item in article_cols.products limit: 5 %}
         
         //- calling prod
         |   {% render 'product-card' prod: item %}

@@ -162,7 +162,7 @@ class Smooth {
         }
         
         this.slider_section = this.contentPage.querySelectorAll('.js-slider-section') || null
-        if($(window).width() < 1025 && this.slider_section.length > 0) {
+        if(this.slider_section.length > 0) {
             this.slider_section.forEach((el) => {
                 new DragSection(el)
             })
