@@ -1,11 +1,10 @@
 
 <div class="page page-collection" data-ispage="collection" data-scroll-content>
   <header class="header-coll"> 
-    <div class="header-coll__hold e-hold">
+    <div class="header-coll__hold">
       <div class="header-coll__bread no-mobile">{% render 'breadcrumbs' %}</div>
-      <div class="header-coll__qty"><span class="no-mobile">Results | </span><span class="e-upper recosemi">{{ collection.products_count }} PRODUCTS</span></div>
       <div class="header-coll__btn-filter no-desk">
-        <button class="btn-hover trg-filter"><span class="static">FILTERS</span><span class="hover" data-hover="FILTERS      FILTERS      ">FILTERS      FILTERS      </span></button>
+        <button>FILTERS  </button>
       </div>
       <div class="header-coll__btn-filter no-mobile">
         <button class="btn-hover trg-filter"><span class="static">SHOW FILTERS</span><span class="hover" data-hover="SHOW FILTERS      SHOW FILTERS      ">SHOW FILTERS      SHOW FILTERS      </span></button>
@@ -13,6 +12,9 @@
       <div class="header-coll__sort-by"><span class="no-mobile">Sort by:  </span>
         <select id="SortBy" name="SortBy">
             {% for option in collection.sort_options %}<option value="{{ option.value }}" {% if option.value == collection.sort_by %}selected{% endif %}>{{ option.name }}</option>        {% endfor %}</select>
+      </div>
+      <div class="header-coll__qty e-flex-col">
+        <div class="header-coll__name">{{ collection.title }}</div><span class="e-upper recosemi">{{ collection.products_count }} PRODUCTS</span>
       </div>
     </div>
   </header>

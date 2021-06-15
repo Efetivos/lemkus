@@ -6,53 +6,72 @@
 .header-coll__hold
     display: grid
     grid-template-columns: 1fr 1fr
-    grid-template-areas: "filters qty" "filters sort"
+    grid-template-areas: "sort filters" "qty qty"
     @include desk
         align-items: center
-        grid-template-areas: "bread btn-filter qty sort"
+        grid-template-areas: "bread btn-filter sort" "qty qty qty "
+        grid-template-columns: 1fr 1fr 1fr
 
 .page-collection footer.footer
     @include mobile
         margin: 25px 0 0
 
 header.header-coll
-    padding: 73px 0 18px
+    padding: 55px 0 22px
     @include desk
-        padding: 6.4rem 0 1.2rem
+        padding: 4.8rem 0 1.2rem
 
 
 
-nav.header-coll__bread
+.header-coll__bread nav.breadcrumbs
     @include desk
-        grid-area: bread
+        justify-content: flex-start
+        margin: 0 0 0 var(--gap)
 
 .breadcrumbs > *
     @include desk
         font-size: 1.4rem
 
 .header-coll__qty
+    border-top: 1px solid var(--dark)
     font-size: 1.2rem
     grid-area: qty
-    @include mobile
-        justify-self: flex-end
-        margin: 0 0 0.6rem 0
+    justify-self: unset
+    margin: 0
+    padding: 18px 0 0
     @include desk
         display: flex
         font-size: 1.4rem
-        margin: 0 0 0 32rem
-        transform: translateX(-1.4rem)
+        margin: 0
+        padding: 1.5rem 0 0.5rem 0
+
+        
 
 
-    
+.header-coll__name
+    font-family: var(--dharmaex)
+    font-size: 4rem
+    text-transform: uppercase
+    @include desk
+        font-size: 9rem
+
+.header-coll__qty span
+    font-size: 1.2rem
+    @include desk
+        font-size: 1.4rem
+
+
 
 .header-coll__btn-filter
     @include desk
-        transform: translateX(16.6rem)
-        //transform: translateX(2.6rem)
+        justify-self: center
+        transform: none
         
 
 .header-coll__btn-filter.no-desk
     grid-area: filters
+    justify-self: center
+    align-self: center
 
 .header-coll__btn-filter button
     height: 3.6rem
@@ -66,10 +85,14 @@ nav.header-coll__bread
 
 .header-coll__sort-by
     grid-area: sort
-    @include mobile
-        justify-self: flex-end
+    border-right: 1px solid var(--dark)
+    width: 100%
+    padding: 0 0 0 var(--gap)
     @include desk
-        //transform: translateX(-4.6rem)
+        border-left: 1px solid var(--dark)
+        border-right: none
+        margin: 0 0 0 16.7rem
+        padding: 0.5rem 0 0.5rem var(--gap)
 
 
 .header-coll__sort-by span
@@ -81,8 +104,9 @@ nav.header-coll__bread
     border: none
     font-family: var(--recosemi)
     font-size: 1.6rem
+    padding: 17px 0
     text-transform: uppercase
-    width: 20.5rem
+    width: 92%
     @include desk
         font-size: 1.4rem
         width: 17.5rem
@@ -94,7 +118,8 @@ nav.header-coll__bread
     text-transform: uppercase
 
 
-
+.header-coll__btn-filter button
+    font-family: var(--recosemi)
 
 
 

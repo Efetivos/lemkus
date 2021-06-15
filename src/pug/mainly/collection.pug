@@ -4,19 +4,13 @@
     //- =========================  HEADER  ========================= -//
     //- =========================  HEADER  ========================= -//
     header.header-coll 
-        .header-coll__hold.e-hold
+        .header-coll__hold
             .header-coll__bread.no-mobile
                 | {% render 'breadcrumbs' %}
-            .header-coll__qty
-                span.no-mobile Results | 
-                span.e-upper.recosemi {{ collection.products_count }} PRODUCTS
 
 
             .header-coll__btn-filter.no-desk
-                button.btn-hover.trg-filter
-                    span.static FILTERS
-                    span.hover(data-hover="FILTERS      FILTERS      ") FILTERS      FILTERS      
-                
+                button FILTERS  
 
 
             .header-coll__btn-filter.no-mobile
@@ -30,6 +24,14 @@
                     |   {% for option in collection.sort_options %}
                     <option value="{{ option.value }}" {% if option.value == collection.sort_by %}selected{% endif %}>{{ option.name }}</option>
                     |         {% endfor %}
+
+
+            .header-coll__qty.e-flex-col
+                .header-coll__name {{ collection.title }}
+                span.e-upper.recosemi {{ collection.products_count }} PRODUCTS
+
+
+
 
         //-| {% section 'filter-prod' %}
 

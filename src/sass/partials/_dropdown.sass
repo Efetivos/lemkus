@@ -4,17 +4,19 @@
 //- =========================  MENU DROPDOWN  ========================= -//
 //- =========================  MENU DROPDOWN  ========================= -//
 .menu-dd
-    background: var(--soft)
-    display: block
-    left: 0
-    position: fixed
-    top: 4.9rem
-    transform: translateY(-100%)
-    transition: transform .8s cubic-bezier(0, 0.79, 0.2, 1)
-    width: 100vw
-    z-index: 6
+    display: none
     @include desk
+        background: var(--soft)
         border-bottom: 1px solid var(--dark)
+        display: block
+        left: 0
+        position: fixed
+        top: 4.9rem
+        transform: translateY(-100%)
+        transition: transform .8s cubic-bezier(0, 0.79, 0.2, 1)
+        width: 100vw
+        z-index: 6
+    
 
 
 
