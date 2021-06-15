@@ -26,15 +26,15 @@
                 //- =========================  PAGINATES  ========================= -//
                 //- =========================  PAGINATES  ========================= -//
                 | {% if paginate.pages > 1 %}
-                .blog-page__paginate
+                .blog-page__paginate(data-currentpage!="{{ paginate.current_page }}")
                     .blog-page__paginate__hold
                         | {%- for part in paginate.parts -%}
                         .blog-page__paginate__each
-                            a(href="{{ part.url }}")
-                                button.e-serif.t-dark.e-rel.e-curp  {{ part.title }}
-                                    .line-pagine.line-static.e-gray.e-abs.e-wp
+                                a(href="{{ part.url }}")
                                     | {%- if part.title == paginate.current_page -%}
-                                    .line-pagine.line-active.e-color.e-abs.e-wp
+                                    button.t-white  {{ part.title }}
+                                    | {%- else -%}
+                                    button  {{ part.title }}
                                     | {%- endif -%}
                         
                         | {%- endfor -%}

@@ -1,6 +1,7 @@
 
 import { gsap } from 'gsap'
 import { index } from '../pages';
+import { collection } from '../pages/collection';
 import DragSlider from '../utils_global/sliders';
 import { ajaxify } from '../utils_shopify/ajaxify';
 import { accordion } from './accordion'
@@ -66,11 +67,12 @@ class Smooth {
 
 
 
-        // ______________ shop
+        // ______________ collection
         if (this.isPage === 'collection') {
             if (!this.once) {
                 accordion_filters.init()
                 this.once = true
+                collection.init()
             }
         }
 

@@ -45,6 +45,7 @@ div#shopify-section-cart-collection
 
 
 .page-cart__items__bag-close
+    cursor: pointer
     display: flex
     justify-content: space-between
 
@@ -58,6 +59,10 @@ div#shopify-section-cart-collection
 .page-cart__items__bag-close .e-sans
     font-size: 1.3rem
     font-family: var(--openbold)
+    transition: .15s color ease-out
+    &:hover
+        color: #999
+        text-decoration: underline
 
 
 

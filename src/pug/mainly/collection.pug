@@ -10,7 +10,7 @@
 
 
             .header-coll__btn-filter.no-desk
-                button FILTERS  
+                button FILTERS
 
 
             .header-coll__btn-filter.no-mobile
@@ -63,16 +63,17 @@
             //- =========================  PAGINATES  ========================= -//
             //- =========================  PAGINATES  ========================= -//
             | {% if paginate.pages > 1 %}
-            .colle__paginate
+            
+            .colle__paginate(data-currentpage!="{{ paginate.current_page }}")
                 .colle__paginate__hold.e-hold
                     | {%- for part in paginate.parts -%}
                     .colle__paginate__each
                         a(href="{{ part.url }}")
-                            button.e-serif.t-dark.e-rel.e-curp  {{ part.title }}
-                                .line-pagine.line-static.e-gray.e-abs.e-wp
-                                | {%- if part.title == paginate.current_page -%}
-                                .line-pagine.line-active.e-color.e-abs.e-wp
-                                | {%- endif -%}
+                            | {%- if part.title == paginate.current_page -%}
+                            button.t-black  {{ part.title }}
+                            | {%- else -%}
+                            button  {{ part.title }}
+                            | {%- endif -%}
                     
                     | {%- endfor -%}
             | {% endif %}
