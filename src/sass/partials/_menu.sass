@@ -81,6 +81,7 @@ a.logo-main svg path
     button, a, span
         font-family: var(--openbold)
 
+
 .menu-search-bag 
     display: inline-block
     font-size: 12.1px
@@ -97,7 +98,7 @@ a.trg-search
     padding: 0
     display: inline-block
     @include desk
-        margin: 0 2.4rem 0 0
+        margin: 0 2rem 0 0
 
 
 
@@ -114,11 +115,19 @@ a.trg-search
 
 .menu-acc-wish a:first-child
     @include desk
-        margin: 0 2.8rem 0 0
+        //margin: 0 2rem 0 0
 
 
 
+.menu-acc-wish, .menu-search-bag
+    top: 1.3rem
 
+
+.link-account, .link-wishlist, .link-search
+    cursor: pointer
+    border-radius: 50px
+    @include desk
+        padding: 0.4rem 1.1rem !important
 
 
 .cape-hour
@@ -130,6 +139,12 @@ a.trg-search
         top: 1.8rem
 
 
+
+
+
+
+//- =========================  MAIN MENU  ========================= -//
+//- =========================  MAIN MENU  ========================= -//
 nav.main-menu
     @include desk
         left: 24.7rem
@@ -138,36 +153,29 @@ nav.main-menu
         z-index: 9
 
 
-
-
 .main-menu ul
     @include desk
         display: flex
         margin: -1rem 0 0
 
 
-.main-menu .item
-    @include desk
-        font-size: 1.4rem
-
 .main-menu ul li
     @include desk
-        padding: 1.1rem 1.7rem
+        padding: 0.6rem 0.55rem
 
-
-//- =========================  MAIN MENU  ========================= -//
-//- =========================  MAIN MENU  ========================= -//
-nav.main-menu
 
 .main-menu .item
     font-family: var(--openbold)
     text-transform: uppercase
     @include desk
+        font-size: 1.4rem
         cursor: pointer
+        border-radius: 50px
+        padding: 0.4rem 1.1rem
 
 
-
-
+.aria-page
+    border: 1px solid var(--dark)
 
 
 

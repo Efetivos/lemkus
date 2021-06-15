@@ -33,7 +33,7 @@
             |   {% elsif prod.compare_at_price_max > prod.price and has_stock > 0 %}
             .prod-card__img__discount
                 span {{ prod.compare_at_price_min | minus: prod.price | times: 100.0 |  divided_by: prod.compare_at_price_min | money_without_currency | times: 100 | replace: '.0', ''}}% OFF {{  }}
-            |   {% else %}
+            |   {% elsif has_stock < 1 %}
             .prod-card__soldout
                 span SOLD OUT
             |   {% endif %}

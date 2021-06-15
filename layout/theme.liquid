@@ -39,7 +39,7 @@
   </style>
   {{ 'app.css' | asset_url | stylesheet_tag }}
 </head>
-<body class="{{ template }}">
+<body class="{{ template }}" data-ariapage="{{ template }}" data-colle="{% if template == 'collection' %}{{ collection.title | downcase }}{% endif %}" >
   {% render 'mymenu' %}
   {% render 'myminicart' %}
   {% render 'mydropdown' %}

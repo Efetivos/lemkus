@@ -2,6 +2,7 @@
 import { gsap } from 'gsap'
 import { index } from '../pages';
 import { collection } from '../pages/collection';
+import { global_app } from '../pages/global_app';
 import DragSection from '../utils_global/drag-section';
 import DragSlider from '../utils_global/sliders';
 import { ajaxify } from '../utils_shopify/ajaxify';
@@ -205,6 +206,7 @@ class Smooth {
         this.rAF = null
         this.on()
         this.verifyDrag()
+        global_app.ariaPage()
     }
 }
 
