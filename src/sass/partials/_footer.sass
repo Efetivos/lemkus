@@ -83,7 +83,21 @@
     white-space: nowrap
     
 .footer__credits a
+    align-items: center
+    display: flex
     font-family: var(--sans)
+    justify-content: center
+    position: relative
+    &:hover
+        span.crdt
+            opacity: 0
+
+        span.dash-credits
+            opacity: 1
+
+span.dash-credits
+    top: 0
+    opacity: 0
     
 .footer__years
     display: none
