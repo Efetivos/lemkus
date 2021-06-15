@@ -2,6 +2,7 @@
 import { gsap } from 'gsap'
 import { index } from '../pages';
 import { collection } from '../pages/collection';
+import DragSection from '../utils_global/drag-section';
 import DragSlider from '../utils_global/sliders';
 import { ajaxify } from '../utils_shopify/ajaxify';
 import { accordion } from './accordion'
@@ -159,7 +160,13 @@ class Smooth {
                 new DragSlider(el)
             })
         }
-
+        
+        this.slider_section = this.contentPage.querySelectorAll('.js-slider-section') || null
+        if($(window).width() < 1025 && this.slider_section.length > 0) {
+            this.slider_section.forEach((el) => {
+                new DragSection(el)
+            })
+        }
 
     }
     

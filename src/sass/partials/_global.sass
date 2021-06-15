@@ -294,3 +294,43 @@ button.drag.recosemi
 .js-slider__holder
     @include mobile
         padding: 0 var(--gap)
+        display: inline-flex !important
+        width: auto !important
+
+
+
+//- =========================  SLIDER  ========================= -//
+//- =========================  SLIDER  ========================= -//
+
+.js-slider-section
+    position: relative
+
+.js-slider-section:before
+    background: var(--dark)
+    content: ''
+    height: 1px
+    left: 0
+    position: absolute
+    top: 7.9rem
+    width: 100%
+    @include desk
+        top: 29.9rem
+
+.js-slider-section__holder
+    display: inline-flex !important
+    width: auto !important
+    z-index: 1 !important
+
+.js-slider-section .colle-cards
+    padding: 0
+    position: relative
+
+.js-slider-section__holder .prod-card__each
+    @include desk
+        width: 45.7rem !important
+
+.js-slider-section__holder .prod-card__each:last-child
+    border-right: none
+
+.js-slider-section__holder .prod-card__each:first-child
+    border-left: none

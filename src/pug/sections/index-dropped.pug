@@ -14,16 +14,22 @@
                     "type": "text",
                     "label": "Text Dropped",
                     "default": "JUST DROPPED"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "is_drag",
+                    "label": "Is one draggable row?",
+                    "default": false
                 }
             ]
         }
     {% endschema %}
 
 | {% assign dropped_col = collections[section.settings.dropped_index] %}
-section.collect-index
+section.collect-index(class="{% if section.settings.is_drag %}js-slider-section{% endif%}")
 
     h1.collect-index__title.dharma {{ section.settings.text_dropped }}
-    .collect-index__hold.colle-cards
+    .collect-index__hold.colle-cards(class="{% if section.settings.is_drag %}js-slider-section__holder{% endif%}")
         | {% for item in dropped_col.products limit: 6 %}
         
         //- calling prod
@@ -31,13 +37,14 @@ section.collect-index
 
         | {% endfor %}
 
-
+    |   {% if section.settings.is_drag %}
     .cols_index__drag.e-hold.no-mobile
         .drag__cntrl
             .drag__cntrl__lines
                 .drag-line.line-static
                 .drag-line.line-dyna
             button(href="#").drag.recosemi DRAG
+    |   {% endif %}
 
     
 
