@@ -115,18 +115,19 @@ a.trg-search
 
 .menu-acc-wish a:first-child
     @include desk
-        //margin: 0 2rem 0 0
+        margin: 0 2rem 0 0
 
 
 
 .menu-acc-wish, .menu-search-bag
-    top: 1.3rem
+    @include desk
+        top: 1.3rem
 
 
 .link-account, .link-wishlist, .link-search
-    cursor: pointer
-    border-radius: 50px
     @include desk
+        cursor: pointer
+        border-radius: 50px
         padding: 0.4rem 1.1rem !important
 
 
