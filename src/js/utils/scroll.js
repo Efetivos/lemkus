@@ -90,6 +90,7 @@ class Smooth {
                 product.init()
                 this.once = true
             }
+            product.onScroll(this.data.last)
         }
 
 
