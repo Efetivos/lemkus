@@ -1,7 +1,7 @@
 .article-card__each
-    .article-card__hold
+    .article-card__hold.js-find-hover
         .article-card__img
-            a(href="{{ art.url }}", title="{{ art.title }}")
+            a(href="{{ art.url }}", title="{{ art.title }}").hover-img
                 img(src="{{ art.image.src | img_url: 'master' }}" alt="{{ art.title }}").img-load
                 
             .article-card__cat-date 
@@ -12,4 +12,4 @@
 
     
 
-        a.article-card__title(href="{{ art.url }}", title="{{ art.title }}") {{ art.title }}
+        a.article-card__title(href="{{ art.url }}", title="{{ art.title }}").hover-img-js {{ art.title }}

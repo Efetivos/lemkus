@@ -21,25 +21,25 @@
 | {% assign dropping_col = collections[section.settings.dropping-card] %}
 section.dropping-card.dropping-card-regular
     | {% for product in dropping_col.products limit:1 %}
-    .dropping-card__hold
+    .dropping-card__hold.js-find-hover
 
         //- BG
         .dropping-card__bg(style="background:#eaeaea")
 
         .dropping-card__infos
             //- CARD
-            .dropping-card__logo 
+            .dropping-card__logo
                 img(src="{{ section.settings.img_logo_brand | img_url: 'master' }}", alt='{{ section.settings.img_logo_brand.alt | escape }}').img-load
 
             //- TITLE
-            a(href="{{ product.url | within: collection }}").dropping-card__title.dharma {{ product.title }}
+            a(href="{{ product.url | within: collection }}").dropping-card__title.dharma.hover-img-js {{ product.title }}
 
             //- PRICE
             .dropping-card__price.recosemi {{ product.price | money }}
 
             //- INFOS
             .dropping-card__infos__img.no-desk
-                a(href="{{ product.url | within: collection }}") 
+                a(href="{{ product.url | within: collection }}")
                     img(src="{{  product.featured_image.src  | img_url: 'master' }}" alt="{{ product.src | escape }}").img-load
 
 
@@ -74,7 +74,7 @@ section.dropping-card.dropping-card-regular
 
 
 
-        .dropping-card__img.no-mobile
+        .dropping-card__img.no-mobile.hover-img 
             a(href="{{ product.url | within: collection }}") 
                 img(src="{{  product.featured_image.src  | img_url: 'master' }}" alt="{{ product.src | escape }}").img-load
 

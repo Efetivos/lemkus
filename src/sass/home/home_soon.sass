@@ -25,6 +25,7 @@
     height: 28.6rem
     width: 100%
     @include desk
+        z-index: 1
         height: 54.4rem
 
 
@@ -86,3 +87,6 @@ a.view-all-card-soon
     @include desk
         font-size: 4rem
         text-decoration: underline
+        transition: .2s opacity ease-out
+        &:hover
+            opacity: .5

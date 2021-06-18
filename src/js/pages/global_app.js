@@ -5,17 +5,41 @@ class GlobalApp {
         return;
     }
 
-    init(contentPage) {
-        this.contentPage = contentPage
-        let doc = this.contentPage
+    init() {
+        this.contentPage = document
+        let doc = document
         this.qsa = (s, o = doc) => o.querySelectorAll(s),
             this.qs = (s, o = doc) => o.querySelector(s)
 
         this.ariaPage()
+
+        //? ---- hover scale
+        this.each_hover = $('.hover-img-js') || null
+        this.each_hover.length > 0 ? this.hoverScale() : null
+        
     }
 
 
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //? - =========================  HOVER SCALE  ========================= -//
+    //? - =========================  HOVER SCALE  ========================= -//
+    hoverScale() {
+        $(this.each_hover).hover(
+            function(){
+                $(this).closest('.js-find-hover').find('.hover-img img').css('transform','scale(1.2)')
+            }, function(){
+                $(this).closest('.js-find-hover').find('.hover-img img').css('transform','scale(1)')
+        });
+    }
     
     
     
@@ -42,5 +66,12 @@ class GlobalApp {
             console.log(`.link-${is_colle}`);
         } 
     }
+
+
+
+
+
+
+
 }
 export const global_app = new GlobalApp ()

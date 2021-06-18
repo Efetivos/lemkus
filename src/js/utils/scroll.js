@@ -206,7 +206,7 @@ class Smooth {
         this.rAF = null
         this.on()
         this.verifyDrag()
-        global_app.ariaPage()
+        global_app.init()
     }
 }
 

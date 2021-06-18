@@ -43,7 +43,7 @@ section.cols_index.e-wvw.js-slider
     .cols_index__hold
         ul.cols_index__items.js-slider__holder
             | {% for block in section.blocks %}
-            li.cols_index__each
+            li.cols_index__each.hover-img
                 .cols_index__img
                     img(src="{{ block.settings.img_cols | img_url: 'master' }}", alt='#').img-load
                 a(href="{{ block.settings.link_cols }}", title="{{ block.settings.title_cols }}", style="color:{{ section.settings.color_text_col }}").cols_index__title.dharma {{ block.settings.title_cols }}

@@ -20,7 +20,7 @@
             .header-prod__thumbs.no-mobile
                 .header-prod__thumbs__travel
                     |   {% for image in product.images %}
-                    .header-prod__thumbs__each
+                    .header-prod__thumbs__each.hover-img
                         img(src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}" ).img-load
                     |   {% endfor %}
 

@@ -5,7 +5,7 @@
     <div class="header-prod__hold">
       <div class="header-prod__thumbs no-mobile">
         <div class="header-prod__thumbs__travel">  {% for image in product.images %}
-          <div class="header-prod__thumbs__each"><img class="img-load" src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}"></div>  {% endfor %}
+          <div class="header-prod__thumbs__each hover-img"><img class="img-load" src="{{ image.src | img_url: 'master' }}" alt="{{ image.alt | escape }}"></div>  {% endfor %}
         </div>
       </div>
       <div class="header-prod__gallery">

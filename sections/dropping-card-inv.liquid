@@ -19,12 +19,12 @@
 {% endschema %}
 {% assign dropping_col_inv = collections[section.settings.dropping_card_inv] %}
 <section class="dropping-card dropping-card-inv">{% for product in dropping_col_inv.products limit:1 %}
-  <div class="dropping-card__hold">
+  <div class="dropping-card__hold js-find-hover">
     <div class="dropping-card__bg" style="background:#eaeaea"></div>
     <div class="dropping-card__infos">
-      <div class="dropping-card__logo"> <img class="img-load" src="{{ section.settings.img_logo_brand_inv | img_url: 'master' }}" alt="{{ section.settings.img_logo_brand_inv.alt | escape }}"></div><a class="dropping-card__title dharma" href="{{ product.url | within: collection }}">{{ product.title }}</a>
+      <div class="dropping-card__logo"> <img class="img-load" src="{{ section.settings.img_logo_brand_inv | img_url: 'master' }}" alt="{{ section.settings.img_logo_brand_inv.alt | escape }}"></div><a class="dropping-card__title dharma hover-img-js" href="{{ product.url | within: collection }}">{{ product.title }}</a>
       <div class="dropping-card__price recosemi">{{ product.price | money }}</div>
-      <div class="dropping-card__infos__img no-desk"><a href="{{ product.url | within: collection }}"> <img class="img-load" src="{{  product.featured_image.src  | img_url: 'master' }}" alt="{{ product.src | escape }}"></a></div>
+      <div class="dropping-card__infos__img no-desk"><a href="{{ product.url | within: collection }}"><img class="img-load" src="{{  product.featured_image.src  | img_url: 'master' }}" alt="{{ product.src | escape }}"></a></div>
       <div class="dropping-card__count">
           {% if product.metafields.drop.drop_month %}
           {% assign drop_day = product.metafields.drop.drop_day %}
@@ -39,6 +39,6 @@
       </div>
       <div class="dropping-card__notify btn-hover"><span class="static">NOTIFY ME</span><span class="hover" data-hover="NOTIFY ME      NOTIFY ME      ">NOTIFY ME      NOTIFY ME      </span></div>
     </div>
-    <div class="dropping-card__img no-mobile"><a href="{{ product.url | within: collection }}"> <img class="img-load" src="{{  product.featured_image.src  | img_url: 'master' }}" alt="{{ product.src | escape }}"></a></div>
+    <div class="dropping-card__img no-mobile hover-img"> <a href="{{ product.url | within: collection }}"> <img class="img-load" src="{{  product.featured_image.src  | img_url: 'master' }}" alt="{{ product.src | escape }}"></a></div>
   </div>{% endfor %}
 </section>
