@@ -46,7 +46,7 @@
   {% render 'menufs' %}
   {% render 'popups' %}
   {% if template == 'blog' %} {% render 'menu-blog' %} {% endif %}
-  {% if template == 'collection' %} {% section 'filter-prod' %} {% endif %}
+  {% if template == 'collection' %} <div class="no-desk"> {% section 'filter-prod' %} </div> {% endif %}
   
   <main role="main">
     <div data-scroll>

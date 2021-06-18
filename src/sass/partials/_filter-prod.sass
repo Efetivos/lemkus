@@ -1,18 +1,26 @@
 @import './partials/alias-mixins'
 
 
+
+.page-collection #shopify-section-filter-prod
+    @include mobile
+        display: none
+
+
 #shopify-section-filter-prod
+    display: none
     background: var(--soft)
     height: calc(var(--vh) * 100)
     position: fixed
     width: 100vw
     z-index: 11
     @include desk
-        height: calc(var(--vh)*100 - 11.5rem)
+        height: calc(var(--vh)*100 - 10.3rem)
+        border: 1px solid red
         position: absolute
-        top: 11.5rem
+        top: 10.3rem
         width: 45.43rem
-        z-index: 2
+        z-index: 3
     @include mobile
         display: none
 
@@ -20,6 +28,8 @@
     height: 100%
     position: relative
     width: 100%
+    background: var(--soft)
+    will-change: transform
 
 
 .filter-prod__hold
