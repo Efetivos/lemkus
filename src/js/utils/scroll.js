@@ -3,6 +3,7 @@ import { gsap } from 'gsap'
 import { index } from '../pages';
 import { collection } from '../pages/collection';
 import { global_app } from '../pages/global_app';
+import { product } from '../pages/product';
 import DragSection from '../utils_global/drag-section';
 import DragSlider from '../utils_global/sliders';
 import { ajaxify } from '../utils_shopify/ajaxify';
@@ -86,6 +87,7 @@ class Smooth {
                 ajaxify.onClick(this.contentPage)
                 add_to_cart.init(this.contentPage)
                 accordion.init(this.contentPage)
+                product.init()
                 this.once = true
             }
         }

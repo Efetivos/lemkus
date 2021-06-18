@@ -9,7 +9,7 @@
 |   {% for collection in product.collections limit:1 %}
 section.dropping-card.dropping-card-regular.no-mobile
     |   {% for product in collections[collection.title].products limit:1 %}
-    .dropping-card__hold
+    .dropping-card__hold.hover-img.js-find-hover
 
         //- BG
         .dropping-card__bg(style="background:#eaeaea")
@@ -20,7 +20,7 @@ section.dropping-card.dropping-card-regular.no-mobile
                 //img(src="{{ section.settings.img_logo_brand | img_url: 'master' }}", alt='{{ section.settings.img_logo_brand.alt | escape }}').img-load
 
             //- TITLE
-            a(href="{{ product.url | within: collection }}").dropping-card__title.dharma {{ product.title }}
+            a(href="{{ product.url | within: collection }}").dropping-card__title.dharma.hover-img-js {{ product.title }}
 
             //- PRICE
             .dropping-card__price.recosemi {{ product.price | money }}
@@ -35,7 +35,7 @@ section.dropping-card.dropping-card-regular.no-mobile
                     span.hover(data-hover="VIEW PRODUCT      VIEW PRODUCT      ") VIEW PRODUCT      VIEW PRODUCT      
 
 
-        .dropping-card__img.no-mobile
+        .dropping-card__img.no-mobile.hover-img
             a(href="{{ product.url | within: collection }}") 
                 img(src="{{  product.featured_image.src  | img_url: 'master' }}" alt="{{ product.src | escape }}").img-load
 
