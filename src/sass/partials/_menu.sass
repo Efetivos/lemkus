@@ -28,7 +28,7 @@ a.logo-main
     position: fixed
     top: 20px
     width: 100px
-    z-index: 9
+    z-index: 8
     @include desk
         top: 1.8rem
         transition: width 0.8s cubic-bezier(0.16, 1.08, 0.38, 0.98)
@@ -570,7 +570,15 @@ nav.main-menu
     @include desk
         left: calc(var(--gap) - 0rem)
         top: 6.3rem
+        pointer-events: none
         width: 131.7rem
+        z-index: 2
+
+.is-top-home header.header-index
+    transform: translateY(25.5rem)
+    
+.is-top-home section.cols_index
+    transform: translateY(15rem)
 
 .is-top-home .cape-hour
     @include desk

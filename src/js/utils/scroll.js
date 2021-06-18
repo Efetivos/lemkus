@@ -58,14 +58,14 @@ class Smooth {
 
 
 
-        //if (this.isPage === 'index') {
-        //    if (!this.once) {
-        //        index.init(this.contentPage)
-        //        this.once = true
-        //    }
-        //        
-        //    index.onScroll(this.data.last)
-        //}
+        if (this.isPage === 'index') {
+            if (!this.once) {
+                index.init(this.contentPage)
+                this.once = true
+            }
+                
+            index.onScroll(this.data.last)
+        }
 
 
 

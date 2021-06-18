@@ -22,7 +22,7 @@
 
 <header class="header-laun no-mobile">
   <div class="header-laun__hold">
-    <h1 class="header-laun__title dharma">{{ section.settings.text_feat }} {{ section.settings.text_feat }} {{ section.settings.text_feat }}</h1>{% assign soon_col = collections[section.settings.launch-feat] %}
+    <h1 class="header-laun__title dharma" data-text="{{ section.settings.text_feat }} {{ section.settings.text_feat }} {{ section.settings.text_feat }} ">{{ section.settings.text_feat }} {{ section.settings.text_feat }} {{ section.settings.text_feat }} </h1>{% assign soon_col = collections[section.settings.launch-feat] %}
     <div class="header-laun__colle">
       <div class="header-laun__colle__hold">
         {% for item in soon_col.products limit: 5 %}

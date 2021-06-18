@@ -11,6 +11,10 @@ section.cols_index
     margin: 1.3rem 0 0
     overflow: hidden
     padding: 0 0 0 var(--gap)
+    @include desk
+        margin: 12.3rem 0 0
+        transform: translateY(0rem)
+        transition: transform .8s cubic-bezier(.16,1.08,.38,.98)
 
 .collect-index
     @include mobile

@@ -34,7 +34,20 @@ h1.header-laun__title
     top: 13.4rem
     white-space: nowrap
     @include desk
-        top: 13vh
+        --space: .5rem
+        --time: 20s
+        animation: marquee-launches-header var(--time) infinite linear
+        top: 15vh
+        white-space: nowrap
+        &:after
+            content: attr(data-text)
+            padding-left: var(--space)
+
+@keyframes marquee-launches-header
+    0%
+        transform: translateX(0)
+    100%
+        transform: translateX(-50%)
 
 
 .header-laun .prod-card__each

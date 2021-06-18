@@ -11,7 +11,12 @@ header.header-index
     margin: 0
     padding: 70px 0 0
     @include desk
-        padding: 25.5rem 0 0
+        padding: 0
+        z-index: 1
+        position: relative
+        transform: translateY(10.1rem)
+        transition: transform .8s cubic-bezier(.16,1.08,.38,.98)
+        will-change: transform
 
 
 .header-index__hold
