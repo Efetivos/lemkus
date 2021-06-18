@@ -77,6 +77,7 @@ class Smooth {
                 this.once = true
                 collection.init()
             }
+            collection.onScroll()
         }
 
 
@@ -90,7 +91,7 @@ class Smooth {
                 product.init()
                 this.once = true
             }
-            product.onScroll(this.data.last)
+            product.onScroll()
         }
 
 

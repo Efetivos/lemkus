@@ -35,7 +35,7 @@ class GlobalApp {
     hoverScale() {
         $(this.each_hover).hover(
             function(){
-                $(this).closest('.js-find-hover').find('.hover-img img').css('transform','scale(1.2)')
+                $(this).closest('.js-find-hover').find('.hover-img img').css('transform','scale(1.1)')
             }, function(){
                 $(this).closest('.js-find-hover').find('.hover-img img').css('transform','scale(1)')
         });

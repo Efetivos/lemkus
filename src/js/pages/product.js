@@ -135,9 +135,7 @@ class Product {
 
     //? - =========================  ONSCROLL  ========================= -//
     //? - =========================  ONSCROLL  ========================= -//
-
-
-    onScroll(scrolled) {
+    onScroll() {
         ScrollTrigger.update()
     }
 
