@@ -1,134 +1,59 @@
 
-import { gsap } from 'gsap'
+import { gsap } from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+gsap.registerPlugin(ScrollToPlugin);
+import { swipe_product } from '../utils/swipe-product';
 class Product {
     constructor() {
         return;
     }
 
-    init(contentPage) {
-        this.contentPage = contentPage
+    init() {
+        this.contentPage = document
         let doc = this.contentPage
         this.qsa = (s, o = doc) => o.querySelectorAll(s),
             this.qs = (s, o = doc) => o.querySelector(s)
 
         if ($(window).width() < 1025) {
-            this.swipeMobile()
-            this.onSwipe()
+            swipe_product.init(document)
+        } else {
+            this.anchorsImgs()
         }
     }
 
 
 
 
-    //? - =========================  SWIPE MOBILE  ========================= -//
-    //? - =========================  SWIPE MOBILE  ========================= -//
 
-    swipeMobile() {
-        this.swipe = {
-            el: document.querySelector('.header-prod__gallery'),
-            travel: document.querySelector('.header-prod__gallery__travel'),
-            prev: document.querySelector('.count-dyna'),
-            next: document.querySelector('.count-static')
+
+
+
+
+
+
+
+    //? - =========================  ANCHORS  ========================= -//
+    //? - =========================  ANCHORS  ========================= -//
+
+    anchorsImgs() {
+        this.thumbs = {
+            each: this.qsa('.header-prod__thumbs__each'),
+            bg_fixed: this.qs('.bg-fixed-els'),
+            each_img_galle: this.qsa('.header-prod__gallery__each')
         }
-        this.travel_size = $('.header-prod__gallery__each').eq(1).outerWidth(true)
-        this.options = {
-            time: .75,
-            animating: false,
-            prev: -1,
-            current: 0,
-            length: $('.header-prod__gallery__each').length
-        }
-
-        $(this.swipe.next).text('/'+this.options.length)
-        this.getSizeSwipe()
-        this.onClickSwipe()
 
         let that = this
-        $(window).resize(function () {
-            that.getSizeSwipe()
+        $(this.thumbs.each).click(function () {
+
+            let indexThis = $(that.thumbs.each).index(this)
+            let $gallery_target = $(that.thumbs.each_img_galle).eq(indexThis)
+            console.log($gallery_target[0]);
+            gsap.to(window, { duration: .6, scrollTo: { y: $gallery_target, offsetY: window.innerWidth * 0.045 } })
+
+            $(that.thumbs.each).removeClass('thumbs-active')
+            $(this).addClass('thumbs-active')
         })
     }
-
-    getSizeSwipe() {
-        this.travel_size = $('.header-prod__gallery__each').eq(1).outerWidth(true)
-        this.options.current = 0
-        gsap.set(this.swipe.travel, { x: 0 })
-    }
-
-    goSwipe() {
-        let that = this
-        gsap.to(this.swipe.travel, { duration: this.options.time, x: `-=${this.travel_size}`, ease: 'expo.out', onComplete() { that.options.animating = false } })
-    }
-
-    backSwipe() {
-        let that = this
-        gsap.to(this.swipe.travel, { duration: this.options.time, x: `+=${this.travel_size}`, ease: 'expo.out', onComplete() { that.options.animating = false } })
-    }
-
-
-    onClickSwipe() {
-        let that = this
-        $(this.swipe.next).click(function () {
-            if (!that.options.animating && that.options.current < (that.options.length - 1)) {
-                that.options.animating = true
-                that.options.current++
-                that.options.prev = that.options.current - 1
-                that.goSwipe(that.options.current)
-                $(that.swipe.prev).text(that.options.current + 1)
-            }
-        })
-
-
-        $(this.swipe.prev).click(function () {
-            if (!that.options.animating && that.options.current > 0) {
-                that.options.animating = true
-                that.options.current--
-                that.options.prev = that.options.current + 1
-                that.backSwipe(that.options.current)
-                $(that.swipe.prev).text(that.options.current + 1)
-            }
-        })
-    }
-
-
-
-    onSwipe() {
-        this.swipe.el.addEventListener('touchstart', handleTouchStart, false);
-        this.swipe.el.addEventListener('touchmove', handleTouchMove, false);
-
-        let xDown = null,  yDown = null;
-        let that = this
-
-        function handleTouchStart(evt) {
-            xDown = evt.touches[0].clientX;
-            yDown = evt.touches[0].clientY;
-        };
-
-
-        function handleTouchMove(evt) {
-            if (!xDown || !yDown) {
-                return;
-            }
-
-            let xUp = evt.touches[0].clientX;
-            let yUp = evt.touches[0].clientY;
-
-            let xDiff = xDown - xUp;
-            let yDiff = yDown - yUp;
-
-            if (Math.abs(xDiff) > Math.abs(yDiff)) { 
-                xDiff > 0 ? $(that.swipe.next).trigger('click') :  $(that.swipe.prev).trigger('click')
-            } else { }
-            /* reset values */
-            xDown = null;
-            yDown = null;
-        };
-    }
-
-
-
-
-
 
 }
 export const product = new Product()

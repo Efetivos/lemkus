@@ -42,7 +42,7 @@
             {% if product.metafields.drop.drop_month %}
           <div class="prod-card__notify btn-hover"><span class="static">NOTIFY ME</span><span class="hover" data-hover="NOTIFY ME      NOTIFY ME      NOTIFY ME      NOTIFY ME      NOTIFY ME      ">NOTIFY ME      NOTIFY ME      NOTIFY ME      NOTIFY ME      NOTIFY ME      </span></div>  {% endif %}
           <div class="prod-descr">
-            <div class="prod-descr__content">{{ fields.descr.description }} </div>  {% if fields.descr.details != blank %}
+            <div class="prod-descr__content no-desk">{{ fields.descr.description }} </div>  {% if fields.descr.details != blank %}
             <div class="ctn-accord">
               <div class="ctn-accord__item">
                 <div class="trg-acc e-curp">
@@ -52,7 +52,10 @@
                     <div class="plus-accd__line indic-rotate"></div>
                   </div>
                 </div>
-                <div class="hold-content">{{ fields.descr.details }}</div>
+                <div class="hold-content"> 
+                  <div class="no-mobile">{{ fields.descr.description }}  </div>
+                  <div class="details">{{ fields.descr.details }}</div>
+                </div>
               </div>
             </div>  {% endif %}
               {% if fields.descr.shipping != blank %}

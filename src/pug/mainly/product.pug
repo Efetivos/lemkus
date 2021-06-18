@@ -113,7 +113,7 @@
                     //- =========================  description  ========================= -//
                     
                     .prod-descr
-                        .prod-descr__content {{ fields.descr.description }} 
+                        .prod-descr__content.no-desk {{ fields.descr.description }} 
 
                         //- details
                         |   {% if fields.descr.details != blank %}
@@ -124,7 +124,9 @@
                                     .plus-accd
                                         .plus-accd__line.indic-static
                                         .plus-accd__line.indic-rotate
-                                .hold-content {{ fields.descr.details }}
+                                .hold-content 
+                                    .no-mobile {{ fields.descr.description }}  
+                                    .details {{ fields.descr.details }}
                         |   {% endif %}
             
 
