@@ -6,13 +6,6 @@
     </div>
   </header>
   <main class="main-blog">
-    <ul>
-      {% for tag in collection.all_tags %}
-      {% if current_tags contains tag %}
-      <li class="active">{{ tag | link_to_remove_tag: tag }}</li> {% else %}
-      <li>{{ tag | link_to_add_tag: tag }}</li> {% endif %}
-      	{% endfor %}
-    </ul>
     <section class="blog-page">  {% paginate blog.articles by 11 %}
       <div class="blog-page__hold e-hold">
         <div class="blog-page__list">

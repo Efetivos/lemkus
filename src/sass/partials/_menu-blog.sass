@@ -47,13 +47,19 @@ li.menu-blog__each
     @include desk
         font-size: 30rem
         margin: -5rem 0 0
+    &:hover
+        span
+            opacity: .65
 
 li.menu-blog__each + li.menu-blog__each
     margin: -1.8rem 0 0
     @include desk
         margin: -5rem 0 0
     
-
+li.menu-blog__each span
+    @include desk
+        transition: .2s opacity ease-out
+    
 span.tag-counter
     font-family: var(--recosemi)
     font-size: 2rem
@@ -62,12 +68,17 @@ span.tag-counter
     @include desk
         font-size: 3rem
         margin: 2.6rem 0 0 8rem
+        transition: .2s opacity ease-out
 
 
-li.menu-blog__each:first-child 
-    a, span
-        color: var(--color)
+//li.menu-blog__each:first-child 
+//    a, span
+//        color: var(--color)
 
+.tag-active
+    color: var(--color)
+    pointer-events: none
+    opacity: 1 !important
 
 .is-menublog
     overflow: hidden

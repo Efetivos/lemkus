@@ -1,6 +1,7 @@
 
 import { gsap } from 'gsap'
 import { index } from '../pages';
+import { blog } from '../pages/blog';
 import { collection } from '../pages/collection';
 import { global_app } from '../pages/global_app';
 import { product } from '../pages/product';
@@ -95,6 +96,15 @@ class Smooth {
         }
 
 
+
+
+        // ______________ blog
+        if (this.isPage === 'blog') {
+            if (!this.once) {
+                this.once = true
+                blog.init()
+            }
+        }
 
 
         this.requestAnimationFrame()
