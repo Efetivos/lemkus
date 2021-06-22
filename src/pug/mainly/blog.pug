@@ -7,6 +7,15 @@
 
 
     main.main-blog
+        ul
+            | {% for tag in collection.all_tags %}
+            | {% if current_tags contains tag %}
+            li.active {{ tag | link_to_remove_tag: tag }}
+            |  {% else %}
+            li {{ tag | link_to_add_tag: tag }}
+            |  {% endif %}
+            | 	{% endfor %}
+
         section.blog-page
 
             //- BLOG

@@ -20,10 +20,20 @@
     
             .header-coll__sort-by
                 span.no-mobile Sort by:  
-                select#SortBy(name='SortBy')
+                //-select#SortBy(name='SortBy')
                     |   {% for option in collection.sort_options %}
                     <option value="{{ option.value }}" {% if option.value == collection.sort_by %}selected{% endif %}>{{ option.name }}</option>
                     |         {% endfor %}
+                    
+                select#SortBy(name='SortBy')
+                    option(value='?sort_by=manual') Featured
+                    option(value='?sort_by=price-ascending') Price: Low to High
+                    option(value='?sort_by=price-descending') Price: High to Low
+                    option(value='?sort_by=title-ascending') A-Z
+                    option(value='?sort_by=title-descending') Z-A
+                    option(value='?sort_by=created-ascending') Oldest to Newest
+                    option(value='?sort_by=created-descending') Newest to Oldest
+                    option(value='?sort_by=best-selling') Best Selling
 
 
             .header-coll__qty.e-flex-col

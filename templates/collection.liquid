@@ -11,7 +11,15 @@
       </div>
       <div class="header-coll__sort-by"><span class="no-mobile">Sort by:  </span>
         <select id="SortBy" name="SortBy">
-            {% for option in collection.sort_options %}<option value="{{ option.value }}" {% if option.value == collection.sort_by %}selected{% endif %}>{{ option.name }}</option>        {% endfor %}</select>
+          <option value="?sort_by=manual">Featured</option>
+          <option value="?sort_by=price-ascending">Price: Low to High</option>
+          <option value="?sort_by=price-descending">Price: High to Low</option>
+          <option value="?sort_by=title-ascending">A-Z</option>
+          <option value="?sort_by=title-descending">Z-A</option>
+          <option value="?sort_by=created-ascending">Oldest to Newest</option>
+          <option value="?sort_by=created-descending">Newest to Oldest</option>
+          <option value="?sort_by=best-selling">Best Selling</option>
+        </select>
       </div>
       <div class="header-coll__qty e-flex-col">
         <div class="header-coll__name">{{ collection.title }}</div><span class="e-upper recosemi">{{ collection.products_count }} PRODUCTS</span>

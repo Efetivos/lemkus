@@ -13,10 +13,10 @@ class Collection {
         this.qsa = (s, o = doc) => o.querySelectorAll(s),
             this.qs = (s, o = doc) => o.querySelector(s)
 
-        
+
         if ($(window).width() > 1024) {
             $('.shopify-section').eq(0).remove()
-            
+
             this.resizing()
             ScrollTrigger.scrollerProxy('[data-scroll-content]', {
                 scrollTop(value) {
@@ -30,6 +30,9 @@ class Collection {
             ScrollTrigger.refresh()
             //this.stickyFilter()
         }
+
+        
+        this.sortBy()
     }
 
 
@@ -58,6 +61,33 @@ class Collection {
 
 
 
+    //? - =========================  MOBILE  ========================= -//
+    //? - =========================  MOBILE  ========================= -//
+    sortBy() {
+
+        $("#SortBy").change(function () {
+
+            let currentUrl = window.location.href
+            var selectOptionBlogNavigation = $(this).children("option:selected").val();
+
+            console.log(currentUrl);
+            console.log(selectOptionBlogNavigation);
+            
+            if (window.location.href.indexOf('?sort_') > 0) {
+                let getDomain = currentUrl.substr(0, currentUrl.indexOf('?'));
+                window.location.href = getDomain + `${selectOptionBlogNavigation}`
+                //Barba.Pjax.goTo(getDomain + `${selectOptionBlogNavigation}`)
+            }
+            else {
+                window.location.href = currentUrl + `${selectOptionBlogNavigation}`
+                //Barba.Pjax.goTo(currentUrl + `${selectOptionBlogNavigation}`)
+            }
+        });
+    }
+
+
+
+
 
 
 
@@ -70,26 +100,26 @@ class Collection {
 
 
 
-    
-    
-    
-    
-    
-    
-    
-    resizing(){
+
+
+
+
+
+
+
+    resizing() {
         this.rem = (window.innerWidth / (1366 * 10))
 
         console.log(this.rem)
         console.log(document.querySelector('.bg-fixed-els').getBoundingClientRect().height)
     }
-    
-    
+
+
     //? - =========================  ONRESIZE  ========================= -//
     //? - =========================  ONRESIZE  ========================= -//
     onResize() {
         let that = this
-        $(window).resize(function(){
+        $(window).resize(function () {
             that.resizing()
         })
     }
