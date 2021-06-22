@@ -17,6 +17,9 @@ class GlobalApp {
         this.each_hover = $('.hover-img-js') || null
         this.each_hover.length > 0 ? this.hoverScale() : null
         
+        //? ---- forgot button
+        this.fgt_btn = $('button.create-forg__forgot') || null
+        this.fgt_btn.length > 0 ? this.showForgot() : null
     }
 
 
@@ -24,6 +27,16 @@ class GlobalApp {
     
     
     
+    
+    
+    
+    //? - =========================  SHOW FORGOT  ========================= -//
+    //? - =========================  SHOW FORGOT  ========================= -//
+    showForgot() {
+        $(this.fgt_btn).click(function(){
+            $('.forgot-form').toggleClass('show-form')
+        });
+    }
     
     
     

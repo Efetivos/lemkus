@@ -1,6 +1,6 @@
 
 import { gsap } from 'gsap'
-class Blog {
+class Customer {
     constructor() {
         return;
     }
@@ -10,9 +10,12 @@ class Blog {
         let doc = this.contentPage
         this.qsa = (s, o = doc) => o.querySelectorAll(s),
             this.qs = (s, o = doc) => o.querySelector(s)
-
-
     }
 
+
+
+    //? - =========================  ONCLICK  ========================= -//
+    //? - =========================  ONCLICK  ========================= -//
+    
 }
-export const blog = new Blog()
+export const customer = new Customer()

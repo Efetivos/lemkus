@@ -1,8 +1,10 @@
 
 import { gsap } from 'gsap'
 import { index } from '../pages';
+import { about } from '../pages/about';
 import { blog } from '../pages/blog';
 import { collection } from '../pages/collection';
+import { contact } from '../pages/contact';
 import { global_app } from '../pages/global_app';
 import { product } from '../pages/product';
 import DragSection from '../utils_global/drag-section';
@@ -67,6 +69,30 @@ class Smooth {
             }
                 
             index.onScroll(this.data.last)
+        }
+
+
+
+
+        // ______________ about
+        if (this.isPage === 'about') {
+            if (!this.once) {
+                this.once = true
+                about.init()
+            }
+            about.onScroll()
+        }
+
+
+
+
+        // ______________ contact
+        if (this.isPage === 'contact') {
+            if (!this.once) {
+                this.once = true
+                contact.init()
+            }
+            contact.onScroll()
         }
 
 
