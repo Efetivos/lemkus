@@ -1,8 +1,0 @@
-
-<div class="page page-404" data-ispage="404" data-scroll-content>
-  <header class="header-404 e-wvw e-hvh e-flex-col">
-    <div class="header-404__hold e-flex-col"><span class="big-t">404 ERROR</span>
-      <p class="e-upper recosemi">Sorry, page not found</p><a class="header-404__btn btn-hover" href="{{ shop.url }}" title="ADDRESS"><span class="static">RETURN HOME</span><span class="hover" data-hover="RETURN HOME      RETURN HOME      ">RETURN HOME      RETURN HOME       </span></a>
-    </div>
-  </header>
-</div>
