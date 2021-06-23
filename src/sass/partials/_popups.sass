@@ -176,3 +176,18 @@ a.popup__btn > *
 .popup__form  fieldset button svg
     padding: 0
     width: 22px
+
+
+.popup__close svg
+    @include desk
+        &:hover
+            g
+                fill: var(--dark)
+            path
+                fill: var(--soft)
+
+.popup__close g
+    transition: fill 0.2s ease-out
+
+.popup__close path
+    transition: fill 0.2s ease-out

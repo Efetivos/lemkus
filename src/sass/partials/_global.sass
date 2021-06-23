@@ -389,6 +389,36 @@ button.drag.recosemi
 
 
 
+
+//- =========================  COLOR HOVERS  ========================= -//
+//- =========================  COLOR HOVERS  ========================= -//
+
+.ctt-links__each a, .ctt-social__items a
+    @include desk
+        transition: .2s color ease-out
+        cursor: pointer
+        &:hover
+            color: var(--color)
+
+
+
+.main-menu ul li a, .link-account, .link-wishlist, .link-search, .trg-cart, .article-card__title, .menu-dd__links a, .menu-dd__featured__title
+    @include desk
+        transition: .2s color ease-out
+        cursor: pointer
+        &:hover
+            color: #f9b510
+
+.trg-cart span
+    color: inherit
+
+
+
+
+
+
+
+
 //- =========================  ONSCENE  ========================= -//
 //- =========================  ONSCENE  ========================= -//
 

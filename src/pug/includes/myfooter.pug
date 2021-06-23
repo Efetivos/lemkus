@@ -5,21 +5,25 @@ footer.footer
         //- legal
         .footer__customer.menu-footer
             |{% for link in linklists.footer-customer.links %}
-            a(href="{{link.url}}", title="{{link.title}}") {{link.title}}
+            a(href="{{link.url}}", title="{{link.title}}").link-footer
+                span {{link.title}}
             |{% endfor %}
         .footer__legal.menu-footer
             |{% for link in linklists.footer-legal.links %}
-            a(href="{{link.url}}", title="{{link.title}}") {{link.title}}
+            a(href="{{link.url}}", title="{{link.title}}").link-footer
+                span {{link.title}}
             |{% endfor %}
         //- main
         .footer__menu.menu-footer
             |{% for link in linklists.footer.links %}
-            a(href="{{link.url}}", title="{{link.title}}") {{link.title}}
+            a(href="{{link.url}}", title="{{link.title}}").link-footer
+                span {{link.title}}
             |{% endfor %}
         //- social
         .footer__social.menu-footer
             |{% for link in linklists.footer-socials.links %}
-            a(href="{{link.url}}", title="{{link.title}}", target="_blank") {{link.title}}
+            a(href="{{link.url}}", title="{{link.title}}", target="_blank").link-footer
+                span {{link.title}}
             |{% endfor %}
 
         //- logo

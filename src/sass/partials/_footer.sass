@@ -15,6 +15,24 @@
         font-size: 1.16rem
         padding: 0 0 1.38rem
 
+a.link-footer
+    @include desk
+        padding: 0
+
+
+a.link-footer span
+    @include desk
+        border-radius: 50px
+        border: 1px solid transparent
+        display: inline-block
+        margin: 0 0 0.6rem 0
+        padding: 0.3rem 0.75rem
+        transition: border-color .2s ease-out
+
+
+a.link-footer span:hover
+    @include desk
+        border-color: var(--dark)
 
     
 .footer__hold
