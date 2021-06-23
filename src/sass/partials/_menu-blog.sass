@@ -1,5 +1,21 @@
 @import './partials/alias-mixins'
+.infinity
+    height: 100vh
+    overflow: hidden
+    width: 100vw
 
+.infinity__each
+    position: relative
+    will-change: transform
+
+.noselect
+    cursor: default
+    -webkit-touch-callout: none
+    -webkit-user-select: none
+    -khtml-user-select: none
+    -moz-user-select: none
+    -ms-user-select: none
+    user-select: none
 
 
 //- =========================  MENUBLOG  ========================= -//
@@ -22,6 +38,7 @@
     right: var(--gap)
     top: 75px
     @include desk
+        z-index: 2
         top: 7rem
 
 .menu-blog__back button.btn-hover

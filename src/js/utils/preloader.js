@@ -1,6 +1,7 @@
 var imagesLoaded = require('imagesloaded');
 var $ = require('jquery');
 import FontFaceObserver from 'fontfaceobserver'
+import { infinity } from './infinity-scroll';
 
 class Preloader {
     constructor() {
@@ -36,9 +37,9 @@ class Preloader {
         Promise.all([
             fontDharma.load()
         ]).then(_ => {
-            console.log({ fontDharma });
             window.dispatchEvent(new Event('resize'))
             $('.preloader-master').remove()
+            $('.infinity').length > 0 ? infinity.init() : null
         }).catch(_ => {
             console.log('catch');
             window.dispatchEvent(new Event('resize'))
