@@ -1,5 +1,6 @@
 
 import { gsap } from 'gsap'
+import { countdown } from '../utils_global/countdown';
 class GlobalApp {
     constructor() {
         return;
@@ -20,6 +21,12 @@ class GlobalApp {
         //? ---- forgot button
         this.fgt_btn = $('button.create-forg__forgot') || null
         this.fgt_btn.length > 0 ? this.showForgot() : null
+        
+        //? ---- forgot button
+        this.countdowns = document.querySelectorAll('.countdown') || null
+        this.countdowns.length > 0 ? countdown.init() : null
+
+
     }
 
 

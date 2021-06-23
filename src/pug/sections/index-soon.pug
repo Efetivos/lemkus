@@ -47,6 +47,7 @@
     {% endschema %}
 
 
+| {% assign soon_col = collections[section.settings.soon_index] %}
 section.soon-index.e-wvw
     .soon-index__hold.e-hold
         h1.soon-index__title.dharma {{ section.settings.text_soon }}
@@ -61,8 +62,10 @@ section.soon-index.e-wvw
                     a(href="{{ section.settings.url_coming }}", title="{{ section.settings.title_coming }}", style="color:{{ section.settings.color_text_coming }}").dharma {{ section.settings.title_coming }}
 
 
+                | {% for item in soon_col.products limit:1 %}
+                |   {% if item.metafields.drop.drop_month %}
                 .soon-index__coming__count.no-mobile
-                    .countdown(data-day="{{ drop_day }}", data-month="{{ drop_month }}", data-hour="{{ drop_hour }}")
+                    .countdown(data-day="{{ item.metafields.drop.drop_day }}", data-month="{{ item.metafields.drop.drop_month }}", data-hour="{{ item.metafields.drop.drop_hour }}")
                         ul.countdown__hold
                             li.countdown__numbers
                                 span.countdown__days 00
@@ -74,10 +77,11 @@ section.soon-index.e-wvw
                                 span.infos__hours HOURS
                                 span.infos__mins MINS
                                 span.infos__secs SECS
+                | {% endif %}
+                | {% endfor %}
                 
         
 
-| {% assign soon_col = collections[section.settings.soon_index] %}
 section.soon-collect-index
     .soon-collect-index__hold.colle-cards
         | {% for item in soon_col.products limit:5 %}
