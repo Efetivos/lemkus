@@ -17,7 +17,6 @@
     -ms-user-select: none
     user-select: none
 
-
 //- =========================  MENUBLOG  ========================= -//
 //- =========================  MENUBLOG  ========================= -//
 .menu-blog
@@ -53,7 +52,9 @@ ul.menu-blog__hold
     padding: calc(var(--vh) * 24) 0 0 var(--gap)
     @include desk
         letter-spacing: -0.4rem
-        padding: 10.9rem 0 0 var(--gap)
+        //padding: 10.9rem 0 0 var(--gap)
+        padding: 0 0 0 var(--gap)
+        margin: 13.9rem 0 0
 
 li.menu-blog__each
     align-items: flex-start
@@ -64,6 +65,7 @@ li.menu-blog__each
     @include desk
         font-size: 30rem
         margin: -5rem 0 0
+        line-height: 90%
     &:hover
         span
             opacity: .65
@@ -71,7 +73,7 @@ li.menu-blog__each
 li.menu-blog__each + li.menu-blog__each
     margin: -1.8rem 0 0
     @include desk
-        margin: -5rem 0 0
+        margin: 0
     
 li.menu-blog__each span
     @include desk
@@ -85,6 +87,7 @@ span.tag-counter
     @include desk
         font-size: 3rem
         margin: 2.6rem 0 0 8rem
+        margin: -10.8rem 0 0 8rem
         transition: .2s opacity ease-out
 
 

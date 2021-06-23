@@ -14,7 +14,7 @@ class InfinityScroll {
             this.qs = (s, o = doc) => o.querySelector(s)
 
 
-
+        this.body = document.querySelector('body')
         this.scroll = {
             ease: 0.05,
             current: 0,
@@ -117,19 +117,22 @@ class InfinityScroll {
     //? - =========================  UPDATE  ========================= -//
     //? - =========================  UPDATE  ========================= -//
     update() {
-        this.scroll.current = this.lerp(this.scroll.current, this.scroll.target, this.scroll.ease)
+        if($(this.body).hasClass('is-menublog')){
 
-        if (this.scroll.current > this.scroll.last) {
-            this.direction = 'down'
-        } else if (this.scroll.current < this.scroll.last) {
-            this.direction = 'up'
+            this.scroll.current = this.lerp(this.scroll.current, this.scroll.target, this.scroll.ease)
+            
+            if (this.scroll.current > this.scroll.last) {
+                this.direction = 'down'
+            } else if (this.scroll.current < this.scroll.last) {
+                this.direction = 'up'
+            }
+            
+            if (this.medias) {
+                this.medias.forEach(media => media.update(this.scroll, this.direction))
+            }
+            
+            this.scroll.last = this.scroll.current
         }
-
-        if (this.medias) {
-            this.medias.forEach(media => media.update(this.scroll, this.direction))
-        }
-
-        this.scroll.last = this.scroll.current
         window.requestAnimationFrame(this.update.bind(this), { passive: true })
     }
 

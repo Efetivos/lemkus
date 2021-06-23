@@ -39,7 +39,7 @@ class Preloader {
         ]).then(_ => {
             window.dispatchEvent(new Event('resize'))
             $('.preloader-master').remove()
-            $('.infinity').length > 0 ? infinity.init() : null
+            $('.infinity').length > 0 && window.innerWidth > 1024 ? infinity.init() : null
         }).catch(_ => {
             console.log('catch');
             window.dispatchEvent(new Event('resize'))
