@@ -21,15 +21,23 @@ class Menu {
             links: this.qsa('.menu-fs__links li a')
         }
 
+
+        $('.top-bar').length > 0 ? this.topBar() : null
+        $('.size-guide').length > 0 ? this.sizeGuide() : null
+        
+        
+        
+        //? - =========================  COOKIES  ========================= -//
+        //? - =========================  COOKIES  ========================= -//
+        this.my_storage = localStorage.getItem('cookieBar', null);
+        this.my_storage
         this.cookies = {
             el: this.qs('.cookies'),
             close: this.qs('.cookies__close')
         }
+        this.verifyStorage()
+        
         this.onClick()
-        $('.top-bar').length > 0 ? this.topBar() : null
-        $('.size-guide').length > 0 ? this.sizeGuide() : null
-
-
     }
 
 
@@ -72,6 +80,7 @@ class Menu {
         //____ dismiss cookies
         $(this.cookies.close).click(function () {
             gsap.set(that.cookies.el, { duration: 1, autoAlpha: 0, onComplete: () => $(that.cookies.el).remove() })
+            that.my_storage = localStorage.setItem('cookieBar', true)
         });
     }
 
@@ -123,7 +132,6 @@ class Menu {
             close: this.qsa('.close-guid, .size-guide__close')
         }
 
-        console.log(this.guide);
         $(this.guide.close).click(function () {
             $(this).closest('.shopify-section').remove()
         })
@@ -160,10 +168,6 @@ class Menu {
 
     //? - =========================  VERIFY SO  ========================= -//
     //? - =========================  VERIFY SO  ========================= -//
-
-
-    //? - =========================  FIX MOBILE  ========================= -//
-    //? - =========================  FIX MOBILE  ========================= -//
     verifySO() {
         function isMacintosh() {
             return navigator.platform.indexOf('Mac') > -1
@@ -230,6 +234,20 @@ class Menu {
         }
 
     }
+
+
+
+    
+
+
+
+    //? - =========================  VERIFY STORAGE  ========================= -//
+    //? - =========================  VERIFY STORAGE  ========================= -//
+    verifyStorage() {
+        this.my_storage ? $(this.cookies.el).removeClass('new-user') : $(this.cookies.el).addClass('new-user')
+    }
+
+
 
 }
 export const menu = new Menu()

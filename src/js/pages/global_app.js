@@ -112,7 +112,12 @@ class GlobalApp {
         let is_on_time = $(this.popup).data('showsup')
         
         function closePopup() {
-            $('.popup__close').click(function () { gsap.to('.popup', { autoAlpha: 0, duration: .3, onComplete: () => $(that.body).removeClass('enable-popup') }) })
+            $('.popup__close').add('.popup__fader').click(function () { gsap.to('.popup', { autoAlpha: 0, duration: .3, onComplete: () => $(that.body).removeClass('enable-popup') }) })
+            $(document).on('keydown', function(event) {
+                if (event.key == "Escape" && $(that.body).hasClass('enable-popup')) {
+                    $('.popup__close').trigger('click')
+                }
+            })
         }
 
         //if trigger on footer
