@@ -1,5 +1,5 @@
-  {% if settings.is_popup_newsl %}
-<div class="popup popup-newsl">
+  {% if settings.is_popup_newsl and settings.is_popup_sale == false  %}
+<div class="popup popup-newsl" data-showsup="{% if settings.is_popup_newsl_footer %}footer{% else %}time{% endif %}">
   <div class="popup__fader e-abs"> </div>
   <div class="popup__hold">
     <div class="popup__img"><img src="{{ settings.popup_img_newsl | img_url: 'master' }}" alt="#"></div>
@@ -20,7 +20,7 @@
   </div>
 </div>  {% endif %}
   {% if settings.is_popup_sale %}
-<div class="popup popup-sale">
+<div class="popup popup-sale" data-showsup="{% if settings.is_popup_sale_footer %}footer{% else %}time{% endif %}">
   <div class="popup__fader e-abs"> </div>
   <div class="popup__hold">
     <div class="popup__img"><img src="{{ settings.popup_img_sale | img_url: 'master' }}" alt="#"></div>

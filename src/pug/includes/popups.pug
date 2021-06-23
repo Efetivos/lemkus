@@ -3,8 +3,8 @@
 
 //- =========================  POPUP NEWSL  ========================= -//
 //- =========================  POPUP NEWSL  ========================= -//
-|   {% if settings.is_popup_newsl %}
-.popup.popup-newsl
+|   {% if settings.is_popup_newsl and settings.is_popup_sale == false  %}
+.popup.popup-newsl(data-showsup="{% if settings.is_popup_newsl_footer %}footer{% else %}time{% endif %}")
     .popup__fader.e-abs 
     .popup__hold
         .popup__img
@@ -26,7 +26,7 @@
 //- =========================  POPUP SALE  ========================= -//
 //- =========================  POPUP SALE  ========================= -//
 |   {% if settings.is_popup_sale %}
-.popup.popup-sale
+.popup.popup-sale(data-showsup="{% if settings.is_popup_sale_footer %}footer{% else %}time{% endif %}")
     .popup__fader.e-abs 
     .popup__hold
         .popup__img

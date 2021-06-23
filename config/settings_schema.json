@@ -34,6 +34,12 @@
         "default": false
       },
       {
+        "type": "checkbox",
+        "id": "is_popup_newsl_footer",
+        "label": "Display when reaching footer? Otherwise after 12s.",
+        "default": false
+      },
+      {
         "id": "popup_subt_newsl",
         "type": "text",
         "label": "Text",
@@ -64,6 +70,12 @@
         "type": "checkbox",
         "id": "is_popup_sale",
         "label": "Display Sale Pop up?",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "is_popup_sale_footer",
+        "label": "Display when reaching footer? Otherwise after 12s.",
         "default": false
       },
       {

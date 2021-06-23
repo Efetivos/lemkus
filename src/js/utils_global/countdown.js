@@ -19,7 +19,6 @@ class Countdown {
                 days: $(thisCounter).data('month')  > 10 ? $(thisCounter).data('month') : `${$(thisCounter).data('month')}`
             }
 
-            console.log(counterParams.days);
             //let future = Date.parse("Aug 19, 2021 13:00:00");
             let future = Date.parse(`${$(thisCounter).data('month')} ${$(thisCounter).data('day')} , 2021 ${$(thisCounter).data('hour')}`);
             let now = new Date();
