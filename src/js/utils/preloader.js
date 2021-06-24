@@ -11,8 +11,8 @@ class Preloader {
 
     init() {
         //toggle INTRO 
-        if($('body').hasClass('index') && window.innerWidth > 1024) { 
-            intro_home.init() 
+        if($('body').hasClass('index')) { 
+            if(window.innerWidth > 1024) { intro_home.init() }            
             $('.preloader-master').remove() 
         }
 
@@ -27,7 +27,7 @@ class Preloader {
         $imgClass.imagesLoaded()
             .always(function (instance) {
                 window.dispatchEvent(new Event('resize'));
-                intro_home.startIntro()
+                if($('body').hasClass('index')) {  intro_home.startIntro() }
             })
 
             //___________ PROGRESS

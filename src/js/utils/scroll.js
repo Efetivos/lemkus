@@ -8,6 +8,7 @@ import { contact } from '../pages/contact';
 import { global_app } from '../pages/global_app';
 import { product } from '../pages/product';
 import DragSection from '../utils_global/drag-section';
+import SliderDrag from '../utils_global/drag-slider';
 import DragSlider from '../utils_global/sliders';
 import { ajaxify } from '../utils_shopify/ajaxify';
 import { accordion } from './accordion'
@@ -74,6 +75,19 @@ class Smooth {
 
 
 
+        // ______________ launches
+        if (this.isPage === 'launches') {
+            if (!this.once) {
+                this.once = true
+                new SliderDrag(this.contentPage)
+            }
+        }
+
+
+
+
+
+
         // ______________ about
         if (this.isPage === 'about') {
             if (!this.once) {
@@ -82,8 +96,6 @@ class Smooth {
             }
             about.onScroll()
         }
-
-
 
 
         // ______________ contact
@@ -202,12 +214,12 @@ class Smooth {
             })
         }
         
-        this.slider_section = this.contentPage.querySelectorAll('.js-slider-section') || null
-        if(this.slider_section.length > 0) {
-            this.slider_section.forEach((el) => {
-                new DragSection(el)
-            })
-        }
+        //this.slider_section = this.contentPage.querySelectorAll('.js-slider-section') || null
+        //if(this.slider_section.length > 0) {
+        //    this.slider_section.forEach((el) => {
+        //        new DragSection(el)
+        //    })
+        //}
 
     }
     
