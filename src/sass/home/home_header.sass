@@ -28,24 +28,30 @@ header.header-index
 
 
 .header-index__imgs
-    width: 100%
     height: 100%
     position: relative
+    width: 100%
+    @include desk
+        display: flex
+        align-items: center
+        justify-content: center
 
 
 .header-index__imgs__each
     height: 100%
     position: relative
+    @include desk
+        width: 22%
+    
 
 
 .header-index__imgs img
-    width: 100%
     height: 100%
     object-fit: cover
+    width: 100%
 
 .header-index__imgs__each:not(:first-child)
     position: absolute
-    left: 0
     top: 0
 
 

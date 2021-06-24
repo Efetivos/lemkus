@@ -13,6 +13,7 @@ import { ajaxify } from '../utils_shopify/ajaxify';
 import { accordion } from './accordion'
 import { accordion_filters } from './accordion-filters';
 import { add_to_cart } from './add-to-cart';
+import { intro_home } from './intro-home';
 class Smooth {
     constructor() {
     }
@@ -66,6 +67,7 @@ class Smooth {
             if (!this.once) {
                 index.init(this.contentPage)
                 this.once = true
+                intro_home.init()
             }
                 
             index.onScroll(this.data.last)
