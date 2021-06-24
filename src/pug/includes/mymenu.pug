@@ -37,15 +37,6 @@ a(href="{{ shop.url }}", title="{{ shop.title }}").logo-main.el-fix !{logomain}
     span.hour 11:18 AM
 
 
-.menu-search-bag.el-fix
-    a(href="{{ shop.url }}/search", title="search", class="link-search").trg-search SEARCH
-    .trg-cart BAG (#[span.cart-counter  {{ cart.item_count }}])
-
-.menu-acc-wish.no-mobile.el-fix
-    a(href="{{ shop.url }}/account", title="account", class="link-account") ACCOUNT
-    a(href="{{ shop.url }}/wishlist", title="wishlist", class="link-wishlist") WISHLIST
-
-
 
 
 
@@ -67,6 +58,21 @@ nav.main-menu.no-mobile.el-fix
 
 
 
+
+
+
+
+
+//- =========================  BAG & ACCOUNT  ========================= -//
+//- =========================  BAG & ACCOUNT  ========================= -//
+
+.menu-acc-wish.no-mobile.el-fix
+    a(href="{{ shop.url }}/account", title="account", class="link-account") ACCOUNT
+    a(href="{{ shop.url }}/wishlist", title="wishlist", class="link-wishlist") WISHLIST
+
+.menu-search-bag.el-fix
+    a(href="{{ shop.url }}/search", title="search", class="link-search").trg-search SEARCH
+    .trg-cart BAG (#[span.cart-counter  {{ cart.item_count }}])
 
 
 

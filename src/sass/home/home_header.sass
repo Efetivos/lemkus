@@ -25,6 +25,7 @@ header.header-index
     height: 28.4rem
     @include desk
         height: auto
+        will-change: transform
 
 
 .header-index__imgs
@@ -78,6 +79,7 @@ header.header-index
 .header-index__imgs, .header-index__hl__img
     @include desk
         height: 54.4rem
+        will-change: clip-path
 
 
 .header-index__hl__texts
@@ -96,8 +98,10 @@ header.header-index
         width: 61%
         letter-spacing: 0.12rem
         line-height: 0.84
+        will-change: transform, opacity
 
 .header-index__hl__texts span
     font-size: 1.2rem
     @include desk
         font-size: 1.6rem
+        will-change: transform, opacity

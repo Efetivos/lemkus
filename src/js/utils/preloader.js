@@ -2,6 +2,7 @@ var imagesLoaded = require('imagesloaded');
 var $ = require('jquery');
 import FontFaceObserver from 'fontfaceobserver'
 import { infinity } from './infinity-scroll';
+import { intro_home } from './intro-home';
 
 class Preloader {
     constructor() {
@@ -9,6 +10,7 @@ class Preloader {
     }
 
     init() {
+        $('body').hasClass('index') && window.innerWidth > 1024 ? intro_home.init() : null
         //? - =========================  PRELOAD
         imagesLoaded.makeJQueryPlugin($);
         let i = 0,
@@ -18,6 +20,7 @@ class Preloader {
         $imgClass.imagesLoaded()
             .always(function (instance) {
                 window.dispatchEvent(new Event('resize'));
+                intro_home.startIntro()
             })
 
             //___________ PROGRESS

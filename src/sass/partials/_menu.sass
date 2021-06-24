@@ -34,8 +34,10 @@ a.logo-main
         transition: width 0.8s cubic-bezier(0.16, 1.08, 0.38, 0.98)
         width: 12.6rem
 
-a.logo-main svg path
+a.logo-main svg path, a.logo-main svg polygon
     fill: var(--dark)
+    @include desk
+        will-change: transform
 
 .cart-counter, .trg-cart
     display: inline-block
