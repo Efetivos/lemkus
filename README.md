@@ -1,8 +1,35 @@
-## Time: 136h00
-Data: 08:50  | 06.24  
-Daily: -00:30 
+## Time: 137h00
+Data: 09:30  | 06.24  
+Daily: 4:30 
   
 ![Screenshot](./cover.png) (https://github.com/Efetivos/lemkus)
+
+
+### ENABLE INTRO
+> home_header.css
+//toggle INTRO 
+.index .header-index__preloader
+    @include desk
+        //z-index: 999
+        //position: fixed
+        //left: 0
+        //top: 0
+        //height: 100vh
+        //width: 100vw
+        //background: var(--soft)
+
+.index
+    @include desk
+        //overflow: hidden
+        //pointer-events: none
+
+> preloader.js
+//toggle INTRO 
+if($('body').hasClass('index') && window.innerWidth > 1024) { 
+	//intro_home.init() 
+	$('.preloader-master').remove() 
+}
+//intro_home.startIntro()
 
 
 ### Colors:

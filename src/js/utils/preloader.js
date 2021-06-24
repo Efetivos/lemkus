@@ -11,7 +11,10 @@ class Preloader {
 
     init() {
         //toggle INTRO 
-        if($('body').hasClass('index') && window.innerWidth > 1024) { intro_home.init(); $('.preloader-master').remove() }
+        if($('body').hasClass('index') && window.innerWidth > 1024) { 
+            intro_home.init() 
+            $('.preloader-master').remove() 
+        }
 
 
 

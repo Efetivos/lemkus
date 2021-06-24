@@ -1,13 +1,16 @@
 
 import { gsap } from 'gsap'
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+gsap.registerPlugin(ScrollTrigger);
 class Index {
     constructor() {
         return;
     }
 
-    init(contentPage) {
-        this.contentPage = contentPage
+    init() {
         this.body = document.querySelector('body')
+
+        this.contentPage = document
         let doc = this.contentPage
         this.qsa = (s, o = doc) => o.querySelectorAll(s),
             this.qs = (s, o = doc) => o.querySelector(s)
@@ -16,12 +19,29 @@ class Index {
         this.onResize()
         if($(window).width() > 1024) {
             setInterval(this.hourCapeTown, 1000);
+            this.onScene()
         }
         
 
     }
 
-
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //? - =========================  ONSCENE  ========================= -//
+    //? - =========================  ONSCENE  ========================= -//
+    onScene() {
+        this.each_cols = this.qsa('.stagger-it')
+        gsap.timeline({ scrollTrigger: { trigger: '.cols_index', start: 'top 75%' }})
+            .fromTo(this.each_cols, { webkitClipPath: 'inset(100% 0% 0% 0%)', clipPath: 'inset(100% 0% 0% 0%)' }, { duration: 2, webkitClipPath: 'inset(0% 0% 0% 0%)', clipPath: 'inset(0% 0% 0% 0%)', ease: 'expo.out', stagger: .15 })
+    }
 
 
 
