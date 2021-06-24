@@ -99,7 +99,7 @@ class IntroHome {
             .add(this.tl_bg_menu, "-=1.75")
             .add(this.tl_texts, "-=.7")
             .add(this.tl_border_holder)
-            .set('.index', { overflowY: 'auto'}, "-=1" )
+            .set('.index', { overflowY: 'auto', pointerEvents: 'inherit' }, "-=1" )
 
 
             $(this.intro.cookie).length > 0 ? this.tl_master.add(this.tl_cookies) : null
