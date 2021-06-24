@@ -8,30 +8,70 @@ gsap.registerPlugin(Draggable, InertiaPlugin);
 
 
 export default class SliderDrag {
-    constructor(el) {
+    constructor(el, type) {
+        this.el = el
+        this.type = type
         this.drag = {
-            btn: el.querySelector('.drag'),
-            width: el.querySelector('.drag').getBoundingClientRect().width,
-            travel: el.querySelector('.header-laun__colle__hold'),
-            line: el.querySelector(".drag__cntrl__lines"),
-            line_dyna: el.querySelector(".drag-line.line-dyna"),
+            btn: this.el.querySelector('.drag'),
+            width: this.el.querySelector('.drag').getBoundingClientRect().width,
+            line: this.el.querySelector(".drag__cntrl__lines"),
+            line_dyna: this.el.querySelector(".drag-line.line-dyna"),
         }
 
+        this.detectType()
         this.createTimeline()
         this.createDrag()
     }
 
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //? - =========================  DETECT TYPE  ========================= -//
+    //? - =========================  DETECT TYPE  ========================= -//
+    detectType() {
+        if(this.type == 'cols') { 
+            this.travel = this.el.querySelector('ul.cols_index__items')
+            this.drag_force = 0.92
+            this.drag_move =  66.82
+            this.drag_move_btn =  1141.44
+        }
+        if(this.type == 'header-launch') { 
+            this.travel = this.el.querySelector('.header-laun__colle__hold')
+            this.drag_force = 0.915  
+            this.drag_move =  186
+            this.drag_move_btn =  986
+        }
+        if(this.type == 'cross-sell') { 
+            this.travel = this.el.querySelector('.cross-sell__hold')
+            this.drag_force = 0.92
+            this.drag_move =  66.9
+            this.drag_move_btn =  1141.44
+        }
+    }
+
+
+
+
+
+
     //create timelines
     createTimeline() {
         this.wallk_btn = window.innerWidth * 0.85
-        this.width_drag = this.drag.line.getBoundingClientRect().width * 0.915
+        this.width_drag = this.drag.line.getBoundingClientRect().width * this.drag_force
         this.t1_drag_btn = gsap.timeline({ paused: true })
-            .to(this.drag.btn, { duration: 100, xPercent: 986, ease: "none" })
+            .to(this.drag.btn, { duration: 100, xPercent: (this.drag_move_btn), ease: "none" })
             .from(this.drag.line_dyna, { duration: 100, scaleX: 0, transformOrigin: 'left', ease: "none" }, 0)
             
             this.t1_drag = gsap.timeline({ paused: true })
-            .to(this.drag.travel, { duration: 100, xPercent: - 186, ease: "none" }, 0)
+            .to(this.travel, { duration: 100, xPercent: - (this.drag_move), ease: "none" }, 0)
 
     }
 

@@ -67,6 +67,7 @@ class Smooth {
             if (!this.once) {
                 index.init(this.contentPage)
                 this.once = true
+                if($('.cols_index__drag').length > 0 && window.innerWidth > 1024 ) { new SliderDrag(this.contentPage,'cols') }
             }
                 
             index.onScroll(this.data.last)
@@ -79,7 +80,8 @@ class Smooth {
         if (this.isPage === 'launches') {
             if (!this.once) {
                 this.once = true
-                new SliderDrag(this.contentPage)
+                if($('.drag').length > 0 && window.innerWidth > 1024 ) { new SliderDrag(this.contentPage, 'header-launch') }
+                
             }
         }
 
@@ -123,12 +125,13 @@ class Smooth {
         // ______________ PRODUCT
         if (this.isPage === 'product') {
             if (!this.once) {
+                this.once = true
                 ajaxify.init()
                 ajaxify.onClick(this.contentPage)
                 add_to_cart.init(this.contentPage)
                 accordion.init(this.contentPage)
                 product.init()
-                this.once = true
+                if($('.drag').length > 0 && window.innerWidth > 1024 ) { new SliderDrag(this.contentPage, 'cross-sell') }
             }
             product.onScroll()
         }
