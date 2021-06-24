@@ -5,6 +5,21 @@
     overflow-x: hidden
 
 
+//toggle INTRO 
+.index .header-index__preloader
+    @include desk
+        //z-index: 999
+        //position: fixed
+        //left: 0
+        //top: 0
+        //height: 100vh
+        //width: 100vw
+        //background: var(--soft)
+
+.index
+    @include desk
+        overflow: hidden
+
 header.header-index
     align-items: flex-end
     display: grid
@@ -25,7 +40,7 @@ header.header-index
     height: 28.4rem
     @include desk
         height: auto
-        will-change: transform
+        will-change: transform, opacity
 
 
 .header-index__imgs
@@ -42,6 +57,7 @@ header.header-index
     height: 100%
     position: relative
     @include desk
+        clip-path: inset(1% 1% 1% 1%)
         width: 22%
     
 
@@ -62,6 +78,7 @@ header.header-index
     position: absolute
     top: 0
     width: 100%
+    //display: none
 
 
 .header-index__hl__img

@@ -10,7 +10,11 @@ class Preloader {
     }
 
     init() {
-        $('body').hasClass('index') && window.innerWidth > 1024 ? intro_home.init() : null
+        //toggle INTRO 
+        if($('body').hasClass('index') && window.innerWidth > 1024) { intro_home.init(); $('.preloader-master').remove() }
+
+
+
         //? - =========================  PRELOAD
         imagesLoaded.makeJQueryPlugin($);
         let i = 0,
@@ -41,12 +45,13 @@ class Preloader {
             fontDharma.load()
         ]).then(_ => {
             window.dispatchEvent(new Event('resize'))
-            $('.preloader-master').remove()
+            
+            $('body').hasClass('index') ? null : $('.preloader-master').remove()
             $('.infinity').length > 0 && window.innerWidth > 1024 ? infinity.init() : null
         }).catch(_ => {
             console.log('catch');
             window.dispatchEvent(new Event('resize'))
-            $('.preloader-master').remove()
+            $('body').hasClass('index') ? null : $('.preloader-master').remove()
         })
     }
 }
