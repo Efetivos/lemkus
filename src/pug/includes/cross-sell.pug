@@ -71,7 +71,7 @@ nav.cross-sell.no-desk
 nav.cross-sell.no-mobile
     |   {% for collection in product.collections limit:1 %}
     .cross-sell__hold.colle-cards
-        |   {% for product in collections[collection.title].products limit:4 %}
+        |   {% for product in collections[collection.title].products limit:3 %}
         |   {% if product.id != $id %}
         |   {% render 'product-card' prod: product %}
 

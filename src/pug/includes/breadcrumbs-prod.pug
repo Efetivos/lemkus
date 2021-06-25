@@ -7,3 +7,17 @@ nav.breadcrumbs.breadcrumbs-prod(role="navigation" aria-label="breadcrumbs").no-
     |   {% endfor %}
     span.recosemi {{ product.title }}
 |   {% endunless %}
+
+
+
+
+
+| {% for collection in collections %}
+h1 {{collection.title}}
+
+| {% endfor %}
+
+| {% for item in collections['kids'].products  limit: 6 %}
+h1 {{item.title}}
+
+| {% endfor %}
