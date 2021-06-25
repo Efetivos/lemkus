@@ -1,9 +1,11 @@
 
 import { gsap } from 'gsap'
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { SplitText } from "gsap/SplitText";
+import { SplitText } from "gsap/SplitText"
 gsap.registerPlugin(ScrollTrigger, SplitText)
-import { countdown } from '../utils_global/countdown';
+import { countdown } from '../utils_global/countdown'
+
+
 class GlobalApp {
     constructor() {
         return;

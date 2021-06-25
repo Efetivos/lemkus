@@ -3,7 +3,7 @@ var $ = require('jquery');
 import FontFaceObserver from 'fontfaceobserver'
 import { infinity } from './infinity-scroll';
 import { intro_home } from './intro-home';
-
+import { about } from '../pages/about';
 class Preloader {
     constructor() {
         return
@@ -11,9 +11,9 @@ class Preloader {
 
     init() {
         //toggle INTRO 
-        if($('body').hasClass('index')) { 
+        if ($('body').hasClass('index')) {
             //if(window.innerWidth > 1024) { intro_home.init() }            
-            $('.preloader-master').remove() 
+            $('.preloader-master').remove()
         }
 
 
@@ -27,7 +27,8 @@ class Preloader {
         $imgClass.imagesLoaded()
             .always(function (instance) {
                 window.dispatchEvent(new Event('resize'));
-               // if($('body').hasClass('index')) {  intro_home.startIntro() }
+                // if($('body').hasClass('index')) {  intro_home.startIntro() }
+                $('.about-header').length > 0 ? about.goEnter() : null
             })
 
             //___________ PROGRESS
@@ -48,7 +49,7 @@ class Preloader {
             fontDharma.load()
         ]).then(_ => {
             window.dispatchEvent(new Event('resize'))
-            
+
             $('body').hasClass('index') ? null : $('.preloader-master').remove()
             $('.infinity').length > 0 && window.innerWidth > 1024 ? infinity.init() : null
         }).catch(_ => {
