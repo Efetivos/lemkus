@@ -2,16 +2,16 @@
   {% assign $id =  product.id %}
   {% for collection in product.collections limit:1 %}
 <section class="dropping-card dropping-card-regular no-mobile">  {% for product in collections[collection.title].products limit:1 %}
-  <div class="dropping-card__hold hover-img js-find-hover">
+  <div class="dropping-card__hold js-find-hover">
     <div class="dropping-card__bg" style="background:#eaeaea"></div>
     <div class="dropping-card__infos">
       <div class="dropping-card__logo"> 
         <!--img(src="{{ section.settings.img_logo_brand | img_url: 'master' }}", alt='{{ section.settings.img_logo_brand.alt | escape }}').img-load-->
-      </div><a class="dropping-card__title dharma hover-img-js" href="{{ product.url | within: collection }}">{{ product.title }}</a>
+      </div><a class="dropping-card__title dharma" href="{{ product.url | within: collection }}">{{ product.title }}</a>
       <div class="dropping-card__price recosemi">{{ product.price | money }}</div>
       <div class="dropping-card__infos__img no-desk"><a href="{{ product.url | within: collection }}"> <img class="img-load" src="{{  product.featured_image.src  | img_url: 'master' }}" alt="{{ product.src | escape }}"></a></div><a class="dropping-card__notify btn-hover cream-v" href="{{ product.url | within: collection }}"><span class="static">VIEW PRODUCT</span><span class="hover" data-hover="VIEW PRODUCT      VIEW PRODUCT      ">VIEW PRODUCT      VIEW PRODUCT      </span></a>
     </div>
-    <div class="dropping-card__img no-mobile hover-img"><a href="{{ product.url | within: collection }}"> <img class="img-load" src="{{  product.featured_image.src  | img_url: 'master' }}" alt="{{ product.src | escape }}"></a></div>
+    <div class="dropping-card__img no-mobile hover-img"><a class="hover-img" href="{{ product.url | within: collection }}"><img class="img-load" src="{{  product.featured_image.src  | img_url: 'master' }}" alt="{{ product.src | escape }}"></a></div>
   </div>  {% endfor %}
 </section>  {% endfor %}
 <nav class="cross-sell">  {% for collection in product.collections limit:1 %}

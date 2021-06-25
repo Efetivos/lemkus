@@ -32,7 +32,7 @@ section.dropping-card.dropping-card-regular
                 img(src="{{ section.settings.img_logo_brand | img_url: 'master' }}", alt='{{ section.settings.img_logo_brand.alt | escape }}').img-load
 
             //- TITLE
-            a(href="{{ product.url | within: collection }}").dropping-card__title.dharma.hover-img-js {{ product.title }}
+            a(href="{{ product.url | within: collection }}").dropping-card__title.dharma {{ product.title }}
 
             //- PRICE
             .dropping-card__price.recosemi {{ product.price | money }}

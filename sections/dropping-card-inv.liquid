@@ -22,7 +22,7 @@
   <div class="dropping-card__hold js-find-hover">
     <div class="dropping-card__bg" style="background:#eaeaea"></div>
     <div class="dropping-card__infos">
-      <div class="dropping-card__logo"> <img class="img-load" src="{{ section.settings.img_logo_brand_inv | img_url: 'master' }}" alt="{{ section.settings.img_logo_brand_inv.alt | escape }}"></div><a class="dropping-card__title dharma hover-img-js" href="{{ product.url | within: collection }}">{{ product.title }}</a>
+      <div class="dropping-card__logo"> <img class="img-load" src="{{ section.settings.img_logo_brand_inv | img_url: 'master' }}" alt="{{ section.settings.img_logo_brand_inv.alt | escape }}"></div><a class="dropping-card__title dharma" href="{{ product.url | within: collection }}">{{ product.title }}</a>
       <div class="dropping-card__price recosemi">{{ product.price | money }}</div>
       <div class="dropping-card__infos__img no-desk"><a href="{{ product.url | within: collection }}"><img class="img-load" src="{{  product.featured_image.src  | img_url: 'master' }}" alt="{{ product.src | escape }}"></a></div>
       <div class="dropping-card__count">

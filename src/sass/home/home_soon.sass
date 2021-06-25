@@ -27,6 +27,7 @@
     @include desk
         z-index: 1
         height: 54.4rem
+        overflow: hidden
 
 
 .soon-index__coming__img img
@@ -86,7 +87,24 @@ h1.soon-index__title
 a.view-all-card-soon
     @include desk
         font-size: 4rem
-        text-decoration: underline
-        transition: .2s opacity ease-out
+        position: relative
+        transition: .2s color ease-out
         &:hover
-            opacity: .5
+            color: var(--color)
+            &:after
+                background-color: var(--color)
+                transform: scaleX(0)
+                transform-origin: right
+                
+
+.view-all-card-soon:after
+    background-color: var(--dark)
+    bottom: 0
+    content: ''
+    height: 6px
+    left: 0
+    position: absolute
+    width: 100%
+    transform: scaleX(1)
+    transform-origin: left
+    transition: .2s background-color ease-out, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)
