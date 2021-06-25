@@ -1,0 +1,48 @@
+@import './partials/alias-mixins'
+
+.loader-home
+    background: var(--soft)
+    height: 100vh
+    left: 0
+    position: fixed
+    top: 0
+    width: 100vw
+    z-index: 50
+    @include desk
+        background: transparent
+
+
+.loader-home__hold
+    height: 100%
+    position: relative
+    width: 100%
+    overflow: hidden
+
+
+.loader-home__counting
+    margin: calc(1px - var(--vh) * 15) 0 0 0
+    @include desk
+        margin: -5vh 0 0 0
+
+
+.loader-home__counting span
+    color: var(--color)
+    font-family: var(--dharma)
+    font-size: 8rem
+    @include desk
+        font-size: 25rem
+
+.loader-home__counter
+    @include desk
+        @include flex-center
+        width: 26rem
+
+.loader-home .separator
+    background: var(--color)
+    height: 1px
+    margin: 0 1.5rem
+    width: 4rem
+    @include desk
+        height: 5px
+        margin: 0 7.5rem
+        width: 7rem

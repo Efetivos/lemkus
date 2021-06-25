@@ -14,23 +14,21 @@
     <div class="dropping-card__img no-mobile hover-img"><a class="hover-img" href="{{ product.url | within: collection }}"><img class="img-load" src="{{  product.featured_image.src  | img_url: 'master' }}" alt="{{ product.src | escape }}"></a></div>
   </div>  {% endfor %}
 </section>  {% endfor %}
-<nav class="cross-sell">  {% for collection in product.collections limit:1 %}
+<nav class="cross-sell no-desk">  {% for collection in product.collections limit:1 %}
   <div class="cross-sell__hold colle-cards">
-      {% for product in collections[collection.title].products limit:6 %}
+      {% for product in collections[collection.title].products limit:5 %}
       {% if product.id != $id %}
       {% render 'product-card' prod: product %}
       {% endif %}
       {% endfor %}
   </div>  {% endfor %}
-  <div class="cross-sell__drag e-hold">
-    <div class="cols_index__drag no-mobile">
-      <div class="drag__cntrl">
-        <div class="drag__cntrl__lines">
-          <div class="drag-line line-static"></div>
-          <div class="drag-line line-dyna"></div>
-        </div>
-        <button class="drag recosemi" href="#">DRAG</button>
-      </div>
-    </div>
-  </div>
+</nav>
+<nav class="cross-sell no-mobile">  {% for collection in product.collections limit:1 %}
+  <div class="cross-sell__hold colle-cards">
+      {% for product in collections[collection.title].products limit:4 %}
+      {% if product.id != $id %}
+      {% render 'product-card' prod: product %}
+      {% endif %}
+      {% endfor %}
+  </div>  {% endfor %}
 </nav>

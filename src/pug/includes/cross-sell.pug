@@ -55,10 +55,23 @@ section.dropping-card.dropping-card-regular.no-mobile
 //- =========================  COLLECTION CROSS SELL  ========================= -//
 //- =========================  COLLECTION CROSS SELL  ========================= -//
 
-nav.cross-sell
+//- mobile
+nav.cross-sell.no-desk
     |   {% for collection in product.collections limit:1 %}
     .cross-sell__hold.colle-cards
-        |   {% for product in collections[collection.title].products limit:6 %}
+        |   {% for product in collections[collection.title].products limit:5 %}
+        |   {% if product.id != $id %}
+        |   {% render 'product-card' prod: product %}
+
+        |   {% endif %}
+        |   {% endfor %}
+
+    |   {% endfor %}
+//- desktop
+nav.cross-sell.no-mobile
+    |   {% for collection in product.collections limit:1 %}
+    .cross-sell__hold.colle-cards
+        |   {% for product in collections[collection.title].products limit:4 %}
         |   {% if product.id != $id %}
         |   {% render 'product-card' prod: product %}
 
@@ -67,10 +80,11 @@ nav.cross-sell
 
     |   {% endfor %}
 
-    .cross-sell__drag.e-hold
-        .cols_index__drag.no-mobile
-            .drag__cntrl
-                .drag__cntrl__lines
-                    .drag-line.line-static
-                    .drag-line.line-dyna
-                button(href="#").drag.recosemi DRAG
+    //-
+        .cross-sell__drag.e-hold
+            .cols_index__drag.no-mobile
+                .drag__cntrl
+                    .drag__cntrl__lines
+                        .drag-line.line-static
+                        .drag-line.line-dyna
+                    button(href="#").drag.recosemi DRAG

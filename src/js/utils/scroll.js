@@ -132,7 +132,7 @@ class Smooth {
                 add_to_cart.init(this.contentPage)
                 accordion.init(this.contentPage)
                 product.init()
-                if($('.drag').length > 0 && window.innerWidth > 1024 ) { new SliderDrag(this.contentPage, 'cross-sell') }
+                //if($('.drag').length > 0 && window.innerWidth > 1024 ) { new SliderDrag(this.contentPage, 'cross-sell') }
             }
             product.onScroll()
         }

@@ -101,10 +101,12 @@ a.view-all-card-soon
     background-color: var(--dark)
     bottom: 0
     content: ''
-    height: 6px
+    height: 2px
     left: 0
     position: absolute
     width: 100%
     transform: scaleX(1)
     transform-origin: left
     transition: .2s background-color ease-out, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)
+    @include desk
+        height: 6px
