@@ -4,6 +4,7 @@ import FontFaceObserver from 'fontfaceobserver'
 import { infinity } from './infinity-scroll';
 import { intro_home } from './intro-home';
 import { about } from '../pages/about';
+import { article } from '../pages/article';
 class Preloader {
     constructor() {
         return
@@ -29,6 +30,7 @@ class Preloader {
                 window.dispatchEvent(new Event('resize'));
                 // if($('body').hasClass('index')) {  intro_home.startIntro() }
                 $('.about-header').length > 0 ? about.goEnter() : null
+                $('.header-article').length > 0 ? article.goEnter() : null
             })
 
             //___________ PROGRESS

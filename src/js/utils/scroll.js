@@ -2,6 +2,7 @@
 import { gsap } from 'gsap'
 import { index } from '../pages';
 import { about } from '../pages/about';
+import { article } from '../pages/article';
 import { blog } from '../pages/blog';
 import { collection } from '../pages/collection';
 import { contact } from '../pages/contact';
@@ -144,6 +145,17 @@ class Smooth {
             if (!this.once) {
                 this.once = true
                 blog.init()
+            }
+        }
+
+
+
+
+        // ______________ article
+        if (this.isPage === 'article') {
+            if (!this.once) {
+                this.once = true
+                article.init()
             }
         }
 
