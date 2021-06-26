@@ -1,0 +1,46 @@
+.   
+    {% schema %}
+        {
+            "name": "Brandsd List",
+            "blocks": [
+                {
+                    "name": "Brand",
+                    "type": "text",
+                    "settings": [
+                        {
+                            "id": "brand_title",
+                            "type": "text",
+                            "label": "Brand title:"
+                        }
+                    ]
+                }
+            ]
+        }
+    {% endschema %}
+
+
+//-section.list-brands
+    | {% for block in section.blocks %}
+    //h1 {{ block.settings.brand_title }}
+    
+    | {% endfor %}
+
+
+
+
+    |   {% for collection in product.collections %}
+    | {% for block in section.blocks %}
+    | {% if collection.title == block.settings.brand_title %}
+    |   {% assign brand %}
+    h1 {{ block.settings.brand_title }}
+    |   {{ collection.image | img_url: 'medium' }}
+    | {% endif %}
+    | {% endfor %}
+    //h1 {{collection.title}}
+
+    | {% endfor %}
+
+    //-| {% for item in collections['kids'].products  limit: 6 %}
+    //-h1 {{item.title}}
+    //-| {% endfor %}
+

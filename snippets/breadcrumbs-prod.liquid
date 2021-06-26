@@ -1,6 +1,2 @@
   {% unless template == 'index' or template == 'cart' or template == 'list-collections' %}
 <nav class="breadcrumbs breadcrumbs-prod no-mobile e-flex" role="navigation" aria-label="breadcrumbs"><a href="{{ shop.url }}">Home   |   </a><a href="{{ shop.url }}/collections/all">Shop All   |   </a>  {% for collection in product.collections %}<a href="{{ collection.url }}">{{ collection.title }}   |   </a>  {% endfor %}<span class="recosemi">{{ product.title }}</span></nav>  {% endunless %}
-{% for collection in collections %}
-<h1>{{collection.title}}</h1>{% endfor %}
-{% for item in collections['kids'].products  limit: 6 %}
-<h1>{{item.title}}</h1>{% endfor %}

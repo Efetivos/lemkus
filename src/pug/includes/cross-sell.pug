@@ -1,14 +1,22 @@
 |   {% assign $id =  product.id %}
+|   {% for collection in product.collections %}
+|       {% for brand in shop.metafields.globals.brands %} 
+|           {% if collection.title == brand %}
+|              {% assign brand_title = brand %}
+|           {% endif %}
+|       {% endfor %}
+|   {% endfor %}
 
 
 
+h1.title.dharma {{ brand_title }}
 
 
 //- =========================  CARD CROSS SELL  ========================= -//
 //- =========================  CARD CROSS SELL  ========================= -//
-|   {% for collection in product.collections limit:1 %}
 section.dropping-card.dropping-card-regular.no-mobile
-    |   {% for product in collections[collection.title].products limit:1 %}
+    |   {% for product in collections[brand_title].products limit:1 %}
+    |   {% if product.id != $id %}
     .dropping-card__hold.js-find-hover
 
         //- BG
@@ -39,8 +47,8 @@ section.dropping-card.dropping-card-regular.no-mobile
             a(href="{{ product.url | within: collection }}").hover-img
                 img(src="{{  product.featured_image.src  | img_url: 'master' }}" alt="{{ product.src | escape }}").img-load
 
+    |   {% endif %}
     |   {% endfor %}
-|   {% endfor %}
 
 
 
@@ -57,28 +65,26 @@ section.dropping-card.dropping-card-regular.no-mobile
 
 //- mobile
 nav.cross-sell.no-desk
-    |   {% for collection in product.collections limit:1 %}
     .cross-sell__hold.colle-cards
-        |   {% for product in collections[collection.title].products limit:5 %}
+        |   {% for product in collections[brand_title].products offset:1 limit:5 %}
         |   {% if product.id != $id %}
         |   {% render 'product-card' prod: product %}
 
         |   {% endif %}
         |   {% endfor %}
 
-    |   {% endfor %}
+
+
 //- desktop
 nav.cross-sell.no-mobile
-    |   {% for collection in product.collections limit:1 %}
     .cross-sell__hold.colle-cards
-        |   {% for product in collections[collection.title].products limit:3 %}
+        |   {% for product in collections[brand_title].products offset:1 limit:4 %}
         |   {% if product.id != $id %}
         |   {% render 'product-card' prod: product %}
 
         |   {% endif %}
         |   {% endfor %}
 
-    |   {% endfor %}
 
     //-
         .cross-sell__drag.e-hold
