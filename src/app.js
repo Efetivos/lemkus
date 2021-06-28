@@ -26,8 +26,11 @@ menu.fixMobile()
 minicart.init()
 preloader.init()
 preloader.font()
-scroll.init()
 dropdown.init()
+if($('body').hasClass('collection')){
+} else {  }
+
+scroll.init()
 
 if ($('.page-about').length > 0 || $('.page-contact').length > 0 || $('.page-blog').length > 0) {
     gsap.set('html', { '--dark': '#fdfbf5', '--soft': '#191919' })

@@ -17,6 +17,7 @@ import { accordion_filters } from './accordion-filters';
 import { add_to_cart } from './add-to-cart';
 class Smooth {
     constructor() {
+        return;
     }
 
     bindMethods() {
@@ -53,7 +54,7 @@ class Smooth {
         const acc = diff / this.config.width
         const velo = + acc
 
-        if ($(window).width() > 1024) {
+        if ($(window).width() > 1024 && this.isPage != 'collection') {
             this.dom.content.style.transform = `translate3d(0, -${this.data.last.toFixed(0)}px, 0)`
         }
 
@@ -182,7 +183,7 @@ class Smooth {
     }
 
     on(requestAnimationFrame = true) {
-        if ($(window).width() > 1024) {
+        if ($(window).width() > 1024 && this.isPage != 'collection') {
             this.setStyles()
             this.setHeight()
         }
