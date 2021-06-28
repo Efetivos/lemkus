@@ -50,7 +50,8 @@ form(action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCar
             span.hover(data-hover="SOLD OUT      SOLD OUT      SOLD OUT      SOLD OUT      ") SOLD OUT      SOLD OUT      SOLD OUT      SOLD OUT      
         |    {% endif %}
 
-        a(href="{{ shop.url }}/pages/wishlist").btn-wishlist.btn-hover.cream-v
+        <div class="swym-wishlist-button-bar"></div>
+        //-a(href="{{ shop.url }}/pages/wishlist").btn-wishlist.btn-hover.cream-v
             span.static WISHLIST
             span.hover(data-hover="WISHLIST      WISHLIST      ") WISHLIST      WISHLIST      
 
