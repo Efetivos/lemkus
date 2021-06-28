@@ -1,0 +1,165 @@
+@import '../partials/alias-mixins'
+
+
+
+//- =========================  PAGE  ========================= -//
+//- =========================  PAGE  ========================= -//
+.page-wishlist__hold
+    display: flex
+    flex-direction: column
+    padding: 7rem 0 0 0
+
+.wish-title
+    font-size: 3rem
+    margin: 0 0 1.9rem 0
+
+
+div#ZoomyWishlistPage
+    flex-wrap: wrap
+    flex-direction: column
+
+
+.ZoomyWishlistPageGrid
+    border: 0 !important
+    border-bottom: 1px solid var(--dark) !important
+    display: grid !important
+    float: none !important
+    grid-template-areas: "img title remove" "img . ." "img price infos"
+    grid-template-columns: 25% 50% 25%
+    margin: 0 0 1.6rem 0 !important
+    padding: 0 0 1.6rem 0 !important
+    width: 100% !important
+    @include desk
+        grid-template-columns: 11.8rem 36rem
+
+
+li.zbodypimg
+    border: 1px solid var(--dark)
+    grid-area: img
+    height: 100%
+    width: 100%
+
+
+#ZoomyWishlistPage li img
+    width: 100%
+    height: 100%
+
+
+li.zbodytitle
+    font-family: var(--dharma)
+    font-size: 2.4rem
+    grid-area: title
+    margin: 0 0 0 1.2rem
+    text-align: left
+    text-transform: uppercase
+
+span.zprice
+    align-self: end
+    font-family: var(--recosemi)
+    grid-area: price
+    margin: 0 0 0 1.2rem
+    text-align: left
+
+.zqty
+    grid-area: qty
+    display: none
+
+li.zbodyaction
+    align-items: flex-end
+    display: inline-flex
+    grid-area: infos
+    margin: 0
+    @include mobile
+        flex-direction: column
+    @include desk
+        justify-content: flex-end
+        
+
+.zooomyshopvariant
+    display: none
+
+.zooomybtn
+    font-size: 1.2rem
+    text-transform: uppercase
+    border: 1px solid var(--dark) !important
+    border-radius: 50px
+    white-space: nowrap
+
+
+
+
+.zopencartlink
+    background: var(--color) !important
+    border: 1px solid var(--dark)
+    color: var(--dark) !important
+    font-family: var(--recosemi) !important
+    height: 2.5rem !important
+    padding: 0 1.3rem!important
+
+
+.ZoomyWishlistPageGrid .removefromwishlist
+    align-items: center
+    background: var(--soft) !important
+    border: 1px solid var(--dark) !important
+    color: var(--dak) !important
+    display: flex
+    font-family: 'OpenSans-Bold', Arial, Helvetica, sans-serif
+    font-size: 0.9rem
+    height: 2.1rem !important
+    justify-content: center
+    width: 2.1rem !important
+
+
+.ZoomyWishlistPageGrid span.zooomybtn
+    align-items: center
+    display: flex
+    height: 2.6rem !important
+    justify-content: center
+    margin: 0 0.8rem 0 0 !important
+    padding: 0 1.5rem !important
+    display: none
+
+
+//- =========================  BUTTON  ========================= -//
+//- =========================  BUTTON  ========================= -//
+div#ZooomyList
+    width: 100% !important
+    
+
+
+
+div#ZooomyList input[type="checkbox"]
+    width: 100%
+
+
+#ZooomyList label
+    width: 100%
+    height: 3.9rem
+
+p.emptymsg
+    position: absolute
+    display: flex
+    top: -2.4rem
+    font-size: 1.6rem
+
+
+p.emptymsg a
+    margin: 0 0.7rem
+    text-decoration: underline
+    color: var(--dark)
+
+
+p.zooomypwishmsg
+    width: 100%
+    background: transparent !important
+    color: var(--dark) !important
+    text-transform: uppercase
+    font-size: 1.6rem !important
+    padding: 0
+
+p.zooomypwishmsg .fa
+    display: none
+
+
+.wishcount
+    display: none

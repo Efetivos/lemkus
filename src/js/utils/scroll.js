@@ -160,6 +160,24 @@ class Smooth {
         }
 
 
+
+
+        // ______________ wishlist
+        if (this.isPage === 'wishlist') {
+            if (!this.once) {
+                this.once = true
+                var checkExist = setInterval(function () {
+                    if ($('.ZoomyWishlistPageGrid').length) {
+                        console.log("Exists!");
+                        window.dispatchEvent(new Event('resize'))
+                        clearInterval(checkExist);
+                    }
+                }, 100); // check every 100ms
+                gsap.delayedCall(5, () => window.dispatchEvent(new Event('resize')) )
+            }
+        }
+
+
         this.requestAnimationFrame()
     }
 

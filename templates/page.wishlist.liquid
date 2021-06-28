@@ -1,9 +1,8 @@
 
-<div class="page page-wishlist" data-barba="container" data-barba-namespace="wishlist" data-ispage="wishlist" data-scroll-content>
-  <header class="header-register e-flex-col">
-    <p class="its-page">Wish List /</p>
-  </header>
-  <div id="ZoomyWishlistPage"></div>
-  <main class="main-about"></main>{% render  'myfooter' %}
+<div class="page page-wishlist" data-ispage="wishlist" data-scroll-content>
+  <div class="page-wishlist__hold e-hold">
+    <h1 class="wish-title dharma">WISHLIST </h1>
+    <div id="ZoomyWishlistPage"></div>
+  </div>{% render  'myfooter' %}
   <script src="https://zooomyapps.com/wishlist/ListWishlist.js" data-shop-id="{{shop.permanent_domain}}" data-customer-id="{{customer.id}}"></script>
 </div>

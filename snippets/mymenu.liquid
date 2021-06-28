@@ -18,7 +18,7 @@
     <li><a class="link-{{ link.title | downcase }} item" href="{{ link.url }}">{{ link.title }}</a></li>  {% endfor %}
   </ul>
 </nav>
-<div class="menu-acc-wish no-mobile el-fix"><a class="link-account" href="{{ shop.url }}/account" title="account">ACCOUNT</a><a class="link-wishlist" href="{{ shop.url }}/wishlist" title="wishlist">WISHLIST</a></div>
+<div class="menu-acc-wish no-mobile el-fix"><a class="link-account" href="{{ shop.url }}/account" title="account">ACCOUNT</a><a class="link-wishlist" href="{{ shop.url }}/pages/wishlist" title="wishlist">WISHLIST</a></div>
 <div class="menu-search-bag el-fix"><a class="link-search trg-search" href="{{ shop.url }}/search" title="search">SEARCH</a>
   <div class="trg-cart">BAG (<span class="cart-counter"> {{ cart.item_count }}</span>)</div>
 </div>
