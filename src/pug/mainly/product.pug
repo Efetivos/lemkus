@@ -129,6 +129,16 @@
                                 .hold-content 
                                     .no-mobile {{ fields.descr.description }}  
                                     .details {{ fields.descr.details }}
+                        |   {% elsif product.description  %}
+                        .ctn-accord
+                            .ctn-accord__item
+                                .trg-acc.e-curp
+                                    h5.click.recosemi DETAILS
+                                    .plus-accd
+                                        .plus-accd__line.indic-static
+                                        .plus-accd__line.indic-rotate
+                                .hold-content 
+                                    .details {{ product.description }}
                         |   {% endif %}
             
 
@@ -143,6 +153,15 @@
                                         .plus-accd__line.indic-static
                                         .plus-accd__line.indic-rotate
                                 .hold-content {{ fields.descr.shipping }} 
+                        |   {% else %}
+                        .ctn-accord
+                            .ctn-accord__item
+                                .trg-acc.e-curp
+                                    h5.click.recosemi SHIPPING / RETURNS
+                                    .plus-accd
+                                        .plus-accd__line.indic-static
+                                        .plus-accd__line.indic-rotate
+                                .hold-content You may choose to restrict the collection or use of your personal information in the following ways: Whenever you are asked to fill in a form on the website, look for the box that you can click to indicate that you do not want the information to be used by anybody for direct marketing purposes.
                         |   {% endif %}
 
     main.main-prod

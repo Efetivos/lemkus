@@ -57,6 +57,20 @@
                   <div class="details">{{ fields.descr.details }}</div>
                 </div>
               </div>
+            </div>  {% elsif product.description  %}
+            <div class="ctn-accord">
+              <div class="ctn-accord__item">
+                <div class="trg-acc e-curp">
+                  <h5 class="click recosemi">DETAILS</h5>
+                  <div class="plus-accd">
+                    <div class="plus-accd__line indic-static"></div>
+                    <div class="plus-accd__line indic-rotate"></div>
+                  </div>
+                </div>
+                <div class="hold-content"> 
+                  <div class="details">{{ product.description }}</div>
+                </div>
+              </div>
             </div>  {% endif %}
               {% if fields.descr.shipping != blank %}
             <div class="ctn-accord">
@@ -69,6 +83,18 @@
                   </div>
                 </div>
                 <div class="hold-content">{{ fields.descr.shipping }} </div>
+              </div>
+            </div>  {% else %}
+            <div class="ctn-accord">
+              <div class="ctn-accord__item">
+                <div class="trg-acc e-curp">
+                  <h5 class="click recosemi">SHIPPING / RETURNS</h5>
+                  <div class="plus-accd">
+                    <div class="plus-accd__line indic-static"></div>
+                    <div class="plus-accd__line indic-rotate"></div>
+                  </div>
+                </div>
+                <div class="hold-content">You may choose to restrict the collection or use of your personal information in the following ways: Whenever you are asked to fill in a form on the website, look for the box that you can click to indicate that you do not want the information to be used by anybody for direct marketing purposes.</div>
               </div>
             </div>  {% endif %}
           </div>
