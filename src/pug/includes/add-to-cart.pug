@@ -38,7 +38,9 @@ form(action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCar
     div.add-cart-btns
         //- _______ btn add to cart
         |   {% if has_stock > 0 %}
-        button(class="{% if product.variants.size > 1 %}disabled{% endif %}" type="submit" name="add" id="add-to-cart-button").btn-hover.add-to-cart-btn
+        .select-var.recosem.t-red.red Please select a size
+        //-button(class="{% if product.variants.size > 1 %}disabled{% endif %}" type="submit" name="add" id="add-to-cart-button").btn-hover.add-to-cart-btn
+        button(class="{% if product.variants.size > 1 %}disabled-add-cart{% endif %}" type="submit" name="add" id="add-to-cart-button").btn-hover.add-to-cart-btn
             span.static ADD TO BAG 
             span.hover(data-hover="ADD TO BAG      ADD TO BAG      ADD TO BAG      ADD TO BAG      ") ADD TO BAG      ADD TO BAG      ADD TO BAG      ADD TO BAG      
             <svg class="loading" width="100%" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="17" cy="17" r="16.5" stroke="var(--dark)" pathLength="1"/></svg>

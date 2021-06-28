@@ -35,7 +35,12 @@ class AddToCart {
         //_____ click add to cart btn
         let $add_to_cart_all = this.qsa('#add-to-cart-button')
         $($add_to_cart_all).click(function(){
-            $(this).addClass('loading-item')
+            if($(this).hasClass('disabled-add-cart')) {
+                $(this).closest('.add-cart-btns').addClass('size-selected')
+            }
+            else {
+                $(this).addClass('loading-item')
+            }
         })
 
 
@@ -86,7 +91,11 @@ class AddToCart {
                 $add_to_cart = $form.find('#add-to-cart-button'),
                 max = $radio.data('inventory-qty')
 
-                $add_to_cart.hasClass('disabled') ? $add_to_cart.removeClass('disabled') : null
+                //$add_to_cart.hasClass('disabled') ? $add_to_cart.removeClass('disabled') : null
+                if($add_to_cart.hasClass('disabled-add-cart')) { 
+                    $add_to_cart.removeClass('disabled-add-cart')
+                    $('.add-cart-btns').removeClass('size-selected')
+                }
                 if($add_to_cart.prop)
                 $qty_field.attr('max', max)
                 if(parseInt($qty_field.val()) > max) {

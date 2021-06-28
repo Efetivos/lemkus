@@ -23,12 +23,15 @@ class Ajaxify {
             e.preventDefault()
             let el = $(this)
 
-            that.fecthItem(el)
+            if (!$('#add-to-cart-button').hasClass('disabled-add-cart')) {
+                that.fecthItem(el)
+                $('.add-cart-btns').addClass('loading-item')
+            }
         });
-        
-        $('.add-cart-btns').click(function(){
-            $(this).addClass('loading-item')
-        })
+
+        //$('.add-cart-btns').click(function () {
+        //    $('.add-cart-btns').addClass('loading-item')
+        //})
 
     }
 

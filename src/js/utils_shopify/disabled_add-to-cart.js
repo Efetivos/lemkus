@@ -12,6 +12,8 @@ class AddToCart {
             this.qs = (s, o = doc) => o.querySelector(s)
 
         this.onClick()
+
+        alert('tresting')
     }
 
 

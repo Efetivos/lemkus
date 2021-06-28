@@ -324,7 +324,10 @@ form#AddToCartForm
 
 
 .add-cart-btns
-    margin: 2.5rem 0 0
+    margin: 3.5rem 0 0
+    position: relative
+    @include desk
+        margin: 2.5rem 0 0
     @include desk
         align-items: center
         display: flex
@@ -332,6 +335,16 @@ form#AddToCartForm
         justify-content: space-between
         margin: 3rem 0 0
 
+.select-var
+    left: 0
+    position: absolute
+    top: -2.2rem
+    opacity: 0
+    pointer-events: none
+    transition: .25s opacity ease-out
+
+.size-selected .select-var
+    opacity: 1
 
 .add-cart-btns > *
     width: 100%
