@@ -42,11 +42,12 @@ class QtyPicker {
 
             if (qty_parameter > 1) {
                 $text_qty.text(`${parseInt(qty_parameter) - 1}`)
-                qty_parameter = $input_qty.val(`${parseInt(qty_parameter) - 1}`)
+                $input_qty.val(`${parseInt(qty_parameter) - 1}`)
+                qty_parameter = parseInt(qty_parameter) - 1
                 $btn_plus.removeClass('disabled')
             }
             
-            qty_parameter == 1 ? alert('whyy') : null
+            qty_parameter == 1 ? $btn_minus.addClass('disabled') : null
         })
 
 
@@ -57,12 +58,11 @@ class QtyPicker {
                 $btn_minus = $(this).closest('.cart__each').find('.js-qty-btn-minus'),
                 $btn_plus = $(this).closest('.cart__each').find('.js-qty-btn-plus')
 
-            if (qty_parameter <= $input_qty.attr('max') - 1) {
+            if (qty_parameter <= $input_qty.attr('max')) {
                 $text_qty.text(`${parseInt(qty_parameter) + 1}`)
-                qty_parameter = $input_qty.val(`${parseInt(qty_parameter) + 1}`)
+                $input_qty.val(`${parseInt(qty_parameter) + 1}`)
+                qty_parameter = parseInt(qty_parameter) + 1
                 $btn_minus.removeClass('disabled')
-            } else {
-                $btn_plus.addClass('disabled')
             }
         })
 
