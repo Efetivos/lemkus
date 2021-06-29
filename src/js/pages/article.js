@@ -28,7 +28,7 @@ class Article {
         }
 
 
-        new SplitText(this.header.title, { type: "line", wordsClass: 'wrapped-line' })
+        new SplitText(this.header.title, { type: "lines", linesClass: "line-wrap line++" })
         new SplitText(this.header.title, { type: "words,chars", wordsClass: 'wrapped-split' })
         gsap.set('.wrapped-split div', { yPercent: 110 })
 

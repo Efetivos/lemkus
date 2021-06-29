@@ -47,7 +47,7 @@ class About {
         }
 
 
-        new SplitText(this.header.title, { type: "line", wordsClass: 'wrapped-line' })
+        new SplitText(this.header.title, { type: "lines", linesClass: "line-wrap line++" })
         new SplitText(this.header.title, { type: "words,chars", wordsClass: 'wrapped-split' })
         gsap.set('.wrapped-split div', { yPercent: 110 })
 
@@ -86,7 +86,7 @@ class About {
         this.big_texts = this.qs('.big-text__title')
         
 
-        new SplitText(this.big_texts, { type: "line", wordsClass: 'wrapped-line' })
+        new SplitText(this.big_texts, { type: "lines", linesClass: "line-wrap line++" })
         new SplitText(this.big_texts, { type: "words,chars", wordsClass: 'wrapped-split-big' })
         gsap.set('.wrapped-split-big div', { yPercent: 110 })
 
