@@ -17,7 +17,15 @@ class QtyPicker {
             plus: this.qsa('.js-qty-btn-plus')
         }
 
-        this.onCLick()
+        this.cart = {
+            cart_counter: this.qs('.cart-counter'),
+            subtotal: this.qs('.cart__infos .subtotal'),
+            current: null
+        }
+
+
+        this.onClick()
+        this.onRemove()
     }
 
 
@@ -31,7 +39,7 @@ class QtyPicker {
 
     //? - =========================  ONCLICK  ========================= -//
     //? - =========================  ONCLICK  ========================= -//
-    onCLick() {
+    onClick() {
         let that = this
 
         //? - ___________  minus
@@ -46,8 +54,11 @@ class QtyPicker {
             if (qty_parameter > 1) {
                 $text_qty.text(`${parseInt(qty_parameter) - 1}`)
                 $input_qty.val(`${parseInt(qty_parameter) - 1}`)
+                $input_qty.attr('value', `${parseInt(qty_parameter) - 1}`)
                 qty_parameter = parseInt(qty_parameter) - 1
                 $btn_plus.removeClass('disabled')
+                that.current_line = $input_qty
+                that.onChangeQty(that.current_line)
             }
 
             qty_parameter == 1 ? $btn_minus.addClass('disabled') : null
@@ -65,12 +76,12 @@ class QtyPicker {
             if (qty_parameter <= $input_qty.attr('max')) {
                 $text_qty.text(`${parseInt(qty_parameter) + 1}`)
                 $input_qty.val(`${parseInt(qty_parameter) + 1}`)
-                $input_qty.attr('value',`${parseInt(qty_parameter) + 1}`)
+                $input_qty.attr('value', `${parseInt(qty_parameter) + 1}`)
                 qty_parameter = parseInt(qty_parameter) + 1
                 $btn_minus.removeClass('disabled')
-                that.onChangeQty($input_qty)
+                that.current_line = $input_qty
+                that.onChangeQty(that.current_line)
             }
-
 
             qty_parameter == parseInt($input_qty.attr('max')) ? $btn_plus.addClass('disabled') : null
         })
@@ -92,28 +103,90 @@ class QtyPicker {
     //? - =========================  CHANGE QTY  ========================= -//
     //? - =========================  CHANGE QTY  ========================= -//
     onChangeQty(el) {
-        let id = $(el).data('id'),
-            qty = $(el).attr('value')
-
-        console.log(id, qty);
+        let that = this
+        let changes = {
+            id: $(el).data('id'),
+            quantity: $(el).attr('value')
+        }
 
         fetch('/cart/change.js', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({
-                'line': id,
-                'quantity': qty
-            })
+            body: JSON.stringify(changes)
         })
             .then(response => {
-                console.log('done')
+                that.updateCart()
                 return response.json();
             })
             .catch((error) => {
                 console.error('Error:', error);
             });
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //? - =========================  GETTING DATA  ========================= -//
+    //? - =========================  GETTING DATA  ========================= -//
+    updateCart() {
+        let that = this
+        $.ajax({ url: '/cart.js', dataType: 'json' })
+            .done(function (data) {
+                $(that.cart.subtotal).text(`${new Intl.NumberFormat('en', { style: 'currency', currency: 'ZAR' }).format(data.total_price)}`)
+                $(that.cart.cart_counter).text(`${data.item_count}`)
+            });
+
+    }
+
+
+
+
+
+
+
+
+
+
+    //? - =========================  REMOVE ITEM  ========================= -//
+    //? - =========================  REMOVE ITEM  ========================= -//
+    onRemove() {
+        let that = this
+        let remove_item = this.qsa('.item-remove')
+        $(remove_item).click(function (e) {
+
+            let changes = {
+                line: $(this).data('line'),
+                quantity: 0
+            }
+            e.preventDefault()
+            fetch('/cart/change.js', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(changes)
+            })
+                .then(response => {
+                    $(that.line_cart.el).eq(`${(changes.line) - 1}`).remove()
+                    that.updateCart()
+                    return response.json();
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+
+        });
     }
 
 
