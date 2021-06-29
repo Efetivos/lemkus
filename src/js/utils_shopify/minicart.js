@@ -48,6 +48,7 @@ class Minicart {
                 that.onClick(cart_body)
                 $(that.cart_counter).text($(cart_body).data('cartcounter'))
                 ajaxify.removeItem(cart_body)
+                ajaxify.onQtyChange(cart_body)
                 
                 setTimeout(function () { $('.add-cart-btns').removeClass('loading-item') }, 500);
                 

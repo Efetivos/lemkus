@@ -101,7 +101,86 @@ class Ajaxify {
 
 
 
+    //? - =========================  QTYCHANGE  ========================= -//
+    //? - =========================  QTYCHANGE  ========================= -//
+    onQtyChange(el) {
+        let that = this
+        let $picker_minus = el.querySelectorAll('.js-qty-btn-minus')
+        let $picker_plus = el.querySelectorAll('.js-qty-btn-plus')
 
+
+        //? - ___________  minus
+        $($picker_minus).click(function () {
+            let $input_qty = $(this).closest('.cart__each').find('.js-qty-field'),
+                qty_parameter = $input_qty.val(),
+                $text_qty = $(this).closest('.cart__each').find('.js-qty-text'),
+                $btn_minus = $(this).closest('.cart__each').find('.js-qty-btn-minus'),
+                $btn_plus = $(this).closest('.cart__each').find('.js-qty-btn-plus')
+
+
+            if (qty_parameter > 1) {
+                $text_qty.text(`${parseInt(qty_parameter) - 1}`)
+                $input_qty.val(`${parseInt(qty_parameter) - 1}`)
+                $input_qty.attr('value', `${parseInt(qty_parameter) - 1}`)
+                qty_parameter = parseInt(qty_parameter) - 1
+                $btn_plus.removeClass('disabled')
+                that.current_line = $input_qty
+                that.changeQty(that.current_line)
+            }
+
+            qty_parameter == 1 ? $btn_minus.addClass('disabled') : null
+        })
+
+
+        //? - ___________  plus
+        $($picker_plus).click(function () {
+            let $input_qty = $(this).closest('.cart__each').find('.js-qty-field'),
+                qty_parameter = $input_qty.val(),
+                $text_qty = $(this).closest('.cart__each').find('.js-qty-text'),
+                $btn_minus = $(this).closest('.cart__each').find('.js-qty-btn-minus'),
+                $btn_plus = $(this).closest('.cart__each').find('.js-qty-btn-plus')
+
+            if (qty_parameter <= $input_qty.attr('max')) {
+                $text_qty.text(`${parseInt(qty_parameter) + 1}`)
+                $input_qty.val(`${parseInt(qty_parameter) + 1}`)
+                $input_qty.attr('value', `${parseInt(qty_parameter) + 1}`)
+                qty_parameter = parseInt(qty_parameter) + 1
+                $btn_minus.removeClass('disabled')
+                that.current_line = $input_qty
+                that.changeQty(that.current_line)
+            }
+
+            qty_parameter == parseInt($input_qty.attr('max')) ? $btn_plus.addClass('disabled') : null
+        })
+
+    }
+
+
+
+    //? - =========================  CHANGE QTY  ========================= -//
+    //? - =========================  CHANGE QTY  ========================= -//
+    changeQty(el) {
+        let that = this
+        let changes = {
+            id: $(el).data('id'),
+            quantity: $(el).attr('value')
+        }
+
+        fetch('/cart/change.js', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(changes)
+        })
+            .then(response => {
+                minicart.insertCart()
+                return response.json();
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+    }
 
 
 
