@@ -12,10 +12,18 @@ class Preloader {
     }
 
     init() {
+        
         this.body = $('body')
         if (this.body.hasClass('index')) {
-            this.isHome()
-        }
+            if(localStorage.initItro !== 'true') {
+                this.body.addClass('intro')
+                this.isHome()
+            }
+            else {
+                gsap.delayedCall(2, ()=> $('.preloader-master').remove())
+            }
+        } 
+        localStorage.setItem('initItro', true)
         this.loadImages()
     }
 
@@ -37,7 +45,7 @@ class Preloader {
         }
         else if (progress > 9 && progress < 100) {
             $(this.loader_home.counter).text(`0${progress}`)
-        } 
+        }
         // exit loader home
         else {
             if ($(window).width() > 1024) {
@@ -45,7 +53,7 @@ class Preloader {
                 gsap.to(this.loader_home.counting, { duration: 1.2, opacity: 0, yPercent: 100, ease: 'expo.in', onComplete: () => $(this.loader_home.el).remove() })
                 gsap.delayedCall(.6, () => { intro_home.startIntro() })
             } else {
-                gsap.to(this.loader_home.el, { duration: 2.2, yPercent: 100, ease: 'expo.inOut', onComplete: () =>  $(this.loader_home.el).remove() })
+                gsap.to(this.loader_home.el, { duration: 2.2, yPercent: 100, ease: 'expo.inOut', onComplete: () => $(this.loader_home.el).remove() })
             }
         }
     }
