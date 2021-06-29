@@ -166,6 +166,7 @@ fieldset.item-qty
     height: 30px
     justify-content: space-around
     width: 100%
+    position: relative
     @include desk
         height: 2.3rem
         font-size: 1.5rem
@@ -183,10 +184,15 @@ fieldset.item-qty button
 
 
 
+.js-qty-field
+    opacity: 0.2
+    position: absolute
+    left: -100%
 
 
-
-
+button.js-qty-btn.disabled
+    opacity: .1 !important
+    pointer-events: none
 
 
 

@@ -12,6 +12,7 @@ import DragSection from '../utils_global/drag-section';
 import SliderDrag from '../utils_global/drag-slider';
 import DragSlider from '../utils_global/sliders';
 import { ajaxify } from '../utils_shopify/ajaxify';
+import { qty_picker } from '../utils_shopify/qty-picker';
 import { accordion } from './accordion'
 import { accordion_filters } from './accordion-filters';
 import { add_to_cart } from './add-to-cart';
@@ -157,6 +158,17 @@ class Smooth {
             if (!this.once) {
                 this.once = true
                 article.init()
+            }
+        }
+
+
+
+
+        // ______________ cart
+        if (this.isPage === 'cart') {
+            if (!this.once) {
+                this.once = true
+                qty_picker.init()
             }
         }
 
