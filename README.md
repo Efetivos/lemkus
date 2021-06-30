@@ -1,6 +1,6 @@
-## Time: 160h0
-Data: 15:00  | 06.28  
-Daily: -2:30 
+## Time: 161h0
+Data: 16:00  | 06.28  
+Daily: -1:30 
   
 ![Screenshot](./cover.png) (https://github.com/Efetivos/lemkus)
 
@@ -402,6 +402,75 @@ div#gf-controls-container {
 .theme-store-id-380.spf-layout-theme #gf-products, .theme-store-id-679.spf-layout-theme #gf-products, .theme-store-id-796.spf-layout-theme #gf-products {
     margin: 0;
 }
+
+
+input.gf-controls-search-input {
+    font-size: 1.4rem;
+    font-family: var(--reco);
+    border: none;
+    background: none;
+    border-bottom: 1px solid var(--dark);
+}
+
+button.gf-controls-search-button {
+    margin: 0;
+}
+
+
+button.gf-controls-search-button {
+    margin: 0 0 0 -0.8rem;
+}
+
+
+span.gf-summary {
+    font-size: 1.4rem;
+}
+
+.sort-by.limit-by.hidden-xs {
+    font-size: 1.6rem;
+    background: transparent;
+}
+
+select#setLimit {
+    font-size: 1.6rem;
+    font-family: var(--reco);
+}
+
+.sort-by {
+    font-size: 1.6rem;
+    background: transparent;
+}
+
+label.sort-by-toggle {
+    font-size: 1.6rem;
+}
+
+
+@media only screen and (max-width:1024px) {
+    #gf-grid .colle-cards {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    div#gf-products {
+        margin: 1.9rem 0 0 -1px !important;
+        width: calc(100vw + 3px)!important;
+    }
+
+    main.main-collection {
+        overflow: hidden;
+    }
+}
+
+@media only screen and (min-width: 580px) and (max-width: 1024px) {
+    #gf-grid .colle-cards {
+        grid-template-columns: repeat(2,33.4vw) ;
+    }
+    .theme-store-id-380.spf-layout-theme #gf-products, .theme-store-id-679.spf-layout-theme #gf-products, .theme-store-id-796.spf-layout-theme #gf-products {
+        margin-left: 0px !important;
+    }
+}
+
+
 
 
 ```
