@@ -206,7 +206,6 @@ class Ajaxify {
 
     //  ________________ UPDATED
     onCartUpdated(data) {
-        console.log('item Ajaxed')
         minicart.insertCart()
     }
 

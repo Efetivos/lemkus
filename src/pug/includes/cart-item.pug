@@ -26,7 +26,7 @@ p.item-size Size: #[span.recosemi {{ item.variant.title }}]
 button(href="/cart/change?line={{ forloop.index }}&amp;quantity=0", data-line="{{ forloop.index }}" data-id="{{ item.variant.id }}").item-remove !{removeIcon}
 
 //- ___price
-p.item-price {{ item.price | money }} |  max: {{ max }}
+p.item-price {{ item.price | money }}
 
 
 //- ___qty inputt
