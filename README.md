@@ -1,5 +1,5 @@
-## Time: 161h0
-Data: 16:00  | 06.28  
+## Time: 161h30
+Data: 20:45  | 06.28  
 Daily: -1:30 
   
 ![Screenshot](./cover.png) (https://github.com/Efetivos/lemkus)
@@ -139,6 +139,16 @@ if($('body').hasClass('index') && window.innerWidth > 1024) {
 	<li>Blog Menu / FS</li>
 	<li>Mini Cart / WishList</li>
 </ul>
+
+
+
+### Implemeting Notify App (Back in Stock)
+> https://app.backinstock.org/widget/edit (Custommize )  
+> https://help.backinstock.org/article/1588-using-a-custom-product-page-button (Add product page)  
+
+
+
+> https://help.backinstock.org/article/2331-add-a-back-in-stock-button-to-the-collection-page (Add to Collection)  
 
 
 ### Implemeting Filter on Collection (Smart Product Filter & Search)

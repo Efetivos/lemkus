@@ -32,7 +32,7 @@
     <div class="prod-card__infos {% if prod.compare_at_price_max > prod.price %}card-sale{% endif %}">
       <div class="prod-card__title"><a class="title-prod dharma" href="{{ prod.url | within: collection }}">{{ prod.title }}</a></div>
       <div class="prod-card__prices"><span class="regular-price">{{ prod.price | money }}</span>{% if prod.compare_at_price_max != 0 %}<span class="sale-price">{{ prod.compare_at_price_max  | money  }}</span>{% endif %}</div>  {% if prod.metafields.drop.drop_month %}
-      <div class="prod-card__notify btn-hover"><span class="static">NOTIFY ME</span><span class="hover" data-hover="NOTIFY ME      NOTIFY ME      NOTIFY ME      NOTIFY ME      NOTIFY ME      ">NOTIFY ME      NOTIFY ME      NOTIFY ME      NOTIFY ME      NOTIFY ME      </span></div>  {% endif %}
+      <div class="prod-card__notify btn-hover" id="BIS_trigger"><span class="static">NOTIFY ME</span><span class="hover" data-hover="NOTIFY ME      NOTIFY ME      NOTIFY ME      NOTIFY ME      NOTIFY ME      ">NOTIFY ME      NOTIFY ME      NOTIFY ME      NOTIFY ME      NOTIFY ME      </span></div>  {% endif %}
     </div>
   </div>
 </div>
