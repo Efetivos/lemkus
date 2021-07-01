@@ -50,11 +50,11 @@ form(action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCar
             span.hover(data-hover="SOLD OUT      SOLD OUT      SOLD OUT      SOLD OUT      ") SOLD OUT      SOLD OUT      SOLD OUT      SOLD OUT      
         |    {% endif %}
 
-        |   {% render 'ZooomyListWishlistProduct' %}
-        //-a(href="{{ shop.url }}/pages/wishlist").btn-wishlist.btn-hover.cream-v
+        a(href="#" data-swaction="addToWishlist" data-product-id="{{product.id | json}}").btn-wishlist.btn-hover.cream-v
             span.static WISHLIST
             span.hover(data-hover="WISHLIST      WISHLIST      ") WISHLIST      WISHLIST      
 
     //- =========================  wishlist button   ========================= -//
+        |   {% render 'ZooomyListWishlistProduct' %}
         | {% render 'ZooomyListWishlistProduct' %}
     

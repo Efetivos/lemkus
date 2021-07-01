@@ -1,5 +1,5 @@
-## Time: 162h30
-Data: 21:45  | 06.28  
+## Time: 164h00
+Data: 23:45  | 06.28  
 Daily: -0:00 
   
 ![Screenshot](./cover.png) (https://github.com/Efetivos/lemkus)
@@ -139,6 +139,24 @@ if($('body').hasClass('index') && window.innerWidth > 1024) {
 	<li>Blog Menu / FS</li>
 	<li>Mini Cart / WishList</li>
 </ul>
+
+
+
+### WishList (Back in Stock)
+> https://admin.swymrelay.com/dashboard (Custommize )  
+> https://swym.it/help/adding-the-swym-product-view-snippet-to-your-shopify-theme/
+> (add-to-cart.liquid)  
+```bash
+    a(href="#" data-swaction="addToWishlist" data-product-id="{{product.id | json}}").btn-wishlist.btn-hover.cream-v
+        span.static WISHLIST
+        span.hover(data-hover="WISHLIST      WISHLIST      ") WISHLIST      WISHLIST     
+```
+> https://swym.it/help/adding-the-wishlist-plus-launch-point-to-your-shopify-sites-header-menu/
+```bash
+    a(href="#" data-swaction="addToWishlist" data-product-id="{{product.id | json}}").btn-wishlist.btn-hover.cream-v
+        span.static WISHLIST
+        span.hover(data-hover="WISHLIST      WISHLIST      ") WISHLIST      WISHLIST     
+```
 
 
 
@@ -491,9 +509,133 @@ label.sort-by-toggle {
     }
 }
 
+
+
+/******** NOTIFY  ********/
 a.BIS_trigger.btn-hover {
     justify-content: center;
 }
 
+
+/******** WISHLIST ********/
+.swym-ui-component .swym-wishlist-container-title-bar {
+    background: var(--dark) !important;
+}
+
+span.swym-user-text.swym-value.swym-value-1 {
+    color: var(--soft) !important;
+    text-transform: uppercase !important;
+}
+
+.swym-ui-component .swym-simple-wishlist-modal .swym-modal-content .swym-close-btn {
+    display: flex !important;
+    justify-content: flex-end !important;
+}
+
+h2.swym-wishlist-main-title.swym-heading.swym-heading-1.swym-is-heading {
+    font-family: var(--dharma) !important;
+    text-transform: uppercase !important;
+    color: var(--dark) !important;
+    font-size: 4rem !important;
+    letter-spacing: 0 !important;
+}
+
+.swym-simple-wishlist-container-content {
+    background: var(--soft) !important;
+}
+
+.swym-ui-component .swym-wishlist-grid {
+    max-width: none !important;
+    width: 94% !important;
+    padding: 0 0 1rem 0 !important;
+}
+
+button.swym-delete-btn.swym-nav.swym-nav-1.swym-is-button {
+    border: 1px solid var(--dark) !important;
+    background: transparent !important;
+    border-radius: 50% !important;
+    width: 2.1rem !important;
+    height: 2.1rem !important;
+}
+
+.swym-ui-component .swym-wishlist-grid .swym-wishlist-item .swym-delete-btn .swym-icon {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.swym-ui-component .swym-wishlist-grid .swym-wishlist-item .swym-delete-btn .swym-icon::before {
+    font-size: 0.65rem !important;
+}
+
+.swym-ui-component .swym-wishlist-grid .swym-wishlist-item {
+    background: transparent !important !important;
+    width: 26.3rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+.swym-ui-component .swym-wishlist-grid .swym-wishlist-item .swym-title {
+    font-family: var(--dharma) !important;
+    text-transform: uppercase !important;
+    color: var(--dark) !important;
+    text-align: center !important;
+    font-size: 3rem !important;
+}
+
+.swym-ui-component .swym-wishlist-grid .swym-wishlist-image-wrapper {
+    width: 14.8rem !important;
+}
+
+.swym-ui-component .swym-wishlist-grid .swym-wishlist-image-wrapper img {
+    width: 14.8rem !important;
+    height: 14.8rem !important;
+}
+
+button.swym-add-to-cart-btn.swym-button.swym-button-1.swym-is-button.swym-bg-2.swym-color-4.swym-is-button {
+    background: var(--color) !important;
+    font-family: var(--recosemi) !important;
+    color: var(--dark) !important;
+    border: 1px solid var(--dark) !important;
+    border-radius: 20px !important;
+    font-size: 1.2rem !important;
+    padding: 0.5rem 1rem !important;
+}
+
+.swym-ui-component .swym-product-price .swym-product-final-price {
+    display: none !important;
+}
+
+a.swym-wishlist-item.swym-is-anchor {
+    padding: 1.3rem 0 !important;
+}
+
+.swym-ui-component .swym-modal {
+}
+
+.swym-ui-component .swym-simple-wishlist-modal .swym-modal-content {
+    max-width: 83% !important;
+}
+
+
+.swym-ui-component .swym-wishlist-grid .swym-wishlist-item .swym-variant-title {
+    font-family: var(--recosemi) !important;
+    font-size: 1.4rem !important;
+}
+
+.swym-ui-component .swym-wishlist-detail-separator {
+    background: var(--dark) !important;
+}
+
+.swym-ui-component .swym-wishlist-grid .swym-wishlist-item {
+    background: transparent !important;
+    margin: 0 1.7rem 1.9rem 0 !important;
+    width: 25.33rem!important;
+}
+
+.swym-ui-component .swym-wishlist-grid .swym-wishlist-item:nth-child(4n) {
+    margin-right: 0 !important;
+}
 
 ```
