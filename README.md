@@ -1,6 +1,6 @@
-## Time: 161h30
-Data: 20:45  | 06.28  
-Daily: -1:30 
+## Time: 162h30
+Data: 21:45  | 06.28  
+Daily: -0:30 
   
 ![Screenshot](./cover.png) (https://github.com/Efetivos/lemkus)
 
@@ -144,11 +144,22 @@ if($('body').hasClass('index') && window.innerWidth > 1024) {
 
 ### Implemeting Notify App (Back in Stock)
 > https://app.backinstock.org/widget/edit (Custommize )  
-> https://help.backinstock.org/article/1588-using-a-custom-product-page-button (Add product page)  
+> https://help.backinstock.org/article/1588-using-a-custom-product-page-button (Add product page)
+> (product.liquid)  
+```bash
+	#BIS_trigger.prod-card__notify.btn-hover
+        span.static NOTIFY ME
+        span.hover(data-hover="NOTIFY ME      NOTIFY ME      NOTIFY ME      NOTIFY ME      NOTIFY ME      ") NOTIFY ME      NOTIFY ME      NOTIFY ME      NOTIFY ME      NOTIFY ME      
 
-
+```
 
 > https://help.backinstock.org/article/2331-add-a-back-in-stock-button-to-the-collection-page (Add to Collection)  
+> (dropping-card.liquid, dropping-card-inv.liquid)  
+```bash
+	a(href="#" class="BIS_trigger" data-product-data="{{ product | json | escape }}").dropping-card__notify.btn-hover NOTIFY ME   
+
+```
+
 
 
 ### Implemeting Filter on Collection (Smart Product Filter & Search)
@@ -480,7 +491,9 @@ label.sort-by-toggle {
     }
 }
 
-
+a.BIS_trigger.btn-hover {
+    justify-content: center;
+}
 
 
 ```
