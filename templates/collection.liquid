@@ -33,14 +33,7 @@
           {% render 'product-card' prod: product %}
           {% else %}
         <p>No products in this collection</p>  {% endfor %}
-      </div>{% if paginate.pages > 1 %}
-      <div class="colle__paginate" data-currentpage="{{ paginate.current_page }}">
-        <div class="colle__paginate__hold e-hold">{%- for part in paginate.parts -%}
-          <div class="colle__paginate__each"><a href="{{ part.url }}">{%- if part.title == paginate.current_page -%}
-              <button class="t-black"> {{ part.title }}</button>{%- else -%}
-              <button> {{ part.title }}</button>{%- endif -%}</a></div>{%- endfor -%}
-        </div>
-      </div>{% endif %}
+      </div>
     </section>  {% endpaginate %}
   </main>{% render  'myfooter' %}
 </div>

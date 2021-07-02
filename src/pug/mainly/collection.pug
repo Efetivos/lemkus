@@ -72,21 +72,21 @@
 
             //- =========================  PAGINATES  ========================= -//
             //- =========================  PAGINATES  ========================= -//
-            | {% if paginate.pages > 1 %}
-            
-            .colle__paginate(data-currentpage!="{{ paginate.current_page }}")
-                .colle__paginate__hold.e-hold
-                    | {%- for part in paginate.parts -%}
-                    .colle__paginate__each
-                        a(href="{{ part.url }}")
-                            | {%- if part.title == paginate.current_page -%}
-                            button.t-black  {{ part.title }}
-                            | {%- else -%}
-                            button  {{ part.title }}
-                            | {%- endif -%}
-                    
-                    | {%- endfor -%}
-            | {% endif %}
+                | {% if paginate.pages > 1 %}
+                
+                .colle__paginate(data-currentpage!="{{ paginate.current_page }}")
+                    .colle__paginate__hold.e-hold
+                        | {%- for part in paginate.parts -%}
+                        .colle__paginate__each
+                            a(href="{{ part.url }}")
+                                | {%- if part.title == paginate.current_page -%}
+                                button.t-black  {{ part.title }}
+                                | {%- else -%}
+                                button  {{ part.title }}
+                                | {%- endif -%}
+                        
+                        | {%- endfor -%}
+                | {% endif %}
         |   {% endpaginate %}
 
     | {% render  'myfooter' %}
