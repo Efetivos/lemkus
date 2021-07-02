@@ -104,7 +104,9 @@
   </header>
   <main class="main-prod">
     <section class="may-also">
-      <div class="may-also__hold e-hold dharma t-color js-split">RECOMMENDED</div>  {% render 'cross-sell' %}
+      <div class="may-also__hold e-hold dharma t-color js-split">RECOMMENDED</div>
+      <h1 class="title t-color t-dharma">{{ product.vendor }}</h1>
+      <h1 class="title t-color t-dharma">{{ product.type }}</h1>  {% render 'cross-sell' %}
     </section>  {% section 'index-blog' %}
   </main>{% render  'myfooter' %}
 </div>
