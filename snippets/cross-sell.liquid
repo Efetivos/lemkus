@@ -1,43 +1,45 @@
 
   {% assign $id =  product.id %}
-  {% for collection in product.collections %}
-      {% for brand in shop.metafields.globals.brands %} 
-          {% if collection.title == brand %}
-             {% assign brand_title = brand %}
-          {% endif %}
-      {% endfor %}
-  {% endfor %}
-<h1 class="title dharma">{{ brand_title }}</h1>
+  {% assign type =  product.type %}
+<h1>{{ type }}</h1>
+<h1 class="title dharma">{{ type }}</h1>
 <section class="dropping-card dropping-card-regular no-mobile">
-    {% for product in collections[brand_title].products limit:1 %}
-    {% if product.id != $id %}
-  <div class="dropping-card__hold js-find-hover">
+    {% assign count = 0 %}
+    {% assign $id_high = '' %}
+    {% for related in collection.products limit:8 %}
+    {% if related.id != $id and related.type == type and count < 1 %}
+  <div class="dropping-card__hold js-find-hover">  {% assign $id_high = related.id %}
     <div class="dropping-card__bg" style="background:#eaeaea"></div>
     <div class="dropping-card__infos">
       <div class="dropping-card__logo"> 
         <!--img(src="{{ section.settings.img_logo_brand | img_url: 'master' }}", alt='{{ section.settings.img_logo_brand.alt | escape }}').img-load-->
-      </div><a class="dropping-card__title dharma" href="{{ product.url | within: collection }}">{{ product.title }}</a>
-      <div class="dropping-card__price recosemi">{{ product.price | money }}</div>
-      <div class="dropping-card__infos__img no-desk"><a href="{{ product.url | within: collection }}"> <img class="img-load" src="{{  product.featured_image.src  | img_url: 'master' }}" alt="{{ product.src | escape }}"></a></div><a class="dropping-card__notify btn-hover cream-v" href="{{ product.url | within: collection }}"><span class="static">VIEW PRODUCT</span><span class="hover" data-hover="VIEW PRODUCT      VIEW PRODUCT      ">VIEW PRODUCT      VIEW PRODUCT      </span></a>
+      </div><a class="dropping-card__title dharma" href="{{ related.url | within: collection }}">{{ related.title }}</a>
+      <div class="dropping-card__price recosemi">{{ related.price | money }}</div>
+      <div class="dropping-card__infos__img no-desk"><a href="{{ related.url | within: collection }}"> <img class="img-load" src="{{  related.featured_image.src  | img_url: 'master' }}" alt="{{ related.src | escape }}"></a></div><a class="dropping-card__notify btn-hover cream-v" href="{{ related.url | within: collection }}"><span class="static">VIEW PRODUCT</span><span class="hover" data-hover="VIEW PRODUCT      VIEW PRODUCT      ">VIEW PRODUCT      VIEW PRODUCT      </span></a>
     </div>
-    <div class="dropping-card__img no-mobile hover-img"><a class="hover-img" href="{{ product.url | within: collection }}"><img class="img-load" src="{{  product.featured_image.src  | img_url: 'master' }}" alt="{{ product.src | escape }}"></a></div>
-  </div>  {% endif %}
+    <div class="dropping-card__img no-mobile hover-img"><a class="hover-img" href="{{ related.url | within: collection }}"><img class="img-load" src="{{  related.featured_image.src  | img_url: 'master' }}" alt="{{ related.src | escape }}"></a></div>
+  </div>  {% assign count = count | plus: 1 %}
+    {% endif %}
     {% endfor %}
 </section>
 <nav class="cross-sell no-desk">
   <div class="cross-sell__hold colle-cards">
-      {% for product in collections[brand_title].products offset:1 limit:5 %}
-      {% if product.id != $id %}
-      {% render 'product-card' prod: product %}
+      {% assign countA = 0 %}
+      {% for related in collection.products offset:1 %}
+      {% if related.id != $id and related.id != $id_high and related.type == type and count < 4 %}
+      {% render 'product-card' prod: related %}
+      {% assign countA = countA | plus: 1 %}
       {% endif %}
       {% endfor %}
   </div>
 </nav>
 <nav class="cross-sell no-mobile">
   <div class="cross-sell__hold colle-cards">
-      {% for product in collections[brand_title].products offset:1 limit:4 %}
-      {% if product.id != $id %}
-      {% render 'product-card' prod: product %}
+      {% assign countB = 0 %}
+      {% for related in collection.products offset:1 %}
+      {% if related.id != $id and related.id != $id_high and related.type == type and count < 3 %}
+      {% render 'product-card' prod: related %}
+      {% assign countB = countB | plus: 1 %}
       {% endif %}
       {% endfor %}
   </div>

@@ -10,6 +10,8 @@
     |   {% section 'size-guide-presch' %}
 
 
+
+
 .page.page-product(data-barba="container", data-barba-namespace="product", data-ispage="product", data-scroll-content,  class!="{% if product.metafields.drop.drop_month %}dropsoon-product{% endif %}")
     header.header-prod
         .header-prod__bread
@@ -170,8 +172,6 @@
 
         section.may-also
             .may-also__hold.e-hold.dharma.t-color.js-split RECOMMENDED
-            h1.title.t-color.t-dharma {{ product.vendor }}
-            h1.title.t-color.t-dharma {{ product.type }}
             |   {% render 'cross-sell' %}
 
 

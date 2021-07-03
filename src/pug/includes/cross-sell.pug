@@ -1,23 +1,18 @@
 |   {% assign $id =  product.id %}
-|   {% for collection in product.collections %}
-|       {% for brand in shop.metafields.globals.brands %} 
-|           {% if collection.title == brand %}
-|              {% assign brand_title = brand %}
-|           {% endif %}
-|       {% endfor %}
-|   {% endfor %}
+|   {% assign type =  product.type %}
+h1 {{ type }}
 
 
-
-h1.title.dharma {{ brand_title }}
-
-
+h1.title.dharma {{ type }}
 //- =========================  CARD CROSS SELL  ========================= -//
 //- =========================  CARD CROSS SELL  ========================= -//
 section.dropping-card.dropping-card-regular.no-mobile
-    |   {% for product in collections[brand_title].products limit:1 %}
-    |   {% if product.id != $id %}
+    |   {% assign count = 0 %}
+    |   {% assign $id_high = '' %}
+    |   {% for related in collection.products limit:8 %}
+    |   {% if related.id != $id and related.type == type and count < 1 %}
     .dropping-card__hold.js-find-hover
+        |   {% assign $id_high = related.id %}
 
         //- BG
         .dropping-card__bg(style="background:#eaeaea")
@@ -28,25 +23,26 @@ section.dropping-card.dropping-card-regular.no-mobile
                 //img(src="{{ section.settings.img_logo_brand | img_url: 'master' }}", alt='{{ section.settings.img_logo_brand.alt | escape }}').img-load
 
             //- TITLE
-            a(href="{{ product.url | within: collection }}").dropping-card__title.dharma {{ product.title }}
+            a(href="{{ related.url | within: collection }}").dropping-card__title.dharma {{ related.title }}
 
             //- PRICE
-            .dropping-card__price.recosemi {{ product.price | money }}
+            .dropping-card__price.recosemi {{ related.price | money }}
 
             //- INFOS
             .dropping-card__infos__img.no-desk
-                a(href="{{ product.url | within: collection }}") 
-                    img(src="{{  product.featured_image.src  | img_url: 'master' }}" alt="{{ product.src | escape }}").img-load
+                a(href="{{ related.url | within: collection }}") 
+                    img(src="{{  related.featured_image.src  | img_url: 'master' }}" alt="{{ related.src | escape }}").img-load
 
-            a(href="{{ product.url | within: collection }}").dropping-card__notify.btn-hover.cream-v
+            a(href="{{ related.url | within: collection }}").dropping-card__notify.btn-hover.cream-v
                     span.static VIEW PRODUCT
                     span.hover(data-hover="VIEW PRODUCT      VIEW PRODUCT      ") VIEW PRODUCT      VIEW PRODUCT      
 
 
         .dropping-card__img.no-mobile.hover-img
-            a(href="{{ product.url | within: collection }}").hover-img
-                img(src="{{  product.featured_image.src  | img_url: 'master' }}" alt="{{ product.src | escape }}").img-load
+            a(href="{{ related.url | within: collection }}").hover-img
+                img(src="{{  related.featured_image.src  | img_url: 'master' }}" alt="{{ related.src | escape }}").img-load
 
+    |   {% assign count = count | plus: 1 %}
     |   {% endif %}
     |   {% endfor %}
 
@@ -66,10 +62,12 @@ section.dropping-card.dropping-card-regular.no-mobile
 //- mobile
 nav.cross-sell.no-desk
     .cross-sell__hold.colle-cards
-        |   {% for product in collections[brand_title].products offset:1 limit:5 %}
-        |   {% if product.id != $id %}
-        |   {% render 'product-card' prod: product %}
+        |   {% assign countA = 0 %}
+        |   {% for related in collection.products offset:1 %}
+        |   {% if related.id != $id and related.id != $id_high and related.type == type and count < 4 %}
+        |   {% render 'product-card' prod: related %}
 
+        |   {% assign countA = countA | plus: 1 %}
         |   {% endif %}
         |   {% endfor %}
 
@@ -78,10 +76,12 @@ nav.cross-sell.no-desk
 //- desktop
 nav.cross-sell.no-mobile
     .cross-sell__hold.colle-cards
-        |   {% for product in collections[brand_title].products offset:1 limit:4 %}
-        |   {% if product.id != $id %}
-        |   {% render 'product-card' prod: product %}
+        |   {% assign countB = 0 %}
+        |   {% for related in collection.products offset:1 %}
+        |   {% if related.id != $id and related.id != $id_high and related.type == type and count < 3 %}
+        |   {% render 'product-card' prod: related %}
 
+        |   {% assign countB = countB | plus: 1 %}
         |   {% endif %}
         |   {% endfor %}
 
