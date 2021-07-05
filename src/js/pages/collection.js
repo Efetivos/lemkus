@@ -32,7 +32,7 @@ class Collection {
         }
 
         
-        this.sortBy()
+        //this.sortBy()
     }
 
 

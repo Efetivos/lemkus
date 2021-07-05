@@ -5,40 +5,41 @@
     //- =========================  HEADER  ========================= -//
     header.header-coll 
         .header-coll__hold
-            .header-coll__bread.no-mobile
-                | {% render 'breadcrumbs' %}
+            //-
+                .header-coll__bread.no-mobile
+                    | {% render 'breadcrumbs' %}
 
 
-            .header-coll__btn-filter.no-desk
-                button FILTERS
+                .header-coll__btn-filter.no-desk
+                    button FILTERS
 
 
-            .header-coll__btn-filter.no-mobile
-                button.btn-hover.trg-filter
-                    span.static SHOW FILTERS
-                    span.hover(data-hover="SHOW FILTERS      SHOW FILTERS      ") SHOW FILTERS      SHOW FILTERS      
-    
-            .header-coll__sort-by
-                span.no-mobile Sort by:  
-                //-select#SortBy(name='SortBy')
-                    |   {% for option in collection.sort_options %}
-                    <option value="{{ option.value }}" {% if option.value == collection.sort_by %}selected{% endif %}>{{ option.name }}</option>
-                    |         {% endfor %}
-                    
-                select#SortBy(name='SortBy')
-                    option(value='?sort_by=manual') Featured
-                    option(value='?sort_by=price-ascending') Price: Low to High
-                    option(value='?sort_by=price-descending') Price: High to Low
-                    option(value='?sort_by=title-ascending') A-Z
-                    option(value='?sort_by=title-descending') Z-A
-                    option(value='?sort_by=created-ascending') Oldest to Newest
-                    option(value='?sort_by=created-descending') Newest to Oldest
-                    option(value='?sort_by=best-selling') Best Selling
+                .header-coll__btn-filter.no-mobile
+                    button.btn-hover.trg-filter
+                        span.static SHOW FILTERS
+                        span.hover(data-hover="SHOW FILTERS      SHOW FILTERS      ") SHOW FILTERS      SHOW FILTERS      
+        
+                .header-coll__sort-by
+                    span.no-mobile Sort by:  
+                    //-select#SortBy(name='SortBy')
+                        |   {% for option in collection.sort_options %}
+                        <option value="{{ option.value }}" {% if option.value == collection.sort_by %}selected{% endif %}>{{ option.name }}</option>
+                        |         {% endfor %}
+                        
+                    select#SortBy(name='SortBy')
+                        option(value='?sort_by=manual') Featured
+                        option(value='?sort_by=price-ascending') Price: Low to High
+                        option(value='?sort_by=price-descending') Price: High to Low
+                        option(value='?sort_by=title-ascending') A-Z
+                        option(value='?sort_by=title-descending') Z-A
+                        option(value='?sort_by=created-ascending') Oldest to Newest
+                        option(value='?sort_by=created-descending') Newest to Oldest
+                        option(value='?sort_by=best-selling') Best Selling
 
 
             .header-coll__qty.e-flex-col
                 .header-coll__name {{ collection.title }}
-                span.e-upper.recosemi {{ collection.products_count }} PRODUCTS
+                //-span.e-upper.recosemi {{ collection.products_count }} PRODUCTS
 
 
 

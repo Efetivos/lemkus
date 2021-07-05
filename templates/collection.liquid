@@ -2,27 +2,8 @@
 <div class="page page-collection e-rel" data-ispage="collection" data-scroll-content>  {% section 'filter-prod' %}
   <header class="header-coll"> 
     <div class="header-coll__hold">
-      <div class="header-coll__bread no-mobile">{% render 'breadcrumbs' %}</div>
-      <div class="header-coll__btn-filter no-desk">
-        <button>FILTERS</button>
-      </div>
-      <div class="header-coll__btn-filter no-mobile">
-        <button class="btn-hover trg-filter"><span class="static">SHOW FILTERS</span><span class="hover" data-hover="SHOW FILTERS      SHOW FILTERS      ">SHOW FILTERS      SHOW FILTERS      </span></button>
-      </div>
-      <div class="header-coll__sort-by"><span class="no-mobile">Sort by:  </span>
-        <select id="SortBy" name="SortBy">
-          <option value="?sort_by=manual">Featured</option>
-          <option value="?sort_by=price-ascending">Price: Low to High</option>
-          <option value="?sort_by=price-descending">Price: High to Low</option>
-          <option value="?sort_by=title-ascending">A-Z</option>
-          <option value="?sort_by=title-descending">Z-A</option>
-          <option value="?sort_by=created-ascending">Oldest to Newest</option>
-          <option value="?sort_by=created-descending">Newest to Oldest</option>
-          <option value="?sort_by=best-selling">Best Selling</option>
-        </select>
-      </div>
       <div class="header-coll__qty e-flex-col">
-        <div class="header-coll__name">{{ collection.title }}</div><span class="e-upper recosemi">{{ collection.products_count }} PRODUCTS</span>
+        <div class="header-coll__name">{{ collection.title }}</div>
       </div>
     </div>
   </header>
