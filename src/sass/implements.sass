@@ -1,11 +1,9 @@
 section.products
     border-bottom: 1px solid var(--dark)
-    border-top: 1px solid var(--dark)
     display: flex
     justify-content: space-between
     @include desk
         overflow: hidden
-        border-top: none
 
 
 div#gf-products
@@ -30,8 +28,9 @@ div#gf-products
 
 
 section.products
-    border-top: 1px solid var(--dark)
     justify-content: space-between
+    @include desk
+        border-top: 1px solid var(--dark)
 
 
 #gf-grid .colle-cards
@@ -143,6 +142,9 @@ div#gf-controls-container
     margin: 0
     padding: 0
     padding: 2rem var(--gap) 0
+    @include mobile
+        margin: -1rem 0 0 0
+        padding: 0 var(--gap) 0
 
 
 .gf-actions
@@ -157,10 +159,14 @@ div#gf-controls-container
 
 
 
+.gf-filter-trigger, .gf-filter-selection
+    @include mobile
+        padding: 0
+
 input.gf-controls-search-input
     background: none
-    border-bottom: 1px solid var(--dark)
     border: none
+    border-bottom: 1px solid var(--dark)
     font-family: var(--reco)
     font-size: 1.4rem
 
@@ -252,7 +258,7 @@ label.sort-by-toggle
 
 
     form.gf-controls-search-form
-        border-bottom: 1px solid
+        //border-bottom: 1px solid
 
 
     .loaded-filter
@@ -444,4 +450,139 @@ a.swym-wishlist-item.swym-is-anchor
     margin-right: 0 !important
 
 div#swym-anchor
+    display: none
+h3.swym-empty-wishlist-title.swym-heading.swym-heading-1
+    color: var(--dark)
+    font-family: var(--dharmaex)
+    font-size: 2.6rem
+    text-transform: uppercase
+    @include desk
+        font-size: 4rem
+
+
+p.swym-empty-wishlist-text.swym-text.swym-text-1
+    color: var(--dark)
+    font-family: var(--reco)
+    font-size: 1.4rem
+    letter-spacing: 0
+    text-align: center
+    @include desk
+        font-size: 1.6rem
+
+
+.swym-ui-component .swym-empty-wishlist-container .swym-empty-wishlist-continue-btn
+    background: var(--color)
+    border-radius: 50px
+    border: 1px solid var(--dark)
+    color: var(--dark)
+    font-family: var(--recosemi)
+    font-size: 1.6rem
+    text-transform: uppercase
+    @include desk
+        font-size: 1.4rem !important
+
+button.swym-disabled span
+    font-size: 1.6rem
+    font-family: var(--recosemi)
+    letter-spacing: 0
+    text-transform: uppercase
+    font-size: 1.2rem
+
+.swym-ui-component .swym-wishlist-context-menu .swym-wishlist-context-menu-item
+    margin: 0
+    padding: 0
+
+span.swym-icon
+    display: none
+
+button.swym-wishlist-context-menu-item.swym-delete.swym-nav.swym-nav-1.swym-is-button.swym-disabled
+    padding: 0
+    justify-content: center
+
+.swym-ui-component .swym-wishlist-context-menu .swym-wishlist-context-menu-content
+    padding: 1.1rem 2.5rem
+    min-width: auto
+
+
+.swym-ui-component .swym-save-wishlist-modal .swym-save-wishlist-modal-dialog .swym-text-heading
+    font-family: var(--dharmaex)
+    text-transform: uppercase
+    color: var(--dark)
+    text-align: center
+    font-size: 2.6rem !important
+
+
+.swym-ui-component .swym-save-wishlist-modal .swym-save-wishlist-modal-dialog .swym-text-content
+    letter-spacing: 0
+    text-align: center
+    font-family: var(--reco)
+    color: var(--dark)
+    font-size: 1.5rem
+
+
+.swym-ui-component .swym-save-wishlist-modal .swym-save-wishlist-modal-dialog .swym-close-btn
+    border: 1px solid var(--dark)
+    padding: 0.6rem
+    border-radius: 50%
+    width: 2.6rem
+    height: 2.6rem
+    display: flex
+    align-items: center
+    justify-content: center
+    @include desk
+        width: 1.6rem
+        height: 1.6rem
+        
+
+
+.swym-ui-component .swym-save-wishlist-modal .swym-save-wishlist-modal-dialog .swym-close-btn::before
+    font-size: 0.8rem
+
+
+button.swym-login-btn.swym-button.swym-button-1.swym-is-button.swym-bg-2.swym-color-4, button.swym-log-out-btn.swym-button.swym-button-1.swym-is-button.swym-bg-2.swym-color-4
+    background: var(--color)
+    border-radius: 50px
+    border: 1px solid var(--dark)
+    color: var(--dark)
+    font-family: var(--recosemi)
+    text-transform: uppercase
+    letter-spacing: 0
+    @include desk
+        font-size: 1.4rem
+
+
+button.swym-save-list-btn.swym-button.swym-button-2.swym-is-button.swym-color-2.swym-border-color-1, .swym-ui-component .swym-save-wishlist-modal .swym-save-wishlist-modal-dialog .swym-logged-in .swym-back-btn
+    border-radius: 50px
+    border: 1px solid var(--dark)
+    color: var(--dark)
+    font-family: var(--recosemi)
+    font-size: 1.6rem
+    text-transform: uppercase
+    letter-spacing: 0
+    @include desk
+        font-size: 1.4rem !important
+
+span.swym-color-2, .swym-ui-component .swym-save-wishlist-modal .swym-save-wishlist-modal-dialog .swym-text-content
+    font-family: var(--reco) !important
+    font-size: 1.6rem !important
+    color: var(--dark) !important
+
+button.swym-back-btn.swym-button.swym-button-2.swym-is-button.swym-color-2
+    font-size: 1.6rem !important
+    letter-spacing: 0 !important
+    @include desk
+        font-size: 1.4rem !important
+
+.swym-ui-component .swym-save-wishlist-modal .swym-save-wishlist-modal-dialog .swym-text-content, span.swym-color-2
+    color: var(--dark) !important
+    font-size: 1.4rem !important
+    @include desk
+        font-size: 1.3rem !important
+
+.swym-ui-component .swym-save-wishlist-modal .swym-save-wishlist-modal-dialog .swym-text-heading
+    @include desk
+        font-size: 4rem !important
+        margin: 0 0 1rem 0 !important
+
+button.swym-wishlist-context-menu-item.swym-share.swym-nav.swym-nav-1.swym-is-button
     display: none
