@@ -124,7 +124,7 @@ class Preloader {
                 i++
                 let $image = imgLoad.images
                 let percentage = (i / $image.length) * 100
-                if (that.body.hasClass('index')) { that.counterLoader(percentage.toFixed()) }
+                if (that.body.hasClass('index') && that.body.hasClass('intro')) { that.counterLoader(percentage.toFixed()) }
             });
     }
 

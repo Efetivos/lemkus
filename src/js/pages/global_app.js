@@ -60,6 +60,7 @@ class GlobalApp {
     onSplitText() {
         this.split_text.forEach(function (el) {
             new SplitText(el, { type: "lines", linesClass: "line-wrap line++" })
+            new SplitText(el, { type: "words,chars", wordsClass: 'wrapped-split' })
         })
         gsap.set('.wrapped-split div', { yPercent: 110 })
 
