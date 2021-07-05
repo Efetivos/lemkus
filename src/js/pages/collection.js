@@ -1,7 +1,8 @@
 
 import { gsap } from 'gsap'
+import { Flip } from "gsap/Flip";
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger, Flip)
 class Collection {
     constructor() {
         return;
@@ -102,18 +103,46 @@ class Collection {
     //? - =========================  AWAIT FILTER  ========================= -//
     //? - =========================  AWAIT FILTER  ========================= -//
     awaitFilter() {
+        let that = this
         var checkExist = setInterval(function () {
             if ($('.toggle-filter').length) {
-                console.log("Exists!");
-                //$(this.DOM.each).eq(-1).clone().prependTo($(this.DOM.travel))
                 let $searchClone = $('#gf-controls-container').clone()
                 $('.products').addClass('loaded-filter')
                 $('#gf-controls-container').remove()
-                $searchClone.prependTo($('.products'))
+                $searchClone.prependTo($('main.main-collection'))
+                that.flipFilter()
                 clearInterval(checkExist);
             }
         }, 100); // check every 100ms
     }
+
+    flipFilter() {
+        let that = this
+        this.body = document.querySelector('body')
+        this.filter = {
+            filter_el: this.qs('#gf-tree'),
+            btn_trigger: this.qs('.toggle-filter'),
+            each_prod: this.qsa('.prod-card__each '),
+            grid: this.qsa('#gf-grid'),
+            toggle_text: this.qsa('#gf-grid')
+        }
+        let tl_filter_els = gsap.timeline().to(this.filter.filter_el, { xPercent: -100, duration: 0.5, ease: "expo.inOut" }).reverse(-1).reversed(true);
+        this.filter.btn_trigger.addEventListener("click", () => {
+            const state = Flip.getState([that.filter.grid, that.filter.each_prod]);
+            $(that.body).toggleClass('is-filter')
+            $(that.body).addClass('flipping')
+            $(that.body).hasClass('is-filter') ? $(this.filter.btn_trigger).text('HIDE FILTER') : $(this.filter.btn_trigger).text('SHOW FILTER')
+            
+
+            Flip.from(state, { absolute: true, duration: 0.5, ease: "expo.inOut", onComplete: () => $(that.body).removeClass('flipping') })
+            tl_filter_els.reversed(!tl_filter_els.reversed());
+        });
+    }
+
+
+
+
+
 
 
 

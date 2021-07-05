@@ -3,6 +3,9 @@ section.products
     border-top: 1px solid var(--dark)
     display: flex
     justify-content: space-between
+    @include desk
+        overflow: hidden
+        border-top: none
 
 
 div#gf-products
@@ -12,6 +15,9 @@ div#gf-products
 .gf-left #gf-tree
     width: 33.3vw
     margin: 0
+    @include desk
+        min-width: 33.3vw
+        will-change: transform
 
 
 .gf-left #gf-tree+#gf-grid
@@ -19,6 +25,8 @@ div#gf-products
     margin: 0
     padding: 0
     width: 66.5vw
+    will-change: transform
+    
 
 
 section.products
@@ -56,6 +64,12 @@ span.gf-Checkbox
     padding: 1rem 2.9rem
 
 
+.gf-block-content.globo-selected-items
+    @include desk
+        display: flex
+        flex-wrap: wrap
+
+
 .gf-block-title.hidden-xs h3 span
     font-family: var(--dharma)
     font-size: 4rem
@@ -91,6 +105,14 @@ span.gf-count
     font-size: 1.2rem
 
 
+
+.selected-item.gf-option-label
+    @include desk
+        margin: 0.5rem 0.7rem 0 0
+
+#gf-tree .selected-item.gf-option-label
+    width: auto
+
 .selected-item.gf-option-label span
     font-size: 1.1rem
     color: var(--soft)
@@ -107,6 +129,10 @@ span.gf-count
 
 .gf-filter-contents span.gf-label
     font-size: 1.4rem !important
+
+.selected-item span.gf-clear
+    @include desk
+        margin: 0 0 0 1.7rem
 
 
 
@@ -197,6 +223,7 @@ label.sort-by-toggle
     
 
 @include desk
+
     /*section.products
         border-top: none
         flex-wrap: wrap*/
@@ -210,37 +237,66 @@ label.sort-by-toggle
     /*form.gf-controls-search-form
         border-bottom: 1px solid var(--dark)*/
 
-.gf-filter-selection
-    justify-content: space-between
-    padding: 0
+    .gf-filter-selection
+        justify-content: space-between
+        padding: 0
 
 
-.gf-actions
-    @include desk
+    .gf-actions
         display: grid
         grid-template-columns: 53% 14.6% 33%
 
-.toggle-filter
-    @include desk
+    .toggle-filter
         justify-self: flex-start
 
 
 
-form.gf-controls-search-form
-    @include desk
+    form.gf-controls-search-form
         border-bottom: 1px solid
 
 
-.loaded-filter
-    @include desk
+    .loaded-filter
         border-top: none !important
-        flex-wrap: wrap
 
-.loaded-filter div#gf-controls-container
-    border-bottom: 1px solid var(--dark)
-    min-width: 100%
-    padding: 0rem var(--gap) 0.4rem
+    div#gf-controls-container
+        border-bottom: 1px solid var(--dark)
+        min-width: 100%
+        padding: 0 var(--gap) 0.4rem
+        position: relative
+        z-index: 2
 
+
+    //______ is filter
+    .is-filter #gf-grid
+        width: 100vw !important
+        transform: translateX(-33.6vw) !important
+
+    .is-filter #gf-grid .colle-cards
+        grid-template-columns: repeat(3,33.7vw) !important
+
+
+    .is-filter #gf-tree
+        //transform: translateX(-33.3vw) !important
+
+
+
+    .flipping main.main-collection
+        min-height: 125vh
+        position: relative
+
+
+    .flipping #gf_pagination_wrap
+        opacity: 0
+
+    
+    .flipping 
+        .prod-card__each:nth-child(1), .prod-card__each:nth-child(2)
+            border-top: 1px solid transparent !important
+
+
+    .prod-card__each 
+        background: var(--soft)
+        will-change: transform
 
 
 
