@@ -29,9 +29,11 @@ class Collection {
             ScrollTrigger.defaults({ scroller: '[data-scroll-content]' })
             ScrollTrigger.refresh()
             //this.stickyFilter()
+
+            this.awaitFilter()
         }
 
-        
+
         //this.sortBy()
     }
 
@@ -72,7 +74,7 @@ class Collection {
 
             console.log(currentUrl);
             console.log(selectOptionBlogNavigation);
-            
+
             if (window.location.href.indexOf('?sort_') > 0) {
                 let getDomain = currentUrl.substr(0, currentUrl.indexOf('?'));
                 window.location.href = getDomain + `${selectOptionBlogNavigation}`
@@ -87,6 +89,31 @@ class Collection {
 
 
 
+
+
+
+
+
+
+
+
+
+
+    //? - =========================  AWAIT FILTER  ========================= -//
+    //? - =========================  AWAIT FILTER  ========================= -//
+    awaitFilter() {
+        var checkExist = setInterval(function () {
+            if ($('.toggle-filter').length) {
+                console.log("Exists!");
+                //$(this.DOM.each).eq(-1).clone().prependTo($(this.DOM.travel))
+                let $searchClone = $('#gf-controls-container').clone()
+                $('.products').addClass('loaded-filter')
+                $('#gf-controls-container').remove()
+                $searchClone.prependTo($('.products'))
+                clearInterval(checkExist);
+            }
+        }, 100); // check every 100ms
+    }
 
 
 

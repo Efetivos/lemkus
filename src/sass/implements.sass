@@ -196,14 +196,76 @@ label.sort-by-toggle
         margin-left: 0px !important
     
 
+@include desk
+    /*section.products
+        border-top: none
+        flex-wrap: wrap*/
+
+    /*div#gf-controls-container
+        width: 100%
+        border-bottom: 1px solid var(--dark)
+        padding: 0 var(--gap) 0
+        margin: -1rem 0 0*/
+
+    /*form.gf-controls-search-form
+        border-bottom: 1px solid var(--dark)*/
+
+.gf-filter-selection
+    justify-content: space-between
+    padding: 0
 
 
+.gf-actions
+    @include desk
+        display: grid
+        grid-template-columns: 53% 14.6% 33%
+
+.toggle-filter
+    @include desk
+        justify-self: flex-start
+
+
+
+form.gf-controls-search-form
+    @include desk
+        border-bottom: 1px solid
+
+
+.loaded-filter
+    @include desk
+        border-top: none !important
+        flex-wrap: wrap
+
+.loaded-filter div#gf-controls-container
+    border-bottom: 1px solid var(--dark)
+    min-width: 100%
+    padding: 0rem var(--gap) 0.4rem
+
+
+
+
+//- =========================  NOTIFY ME  ========================= -//
+//- =========================  NOTIFY ME  ========================= -//
 
 /******** NOTIFY  ********/
 a.BIS_trigger.btn-hover
     justify-content: center
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+//- =========================  wishlist  ========================= -//
+//- =========================  wishlist  ========================= -//
 
 /******** WISHLIST ********/
 .swym-ui-component .swym-wishlist-container-title-bar
