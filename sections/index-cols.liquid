@@ -44,7 +44,7 @@
   <div class="cols_index__hold">
     <ul class="cols_index__items js-slider__holder">{% for block in section.blocks %}
       <li class="cols_index__each hover-img {% if forloop.index <= 3 %} stagger-it {% endif %}">
-        <div class="cols_index__img"><img class="img-load" src="{{ block.settings.img_cols | img_url: 'master' }}" alt="#"></div><a class="cols_index__title dharma" href="{{ block.settings.link_cols }}" title="{{ block.settings.title_cols }}" style="color:{{ section.settings.color_text_col }}">{{ block.settings.title_cols }}</a>
+        <div class="cols_index__img"><a href="{{ block.settings.link_cols }}" title="{{ block.settings.title_cols }}"><img class="img-load" src="{{ block.settings.img_cols | img_url: 'master' }}" alt="#"></a></div><a class="cols_index__title dharma" href="{{ block.settings.link_cols }}" title="{{ block.settings.title_cols }}" style="color:{{ section.settings.color_text_col }}">{{ block.settings.title_cols }}</a>
       </li>{% endfor %}
     </ul>
     <div class="cols_index__drag no-mobile">

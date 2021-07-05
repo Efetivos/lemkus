@@ -44,12 +44,21 @@ li.cols_index__each
     flex-shrink: 0
     position: relative
     @include desk
+        overflow: hidden
         height: 100%
         width: 42.2rem
 
 
 .cols_index__img
     height: 100%
+    width: 100%
+
+.cols_index__img a
+    display: block
+    height: 100%
+    left: 0
+    position: relative
+    top: 0
     width: 100%
 
 
@@ -67,7 +76,7 @@ li.cols_index__each + li.cols_index__each
     margin: 0 0 0 var(--gap)
 
 
-.cols_index__each a
+.cols_index__title
     bottom: 1.6rem
     font-size: 4rem
     left: 2rem

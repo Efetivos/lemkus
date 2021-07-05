@@ -46,7 +46,9 @@ section.cols_index.e-wvw.js-slider
             | {% for block in section.blocks %}
             li.cols_index__each.hover-img(class!="{% if forloop.index <= 3 %} stagger-it {% endif %}")
                 .cols_index__img
-                    img(src="{{ block.settings.img_cols | img_url: 'master' }}", alt='#').img-load
+                    a(href="{{ block.settings.link_cols }}", title="{{ block.settings.title_cols }}")
+                        img(src="{{ block.settings.img_cols | img_url: 'master' }}", alt='#').img-load
+                
                 a(href="{{ block.settings.link_cols }}", title="{{ block.settings.title_cols }}", style="color:{{ section.settings.color_text_col }}").cols_index__title.dharma {{ block.settings.title_cols }}
             | {% endfor %}
 
