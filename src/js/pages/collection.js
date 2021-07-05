@@ -131,7 +131,7 @@ class Collection {
             const state = Flip.getState([that.filter.grid, that.filter.each_prod]);
             $(that.body).toggleClass('is-filter')
             $(that.body).addClass('flipping')
-            $(that.body).hasClass('is-filter') ? $(this.filter.btn_trigger).text('HIDE FILTER') : $(this.filter.btn_trigger).text('SHOW FILTER')
+            $(that.body).hasClass('is-filter') ? $(this.filter.btn_trigger).text('SHOW FILTER') : $(this.filter.btn_trigger).text('HIDE FILTER') 
             
 
             Flip.from(state, { absolute: true, duration: 0.5, ease: "expo.inOut", onComplete: () => $(that.body).removeClass('flipping') })
