@@ -21,6 +21,11 @@
                             "id": "ctt_link",
                             "type": "text",
                             "label": "Link:"
+                        },
+                        {
+                            "id": "ctt_text",
+                            "type": "text",
+                            "label": "Text:"
                         }
                     ]
                 }
@@ -35,7 +40,7 @@ section.ctt-links
         ul.ctt-links__items
             | {% for block in section.blocks %}
             li.ctt-links__each
-                a(href="{{ block.settings.ctt_link }}", title="{{ block.settings.ctt_link }}").underline {{ block.settings.ctt_link }}
+                a(href="{{ block.settings.ctt_link }}", title="{{ block.settings.ctt_text }}").underline {{ block.settings.ctt_text }}
             | {% endfor %}
 
 

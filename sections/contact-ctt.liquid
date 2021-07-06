@@ -21,6 +21,11 @@
                         "id": "ctt_link",
                         "type": "text",
                         "label": "Link:"
+                    },
+                    {
+                        "id": "ctt_text",
+                        "type": "text",
+                        "label": "Text:"
                     }
                 ]
             }
@@ -33,7 +38,7 @@
   <div class="ctt-links__hold e-hold">
     <div class="ctt-links___title ctt-subt">{{ section.settings.ctt_link_title }}</div>
     <ul class="ctt-links__items">{% for block in section.blocks %}
-      <li class="ctt-links__each"><a class="underline" href="{{ block.settings.ctt_link }}" title="{{ block.settings.ctt_link }}">{{ block.settings.ctt_link }}</a></li>{% endfor %}
+      <li class="ctt-links__each"><a class="underline" href="{{ block.settings.ctt_link }}" title="{{ block.settings.ctt_text }}">{{ block.settings.ctt_text }}</a></li>{% endfor %}
     </ul>
   </div>
 </section>
