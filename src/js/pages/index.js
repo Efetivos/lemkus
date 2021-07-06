@@ -18,8 +18,25 @@ class Index {
         this.vh = window.innerHeight
         this.onResize()
         if($(window).width() > 1024) {
+            
+
+            ScrollTrigger.scrollerProxy('[data-scroll-content]', {
+                scrollTop(value) {
+                    return arguments.length ? null : (document.querySelector('[data-scroll-content]').getBoundingClientRect().top) * -1
+                },
+                getBoundingClientRect() {
+                    return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+                },
+            });
+            ScrollTrigger.defaults({ scroller: '[data-scroll-content]' })
+            ScrollTrigger.refresh()
+
+
+            
             setInterval(this.hourCapeTown, 1000);
             this.onScene()
+            this.isTop()
+            
         }
         
 
@@ -29,6 +46,10 @@ class Index {
     
     
     
+    isTop() {
+        this.tl_istop = gsap.timeline( { scrollTrigger: { trigger: 'body', start: 'top 0', end: window.innerWidth * 0.15989, scrub: true } } )
+            .fromTo('.logo-main', { top: window.innerWidth * 0.0489, width: window.innerWidth * 0.964 }, { top: window.innerWidth * 0.014, width: window.innerWidth * 0.092, ease: 'none' })
+    }
     
     
     
@@ -75,6 +96,8 @@ class Index {
     //? - =========================  ONSCROLL  ========================= -//
     onScroll(scrolled) {
         if ($(window).width() > 1024) {
+            ScrollTrigger.update()
+            
             if (scrolled < this.vh * 0.02) {
                 $(this.body).addClass('is-top-home')
             } else {

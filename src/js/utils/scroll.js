@@ -74,7 +74,7 @@ class Smooth {
                 if($('.dropped-index .cols_index__drag').length > 0 && window.innerWidth > 1024 ) { new SliderDrag(this.contentPage.querySelector('#shopify-section-index-dropped'),'drag__cntrl') }
             }
                 
-            index.onScroll(this.data.last)
+            index.onScroll()
         }
 
 

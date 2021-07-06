@@ -31,8 +31,9 @@ a.logo-main
     z-index: 8
     @include desk
         top: 1.8rem
-        transition: width 0.8s cubic-bezier(0.16, 1.08, 0.38, 0.98)
+        transition: width 0.6s cubic-bezier(0.16, 1.08, 0.38, 0.98)
         width: 12.6rem
+        will-change: width, top
 
 a.logo-main svg path, a.logo-main svg polygon
     fill: var(--dark)
@@ -574,23 +575,23 @@ nav.main-menu
     @include desk
         display: none
 
-.is-top-home a.logo-main
-    @include desk
-        left: calc(var(--gap) - 0rem)
-        top: 6.3rem
-        pointer-events: none
-        width: 131.7rem
-        z-index: 2
+//.is-top-home a.logo-main
+//@include desk
+//left: calc(var(--gap) - 0rem)
+//top: 6.3rem
+//pointer-events: none
+//width: 131.7rem
+//z-index: 2
 
-.is-top-home header.header-index
-    transform: translateY(25.5rem)
+//.is-top-home header.header-index
+//transform: translateY(25.5rem)
 
-.is-topbar.is-top-home header.header-index
-    transform: translateY(30.5rem)
+//.is-topbar.is-top-home header.header-index
+//transform: translateY(30.5rem)
 
-.is-top-home section.cols_index
-    transform: translateY(15rem)
+//.is-top-home section.cols_index
+//transform: translateY(15rem)
 
-.is-top-home .cape-hour
-    @include desk
-        display: inline-flex
+//.is-top-home .cape-hour
+//@include desk
+//display: inline-flex
