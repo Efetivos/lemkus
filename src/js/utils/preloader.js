@@ -82,10 +82,13 @@ class Preloader {
 
             this.body.hasClass('index') ? null : $('.preloader-master').remove()
             $('.infinity').length > 0 && window.innerWidth > 1024 ? infinity.init() : null
+            $('.article').length > 0 ? article.onEnter() : null
+            
         }).catch(_ => {
             console.log('catch');
             window.dispatchEvent(new Event('resize'))
             this.body.hasClass('index') ? null : $('.preloader-master').remove()
+            $('.article').length > 0 ? article.onEnter() : null
         })
     }
 

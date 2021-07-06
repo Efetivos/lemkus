@@ -38,8 +38,8 @@ section.dropping-card.dropping-card-regular.no-mobile
             a(href="{{ hl.url | within: collection }}")
                 img(src="{{  hl.featured_image.src  | img_url: 'master' }}" alt="{{ hl.src | escape }}").img-load
 
-    |   {% endif %}
     |   {% assign count = count | plus: 1 %}
+    |   {% endif %}
     |   {% endfor %}
 
 

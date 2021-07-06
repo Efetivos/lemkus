@@ -16,8 +16,8 @@
       <div class="dropping-card__infos__img no-desk"><a href="{{ hl.url | within: collection }}"> <img class="img-load" src="{{  hl.featured_image.src  | img_url: 'master' }}" alt="{{ hl.src | escape }}"></a></div><a class="dropping-card__notify btn-hover cream-v" href="{{ hl.url | within: collection }}"><span class="static">VIEW PRODUCT</span><span class="hover" data-hover="VIEW PRODUCT      VIEW PRODUCT      ">VIEW PRODUCT      VIEW PRODUCT      </span></a>
     </div>
     <div class="dropping-card__img no-mobile"><a href="{{ hl.url | within: collection }}"><img class="img-load" src="{{  hl.featured_image.src  | img_url: 'master' }}" alt="{{ hl.src | escape }}"></a></div>
-  </div>  {% endif %}
-    {% assign count = count | plus: 1 %}
+  </div>  {% assign count = count | plus: 1 %}
+    {% endif %}
     {% endfor %}
 </section>
 <nav class="cross-sell no-desk">
