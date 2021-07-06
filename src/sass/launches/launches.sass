@@ -3,7 +3,9 @@
 .page.page-launches
     overflow-x: hidden
 
-
+div#shopify-section-launches-header
+    @include desk
+        height: 100vh
 
 header.header-laun
     @include desk
@@ -83,6 +85,8 @@ button.scroll-down
 .main-launches
     @include mobile
         margin: 42px 0 0
+    @include desk
+        margin: -9rem 0 0 -1px
 
 .main-launches .dropping-card-regular .dropping-card__infos
     @include desk

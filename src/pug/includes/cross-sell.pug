@@ -1,16 +1,15 @@
 |   {% assign $id =  product.id %}
-|   {% assign type =  product.type %}
+|   {% assign type = product.collections[0].title %}
 
 //- =========================  CARD CROSS SELL  ========================= -//
 //- =========================  CARD CROSS SELL  ========================= -//
 section.dropping-card.dropping-card-regular.no-mobile
     |   {% assign count = 0 %}
     |   {% assign $id_high = '' %}
-    |   {% for related in collection.products limit:8 %}
-    |   {% if related.id != $id and related.type == type and count < 1 %}
+    |   {% for hl in collection.products %}
+    |   {% if hl.id != $id and hl.id != $id and count < 1 %}
     .dropping-card__hold.js-find-hover
-        |   {% assign $id_high = related.id %}
-
+        |   {% assign $id_high = hl.id %}
         //- BG
         .dropping-card__bg(style="background:#eaeaea")
 
@@ -20,27 +19,27 @@ section.dropping-card.dropping-card-regular.no-mobile
                 //img(src="{{ section.settings.img_logo_brand | img_url: 'master' }}", alt='{{ section.settings.img_logo_brand.alt | escape }}').img-load
 
             //- TITLE
-            a(href="{{ related.url | within: collection }}").dropping-card__title.dharma {{ related.title }}
+            a(href="{{ hl.url | within: collection }}").dropping-card__title.dharma {{ hl.title }}
 
             //- PRICE
-            .dropping-card__price.recosemi {{ related.price | money }}
+            .dropping-card__price.recosemi {{ hl.price | money }}
 
             //- INFOS
             .dropping-card__infos__img.no-desk
-                a(href="{{ related.url | within: collection }}") 
-                    img(src="{{  related.featured_image.src  | img_url: 'master' }}" alt="{{ related.src | escape }}").img-load
+                a(href="{{ hl.url | within: collection }}") 
+                    img(src="{{  hl.featured_image.src  | img_url: 'master' }}" alt="{{ hl.src | escape }}").img-load
 
-            a(href="{{ related.url | within: collection }}").dropping-card__notify.btn-hover.cream-v
+            a(href="{{ hl.url | within: collection }}").dropping-card__notify.btn-hover.cream-v
                     span.static VIEW PRODUCT
                     span.hover(data-hover="VIEW PRODUCT      VIEW PRODUCT      ") VIEW PRODUCT      VIEW PRODUCT      
 
 
-        .dropping-card__img.no-mobile.hover-img
-            a(href="{{ related.url | within: collection }}").hover-img
-                img(src="{{  related.featured_image.src  | img_url: 'master' }}" alt="{{ related.src | escape }}").img-load
+        .dropping-card__img.no-mobile
+            a(href="{{ hl.url | within: collection }}")
+                img(src="{{  hl.featured_image.src  | img_url: 'master' }}" alt="{{ hl.src | escape }}").img-load
 
-    |   {% assign count = count | plus: 1 %}
     |   {% endif %}
+    |   {% assign count = count | plus: 1 %}
     |   {% endfor %}
 
 
@@ -60,9 +59,9 @@ section.dropping-card.dropping-card-regular.no-mobile
 nav.cross-sell.no-desk
     .cross-sell__hold.colle-cards
         |   {% assign countA = 0 %}
-        |   {% for related in collection.products offset:1 %}
-        |   {% if related.id != $id and related.id != $id_high and related.type == type and count < 4 %}
-        |   {% render 'product-card' prod: related %}
+        |   {% for cross_mob in collection.products offset:1 %}
+        |   {% if cross_mob.id != $id and cross_mob.id != $id_high and countA < 4 %}
+        |   {% render 'product-card' prod: cross_mob %}
 
         |   {% assign countA = countA | plus: 1 %}
         |   {% endif %}
@@ -74,9 +73,9 @@ nav.cross-sell.no-desk
 nav.cross-sell.no-mobile
     .cross-sell__hold.colle-cards
         |   {% assign countB = 0 %}
-        |   {% for related in collection.products offset:1 %}
-        |   {% if related.id != $id and related.id != $id_high and related.type == type and count < 3 %}
-        |   {% render 'product-card' prod: related %}
+        |   {% for cross_desk in collection.products offset:1 %}
+        |   {% if cross_desk.id != $id and cross_desk.id != $id_high and countB < 3 %}
+        |   {% render 'product-card' prod: cross_desk %}
 
         |   {% assign countB = countB | plus: 1 %}
         |   {% endif %}

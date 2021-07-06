@@ -78,8 +78,8 @@
             
             |   {% if prod.metafields.drop.drop_month %}
             
-            a(href="#" class="BIS_trigger" data-product-data="{{ prod | json | escape }}").prod-card__notify.btn-hover NOTIFY ME
-            //-.prod-card__notify.btn-hover
+            //-a(href="#" class="BIS_trigger" data-product-data="{{ prod | json | escape }}").prod-card__notify.btn-hover NOTIFY ME
+            .prod-card__notify.btn-hover
                 span.static NOTIFY ME
                 span.hover(data-hover="NOTIFY ME      NOTIFY ME      NOTIFY ME      NOTIFY ME      NOTIFY ME      ") NOTIFY ME      NOTIFY ME      NOTIFY ME      NOTIFY ME      NOTIFY ME      
             |   {% endif %}

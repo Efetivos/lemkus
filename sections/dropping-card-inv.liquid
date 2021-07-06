@@ -36,7 +36,8 @@
             <li class="countdown__infos"><span class="infos__days">DAYS</span><span class="infos__hours">HOURS</span><span class="infos__mins">MINS</span><span class="infos__secs">SECS</span></li>
           </ul>
         </div>  {% endif %}
-      </div><a class="BIS_trigger dropping-card__notify btn-hover" href="#" data-product-data="{{ product | json | escape }}">NOTIFY ME</a>
+      </div>
+      <div class="dropping-card__notify btn-hover"><span class="static">NOTIFY ME</span><span class="hover" data-hover="NOTIFY ME      NOTIFY ME      ">NOTIFY ME      NOTIFY ME      </span></div>
     </div>
     <div class="dropping-card__img no-mobile hover-img"> <a href="{{ product.url | within: collection }}"> <img class="img-load" src="{{  product.featured_image.src  | img_url: 'master' }}" alt="{{ product.src | escape }}"></a></div>
   </div>{% endfor %}
