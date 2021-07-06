@@ -184,6 +184,7 @@ class Menu {
 
         if (isIOS && window.innerWidth < 980) {
             $('html').addClass('is-ios')
+            //navigator.userAgent.search("Google") > 0 ? alert('is chrome') : alert('is not Google')
         }
 
         if (navigator.userAgent.search("Safari") >= 0 && navigator.userAgent.search("Chrome") < 0) {

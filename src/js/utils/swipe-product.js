@@ -42,8 +42,14 @@ class SwipeProduct {
         this.onClickSwipe()
 
         let that = this
+        this.vw_size = window.innerWidth 
         $(window).resize(function () {
-            that.getSizeSwipe()
+            let newsize = window.innerWidth 
+            if(newsize != that.vw_size) {
+                that.getSizeSwipe()
+                that.vw_size = newsize
+            } 
+            
         })
     }
 
