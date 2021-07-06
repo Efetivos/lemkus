@@ -55,6 +55,12 @@ export default class SliderDrag {
             this.drag_move =  66.9
             this.drag_move_btn =  1141.44
         }
+        if(this.type == 'drag__cntrl') { 
+            this.travel = this.el.querySelector('.collect-index__hold')
+            this.drag_force = 0.92
+            this.drag_move =  40.1
+            this.drag_move_btn =  1141.44
+        }
     }
 
 
