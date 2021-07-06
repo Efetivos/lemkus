@@ -173,7 +173,10 @@ class Menu {
             return navigator.platform.indexOf('Mac') > -1
         }
         let isMac = isMacintosh()
-        if (isMac) { $('body').addClass('is-mac') } //verify mac
+        if (isMac) { 
+            $('body').addClass('is-mac') 
+            if (navigator.userAgent.search("Chrome") > 0 ) { $('body').addClass('is-mac-chrome') }
+        } //verify mac
         if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
             $('html').addClass('is-firefox')
         }
