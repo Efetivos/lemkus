@@ -53,7 +53,7 @@ export default class DragSection {
             type: "x",
             edgeResistance: 0.925,
             bounds: that.slider.el,
-            inertia: true
+            inertia: { velocity: 1500, max: 2000, min: 0 }
         });
 
     }
