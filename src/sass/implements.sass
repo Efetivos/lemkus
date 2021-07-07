@@ -184,6 +184,7 @@ button.gf-controls-search-button
 
 span.gf-summary
     font-size: 1.6rem
+    display: flex
 
 
 .sort-by.limit-by.hidden-xs
@@ -250,12 +251,22 @@ label.sort-by-toggle
 
 
     .gf-actions
-        display: grid
-        grid-template-columns: 53% 14.6% 33%
+        display: flex
+        justify-content: space-between
 
     .toggle-filter
         justify-self: flex-start
 
+
+    .gf-filter-selection > *
+        margin: 0 0 0 5.3rem
+
+    .gf-filter-selection, .gf-filter-trigger, span.gf-summary
+        padding: 0
+        margin: 0
+
+    span.gf-summary > *
+        padding: 0 0.5rem
 
 
     form.gf-controls-search-form
