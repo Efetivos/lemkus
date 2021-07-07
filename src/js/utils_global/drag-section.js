@@ -52,7 +52,6 @@ export default class DragSection {
         Draggable.create(that.slider.holder, {
             type: "x",
             edgeResistance: 0.925,
-            dragResistance: 0.475,
             bounds: that.slider.el,
             inertia: true
         });

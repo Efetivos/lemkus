@@ -192,7 +192,6 @@ class Menu {
         }
 
         if (navigator.userAgent.search("Safari") >= 0 && navigator.userAgent.search("Chrome") < 0) {
-            $('html').addClass('is-safari')
 
 
             var nVer = navigator.appVersion;
@@ -228,10 +227,16 @@ class Menu {
                 majorVersion = parseInt(navigator.appVersion, 10);
             }
 
-            console.log(parseFloat(fullVersion))
-            console.log(parseInt(fullVersion))
             if (parseFloat(fullVersion) > 14) {
                 $('html').addClass('is-new-safari')
+            }
+
+            
+            if (/CriOS/i.test(navigator.userAgent) && /iphone|ipod|ipad/i.test(navigator.userAgent)) {
+                return true;
+            } else {
+                $('html').addClass('is-safari')
+                return false;
             }
 
         }
