@@ -54,8 +54,6 @@ export default class DragSlider {
             //edgeResistance: 0.5,
             bounds: that.slider.el,
             inertia: true,
-            onPress: () => $('body').addClass('is-dragging'),
-            onRelease: () => $('body').removeClass('is-dragging')
         });
 
     }

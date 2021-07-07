@@ -39,8 +39,7 @@
             </ul>
           </div>  {% endif %}
             {% render 'add-to-cart' %}
-            {% if product.metafields.drop.drop_month %}
-          <div class="prod-card__notify btn-hover" id="BIS_trigger"><span class="static">NOTIFY ME</span><span class="hover" data-hover="NOTIFY ME      NOTIFY ME      NOTIFY ME      NOTIFY ME      NOTIFY ME      ">NOTIFY ME      NOTIFY ME      NOTIFY ME      NOTIFY ME      NOTIFY ME      </span></div>  {% endif %}
+            {% if product.metafields.drop.drop_month %}<a class="prod-card__notify btn-hover notifyme klaviyo-bis-trigger" href="#"><span class="static">NOTIFY ME</span><span class="hover" data-hover="NOTIFY ME      NOTIFY ME      NOTIFY ME      NOTIFY ME      NOTIFY ME      ">NOTIFY ME      NOTIFY ME      NOTIFY ME      NOTIFY ME      NOTIFY ME      </span></a>  {% endif %}
           <div class="prod-descr">
             <div class="prod-descr__content no-desk">{{ fields.descr.description }} </div>  {% if fields.descr.details != blank %}
             <div class="ctn-accord">

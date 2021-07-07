@@ -8,6 +8,7 @@ import { collection } from '../pages/collection';
 import { contact } from '../pages/contact';
 import { global_app } from '../pages/global_app';
 import { product } from '../pages/product';
+import SliderDrag from '../utils_global/bkp-drag-slider';
 import { cursor } from '../utils_global/cursor';
 import DragSlider from '../utils_global/sliders';
 import { ajaxify } from '../utils_shopify/ajaxify';
@@ -70,7 +71,7 @@ class Smooth {
                 cursor.init()
                 index.init(this.contentPage)
                 this.once = true
-                //if($('.cols_index__drag').length > 0 && window.innerWidth > 1024 ) { new SliderDrag(this.contentPage.querySelector('#shopify-section-index-cols'),'cols') }
+                if($('.cols_index__drag').length > 0 && window.innerWidth > 1024 ) { new SliderDrag(this.contentPage.querySelector('#shopify-section-index-cols'),'cols') }
                 //if($('.dropped-index .cols_index__drag').length > 0 && window.innerWidth > 1024 ) { new SliderDrag(this.contentPage.querySelector('#shopify-section-index-dropped'),'drag__cntrl') }
             }
                 
@@ -261,7 +262,7 @@ class Smooth {
             })
         } else {
             this.slider.forEach((el) => {
-                new DragSlider(el)
+                //new DragSlider(el)
             })
 
         }

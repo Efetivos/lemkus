@@ -315,10 +315,10 @@ li.countdown__infos span + span
 //- =========================  DRAG  ========================= -//
 //- =========================  DRAG  ========================= -//
 .js-slider__holder
-    @include mobile
-    padding: 0 var(--gap)
     display: inline-flex !important
     width: auto !important
+    @include mobile
+        padding: 0 var(--gap)
     @include desk
         transition: transform 1.6s cubic-bezier(0.16, 1, 0.3, 1)
 
@@ -341,10 +341,16 @@ li.countdown__infos span + span
     @include desk
         top: 29.9rem
 
+section.collect-index.js-slider-section.js-slider:before
+    @include desk
+        display: none
+
+
 .js-slider-section__holder
     display: inline-flex !important
     width: auto !important
     z-index: 1 !important
+    will-change: transform
 
 .js-slider-section .colle-cards
     padding: 0
@@ -500,12 +506,10 @@ li.countdown__infos span + span
     width: 10.6rem
     height: 3.9rem
     border: 1px solid var(--dark)
-    transition: width 0.1s cubic-bezier(0.16, 1, 0.3, 1), height 0.1s cubic-bezier(0.16, 1, 0.3, 1)
     
 
 .is-drag .cursor__text span
     transform: scale(1)
-    transition: transform 0.1s cubic-bezier(0.16, 1, 0.3, 1)
     
 
 
@@ -513,7 +517,6 @@ li.countdown__infos span + span
     width: 20.6rem
     height: 3.9rem
     background: var(--dark)
-    transition: background 0.1s cubic-bezier(0.16, 1, 0.3, 1)
     
 
 .is-dragging .cursor__text span

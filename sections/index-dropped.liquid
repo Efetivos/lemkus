@@ -1,5 +1,21 @@
-
-{% schema %}
+{% assign dropped_col = collections[section.settings.dropped_index] %}
+<section class="collect-index {% if section.settings.is_drag %}js-slider-section{% endif%} js-slider">
+  <h1 class="collect-index__title dharma js-split">{{ section.settings.text_dropped }}</h1>
+  <div class="collect-index__hold colle-cards {% if section.settings.is_drag %}js-slider-section__holder{% endif%} js-slider__holder">
+    {% for item in dropped_col.products limit: 6 %}
+      {% render 'product-card' prod: item %}
+    {% endfor %}
+  </div>  {% if section.settings.is_drag %}
+  <div class="cols_index__drag e-hold no-mobile">
+    <div class="drag__cntrl">
+      <div class="drag__cntrl__lines">
+        <div class="drag-line line-static"></div>
+        <div class="drag-line line-dyna"></div>
+      </div>
+      <button class="drag recosemi" href="#">DRAG</button>
+    </div>
+  </div>  {% endif %}
+</section>{% schema %}
     {
         "name": "INDEX | Just Dropped",
         "class": "dropped-index",
@@ -21,24 +37,12 @@
                 "label": "Is one draggable row?",
                 "default": false
             }
+        ],
+        "presets": [
+            {
+            "name": "Just Droppend",
+            "category": "Collection"
+            }
         ]
     }
 {% endschema %}
-{% assign dropped_col = collections[section.settings.dropped_index] %}
-<section class="collect-index {% if section.settings.is_drag %}js-slider-section{% endif%} js-slider">
-  <h1 class="collect-index__title dharma js-split">{{ section.settings.text_dropped }}</h1>
-  <div class="collect-index__hold colle-cards {% if section.settings.is_drag %}js-slider-section__holder{% endif%} js-slider__holder">
-    {% for item in dropped_col.products limit: 6 %}
-      {% render 'product-card' prod: item %}
-    {% endfor %}
-  </div>  {% if section.settings.is_drag %}
-  <div class="cols_index__drag e-hold no-mobile">
-    <div class="drag__cntrl">
-      <div class="drag__cntrl__lines">
-        <div class="drag-line line-static"></div>
-        <div class="drag-line line-dyna"></div>
-      </div>
-      <button class="drag recosemi" href="#">DRAG</button>
-    </div>
-  </div>  {% endif %}
-</section>

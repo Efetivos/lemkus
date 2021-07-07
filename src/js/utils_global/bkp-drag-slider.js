@@ -39,8 +39,8 @@ export default class SliderDrag {
     detectType() {
         if(this.type == 'cols') { 
             this.travel = this.el.querySelector('ul.cols_index__items')
-            this.drag_force = 0.92
-            this.drag_move =  66.82
+            this.drag_force = 0.5
+            this.drag_move =  40.45
             this.drag_move_btn =  1141.44
         }
         if(this.type == 'header-launch') { 
@@ -91,7 +91,8 @@ export default class SliderDrag {
         const proxy = document.createElement("div");
         Draggable.create(proxy, {
             type: 'x',
-            trigger: this.drag.btn,
+            //trigger: this.drag.btn,
+            trigger: '.cols_index ',
             onDragStart: function () {
                 that.t1_drag.pause();
             },
@@ -99,7 +100,7 @@ export default class SliderDrag {
 
                 progressProxy = this.x / that.width_drag
                 gsap.to(that.t1_drag, { duration: 1.25, progress: progressProxy, ease: 'expo.out', overwrite: true })
-                gsap.to(that.t1_drag_btn, { duration: .6, progress: progressProxy, ease: 'expo.out', overwrite: true })
+                //gsap.to(that.t1_drag_btn, { duration: .6, progress: progressProxy, ease: 'expo.out', overwrite: true })
             },
             onPress: function () {
                 this.update();

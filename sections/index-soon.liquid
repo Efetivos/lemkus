@@ -1,5 +1,33 @@
-
-{% schema %}
+{% assign soon_col = collections[section.settings.soon_index] %}
+<section class="soon-index e-wvw">
+  <div class="soon-index__hold e-hold">
+    <h1 class="soon-index__title dharma js-split">{{ section.settings.text_soon }}</h1>
+    <div class="soon-index__coming hover-img">
+      <div class="soon-index__coming__hold e-wp e-hp e-rel">
+        <div class="soon-index__coming__img"><a href="{{ section.settings.url_coming }}" title="{{ section.settings.title_coming }}"><img class="img-load" src="{{ section.settings.img_coming | img_url: 'master' }}" alt="{{ section.settings.img_coming.alt | escape }}"></a></div>
+        <div class="soon-index__coming__texts"><span class="recosemi" style="color:{{ section.settings.color_text_coming }}">{{ section.settings.coming}}</span><a class="dharma" href="{{ section.settings.url_coming }}" title="{{ section.settings.title_coming }}" style="color:{{ section.settings.color_text_coming }}">{{ section.settings.title_coming }}</a></div>{% for item in soon_col.products limit:1 %}
+          {% if item.metafields.drop.drop_month %}
+        <div class="soon-index__coming__count no-mobile">
+          <div class="countdown" data-day="{{ item.metafields.drop.drop_day }}" data-month="{{ item.metafields.drop.drop_month }}" data-hour="{{ item.metafields.drop.drop_hour }}">
+            <ul class="countdown__hold">
+              <li class="countdown__numbers"><span class="countdown__days">00</span><span class="countdown__hours">00</span><span class="countdown__mins">00</span><span class="countdown__secs">00</span></li>
+              <li class="countdown__infos"><span class="infos__days">DAYS</span><span class="infos__hours">HOURS</span><span class="infos__mins">MINS</span><span class="infos__secs">SECS</span></li>
+            </ul>
+          </div>
+        </div>{% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+<section class="soon-collect-index">
+  <div class="soon-collect-index__hold colle-cards">
+    {% for item in soon_col.products limit:5 %}
+      {% render 'product-card' prod: item %}
+    {% endfor %}
+    <div class="prod-card__each"><a class="view-all-card-soon recosemi" href="#">VIEW ALL </a></div>
+  </div>
+</section>{% schema %}
     {
         "name": "INDEX | Dropping Soon",
         "settings": [
@@ -42,37 +70,12 @@
                 "label": "Text soon",
                 "default": "DROPPING SOON"
             }
+        ],
+        "presets": [
+            {
+            "name": "Drop Soon",
+            "category": "Collection"
+            }
         ]
     }
 {% endschema %}
-
-{% assign soon_col = collections[section.settings.soon_index] %}
-<section class="soon-index e-wvw">
-  <div class="soon-index__hold e-hold">
-    <h1 class="soon-index__title dharma js-split">{{ section.settings.text_soon }}</h1>
-    <div class="soon-index__coming hover-img">
-      <div class="soon-index__coming__hold e-wp e-hp e-rel">
-        <div class="soon-index__coming__img"><a href="{{ section.settings.url_coming }}" title="{{ section.settings.title_coming }}"><img class="img-load" src="{{ section.settings.img_coming | img_url: 'master' }}" alt="{{ section.settings.img_coming.alt | escape }}"></a></div>
-        <div class="soon-index__coming__texts"><span class="recosemi" style="color:{{ section.settings.color_text_coming }}">{{ section.settings.coming}}</span><a class="dharma" href="{{ section.settings.url_coming }}" title="{{ section.settings.title_coming }}" style="color:{{ section.settings.color_text_coming }}">{{ section.settings.title_coming }}</a></div>{% for item in soon_col.products limit:1 %}
-          {% if item.metafields.drop.drop_month %}
-        <div class="soon-index__coming__count no-mobile">
-          <div class="countdown" data-day="{{ item.metafields.drop.drop_day }}" data-month="{{ item.metafields.drop.drop_month }}" data-hour="{{ item.metafields.drop.drop_hour }}">
-            <ul class="countdown__hold">
-              <li class="countdown__numbers"><span class="countdown__days">00</span><span class="countdown__hours">00</span><span class="countdown__mins">00</span><span class="countdown__secs">00</span></li>
-              <li class="countdown__infos"><span class="infos__days">DAYS</span><span class="infos__hours">HOURS</span><span class="infos__mins">MINS</span><span class="infos__secs">SECS</span></li>
-            </ul>
-          </div>
-        </div>{% endif %}
-        {% endfor %}
-      </div>
-    </div>
-  </div>
-</section>
-<section class="soon-collect-index">
-  <div class="soon-collect-index__hold colle-cards">
-    {% for item in soon_col.products limit:5 %}
-      {% render 'product-card' prod: item %}
-    {% endfor %}
-    <div class="prod-card__each"><a class="view-all-card-soon recosemi" href="#">VIEW ALL </a></div>
-  </div>
-</section>

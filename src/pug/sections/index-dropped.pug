@@ -1,29 +1,4 @@
-.   
-    {% schema %}
-        {
-            "name": "INDEX | Just Dropped",
-            "class": "dropped-index",
-            "settings": [
-                {
-                    "id": "dropped_index",
-                    "type": "collection",
-                    "label": "Collection"
-                },
-                {
-                    "id": "text_dropped",
-                    "type": "text",
-                    "label": "Text Dropped",
-                    "default": "JUST DROPPED"
-                },
-                {
-                    "type": "checkbox",
-                    "id": "is_drag",
-                    "label": "Is one draggable row?",
-                    "default": false
-                }
-            ]
-        }
-    {% endschema %}
+
 
 | {% assign dropped_col = collections[section.settings.dropped_index] %}
 section.collect-index(class="{% if section.settings.is_drag %}js-slider-section{% endif%}").js-slider
@@ -49,3 +24,35 @@ section.collect-index(class="{% if section.settings.is_drag %}js-slider-section{
     
 
 
+.   
+    {% schema %}
+        {
+            "name": "INDEX | Just Dropped",
+            "class": "dropped-index",
+            "settings": [
+                {
+                    "id": "dropped_index",
+                    "type": "collection",
+                    "label": "Collection"
+                },
+                {
+                    "id": "text_dropped",
+                    "type": "text",
+                    "label": "Text Dropped",
+                    "default": "JUST DROPPED"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "is_drag",
+                    "label": "Is one draggable row?",
+                    "default": false
+                }
+            ],
+            "presets": [
+                {
+                "name": "Just Droppend",
+                "category": "Collection"
+                }
+            ]
+        }
+    {% endschema %}

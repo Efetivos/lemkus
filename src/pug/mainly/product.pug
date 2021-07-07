@@ -101,12 +101,11 @@
 
 
 
-
                     //- =========================  NOTIFY  ========================= -//
                     //- =========================  NOTIFY  ========================= -//
                     
                     |   {% if product.metafields.drop.drop_month %}
-                    #BIS_trigger.prod-card__notify.btn-hover
+                    a(href="#").prod-card__notify.btn-hover.notifyme.klaviyo-bis-trigger
                         span.static NOTIFY ME
                         span.hover(data-hover="NOTIFY ME      NOTIFY ME      NOTIFY ME      NOTIFY ME      NOTIFY ME      ") NOTIFY ME      NOTIFY ME      NOTIFY ME      NOTIFY ME      NOTIFY ME      
                     |   {% endif %}
