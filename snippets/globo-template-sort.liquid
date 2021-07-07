@@ -1,0 +1,143 @@
+{% raw %}
+{% assign root_url = {% endraw %}"{%- if routes.root_url != "/" -%}{{ routes.root_url }}{%- endif -%}"{% raw %} %}
+<div id="gf-controls-container">
+    <form class="gf-controls-search-form">
+    <input value="{{terms}}" onkeyup="this.setAttribute('value', this.value); searchProducts(this.value);" name="q" placeholder="{{translation.product.search | default: "Search by product, category or keyword"}}" aria-label="{{translation.product.search | default: "Search by product, category or keyword "}}" autocomplete="off" class="gf-controls-search-input"/>
+    <button onclick="clearSearchProducts()" type="button" class="gf-controls-clear-button">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M11.414 10l6.293-6.293a1 1 0 10-1.414-1.414L10 8.586 3.707 2.293a1 1 0 00-1.414 1.414L8.586 10l-6.293 6.293a1 1 0 101.414 1.414L10 11.414l6.293 6.293A.998.998 0 0018 17a.999.999 0 00-.293-.707L11.414 10z" fill="#5C5F62"/></svg>
+    </button>
+    <button type="button" class="gf-controls-search-button">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M2 8c0-3.309 2.691-6 6-6s6 2.691 6 6-2.691 6-6 6-6-2.691-6-6zm17.707 10.293l-5.395-5.396A7.946 7.946 0 0016 8c0-4.411-3.589-8-8-8S0 3.589 0 8s3.589 8 8 8a7.954 7.954 0 004.897-1.688l5.396 5.395A.998.998 0 0020 19a1 1 0 00-.293-.707z" fill="#3d4246"/></svg>
+    </button>
+</form>
+    {% if pagination.total > 0 %}
+<div class="gf-actions">
+    <div class="gf-filter-trigger">
+    <h3 class="gf-refine-toggle-mobile" tabindex="0">
+        <span onclick="globofilter.toggleCanvas()"><i class="fa fa-tasks" aria-hidden="true"></i> {{translation.filter.filter_by | default: "Filter by"}}</span>
+    </h3>
+    </div>
+    
+    <button class="no-mobile toggle-filter recosemi">SHOW FILTER</button>
+
+    <span class="gf-summary">
+            {% assign plurality = translation.search.products | default: "Products" %}
+    {% assign singular = translation.search.product | default: "Product" %}
+    <b>{{pagination.total}}</b> {{pagination.total | pluralize: singular, plurality}}
+        </span>
+
+    <div class="gf-filter-selection">
+
+                        <div class="sort-by limit-by hidden-xs">
+        <label for="setLimit">{{translation.product.limit | default: "Show"}}</label>
+        <select id="setLimit" class="sortby-select" onchange="setLimit(this.value); return false;">
+        <option selected value="12">12</option><option  value="24">24</option><option  value="48">48</option>        </select>
+    </div>
+                
+    
+    {% assign relevance = '' %}
+    {% endraw %}{% if request.page_type == 'search' %}{% raw %}
+    {% assign relevance = 'relevance,' %}
+    {% endraw %}{% endif %}{% raw %}
+
+    {% assign available_sort  = '{{relevance}}stock-descending,best-selling,title-ascending,title-descending,price-ascending,price-descending,created-descending,created-ascending,sale-descending' | append: ',{% endraw %}{{collection.default_sort_by}}{% raw %}'  | split: "," %}
+    {% capture sort_by_text %}
+        {% case sort_by %}
+        {% when 'best-selling' %}
+        {{translation.sort.best_selling | default: "Best Selling"}}
+        {% when 'manual' %}
+        {{translation.sort.manually | default: "Featured"}}
+        {% when 'relevance' %}
+        {{translation.sort.relevance | default: "Relevance"}}
+        {% when 'featured' %}
+        {{translation.sort.manually | default: "Featured"}}
+        {% when 'stock-descending' %}
+        {{translation.sort.availability_in_stock_first | default: "Availability"}}
+        {% when 'title-ascending' %}
+        {{translation.sort.alphabetically_a_z | default: "Alphabetically, A-Z"}}
+        {% when 'title-descending' %}
+        {{translation.sort.alphabetically_z_a | default: "Alphabetically, Z-A"}}
+        {% when 'price-ascending' %}
+        {{translation.sort.price_low_to_high | default: "Price, low to high"}}
+        {% when 'price-descending' %}
+        {{translation.sort.price_high_to_low | default: "Price, high to low"}}
+        {% when 'created-descending' %}
+        {{translation.sort.date_new_to_old | default: "Date, new to old"}}
+        {% when 'created-ascending' %}
+        {{translation.sort.date_old_to_new | default: "Date, old to new"}}
+        {% when 'sale-descending' %}
+        {{translation.sort.sale_off | default: "% Sale off"}}
+        {% endcase %}
+    {% endcapture %}
+    <div class="sort-by">
+        <label for="globo-dropdown-sort_options" class="sort-by-toggle" role="button" tabindex="0" aria-expanded="false"><span>{{sort_by_text}}</span></label>
+        <div id="globo-dropdown-sort_options" class="globo-dropdown-custom__options">
+        {% if available_sort contains 'best-selling' %}<span data-sort="best-selling" onclick="changeSortBy('best-selling');">{{translation.sort.best_selling | default: "Best Selling"}}</span>{% endif %}
+        {% if available_sort contains 'featured' %}<span data-sort="manual" onclick="changeSortBy('manual');">{{translation.sort.manually | default: "Featured"}}</span>{% endif %}
+        {% if available_sort contains 'stock-descending' %}<span data-sort="stock-descending" onclick="changeSortBy('stock-descending');">{{translation.sort.availability_in_stock_first | default: "Availability"}}</span>{% endif %}
+        {% if available_sort contains 'relevance' %}<span data-sort="relevance" onclick="changeSortBy('relevance');">{{translation.sort.relevance | default: "Relevance"}}</span>{% endif %}
+        {% if available_sort contains 'title-ascending' %}<span data-sort="title-ascending" onclick="changeSortBy('title-ascending');">{{translation.sort.alphabetically_a_z | default: "Alphabetically, A-Z"}}</span>{% endif %}
+        {% if available_sort contains 'title-descending' %}<span data-sort="title-descending" onclick="changeSortBy('title-descending');">{{translation.sort.alphabetically_z_a | default: "Alphabetically, Z-A"}}</span>{% endif %}
+        {% if available_sort contains 'price-ascending' %}<span data-sort="price-ascending" onclick="changeSortBy('price-ascending');">{{translation.sort.price_low_to_high | default: "Price, low to high"}}</span>{% endif %}
+        {% if available_sort contains 'price-descending' %}<span data-sort="price-descending" onclick="changeSortBy('price-descending');">{{translation.sort.price_high_to_low | default: "Price, high to low"}}</span>{% endif %}
+        {% if available_sort contains 'created-descending' %}<span data-sort="created-descending" onclick="changeSortBy('created-descending');">{{translation.sort.date_new_to_old | default: "Date, new to old"}}</span>{% endif %}
+        {% if available_sort contains 'created-ascending' %}<span data-sort="created-ascending" onclick="changeSortBy('created-ascending');">{{translation.sort.date_old_to_new | default: "Date, old to new"}}</span>{% endif %}
+        {% if available_sort contains 'sale-descending' %}<span data-sort="sale-descending" onclick="changeSortBy('sale-descending');">{{translation.sort.sale_off | default: "% Sale off"}}</span>{% endif %}
+        </div>
+    </div>
+        </div>
+
+    <div class="globo-selected-items-wrapper visible-xs">
+    {% if has_filter and filters %}
+    <ul class="globo-selected-items">
+        {% capture selected_item_html %}
+        {% assign filter_count = 0 %}
+        {% for filter in filters %}
+        {% if filter.is_selected %}
+            {% if filter.style == 'Slider' %}
+            {% assign filter_count = filter_count | plus: 1 %}
+            <li class="selected-item gf-option-label">
+                <a onclick="removeFilter({{filter.id}})">
+                <span class="selected-item">
+                    <strong>
+                    {% if filter.attribute == 'Price' %}
+                        <span class="money">{{filter.values.min | times: 100 | money}}</span> - <span class="money">{{filter.values.max | times: 100 | money}}</span>
+                    {% elsif filter.attribute == 'Percent Sale' %}
+                        {{filter.values.min}}% - {{filter.values.max}}%
+                    {% else %}
+                        {{filter.values.min}} - {{filter.values.max}}
+                    {% endif %}
+                    </strong>
+                </span>
+                <span class="gf-clear">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M11.414 10l6.293-6.293a1 1 0 10-1.414-1.414L10 8.586 3.707 2.293a1 1 0 00-1.414 1.414L8.586 10l-6.293 6.293a1 1 0 101.414 1.414L10 11.414l6.293 6.293A.998.998 0 0018 17a.999.999 0 00-.293-.707L11.414 10z" fill="#5C5F62"/></svg>
+                </span>
+                </a>
+            </li>
+            {% else %}
+            {% for value in filter.values %}
+                {% if value.selected %}
+                {% assign filter_count = filter_count | plus: 1 %}
+                <li class="selected-item gf-option-label">
+                    <a onclick="removeFilterValue({{filter.id}},'{{value.value | replace:"'", "\'" | escape_once}}')">
+                    <span class="selected-item"><strong>{{value.label}}</strong></span>
+                    <span class="gf-clear"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M11.414 10l6.293-6.293a1 1 0 10-1.414-1.414L10 8.586 3.707 2.293a1 1 0 00-1.414 1.414L8.586 10l-6.293 6.293a1 1 0 101.414 1.414L10 11.414l6.293 6.293A.998.998 0 0018 17a.999.999 0 00-.293-.707L11.414 10z" fill="#5C5F62"/></svg></span>
+                    </a>
+                </li>
+                {% endif %}
+            {% endfor %}
+            {% endif %}
+        {% endif %}
+        {% endfor %}
+        {% endcapture %}
+        {% if filter_count > 1 %}
+        <li class="selected-item gf-option-label"><a onclick="clearAllFilter()" class="clear-refinements">{{ translation.filter.clear_all | default: "Clear all"}}</a></li>
+        {% endif %}
+        {{selected_item_html}}
+    </ul>
+    {% endif %}
+    </div>
+</div>
+{% endif %}
+</div>
+{% endraw %}

@@ -79,6 +79,7 @@ section.dropping-card
     display: flex
     align-items: center
     justify-content: center
+    overflow: hidden
 
 
 .dropping-card__img.no-mobile a
@@ -94,6 +95,7 @@ section.dropping-card
     object-position: 50% -5rem
     @include desk
         transform: scale(1.5)
+        transition: transform 2.6s cubic-bezier(0.16, 1, 0.3, 1)
         &:hover
             transform: scale(1.52) !important
         
