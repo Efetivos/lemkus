@@ -24,9 +24,9 @@ class Menu {
 
         $('.top-bar').length > 0 ? this.topBar() : null
         $('.size-guide').length > 0 ? this.sizeGuide() : null
-        
-        
-        
+
+
+
         //? - =========================  COOKIES  ========================= -//
         //? - =========================  COOKIES  ========================= -//
         this.my_storage = localStorage.getItem('cookieBar', null);
@@ -36,7 +36,7 @@ class Menu {
             close: this.qs('.cookies__close')
         }
         this.verifyStorage()
-        
+
         this.onClick()
     }
 
@@ -173,9 +173,9 @@ class Menu {
             return navigator.platform.indexOf('Mac') > -1
         }
         let isMac = isMacintosh()
-        if (isMac) { 
-            $('body').addClass('is-mac') 
-            if (navigator.userAgent.search("Chrome") > 0 ) { $('body').addClass('is-mac-chrome') }
+        if (isMac) {
+            $('body').addClass('is-mac')
+            if (navigator.userAgent.search("Chrome") > 0) { $('body').addClass('is-mac-chrome') }
         } //verify mac
         if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
             $('html').addClass('is-firefox')
@@ -183,14 +183,18 @@ class Menu {
         let isIOS = /iPad|iPhone|iPod/.test(navigator.platform) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
 
         if (isIOS && window.innerWidth < 980) {
-            $('html').addClass('is-ios')
-            //navigator.userAgent.search("Google") > 0 ? alert('is chrome') : alert('is not Google')
+            if (/CriOS/i.test(navigator.userAgent) && /iphone|ipod|ipad/i.test(navigator.userAgent)) {
+                return true;
+            } else {
+                $('html').addClass('is-ios')
+                return false;
+            }
         }
 
         if (navigator.userAgent.search("Safari") >= 0 && navigator.userAgent.search("Chrome") < 0) {
             $('html').addClass('is-safari')
 
-            
+
             var nVer = navigator.appVersion;
             var nAgt = navigator.userAgent;
             var browserName = navigator.appName;
@@ -226,7 +230,7 @@ class Menu {
 
             console.log(parseFloat(fullVersion))
             console.log(parseInt(fullVersion))
-            if(parseFloat(fullVersion) > 14) {
+            if (parseFloat(fullVersion) > 14) {
                 $('html').addClass('is-new-safari')
             }
 
@@ -241,7 +245,7 @@ class Menu {
 
 
 
-    
+
 
 
 
