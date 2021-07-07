@@ -7,6 +7,7 @@ import { blog } from '../pages/blog';
 import { collection } from '../pages/collection';
 import { contact } from '../pages/contact';
 import { global_app } from '../pages/global_app';
+import { launches } from '../pages/launches';
 import { product } from '../pages/product';
 import SliderDrag from '../utils_global/bkp-drag-slider';
 import { cursor } from '../utils_global/cursor';
@@ -86,7 +87,7 @@ class Smooth {
             if (!this.once) {
                 this.once = true
                 //if($('.drag').length > 0 && window.innerWidth > 1024 ) { new SliderDrag(this.contentPage, 'header-launch') }
-                
+                launches.init()
             }
         }
 
