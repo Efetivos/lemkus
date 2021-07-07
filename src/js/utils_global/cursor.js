@@ -48,10 +48,8 @@ class Cursor {
         $(this.trg_drag).hover(
             function () {
                 that.body.addClass('is-drag')
-                $(that.DOM.cursor).addClass('drag-hover')
             }, function () {
                 that.body.removeClass('is-drag')
-                $(that.DOM.cursor).removeClass('drag-hover')
         })
     }
 }
