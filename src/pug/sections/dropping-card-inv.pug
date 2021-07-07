@@ -6,9 +6,9 @@
             "class": "dropping-card",
             "settings": [
                 {
-                    "id": "dropping_card_inv",
-                    "type": "collection",
-                    "label": "Collection"
+                    "id": "dropping_card_prod_inv",
+                    "type": "product",
+                    "label": "Product"
                 },
                 {
                     "id": "img_logo_brand_inv",
@@ -21,7 +21,6 @@
 
 | {% assign dropping_col_inv = collections[section.settings.dropping_card_inv] %}
 section.dropping-card.dropping-card-inv
-    | {% for product in dropping_col_inv.products limit:1 %}
     .dropping-card__hold.js-find-hover
 
         //- BG
@@ -33,24 +32,24 @@ section.dropping-card.dropping-card-inv
                 img(src="{{ section.settings.img_logo_brand_inv | img_url: 'master' }}", alt='{{ section.settings.img_logo_brand_inv.alt | escape }}').img-load
 
             //- TITLE
-            a(href="{{ product.url | within: collection }}").dropping-card__title.dharma {{ product.title }}
+            a(href="{{ all_products[section.settings.dropping_card_prod_inv].url | within: collection }}").dropping-card__title.dharma {{ all_products[section.settings.dropping_card_prod_inv].title }}
 
             //- PRICE
-            .dropping-card__price.recosemi {{ product.price | money }}
+            .dropping-card__price.recosemi {{ all_products[section.settings.dropping_card_prod_inv].price | money }}
 
             //- INFOS
             .dropping-card__infos__img.no-desk
-                a(href="{{ product.url | within: collection }}")
-                    img(src="{{  product.featured_image.src  | img_url: 'master' }}" alt="{{ product.src | escape }}").img-load
+                a(href="{{ all_products[section.settings.dropping_card_prod_inv].url | within: collection }}")
+                    img(src="{{  all_products[section.settings.dropping_card_prod_inv].featured_image.src  | img_url: 'master' }}" alt="{{ all_products[section.settings.dropping_card_prod_inv].src | escape }}").img-load
 
 
             
             //- COUNTDOWN
             .dropping-card__count
-                |   {% if product.metafields.drop.drop_month %}
-                |   {% assign drop_day = product.metafields.drop.drop_day %}
-                |   {% assign drop_month = product.metafields.drop.drop_month %}
-                |   {% assign drop_hour = product.metafields.drop.drop_hour %}
+                |   {% if all_products[section.settings.dropping_card_prod_inv].metafields.drop.drop_month %}
+                |   {% assign drop_day = all_products[section.settings.dropping_card_prod_inv].metafields.drop.drop_day %}
+                |   {% assign drop_month = all_products[section.settings.dropping_card_prod_inv].metafields.drop.drop_month %}
+                |   {% assign drop_hour = all_products[section.settings.dropping_card_prod_inv].metafields.drop.drop_hour %}
                 .countdown(data-day="{{ drop_day }}", data-month="{{ drop_month }}", data-hour="{{ drop_hour }}")
                     ul.countdown__hold
                         li.countdown__numbers
@@ -76,10 +75,9 @@ section.dropping-card.dropping-card-inv
 
 
         .dropping-card__img.no-mobile.hover-img 
-            a(href="{{ product.url | within: collection }}") 
-                img(src="{{  product.featured_image.src  | img_url: 'master' }}" alt="{{ product.src | escape }}").img-load
+            a(href="{{ all_products[section.settings.dropping_card_prod_inv].url | within: collection }}") 
+                img(src="{{  all_products[section.settings.dropping_card_prod_inv].featured_image.src  | img_url: 'master' }}" alt="{{ all_products[section.settings.dropping_card_prod_inv].src | escape }}").img-load
 
-    | {% endfor %}
         
 
 

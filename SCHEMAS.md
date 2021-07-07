@@ -1,5 +1,6 @@
 - [Using Schemas ](#using-schemas)
     - [Sections](##sections)
+    - [Product](###product)
     - [Images](###images)
     - [Text](###text)
     - [Text Area](###text-area)
@@ -12,6 +13,7 @@
 
 
 # Using Schemas
+> https://shopify.dev/themes/architecture/settings/input-settings  
 > https://shopify.dev/docs/themes/settings
 
 
@@ -38,6 +40,46 @@
 
 img(src="{{ section.settings.header-img | img_url: 'master' }}", alt='')
 ```
+
+
+
+### [Product]
+> https://shopify.dev/themes/architecture/settings/input-settings#product  
+*[section_name].liquid*
+```bash
+{% schema %}
+    {
+        "name": "Header",
+        "class": "header-index",
+        "settings": [
+            {
+                "type": "product",
+                "id": "dropping_card_prod",
+                "label": "Product",
+                "info": "Some info to user",
+            }
+        ]
+    }
+{% endschema %}
+
+//- TITLE
+a(href="{{ all_products[section.settings.dropping_card_prod].url | within: collection }}") {{ all_products[section.settings.dropping_card_prod].title }}
+
+//- PRICE
+.price{{ all_products[section.settings.dropping_card_prod].price | money }}
+
+//- INFOS
+.img
+    a(href="{{ all_products[section.settings.dropping_card_prod].url | within: collection }}")
+        img(src="{{  all_products[section.settings.dropping_card_prod].featured_image.src  | img_url: 'master' }}" alt="{{ all_products[section.settings.dropping_card_prod].src | escape }}").img-load
+
+//- METAFIELDS
+|   {% assign drop_day = all_products[section.settings.dropping_card_prod].metafields.drop.drop_day %}
+h1 {{ drop_day }}
+
+```
+
+
 
 
 
