@@ -126,7 +126,10 @@ class Collection {
             grid: this.qsa('#gf-grid'),
             toggle_text: this.qsa('#gf-grid')
         }
-        let tl_filter_els = gsap.timeline().to(this.filter.filter_el, { xPercent: -100, duration: 0.5, ease: "expo.inOut" }).reverse(-1).reversed(true);
+
+        $(this.body).addClass('is-filter')
+        gsap.set(this.filter.filter_el, { xPercent: -100})
+        let tl_filter_els = gsap.timeline().to(this.filter.filter_el, { xPercent: 0, duration: 0.5, ease: "expo.inOut" }).reverse(-1).reversed(true);
         this.filter.btn_trigger.addEventListener("click", () => {
             const state = Flip.getState([that.filter.grid, that.filter.each_prod]);
             $(that.body).toggleClass('is-filter')

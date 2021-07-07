@@ -36,7 +36,7 @@ class Launches {
 
 
         $(this.btn_viewall).click(function () {
-            gsap.to(window, { duration: .5, scrollTo: { y: '.main-launches', offsetY: window.innerWidth * 0.04 } })
+            gsap.to(window, { duration: .5, scrollTo: { y: '.main-launches', offsetY: window.innerWidth * 0.03 } })
         });
     }
 }
