@@ -9,8 +9,6 @@ import { contact } from '../pages/contact';
 import { global_app } from '../pages/global_app';
 import { product } from '../pages/product';
 import { cursor } from '../utils_global/cursor';
-import DragSection from '../utils_global/drag-section';
-import SliderDrag from '../utils_global/drag-slider';
 import DragSlider from '../utils_global/sliders';
 import { ajaxify } from '../utils_shopify/ajaxify';
 import { qty_picker } from '../utils_shopify/qty-picker';
@@ -72,8 +70,8 @@ class Smooth {
                 cursor.init()
                 index.init(this.contentPage)
                 this.once = true
-                if($('.cols_index__drag').length > 0 && window.innerWidth > 1024 ) { new SliderDrag(this.contentPage.querySelector('#shopify-section-index-cols'),'cols') }
-                if($('.dropped-index .cols_index__drag').length > 0 && window.innerWidth > 1024 ) { new SliderDrag(this.contentPage.querySelector('#shopify-section-index-dropped'),'drag__cntrl') }
+                //if($('.cols_index__drag').length > 0 && window.innerWidth > 1024 ) { new SliderDrag(this.contentPage.querySelector('#shopify-section-index-cols'),'cols') }
+                //if($('.dropped-index .cols_index__drag').length > 0 && window.innerWidth > 1024 ) { new SliderDrag(this.contentPage.querySelector('#shopify-section-index-dropped'),'drag__cntrl') }
             }
                 
             index.onScroll()
@@ -86,7 +84,7 @@ class Smooth {
         if (this.isPage === 'launches') {
             if (!this.once) {
                 this.once = true
-                if($('.drag').length > 0 && window.innerWidth > 1024 ) { new SliderDrag(this.contentPage, 'header-launch') }
+                //if($('.drag').length > 0 && window.innerWidth > 1024 ) { new SliderDrag(this.contentPage, 'header-launch') }
                 
             }
         }
@@ -261,6 +259,11 @@ class Smooth {
             this.slider.forEach((el) => {
                 new DragSlider(el)
             })
+        } else {
+            this.slider.forEach((el) => {
+                new DragSlider(el)
+            })
+
         }
         
         //this.slider_section = this.contentPage.querySelectorAll('.js-slider-section') || null

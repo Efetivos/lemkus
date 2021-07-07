@@ -316,9 +316,11 @@ li.countdown__infos span + span
 //- =========================  DRAG  ========================= -//
 .js-slider__holder
     @include mobile
-        padding: 0 var(--gap)
-        display: inline-flex !important
-        width: auto !important
+    padding: 0 var(--gap)
+    display: inline-flex !important
+    width: auto !important
+    @include desk
+        transition: transform 1.6s cubic-bezier(0.16, 1, 0.3, 1)
 
 
 

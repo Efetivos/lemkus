@@ -51,10 +51,11 @@ export default class DragSlider {
         let that = this
         Draggable.create(that.slider.holder, {
             type: "x",
-            edgeResistance: 0.5,
-            dragResistance: 0.475,
+            //edgeResistance: 0.5,
             bounds: that.slider.el,
-            inertia: true
+            inertia: true,
+            onPress: () => $('body').addClass('is-dragging'),
+            onRelease: () => $('body').removeClass('is-dragging')
         });
 
     }
