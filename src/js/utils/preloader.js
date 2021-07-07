@@ -88,7 +88,7 @@ class Preloader {
             console.log('catch');
             window.dispatchEvent(new Event('resize'))
             this.body.hasClass('index') ? null : $('.preloader-master').remove()
-            if($('.article').length > 0) { article.onEnter(); article.goEnter(); }
+            if($('.article').length > 0) {  article.onEnter(); article.goEnter(); }
         })
     }
 

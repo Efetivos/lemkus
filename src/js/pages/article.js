@@ -21,8 +21,8 @@ class Article {
     //? - =========================  HEADER ABOUT  ========================= -//
     onEnter() {
         this.header = {
-            title: this.qs('.header-article__title'),
-            infos: this.qs('.header-article__infos'),
+            title: document.querySelector('.header-article__title'),
+            infos: document.querySelector('.header-article__infos'),
         }
 
 
