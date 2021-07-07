@@ -47,11 +47,21 @@ class Index {
     
     
     isTop() {
-        this.tl_istop = gsap.timeline( { scrollTrigger: { trigger: 'body', start: 'top 0', end: window.innerWidth * 0.15989, scrub: true } } )
-            //.fromTo('.logo-main', { top: window.innerWidth * 0.0489, width: window.innerWidth * 0.964 }, { duration: 3, top: window.innerWidth * 0.014, width: window.innerWidth * 0.092, ease: 'none' })
-            //.fromTo('.logo-main', { xPercent: 473.1, yPercent: 729, scale: 10.44 }, { duration: 3, xPercent: 0, yPercent: 0, scale: 1, ease: 'none' })
-            .fromTo('.logo-main', { xPercent: 0, yPercent: 0, scale: 1 }, { duration: 3, xPercent: -45.2, yPercent: -70.6, scale: 0.0935, ease: 'none' })
-            .fromTo('.cape-hour', { opacity: 1 }, { duration: 1, opacity: 0, ease: 'none' }, 1.5)
+        if($('.is-topbar').length > 0 ){
+            this.tl_istop = gsap.timeline( { scrollTrigger: { trigger: 'body', start: 'top 0', end: window.innerWidth * 0.10, scrub: true } } )
+                .fromTo('.logo-main', { xPercent: 0, yPercent: 23.2, scale: 1 }, { duration: 3, xPercent: -45.2, yPercent: -49.9, scale: 0.0935, ease: 'none' }) 
+                .fromTo('.cape-hour', { opacity: 1 }, { duration: 1, opacity: 0, ease: 'none' }, 1.5)
+
+                $('.top-bar__close').click(function(){
+                    $('.logo-main').css('top','2.55rem')
+                })
+                console.log('is top bar')
+        } else {
+            this.tl_istop = gsap.timeline( { scrollTrigger: { trigger: 'body', start: 'top 0', end: window.innerWidth * 0.15989, scrub: true } } )
+                .fromTo('.logo-main', { xPercent: 0, yPercent: 0, scale: 1 }, { duration: 3, xPercent: -45.2, yPercent: -70.6, scale: 0.0935, ease: 'none' })
+                .fromTo('.cape-hour', { opacity: 1 }, { duration: 1, opacity: 0, ease: 'none' }, 1.5)
+                console.log('isn"t top bar')
+        }
     }
     
     
