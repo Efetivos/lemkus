@@ -8,6 +8,7 @@ import { collection } from '../pages/collection';
 import { contact } from '../pages/contact';
 import { global_app } from '../pages/global_app';
 import { product } from '../pages/product';
+import { cursor } from '../utils_global/cursor';
 import DragSection from '../utils_global/drag-section';
 import SliderDrag from '../utils_global/drag-slider';
 import DragSlider from '../utils_global/sliders';
@@ -68,6 +69,7 @@ class Smooth {
 
         if (this.isPage === 'index') {
             if (!this.once) {
+                cursor.init()
                 index.init(this.contentPage)
                 this.once = true
                 if($('.cols_index__drag').length > 0 && window.innerWidth > 1024 ) { new SliderDrag(this.contentPage.querySelector('#shopify-section-index-cols'),'cols') }
