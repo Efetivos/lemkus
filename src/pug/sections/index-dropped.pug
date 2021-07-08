@@ -4,7 +4,7 @@
 section.collect-index(class="{% if section.settings.is_drag %}js-slider-section{% endif%}").js-slider
 
     h1.collect-index__title.dharma.js-split {{ section.settings.text_dropped }}
-    .collect-index__hold.colle-cards(class="{% if section.settings.is_drag %}js-slider-section__holder{% endif%}").js-slider__holder
+    .collect-index__hold.colle-cards(class="{% if section.settings.is_drag %}js-slider-section__holder js-slider__holder{% endif%}")
         | {% for item in dropped_col.products limit: 6 %}
         
         //- calling prod
@@ -21,7 +21,6 @@ section.collect-index(class="{% if section.settings.is_drag %}js-slider-section{
             button(href="#").drag.recosemi DRAG
     |   {% endif %}
 
-    
 
 
 .   

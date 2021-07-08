@@ -15,10 +15,10 @@ class Launches {
         this.qsa = (s, o = doc) => o.querySelectorAll(s),
             this.qs = (s, o = doc) => o.querySelector(s)
 
-        this.btn_viewall = document.querySelector('button.scroll-down')
-
-
-        if ($(window).width() > 1024) { this.viewALl() }
+            
+            
+        //this.btn_viewall = document.querySelector('button.scroll-down')
+        //if ($(window).width() > 1024) { this.viewALl() }
     }
 
 
@@ -33,8 +33,6 @@ class Launches {
     //? - =========================  VIEW ALL BTn  ========================= -//
     //? - =========================  VIEW ALL BTn  ========================= -//
     viewALl() {
-
-
         $(this.btn_viewall).click(function () {
             gsap.to(window, { duration: .5, scrollTo: { y: '.main-launches', offsetY: window.innerWidth * 0.03 } })
         });
