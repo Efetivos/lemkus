@@ -23,7 +23,7 @@ header.header-laun
 
 
 .header-laun__colle__hold
-    display: flex
+    display: inline-flex
     gap: 4.9rem
 
 
@@ -69,6 +69,12 @@ h1.header-laun__title
     display: flex
     justify-content: space-between
     gap: 2.8rem
+    @include desk
+        margin: 0
+        overflow: hidden
+        height: 0
+        opacity: 0
+        
 
 
 button.scroll-down

@@ -69,11 +69,13 @@ class Smooth {
 
         if (this.isPage === 'index') {
             if (!this.once) {
-                cursor.init()
                 index.init(this.contentPage)
-                this.once = true
-                if($('.cols_index__drag').length > 0 && window.innerWidth > 1024 ) { new SliderDrag(this.contentPage.querySelector('#shopify-section-index-cols'),'cols') }
+                if($('.cols_index__drag').length > 0 && window.innerWidth > 1024 ) { 
+                    cursor.init()
+                    new SliderDrag(this.contentPage.querySelector('#shopify-section-index-cols'),'cols') 
+                }
                 if($('.dropped-index .cols_index__drag').length > 0 && window.innerWidth > 1024 ) { new SliderDrag(this.contentPage.querySelector('#shopify-section-index-dropped'),'drag__cntrl') }
+                this.once = true
             }
                 
             index.onScroll()
@@ -85,9 +87,12 @@ class Smooth {
         // ______________ launches
         if (this.isPage === 'launches') {
             if (!this.once) {
-                this.once = true
-                //if($('.drag').length > 0 && window.innerWidth > 1024 ) { new SliderDrag(this.contentPage, 'header-launch') }
+                if($('.header-laun__colle__hold').length > 0 && window.innerWidth > 1024 ) { 
+                    cursor.init()
+                    new SliderDrag(this.contentPage.querySelector('#shopify-section-launches-header'), 'header-launch') 
+                }
                 launches.init()
+                this.once = true
             }
         }
 

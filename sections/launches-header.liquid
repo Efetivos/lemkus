@@ -24,10 +24,22 @@
   <div class="header-laun__hold">
     <h1 class="header-laun__title dharma" data-text="{{ section.settings.text_feat }} {{ section.settings.text_feat }} {{ section.settings.text_feat }} ">{{ section.settings.text_feat }} {{ section.settings.text_feat }} {{ section.settings.text_feat }} </h1>{% assign soon_col = collections[section.settings.launch-feat] %}
     <div class="header-laun__colle">
-      <div class="header-laun__colle__hold">
+      <div class="header-laun__colle__hold js-slider__holder">
         {% for item in soon_col.products limit: 5 %}
           {% render 'product-card' prod: item %}
         {% endfor %}
+      </div>
+    </div>
+    <div class="header-laun__cntrl-view">
+      <div class="header-laun__cntrl-view__hold e-hold">
+        <div class="drag__cntrl">
+          <div class="drag__cntrl__lines">
+            <div class="drag-line line-static"></div>
+            <div class="drag-line line-dyna"></div>
+          </div>
+          <button class="drag recosemi" href="#">DRAG</button>
+        </div>
+        <button class="recosemi scroll-down btn-hover" href="#"><span class="static">VIEW ALL</span><span class="hover" data-hover="VIEW ALL      VIEW ALL      ">VIEW ALL      VIEW ALL      </span></button>
       </div>
     </div>
   </div>

@@ -43,26 +43,24 @@ export default class SliderDrag {
             this.travel = this.el.querySelector('ul.cols_index__items')
             this.drag_force = 0.3
             this.drag_move =  40.45
-            this.drag_move_btn =  1141.44
         }
         if(this.type == 'header-launch') { 
+            this.ctn = this.el.querySelector('.header-laun__hold')
             this.travel = this.el.querySelector('.header-laun__colle__hold')
             this.drag_force = 0.915  
             this.drag_move =  186
-            this.drag_move_btn =  986
         }
         if(this.type == 'cross-sell') { 
+            this.ctn = this.el.querySelector('.cross-sell')
             this.travel = this.el.querySelector('.cross-sell__hold')
             this.drag_force = 0.92
             this.drag_move =  66.9
-            this.drag_move_btn =  1141.44
         }
         if(this.type == 'drag__cntrl') { 
             this.ctn = this.el.querySelector('.collect-index__hold')
             this.travel = this.el.querySelector('.collect-index__hold')
             this.drag_force = 0.4
             this.drag_move =  40
-            this.drag_move_btn =  1141.44
         }
     }
 

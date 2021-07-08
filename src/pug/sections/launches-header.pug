@@ -27,7 +27,7 @@ header.header-laun.no-mobile
 
         | {% assign soon_col = collections[section.settings.launch-feat] %}
         .header-laun__colle
-            .header-laun__colle__hold
+            .header-laun__colle__hold.js-slider__holder
                 | {% for item in soon_col.products limit: 5 %}
                 
                 //- calling prod
@@ -35,7 +35,7 @@ header.header-laun.no-mobile
 
                 | {% endfor %}
                 
-        //-.header-laun__cntrl-view
+        .header-laun__cntrl-view
             .header-laun__cntrl-view__hold.e-hold
                 .drag__cntrl
                     .drag__cntrl__lines
