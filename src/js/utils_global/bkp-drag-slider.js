@@ -99,7 +99,8 @@ export default class SliderDrag {
             onDrag: function () {
 
                 progressProxy = ( this.x * -1 ) / that.width_drag
-                gsap.to(that.t1_drag, { duration: .8, progress: progressProxy, ease: 'expo.out', overwrite: true })
+                //gsap.to(that.t1_drag, { duration: .8, progress: progressProxy, ease: 'power1.inOut', overwrite: true })
+                gsap.set(that.t1_drag, {  progress: progressProxy, overwrite: true })
             },
             onRelease: () => that.body.removeClass('is-dragging'), 
             onPress: function () {
