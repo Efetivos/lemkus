@@ -29,7 +29,7 @@ class Cursor {
                 that.mouse.moved = true;
                 that.mouse.x = e.clientX;
                 that.mouse.y = e.clientY;
-                gsap.to(that.DOM.cursor, { duration: .1, ease: 'power2.out', y: that.mouse.y, x: that.mouse.x })
+                gsap.to(that.DOM.cursor, { duration: .6, ease: 'power2.out', y: that.mouse.y, x: that.mouse.x })
             }
         });
 

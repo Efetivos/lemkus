@@ -71,7 +71,7 @@ class Smooth {
             if (!this.once) {
                 index.init(this.contentPage)
                 if($('.cols_index__drag').length > 0 && window.innerWidth > 1024 ) { 
-                    //cursor.init()
+                    cursor.init()
                     new SliderDrag(this.contentPage.querySelector('#shopify-section-index-cols'),'cols') 
                 }
                 if($('.dropped-drag').length > 0 && window.innerWidth > 1024 ) { 
