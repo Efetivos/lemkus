@@ -1,23 +1,4 @@
 
-{% schema %}
-    {
-        "name": "MODULE | Dropping Card",
-        "class": "dropping-card",
-        "settings": [
-            {
-                "id": "dropping_card_prod",
-                "type": "product",
-                "label": "Product"
-            },
-            {
-                "id": "img_logo_brand",
-                "type": "image_picker",
-                "label": "Image Logo"
-            }
-        ]
-    }
-{% endschema %}
-
 <section class="dropping-card dropping-card-regular">
   <div class="dropping-card__hold js-find-hover">
     <div class="dropping-card__bg" style="background:#eaeaea"></div>
@@ -41,4 +22,27 @@
     </div>
     <div class="dropping-card__img no-mobile hover-img"> <a href="{{ all_products[section.settings.dropping_card_prod].url | within: collection }}"> <img class="img-load" src="{{  all_products[section.settings.dropping_card_prod].featured_image.src  | img_url: 'master' }}" alt="{{ all_products[section.settings.dropping_card_prod].src | escape }}"></a></div>
   </div>
-</section>
+</section>{% schema %}
+    {
+        "name": "MODULE | Dropping Card",
+        "class": "dropping-card",
+        "settings": [
+            {
+                "id": "dropping_card_prod",
+                "type": "product",
+                "label": "Product"
+            },
+            {
+                "id": "img_logo_brand",
+                "type": "image_picker",
+                "label": "Image Logo"
+            }
+        ],
+        "presets": [
+            {
+            "name": "Dropping Card Regular",
+            "category": "Cards"
+            }
+        ]
+    }
+{% endschema %}

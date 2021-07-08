@@ -1,22 +1,3 @@
-.   
-    {% schema %}
-        {
-            "name": "MODULE | Dropping Card",
-            "class": "dropping-card",
-            "settings": [
-                {
-                    "id": "dropping_card_prod",
-                    "type": "product",
-                    "label": "Product"
-                },
-                {
-                    "id": "img_logo_brand",
-                    "type": "image_picker",
-                    "label": "Image Logo"
-                }
-            ]
-        }
-    {% endschema %}
 
 section.dropping-card.dropping-card-regular
     .dropping-card__hold.js-find-hover
@@ -80,3 +61,28 @@ section.dropping-card.dropping-card-regular
         
 
 
+.   
+    {% schema %}
+        {
+            "name": "MODULE | Dropping Card",
+            "class": "dropping-card",
+            "settings": [
+                {
+                    "id": "dropping_card_prod",
+                    "type": "product",
+                    "label": "Product"
+                },
+                {
+                    "id": "img_logo_brand",
+                    "type": "image_picker",
+                    "label": "Image Logo"
+                }
+            ],
+            "presets": [
+                {
+                "name": "Dropping Card Regular",
+                "category": "Cards"
+                }
+            ]
+        }
+    {% endschema %}

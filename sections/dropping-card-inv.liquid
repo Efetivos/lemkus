@@ -1,22 +1,3 @@
-
-{% schema %}
-    {
-        "name": "MODULE | Dropping Inverse",
-        "class": "dropping-card",
-        "settings": [
-            {
-                "id": "dropping_card_prod_inv",
-                "type": "product",
-                "label": "Product"
-            },
-            {
-                "id": "img_logo_brand_inv",
-                "type": "image_picker",
-                "label": "Image Logo"
-            }
-        ]
-    }
-{% endschema %}
 {% assign dropping_col_inv = collections[section.settings.dropping_card_inv] %}
 <section class="dropping-card dropping-card-inv">
   <div class="dropping-card__hold js-find-hover">
@@ -41,4 +22,27 @@
     </div>
     <div class="dropping-card__img no-mobile hover-img"> <a href="{{ all_products[section.settings.dropping_card_prod_inv].url | within: collection }}"> <img class="img-load" src="{{  all_products[section.settings.dropping_card_prod_inv].featured_image.src  | img_url: 'master' }}" alt="{{ all_products[section.settings.dropping_card_prod_inv].src | escape }}"></a></div>
   </div>
-</section>
+</section>{% schema %}
+    {
+        "name": "MODULE | Dropping Inverse",
+        "class": "dropping-card",
+        "settings": [
+            {
+                "id": "dropping_card_prod_inv",
+                "type": "product",
+                "label": "Product"
+            },
+            {
+                "id": "img_logo_brand_inv",
+                "type": "image_picker",
+                "label": "Image Logo"
+            }
+        ],
+        "presets": [
+            {
+            "name": "Dropping Card Inverse",
+            "category": "Cards"
+            }
+        ]
+    }
+{% endschema %}

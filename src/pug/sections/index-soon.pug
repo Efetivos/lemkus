@@ -2,42 +2,9 @@
 
 
 | {% assign soon_col = collections[section.settings.soon_index] %}
-section.soon-index.e-wvw
-    .soon-index__hold.e-hold
-        h1.soon-index__title.dharma.js-split {{ section.settings.text_soon }}
-        .soon-index__coming.hover-img
-            .soon-index__coming__hold.e-wp.e-hp.e-rel
-                .soon-index__coming__img
-                    a(href="{{ section.settings.url_coming }}", title="{{ section.settings.title_coming }}")
-                        img(src="{{ section.settings.img_coming | img_url: 'master' }}", alt='{{ section.settings.img_coming.alt | escape }}').img-load
-
-
-                .soon-index__coming__texts
-                    span.recosemi(style="color:{{ section.settings.color_text_coming }}") {{ section.settings.coming}}
-                    a(href="{{ section.settings.url_coming }}", title="{{ section.settings.title_coming }}", style="color:{{ section.settings.color_text_coming }}").dharma {{ section.settings.title_coming }}
-
-
-                | {% for item in soon_col.products limit:1 %}
-                |   {% if item.metafields.drop.drop_month %}
-                .soon-index__coming__count.no-mobile
-                    .countdown(data-day="{{ item.metafields.drop.drop_day }}", data-month="{{ item.metafields.drop.drop_month }}", data-hour="{{ item.metafields.drop.drop_hour }}")
-                        ul.countdown__hold
-                            li.countdown__numbers
-                                span.countdown__days 00
-                                span.countdown__hours 00
-                                span.countdown__mins 00
-                                span.countdown__secs 00
-                            li.countdown__infos
-                                span.infos__days DAYS
-                                span.infos__hours HOURS
-                                span.infos__mins MINS
-                                span.infos__secs SECS
-                | {% endif %}
-                | {% endfor %}
-                
-        
-
 section.soon-collect-index
+    .e-hold
+        h1.soon-index__title.dharma.js-split {{ section.settings.text_soon }}
     .soon-collect-index__hold.colle-cards
         | {% for item in soon_col.products limit:5 %}
         
@@ -55,34 +22,6 @@ section.soon-collect-index
         {
             "name": "INDEX | Dropping Soon",
             "settings": [
-                
-                {
-                    "id": "coming",
-                    "type": "text",
-                    "label": "Coming",
-                    "default": "COMING SOON"
-                },
-                {
-                    "id": "img_coming",
-                    "type": "image_picker",
-                    "label": "Image Coming"
-                },
-                {
-                    "id": "title_coming",
-                    "type": "text",
-                    "label": "Title Coming"
-                },
-                {
-                    "id": "url_coming",
-                    "type": "url",
-                    "label": "Link Coming"
-                },
-                {
-                    "type": "color",
-                    "id": "color_text_coming",
-                    "label": "Color Text",
-                    "default": "#ffffff"
-                },
                 {
                     "id": "soon_index",
                     "type": "collection",
