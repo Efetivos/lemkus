@@ -71,10 +71,14 @@ class Smooth {
             if (!this.once) {
                 index.init(this.contentPage)
                 if($('.cols_index__drag').length > 0 && window.innerWidth > 1024 ) { 
-                    cursor.init()
-                    //new SliderDrag(this.contentPage.querySelector('#shopify-section-index-cols'),'cols') 
+                    //cursor.init()
+                    new SliderDrag(this.contentPage.querySelector('#shopify-section-index-cols'),'cols') 
                 }
-                //if($('.dropped-index .cols_index__drag').length > 0 && window.innerWidth > 1024 ) { new SliderDrag(this.contentPage.querySelector('#shopify-section-index-dropped'),'drag__cntrl') }
+                if($('.dropped-drag').length > 0 && window.innerWidth > 1024 ) { 
+                    this.contentPage.querySelectorAll('.dropped-drag').forEach((el) => {
+                        new SliderDrag(el,'drag__cntrl') 
+                    })
+                }
                 this.once = true
             }
                 

@@ -1,7 +1,7 @@
 
 
 | {% assign dropped_col = collections[section.settings.dropped_index] %}
-section.collect-index(class="{% if section.settings.is_drag %}js-slider-section{% endif%}").js-slider
+section.collect-index(class="{% if section.settings.is_drag %}dropped-drag js-slider-section{% endif%}").js-slider
 
     h1.collect-index__title.dharma.js-split {{ section.settings.text_dropped }}
     .collect-index__hold.colle-cards(class="{% if section.settings.is_drag %}js-slider-section__holder js-slider__holder trg-cursor{% endif%}")
@@ -12,13 +12,13 @@ section.collect-index(class="{% if section.settings.is_drag %}js-slider-section{
 
         | {% endfor %}
 
-    |   {% if section.settings.is_drag %}
     .cols_index__drag.e-hold.no-mobile
         .drag__cntrl
             .drag__cntrl__lines
                 .drag-line.line-static
                 .drag-line.line-dyna
             button(href="#").drag.recosemi DRAG
+    |   {% if section.settings.is_drag %}
     |   {% endif %}
 
 

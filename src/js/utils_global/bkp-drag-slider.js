@@ -19,6 +19,8 @@ export default class SliderDrag {
             line_dyna: this.el.querySelector(".drag-line.line-dyna"),
         }
 
+        console.log(this.drag);
+
         this.detectType()
         this.createTimeline()
         this.createDrag()

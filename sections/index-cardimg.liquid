@@ -4,17 +4,18 @@
     <div class="soon-index__coming hover-img">
       <div class="soon-index__coming__hold e-wp e-hp e-rel">
         <div class="soon-index__coming__img"><a href="{{ section.settings.url_coming }}" title="{{ section.settings.title_coming }}"><img class="img-load" src="{{ section.settings.img_coming | img_url: 'master' }}" alt="{{ section.settings.img_coming.alt | escape }}"></a></div>
-        <div class="soon-index__coming__texts"><span class="recosemi" style="color:{{ section.settings.color_text_coming }}">{{ section.settings.coming}}</span><a class="dharma" href="{{ section.settings.url_coming }}" title="{{ section.settings.title_coming }}" style="color:{{ section.settings.color_text_coming }}">{{ section.settings.title_coming }}</a></div>{% for item in soon_col.products limit:1 %}
-          {% if item.metafields.drop.drop_month %}
+        <div class="soon-index__coming__texts"><span class="recosemi" style="color:{{ section.settings.color_text_coming }}">{{ section.settings.coming}}</span><a class="dharma" href="{{ section.settings.url_coming }}" title="{{ section.settings.title_coming }}" style="color:{{ section.settings.color_text_coming }}">{{ section.settings.title_coming }}</a></div>  {% if all_products[section.settings.cardimg_prod].metafields.drop.drop_month %}
+          {% assign drop_day = all_products[section.settings.cardimg_prod].metafields.drop.drop_day %}
+          {% assign drop_month = all_products[section.settings.cardimg_prod].metafields.drop.drop_month %}
+          {% assign drop_hour = all_products[section.settings.cardimg_prod].metafields.drop.drop_hour %}
         <div class="soon-index__coming__count no-mobile">
-          <div class="countdown" data-day="{{ item.metafields.drop.drop_day }}" data-month="{{ item.metafields.drop.drop_month }}" data-hour="{{ item.metafields.drop.drop_hour }}">
+          <div class="countdown" data-day="{{ drop_day }}" data-month="{{ drop_month }}" data-hour="{{ drop_hour }}">
             <ul class="countdown__hold">
               <li class="countdown__numbers"><span class="countdown__days">00</span><span class="countdown__hours">00</span><span class="countdown__mins">00</span><span class="countdown__secs">00</span></li>
               <li class="countdown__infos"><span class="infos__days">DAYS</span><span class="infos__hours">HOURS</span><span class="infos__mins">MINS</span><span class="infos__secs">SECS</span></li>
             </ul>
           </div>
         </div>{% endif %}
-        {% endfor %}
       </div>
     </div>
   </div>
@@ -49,6 +50,11 @@
                 "id": "color_text_coming",
                 "label": "Color Text",
                 "default": "#ffffff"
+            },
+            {
+                "id": "cardimg_prod",
+                "type": "product",
+                "label": "Product"
             }
         ],
         "presets": [

@@ -55,12 +55,10 @@ class Index {
                 $('.top-bar__close').click(function(){
                     $('.logo-main').css('top','2.55rem')
                 })
-                console.log('is top bar')
         } else {
             this.tl_istop = gsap.timeline( { scrollTrigger: { trigger: 'body', start: 'top 0', end: window.innerWidth * 0.15989, scrub: true } } )
                 .fromTo('.logo-main', { xPercent: 0, yPercent: 0, scale: 1 }, { duration: 3, xPercent: -45.2, yPercent: -70.6, scale: 0.0935, ease: 'none' })
                 .fromTo('.cape-hour', { opacity: 1 }, { duration: 1, opacity: 0, ease: 'none' }, 1.5)
-                console.log('isn"t top bar')
         }
     }
     

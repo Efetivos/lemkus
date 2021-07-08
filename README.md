@@ -1,6 +1,6 @@
-## Time: 192h00
-Data: 07:00  | 07.07  
-Daily: -3:00 
+## Time: 193h00
+Data: 08:00  | 07.07  
+Daily: -2:00 
   
 ![Screenshot](./cover.png) (https://github.com/Efetivos/lemkus)
 

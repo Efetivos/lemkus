@@ -16,10 +16,13 @@ section.soon-index.e-wvw
                     a(href="{{ section.settings.url_coming }}", title="{{ section.settings.title_coming }}", style="color:{{ section.settings.color_text_coming }}").dharma {{ section.settings.title_coming }}
 
 
-                | {% for item in soon_col.products limit:1 %}
-                |   {% if item.metafields.drop.drop_month %}
+                |   {% if all_products[section.settings.cardimg_prod].metafields.drop.drop_month %}
+                |   {% assign drop_day = all_products[section.settings.cardimg_prod].metafields.drop.drop_day %}
+                |   {% assign drop_month = all_products[section.settings.cardimg_prod].metafields.drop.drop_month %}
+                |   {% assign drop_hour = all_products[section.settings.cardimg_prod].metafields.drop.drop_hour %}
+                
                 .soon-index__coming__count.no-mobile
-                    .countdown(data-day="{{ item.metafields.drop.drop_day }}", data-month="{{ item.metafields.drop.drop_month }}", data-hour="{{ item.metafields.drop.drop_hour }}")
+                    .countdown(data-day="{{ drop_day }}", data-month="{{ drop_month }}", data-hour="{{ drop_hour }}")
                         ul.countdown__hold
                             li.countdown__numbers
                                 span.countdown__days 00
@@ -32,7 +35,6 @@ section.soon-index.e-wvw
                                 span.infos__mins MINS
                                 span.infos__secs SECS
                 | {% endif %}
-                | {% endfor %}
 
 
 
@@ -69,6 +71,11 @@ section.soon-index.e-wvw
                     "id": "color_text_coming",
                     "label": "Color Text",
                     "default": "#ffffff"
+                },
+                {
+                    "id": "cardimg_prod",
+                    "type": "product",
+                    "label": "Product"
                 }
             ],
             "presets": [
