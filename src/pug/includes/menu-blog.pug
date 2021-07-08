@@ -5,7 +5,22 @@
             span.hover(data-hover="BACK      BACK      BACK      BACK      BACK      BACK      ") BACK      BACK      BACK      BACK      BACK      BACK       
 
     .infinity.e-wvw.noselect
-        ul.menu-blog__hold.infinity__hold
+        ul.menu-blog__hold.infinity__hold.no-desk
+            li.menu-blog__each.infinity__each
+                a(href="{{ shop.url}}/blogs/{{ blog.handle }}", title="{{ blog.title }} tagged {{ tag | escape }}") 
+                    span.tag-name(class="{% if current_tags.first == blank %}tag-active{% endif %}") ALL 
+                span.tag-counter(class="{% if current_tags.first == blank %}tag-active{% endif %}") {{ blogs['news'].articles_count }}
+            |   {% for tag in blog.all_tags %}
+            |   {% assign count = 0 %} {% for article in blogs[blog.handle].articles %} {% if article.tags contains tag %} {% capture count %}{{ count | plus: 1 }}{% endcapture %} {% endif %} {% endfor %} 
+            
+            li.menu-blog__each.infinity__each
+                a(href="{{ shop.url}}/blogs/{{ blog.handle }}/tagged/{{ tag | handleize }}", title="{{ blog.title }} tagged {{ tag | escape }}")
+                    span.tag-name.dharma(class="{% if tag == current_tags.first %}tag-active{% endif %}") {{ tag }}
+                span.tag-counter(class="{% if tag == current_tags.first %}tag-active{% endif %}")  {{ count }}
+            |   {% endfor %}
+
+    
+        ul.menu-blog__hold.infinity__hold.no-mobile
             each list, index in['','','','','']
                 li.menu-blog__each.infinity__each
                     a(href="{{ shop.url}}/blogs/{{ blog.handle }}", title="{{ blog.title }} tagged {{ tag | escape }}") 
