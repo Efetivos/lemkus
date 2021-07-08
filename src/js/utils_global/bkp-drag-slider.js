@@ -48,7 +48,7 @@ export default class SliderDrag {
             this.ctn = this.el.querySelector('.header-laun__hold')
             this.travel = this.el.querySelector('.header-laun__colle__hold')
             this.drag_force = 0.915  
-            this.drag_move =  186
+            this.drag_move =  66
         }
         if(this.type == 'cross-sell') { 
             this.ctn = this.el.querySelector('.cross-sell')
@@ -75,6 +75,7 @@ export default class SliderDrag {
         this.min_drag = (this.travel.getBoundingClientRect().width - window.innerWidth - (window.innerWidth * 0.015) ) * -1
         this.width_drag = this.drag.line.getBoundingClientRect().width * this.drag_force
             
+        if(this.type == 'header-launch') {  this.min_drag = (this.travel.getBoundingClientRect().width - window.innerHeight ) * -1 }
         this.t1_drag = gsap.timeline({ paused: true })
         .to(this.travel, { duration: 100, xPercent: - (this.drag_move), ease: "none" }, 0)
 
@@ -122,6 +123,7 @@ export default class SliderDrag {
             that.wallk_btn = window.innerWidth * 0.85
             that.width_drag = that.drag.line.getBoundingClientRect().width
             this.min_drag = (this.travel.getBoundingClientRect().width - window.innerWidth - (window.innerWidth * 0.015) ) * -1
+            if(this.type == 'header-launch') {  this.min_drag = (this.travel.getBoundingClientRect().width - window.innerHeight ) * -1 }
             
         })
         

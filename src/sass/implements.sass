@@ -162,7 +162,11 @@ div#gf-controls-container
 
 .gf-filter-trigger, .gf-filter-selection
     @include mobile
+        align-items: flex-end
+        flex-direction: column
+        justify-content: space-between
         padding: 0
+        position: relative
 
 input.gf-controls-search-input
     background: none
@@ -185,6 +189,10 @@ button.gf-controls-search-button
 span.gf-summary
     font-size: 1.6rem
     display: flex
+    @include mobile
+        justify-content: flex-end
+        flex: auto
+        margin: 1rem 0 0 0
 
 
 .sort-by.limit-by.hidden-xs

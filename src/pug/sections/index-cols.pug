@@ -42,7 +42,7 @@
 
 section.cols_index.e-wvw.js-slider
     .cols_index__hold
-        ul.cols_index__items.js-slider__holder
+        ul.cols_index__items.js-slider__holder.trg-cursor
             | {% for block in section.blocks %}
             li.cols_index__each.hover-img(class!="{% if forloop.index <= 3 %} stagger-it {% endif %}")
                 .cols_index__img

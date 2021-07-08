@@ -183,6 +183,7 @@ class Menu {
         let isIOS = /iPad|iPhone|iPod/.test(navigator.platform) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
 
         if (isIOS && window.innerWidth < 980) {
+            $('html').addClass('is-crios')
             if (/CriOS/i.test(navigator.userAgent) && /iphone|ipod|ipad/i.test(navigator.userAgent)) {
                 return true;
             } else {

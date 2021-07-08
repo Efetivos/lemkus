@@ -43,7 +43,7 @@ class Cursor {
     //?  -------------------------- ON HOVER -------------------------- //
     onHovers() {
         let that = this
-        this.trg_drag = document.querySelectorAll('.js-slider__holder')
+        this.trg_drag = document.querySelectorAll('.trg-cursor')
         //? ----- hover expl
         $(this.trg_drag).hover(
             function () {
