@@ -20,6 +20,21 @@
   <link rel="preconnect" href="https://www.google-analytics.com/" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+  <script>
+  
+if (window.matchMedia('(prefers-color-scheme: dark)').media === 'not all') {
+    document.head.insertAdjacentHTML(
+        'beforeend',
+        '<link rel="icon" type="image/png" href="{{ "Favicon_White.svg" | asset_url }}">'
+    );
+} else {
+    document.head.insertAdjacentHTML(
+        'beforeend',
+        '<link rel="icon" type="image/png" href="{{ "Favicon_Black.svg" | asset_url }}">'
+    );
+}
+</script>
+  {% comment %}<link rel='icon' type='image/png' href='{{ "Favicon_Black.svg" | asset_url }}'> {% endcomment %}
   <script type="text/javascript" async src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=RXrvpv"></script>
   <style>
     @font-face{font-family: 'DharmaGothicE-Bold'; font-display: fallback; src: url('{{ "DharmaGothicE-Bold.eot" | asset_url }}') format('embedded-opentype'), url('{{ "DharmaGothicE-Bold.ttf" | asset_url }}') format('truetype'), url('{{ "DharmaGothicE-Bold.woff" | asset_url }}') format('woff'), url('{{ "DharmaGothicE-Bold.woff2" | asset_url }}') format('woff2'); font-weight: normal; font-style: normal;}
