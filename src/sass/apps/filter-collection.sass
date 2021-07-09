@@ -274,7 +274,7 @@ label.sort-by-toggle
     div#gf-controls-container
         border-bottom: 1px solid var(--dark)
         min-width: 100%
-        padding: 0 var(--gap) 0.4rem
+        padding: 0 var(--gap) 0.9rem
         position: relative
         z-index: 2
 
@@ -430,7 +430,7 @@ label.sort-by-toggle
 
     .gf-left #gf-tree .globo-selected-items-wrapper .globo-selected-items
         padding: 17px 14px 20px 14px !important
-        border-top: 1px solid var(--dark)
+        border-top: none
 
 
     a.checked
@@ -469,6 +469,49 @@ label.sort-by-toggle
 
     span.gf-summary > * 
         margin: 0 0.4rem 0 0
+
+
+
+
+
+    .selected-item span.gf-clear
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M11.414 10l6.293-6.293a1 1 0 10-1.414-1.414L10 8.586 3.707 2.293a1 1 0 00-1.414 1.414L8.586 10l-6.293 6.293a1 1 0 101.414 1.414L10 11.414l6.293 6.293A.998.998 0 0018 17a.999.999 0 00-.293-.707L11.414 10z' fill='%235C5F62'%3E%3C/path%3E%3C/svg%3E") !important
+
+
+
+
+
+
+
+//- =========================  IS SAFARI  ========================= -//
+//- =========================  IS SAFARI  ========================= -//
+@include mobile
+    .is-crios
+        .gf-actions
+            flex-direction: column
+
+
+        .gf-filter-selection
+            width: 100% !important
+
+
+        .gf-filter-selection, .gf-filter-trigger
+            flex: none
+            width: 100%
+            max-width: 100% !important
+
+
+        .gf-close-canvas
+
+
+        .gf-close-canvas svg
+            width: 10px
+
+
+        span.selected-item strong
+            padding: 2px 0 0 0
+
+
 
 
 //- =========================  SEARCH  ========================= -//
