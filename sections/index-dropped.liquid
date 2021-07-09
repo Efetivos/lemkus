@@ -2,7 +2,7 @@
 <section class="collect-index {% if section.settings.is_drag %}dropped-drag js-slider-section{% endif%} js-slider">
   <h1 class="collect-index__title dharma js-split">{{ section.settings.text_dropped }}</h1>
   <div class="collect-index__hold colle-cards {% if section.settings.is_drag %}js-slider-section__holder js-slider__holder trg-cursor{% endif%}">
-    {% for item in dropped_col.products limit: 6 %}
+    {% for item in dropped_col.products limit: 5 %}
       {% render 'product-card' prod: item %}
     {% endfor %}
   </div>
