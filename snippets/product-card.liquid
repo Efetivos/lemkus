@@ -21,12 +21,8 @@
       <div class="sizes">
           {% assign sizes = '' %}
           {% for variant in prod.variants %}
-          {% assign sizes = sizes | append: variant.options[0] | append: '_' %}
-          {% endfor %}
-          {% assign sizesArr = sizes | split: '_' | uniq %}
-          {% for size in sizesArr %}
-          <span class="recosemi">{{ size }}</span>
-          {% endfor %}
+              {% assign var_url = variant.url %}
+              {% assign sizes = sizes | append: variant.options[0] | append: '_' %}<a class="{% unless variant.available %}disabled{% endunless %} link-var" href="{{ variant.url }}"><span class="recosemi">{{ variant.title  }}</span></a>  {% endfor %}
       </div>
     </div>
     <div class="prod-card__infos {% if prod.compare_at_price_max > prod.price %}card-sale{% endif %}">

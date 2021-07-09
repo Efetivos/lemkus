@@ -43,14 +43,20 @@
             .sizes
                 |   {% assign sizes = '' %}
                 |   {% for variant in prod.variants %}
-                |   {% assign sizes = sizes | append: variant.options[0] | append: '_' %}
+                |       {% assign var_url = variant.url %}
+                |       {% assign sizes = sizes | append: variant.options[0] | append: '_' %}
+                
+                a(href="{{ variant.url }}" class="{% unless variant.available %}disabled{% endunless %}").link-var
+                    span.recosemi {{ variant.title  }}
                 |   {% endfor %}
 
-                |   {% assign sizesArr = sizes | split: '_' | uniq %}
+                //-|   {% assign sizesArr = sizes | split: '_' | uniq %}
 
-                |   {% for size in sizesArr %}
-                |   <span class="recosemi">{{ size }}</span>
-                |   {% endfor %}
+                //-|   {% for size in sizesArr %}
+                //-a(href="{{ var_url }}").link-var
+                //-    span.recosemi {{ size }}
+                //-//-|  <span class="recosemi">{{ size }}</span>
+                //-|   {% endfor %}
             
 
 
@@ -75,7 +81,6 @@
             
             //- =========================  NOTIFY  ========================= -//
             //- =========================  NOTIFY  ========================= -//
-            
             |   {% if prod.metafields.drop.drop_month %}
             
             //-a(href="#" class="BIS_trigger" data-product-data="{{ prod | json | escape }}").prod-card__notify.btn-hover NOTIFY ME
