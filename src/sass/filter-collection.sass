@@ -1,0 +1,467 @@
+section.products
+    border-bottom: 1px solid var(--dark)
+    display: flex
+    justify-content: space-between
+    @include desk
+        overflow: hidden
+
+
+div#gf-products
+    display: grid !important
+
+
+.gf-left #gf-tree
+    width: 33.3vw
+    margin: 0
+    @include desk
+        min-width: 33.3vw
+        will-change: transform
+
+
+.gf-left #gf-tree+#gf-grid
+    border-left: 1px solid var(--dark)
+    margin: 0
+    padding: 0
+    width: 66.5vw
+    will-change: transform
+    
+
+
+section.products
+    justify-content: space-between
+    @include desk
+        border-top: 1px solid var(--dark)
+
+
+#gf-grid .colle-cards
+    grid-template-columns: repeat(2,33.4vw)
+
+
+.gf-filter-contents
+    padding: 0 2.9rem
+
+
+.gf-block-title h3
+    display: flex
+    justify-content: space-between
+    position: relative
+
+
+span.gf-Checkbox
+    border-radius: 50%
+
+
+.checked .gf-Checkbox
+    background-size: 105%
+
+
+.gf-scroll.gf-block-scroll::-webkit-scrollbar-thumb, body>#gf-tree .gf-filter-contents::-webkit-scrollbar-thumb
+    background: var(--color)
+
+
+.globo-selected-items-wrapper
+    padding: 1rem 2.9rem
+
+
+.gf-block-content.globo-selected-items
+    @include desk
+        display: flex
+        flex-wrap: wrap
+
+
+.gf-block-title.hidden-xs h3 span
+    font-family: var(--dharma)
+    font-size: 4rem
+    padding: 2rem 0
+
+
+a.gf-refine-toggle.hidden-xs
+    font-family: var(--recosemi)
+    font-size: 1.6rem
+    margin: 1rem 0 0
+    text-decoration: underline
+    text-transform: uppercase
+
+
+#gf-tree .gf-label
+    font-size: 1.1rem
+
+
+.gf-block-title span
+    font-size: 1.6rem
+    font-family: var(--recosemi)
+
+
+.gf-option-block
+    border-bottom: 1px solid var(--dark)
+
+
+.gf-left #gf-tree .globo-selected-items-wrapper .globo-selected-items
+    border-bottom: 1px solid var(--dark)
+
+
+span.gf-count
+    font-size: 1.2rem
+
+
+
+.selected-item.gf-option-label
+    @include desk
+        margin: 0.5rem 0.7rem 0 0
+
+#gf-tree .selected-item.gf-option-label
+    width: auto
+
+.selected-item.gf-option-label span
+    font-size: 1.1rem
+    color: var(--soft)
+
+
+#gf-tree .selected-item.gf-option-label
+    background: var(--dark)
+    border-radius: 50px
+
+
+.selected-item.gf-option-label a
+    padding: 0.7rem 1.5rem
+
+
+.gf-filter-contents span.gf-label
+    font-size: 1.4rem !important
+
+.selected-item span.gf-clear
+    @include desk
+        margin: 0 0 0 1.7rem
+
+span.selected-item strong
+    display: flex
+
+#gf-tree a
+    font-size: 1.4rem
+
+div#gf-controls-container
+    margin: 0
+    padding: 0
+    padding: 2rem var(--gap) 0
+    @include mobile
+        margin: -1rem 0 0 0
+        padding: 0 var(--gap) 0
+
+
+.gf-actions
+    margin: 0
+    padding: 0
+
+
+
+
+.theme-store-id-380.spf-layout-theme #gf-products, .theme-store-id-679.spf-layout-theme #gf-products, .theme-store-id-796.spf-layout-theme #gf-products
+    margin: 0
+
+
+
+.gf-filter-trigger, .gf-filter-selection
+    @include mobile
+        align-items: flex-end
+        flex-direction: column
+        justify-content: space-between
+        padding: 0
+        position: relative
+
+input.gf-controls-search-input
+    background: none
+    border: none
+    border-bottom: 1px solid var(--dark)
+    font-family: var(--reco)
+    font-size: 1.4rem
+
+
+button.gf-controls-search-button
+    margin: 0
+
+
+
+button.gf-controls-search-button
+    margin: 0 0 0 -0.8rem
+
+
+
+span.gf-summary
+    font-size: 1.6rem
+    display: flex
+    @include mobile
+        justify-content: flex-end
+        flex: auto
+        margin: 1rem 0 0 0
+
+
+.sort-by.limit-by.hidden-xs
+    font-size: 1.6rem
+    background: transparent
+
+
+select#setLimit
+    font-size: 1.6rem
+    font-family: var(--reco)
+
+
+.sort-by
+    font-size: 1.6rem
+    background: transparent
+
+
+label.sort-by-toggle
+    font-size: 1.6rem
+
+
+
+@media only screen and (max-width:1024px)
+    #gf-grid .colle-cards
+        grid-template-columns: 1fr 1fr
+    
+
+    div#gf-products
+        margin: 1.9rem 0 0 -1px !important
+        width: calc(100vw + 3px)!important
+    
+
+    main.main-collection
+        overflow: hidden
+    
+
+
+@media only screen and (min-width: 580px) and (max-width: 1024px)
+    #gf-grid .colle-cards
+        grid-template-columns: repeat(2,33.4vw) 
+    
+    .theme-store-id-380.spf-layout-theme #gf-products, .theme-store-id-679.spf-layout-theme #gf-products, .theme-store-id-796.spf-layout-theme #gf-products
+        margin-left: 0px !important
+    
+
+@include desk
+
+    .gf-filter-selection
+        justify-content: space-between
+        padding: 0
+
+
+    .gf-actions
+        display: flex
+        justify-content: space-between
+
+    .toggle-filter
+        justify-self: flex-start
+
+
+    .gf-filter-selection > *
+        margin: 0 0 0 5.3rem
+
+    .gf-filter-selection, .gf-filter-trigger, span.gf-summary
+        padding: 0
+        margin: 0
+
+    span.gf-summary > *
+        padding: 0 0.5rem
+
+
+    form.gf-controls-search-form
+        //border-bottom: 1px solid
+
+
+    .loaded-filter
+        border-top: none !important
+
+    div#gf-controls-container
+        border-bottom: 1px solid var(--dark)
+        min-width: 100%
+        padding: 0 var(--gap) 0.4rem
+        position: relative
+        z-index: 2
+
+
+
+    //______ is filter
+    .is-filter #gf-grid
+        width: 100vw !important
+        transform: translateX(-33.6vw) !important
+
+    .is-filter #gf-grid .colle-cards
+        grid-template-columns: repeat(3,33.7vw) !important
+
+
+    .is-filter #gf-tree
+        //transform: translateX(-33.3vw) !important
+
+
+
+    .flipping main.main-collection
+        min-height: 125vh
+        position: relative
+
+
+    .flipping #gf_pagination_wrap
+        opacity: 0
+
+    
+    .flipping 
+        .prod-card__each:nth-child(1), .prod-card__each:nth-child(2)
+            border-top: 1px solid transparent !important
+
+
+    .prod-card__each 
+        background: var(--soft)
+        will-change: transform
+
+@include mobile
+    a.clear-refinements, button.clear-refinements.visible-xs
+        background: transparent !important
+        color: var(--dark) !important
+        font-family: var(--recosemi)
+        text-decoration: underline !important
+        border: none !important
+
+
+    #gf-controls-container .globo-selected-items-wrapper .selected-item>a, .gf-top_one #gf-tree .globo-selected-items-wrapper .selected-item>a
+        background: transparent
+        border: none
+
+
+    #gf-controls-container .globo-selected-items-wrapper .globo-selected-items span.selected-item strong, .gf-top_one #gf-tree .globo-selected-items-wrapper .globo-selected-items span.selected-item strong
+        font-size: 14px
+
+
+    li.selected-item.gf-option-label a:not(a.clear-refinements)
+        background: var(--dark) !important
+        border-radius: 50px !important
+        padding: 1px 15px !important
+        display: flex !important
+        align-items: center !important
+        justify-content: center !important
+
+
+    span.selected-item strong
+        color: var(--soft) !important
+
+
+    .selected-item a.clear-refinements
+        background: transparent !important
+
+
+    span.selected-item
+        margin: 0 9px 0 0
+
+
+    .selected-item.gf-option-label span strong
+        text-transform: uppercase !important
+
+
+    .gf-filter-selection, .gf-filter-trigger
+        align-items: flex-start
+
+
+    .gf-refine-toggle-mobile, .gf-filter-selection .sort-by
+        border-color: var(--dark)
+
+
+    i.fa.fa-tasks
+        display: none
+
+
+    h3.gf-refine-toggle-mobile span, span#gf-mobile-refine-toggle
+        font-family: var(--recosemi)
+
+
+    .selected-item span.gf-clear
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M11.414 10l6.293-6.293a1 1 0 10-1.414-1.414L10 8.586 3.707 2.293a1 1 0 00-1.414 1.414L8.586 10l-6.293 6.293a1 1 0 101.414 1.414L10 11.414l6.293 6.293A.998.998 0 0018 17a.999.999 0 00-.293-.707L11.414 10z' fill='%FFFFFF'%3E%3C/path%3E%3C/svg%3E")
+
+
+    body>#gf-tree .gf-filter-header>div.gf-filter-heading
+        font-family: var(--recosemi)
+
+
+    span.gf-close-canvas
+        border: 1px solid var(--dark)
+        border-radius: 50%
+        max-width: 20px
+        display: flex
+        height: 20px
+        padding: 4px
+        justify-content: center
+        align-items: center
+        top: auto
+
+
+    body>#gf-tree .gf-filter-footer, body>#gf-tree .gf-filter-header
+        display: flex
+        justify-content: center
+        align-items: center
+        padding: 15px 15px
+
+
+    div#gf-tree
+        background: var(--soft)
+
+
+    body>#gf-tree .globo-selected-items .selected-item>a
+        border: none !important
+        justify-content: center
+        align-items: center
+        border-radius: 50px
+        background: var(--dark)
+        padding: 3px 11px
+
+
+    #gf-tree .selected-item.gf-option-label
+        margin: 0 !important
+        background: none
+
+
+    #gf-tree .selected-item.gf-option-label
+
+
+    body>#gf-tree .globo-selected-items .selected-item span
+        font-size: 13px
+
+
+    body>#gf-tree .globo-selected-items-wrapper
+        width: 100%
+        padding: 0
+
+
+    .gf-left #gf-tree .globo-selected-items-wrapper .globo-selected-items
+        padding: 17px 14px 20px 14px !important
+        border-top: 1px solid var(--dark)
+
+
+    a.checked
+
+
+    #gf-tree .gf-label
+        font-family: var(--reco)
+
+
+    span.gf-count
+        font-family: var(--reco)
+
+
+    body>#gf-tree .gf-filter-footer button
+        font-family: var(--recosemi)
+        font-size: 14px
+
+
+    body>#gf-tree .gf-option-block, body>#gf-tree .globo-selected-items-wrapper>.globo-selected-items
+        border-bottom: 1px solid var(--dark)
+
+
+    #gf-tree a
+        font-family: var(--recosemi)
+
+
+    #gf-controls-container .globo-selected-items-wrapper
+        padding: 0
+
+    body>#gf-tree .gf-filter-header
+        border-bottom: 1px solid var(--dark)
+
+    body>#gf-tree .gf-filter-footer, body>#gf-tree .gf-filter-header
+        border-top: 1px solid var(--dark)

@@ -7,7 +7,7 @@
   <meta name="description" content="{{ page_description | escape }}">
   <link rel="canonical" href="{{ canonical_url }}">
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-  {{ content_for_header }} <!-- Header hook for plugins -->
+  {% include 'globo.filter.script' %}{{ content_for_header }} <!-- Header hook for plugins -->
   <link rel="preload" href=" {{ 'DharmaGothicE-Bold.woff' | asset_url }} " as="font" type="font/woff" crossorigin>
   <link rel="preload" href=" {{ 'DharmaGothicE-ExBold.woff' | asset_url }} " as="font" type="font/woff" crossorigin>
   <link rel="preload" href="  {{ 'OpenSans-Bold.woff' | asset_url }} " as="font" type="font/woff" crossorigin>
@@ -72,24 +72,26 @@
         replace_anchor: false
       },
       modal: {
-      headline: "{product_name}",
-      body_content: "Pick a size and add your email address below to be notified as soon as this item becomes available."+"<p class=‘size’>Size:</p>",
-      email_field_label: "Email",
-      button_label: "Notify me when available",
-      subscription_success_label: "You’re in! We’ll let you know when it’s back.",
-      footer_content: "We’ll notify you when this product is in stock. We don’t share your address with anybody else.",
-    additional_styles: "@import url(’https://cdn.shopify.com/s/files/1/0538/9280/8895/t/3/assets/DharmaGothicE-ExBold.woff?v=3374710654463336380');@import url(’https://cdn.shopify.com/s/files/1/0538/9280/8895/t/3/assets/RecoletaAlt-SemiBold.woff?v=10529567935536612162');@import url(’https://cdn.shopify.com/s/files/1/0538/9280/8895/t/3/assets/RecoletaAlt-Regular.woff?v=4854757421062460364');.btn{color:#191919;width:19.5rem;text-transform:uppercase;align-items:center;background:#fec333;border-radius:50px;border:1px solid #191919;cursor:pointer;display:flex;font-family:RecoletaAlt-SemiBold;font-size:1.1rem;justify-content:center;overflow:hidden;position:relative}.btn::after{opacity:0;position:absolute;top:1rem;left:0;width:200%;height:100%;content:‘Notify me when available  Notify me when available   ’;background:#fec333;animation:marquee 10s linear infinite;will-change:transform}.btn:hover::after{opacity:1}@keyframes marquee{0%{transform:translate3d(0,0,0)}100%{transform:translate3d(-25%,0,0)}}.control-group{display:flex;justify-content:center}.small-print{padding-top:16px}.small-print,p{font-family:RecoletaAlt-Regular;font-size:1.2rem;font-weight:400;font-stretch:normal;font-style:normal;line-height:1.38;letter-spacing:normal;text-align:center}#container{background:#fdfbf5;border-radius:0}.form-control{border:0}.form-control,.input-lg{padding:8px 0;border-bottom:1px solid #191919;color:#191919;background-color:transparent;background-image:none;border-radius:0;box-shadow:none;transition:none;font-family:RecoletaAlt-Regular;font-size:1.2rem;outline:0}.modal-title{font-family:DharmaGothicE-ExBold;font-size:4rem;font-weight:700;font-stretch:normal;font-style:normal;line-height:.9;letter-spacing:normal;text-align:center;color:#191919;text-transform:uppercase;margin-top:28px}.alert{font-family:RecoletaAlt-Regular;font-size:1rem}.size{margin-block-end:0;text-align:left}",
-      background_color: "#fff",
-      text_color: "#222",
-      button_text_color: "#fff",
-      button_background_color: "#439FDB",
-      close_button_color: "#ccc",
-      error_background_color: "#FCD6D7",
-      error_text_color: "#C72E2F",
-      success_background_color: "#D3EFCD",
-      success_text_color: "#1B9500"
+        headline: "{product_name}",
+        body_content: "Pick a size and add your email address below to be notified as soon as this item becomes available."+"<p class=‘size’>Size:</p>",
+        email_field_label: "Email",
+        button_label: "Notify me when available",
+        subscription_success_label: "You’re in! We’ll let you know when it’s back.",
+        footer_content: "We’ll notify you when this product is in stock. We don’t share your address with anybody else.",
+        additional_styles: "@import url(’https://cdn.shopify.com/s/files/1/0538/9280/8895/t/3/assets/DharmaGothicE-ExBold.woff?v=3374710654463336380');@import url(’https://cdn.shopify.com/s/files/1/0538/9280/8895/t/3/assets/RecoletaAlt-SemiBold.woff?v=10529567935536612162');@import url(’https://cdn.shopify.com/s/files/1/0538/9280/8895/t/3/assets/RecoletaAlt-Regular.woff?v=4854757421062460364');.btn{color:#191919;width:19.5rem;text-transform:uppercase;align-items:center;background:#fec333;border-radius:50px;border:1px solid #191919;cursor:pointer;display:flex;font-family:RecoletaAlt-SemiBold;font-size:1.1rem;justify-content:center;overflow:hidden;position:relative}.btn::after{opacity:0;position:absolute;top:1rem;left:0;width:200%;height:100%;content:‘Notify me when available  Notify me when available   ’;background:#fec333;animation:marquee 10s linear infinite;will-change:transform}.btn:hover::after{opacity:1}@keyframes marquee{0%{transform:translate3d(0,0,0)}100%{transform:translate3d(-25%,0,0)}}.control-group{display:flex;justify-content:center}.small-print{padding-top:16px}.small-print,p{font-family:RecoletaAlt-Regular;font-size:1.2rem;font-weight:400;font-stretch:normal;font-style:normal;line-height:1.38;letter-spacing:normal;text-align:center}#container{background:#fdfbf5;border-radius:0}.form-control{border:0}.form-control,.input-lg{padding:8px 0;border-bottom:1px solid #191919;color:#191919;background-color:transparent;background-image:none;border-radius:0;box-shadow:none;transition:none;font-family:RecoletaAlt-Regular;font-size:1.2rem;outline:0}.modal-title{font-family:DharmaGothicE-ExBold;font-size:4rem;font-weight:700;font-stretch:normal;font-style:normal;line-height:.9;letter-spacing:normal;text-align:center;color:#191919;text-transform:uppercase;margin-top:28px}.alert{font-family:RecoletaAlt-Regular;font-size:1rem}.size{margin-block-end:0;text-align:left}",
+        background_color: "#fff",
+        text_color: "#222",
+        button_text_color: "#fff",
+        button_background_color: "#439FDB",
+        close_button_color: "#ccc",
+        error_background_color: "#FCD6D7",
+        error_text_color: "#C72E2F",
+        success_background_color: "#D3EFCD",
+        success_text_color: "#1B9500"
       }
     });
   </script>
-</body>
+	{% include 'globo.filter.action' %}
+  {% include 'swymSnippet' %}
+	</body>
 </html>
