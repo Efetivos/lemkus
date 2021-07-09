@@ -250,7 +250,6 @@ button.js-qty-btn.disabled
 section.cart-colle
     margin: 3.3rem 0 0
     @include desk
-        border-right: 1px solid var(--dark)
         margin: 0
         padding: 1.3rem 0 0
 
@@ -308,6 +307,7 @@ section.cart-colle
     .cart-colle__hold.mini-card
         margin: -1px
         @include mobile
+            margin: -1px 0 0 -1px !important
             height: auto
             padding: 0 0 5rem 0
 
@@ -383,7 +383,9 @@ section.cart-colle
 
 .minicart .page-cart__items
     @include desk
+        z-index: 1
         width: 60.1rem
+        border-left: 1px solid var(--dark)
 
 .minicart div#shopify-section-cart-collection
     @include desk
@@ -419,6 +421,13 @@ section.cart-colle
     @include desk
         width: 24rem
 
+.blog button.btn-checkout
+    color: var(--soft)
+    border: 1px solid var(--soft)
+
+
+.blog button.btn-checkout span
+    color: var(--soft)
 
 .minicart form.cart
     @include desk

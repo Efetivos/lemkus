@@ -15,11 +15,15 @@
     left: 0
     position: fixed
     top: 0
-    z-index: 3
+    z-index: 8
     width: 100vw
     @include desk
         height: 5rem
 
+
+.index .bg-fixed-els
+    @include desk
+        z-index: 3
 
 //- =========================  LOGO MAIN  ========================= -//
 //- =========================  LOGO MAIN  ========================= -//
@@ -28,7 +32,7 @@ a.logo-main
     position: fixed
     top: 20px
     width: 100px
-    z-index: 7
+    z-index: 9
     @include desk
         top: 1.8rem
         
@@ -40,6 +44,7 @@ a.logo-main
 
 .index  a.logo-main
     @include desk
+        z-index: 7
         top: 6.3rem
         width: 131.7rem
 

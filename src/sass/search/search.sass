@@ -10,7 +10,14 @@ header.header-search
     @include desk
         padding: 8.4rem 0 2.7rem
 
+.search a.link-search.trg-search.aria-page
+    @include mobile
+        border-radius: 50px
+        padding: 4px 8px
 
+.search .menu-search-bag
+    @include mobile
+        top: 17px
 
 
 
@@ -30,6 +37,8 @@ header.header-search
     width: 100%
     @include desk
         margin: 2.1rem 0 0
+    @include mobile
+        font-size: 15px
 
 
 
@@ -38,7 +47,7 @@ header.header-search
     background: transparent
     border: none
     font-family: var(--reco)
-    font-size: 1.2rem
+    font-size: 15px
     line-height: 2.3rem
     padding: 0 3.1rem
     width: 100%
