@@ -11,7 +11,9 @@
         display: block
         left: 0
         position: fixed
+        pointer-events: none
         top: 5rem
+        overflow: hidden
         //opacity: 0
         //transform: translateY(-114%)
         //transition: transform .8s cubic-bezier(0, 0.79, 0.2, 1)
@@ -97,28 +99,30 @@
     
 
 .menu-dd__fader
-    background: rgba(0, 0, 0, .75)
-    height: 100vh
-    left: 0
-    opacity: 0
-    pointer-events: none
-    position: fixed
-    top: 0
-    transition: opacity .4s ease-out
-    visibility: hidden
-    width: 100vw
-    z-index: 2
+    @include desk
+        background: rgba(0, 0, 0, .75)
+        height: 100vh
+        left: 0
+        pointer-events: none
+        position: fixed
+        top: 0
+        width: 100vw
+        z-index: 2
 
+
+.is-dropd
+    overflow: hidden !important
 
 .dd-active
     transform: translateY(0%)
     z-index: 9
     opacity: 1
+    pointer-events: auto
+
+
 
 .is-dropd .menu-dd__fader
-    opacity: 1
     pointer-events: auto
-    visibility: visible
 
 
 .trg-dd-active button

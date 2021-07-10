@@ -1,7 +1,8 @@
 ## Time: 201h30
-Data: 23:45  | 07.08  
+Data: 02:00  | 07.09  
 Daily: -0:00 
   
+Extra Hours: + 3  
 ![Screenshot](./cover.png) (https://github.com/Efetivos/lemkus)
 
 
