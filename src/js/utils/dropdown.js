@@ -15,14 +15,126 @@ class Dropdown {
         this.body = this.qs('body')
         this.dd = {
             trg: this.qsa('.trg-dd'),
-            els: this.qsa('.menu-dd')
+            els: this.qsa('.menu-dd'),
+            els_links: this.qsa('.menu-dd__links'),
+            els_featured: this.qsa('.menu-dd__featured'),
         }
 
         if ($(window).width() > 1024) {
-            this.onHover()
+            //this.onHover()
+            this.setters()
+            this.onClick()
         }
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //? - =========================  SETTERS  ========================= -//
+    //? - =========================  SETTERS  ========================= -//
+    setters() {
+        gsap.set(this.dd.els, { webkitClipPath: `inset(0% 0% 100% 0%)`, clipPath: `inset(0% 0% 100% 0%)` })
+        gsap.set([this.dd.els_links, this.dd.els_featured], { opacity: 0, yPercent: 30 })
+    }
+
+
+
+
+
+
+
+
+
+
+    //? - =========================  ACTIVE  ========================= -//
+    //? - =========================  ACTIVE  ========================= -//
+    activeDD(el, trg) {
+        let clip = { y: 100 },
+            $links = el.find('.menu-dd__links'),
+            $featured = el.find('.menu-dd__featured')
+
+        trg.addClass('trg-dd-active')
+        el.addClass('dd-active')
+        $(this.body).addClass('is-dropd')
+        gsap.set(el, { opacity: 1 })
+        gsap.to(clip, {
+            duration: 1, y: 0, ease: 'expo.inOut', overwrite: 'true', onUpdate: () => {
+                gsap.set(el, { webkitClipPath: `inset(0% 0% ${clip.y}% 0%)`, clipPath: `inset(0% 0% ${clip.y}% 0%)` })
+            }
+        })
+        gsap.fromTo([$links, $featured], { yPercent: 50 }, { delay: .3, duration: 1, yPercent: 0, opacity: 1, ease: 'expo.out', stagger: .16, overwrite: 'true' })
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //? - ========================= DESACTIVE  ========================= -//
+    //? - ========================= DESACTIVE  ========================= -//
+    desactiveDD(el, trg) {
+        let clip = { y: 0 },
+            $links = el.find('.menu-dd__links'),
+            $featured = el.find('.menu-dd__featured')
+
+        el.removeClass('dd-active')
+        
+        trg.removeClass('trg-dd-active')
+        //$(this.body).removeClass('is-dropd')
+
+        gsap.to(el, { duration: .8, opacity: .5, ease: 'none', overwrite: 'true' })
+        gsap.to(clip, {
+            duration: .8, y: 100, ease: 'expo.inOut', overwrite: 'true', onUpdate: () => {
+                gsap.set(el, { webkitClipPath: `inset(0% 0% ${clip.y}% 0%)`, clipPath: `inset(0% 0% ${clip.y}% 0%)` })
+            }
+        })
+        gsap.to([$links, $featured], { duration: .8, yPercent: 20, ease: 'expo.inOut', overwrite: 'true' })
+
+
+    }
+
+
+
+
+    //? - =========================  CLICK  ========================= -//
+    //? - =========================  CLICK  ========================= -//
+    onClick() {
+        this.dd_active = null
+        let that = this
+        $(this.dd.trg).click(function () {
+            let thisIndex = $(that.dd.trg).index(this)
+            if ($(this).hasClass('trg-dd-active')) {
+                that.desactiveDD( $(that.dd.els).eq(thisIndex), $(this) )
+            }
+            else if ($(that.body).hasClass('is-dropd')) {
+                gsap.delayedCall(.1, () => that.activeDD( $(that.dd.els).eq(thisIndex) , $(this) ))
+                that.activeDD( $(that.dd.els).eq(thisIndex), $(this) )
+            } else {
+                that.activeDD( $(that.dd.els).eq(thisIndex), $(this) )
+
+            }
+        });
+
+    }
 
 
 
@@ -50,10 +162,10 @@ class Dropdown {
                 $(that.body).addClass('is-dropd')
             }, function () {
                 let thisIndex = $(that.dd.trg).index(this)
-                
-                
+
+
                 setTimeout(function () {
-                    if (!$(that.body).hasClass(''+that.trg_active)) {
+                    if (!$(that.body).hasClass('' + that.trg_active)) {
                         //console.log("that.trg_active: " + that.trg_active);
                         //console.log("that.dd_active: " + that.dd_active);
                         $(that.dd.els).eq(thisIndex).removeClass('dd-active')

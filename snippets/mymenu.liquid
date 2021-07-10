@@ -11,10 +11,18 @@
 <nav class="main-menu no-mobile el-fix">
   <ul>
     <li><a class="link-launches item" href="{{ shop.url }}/pages/launches">LAUNCHES</a></li>
-    <li class="trg-dd" data-trgdd="is-sneakers"><a class="link-sneakers e-upper item" href="{{ shop.url }}/collections/sneakers">sneakers</a></li>
-    <li class="trg-dd" data-trgdd="is-apparel"><a class="link-apparel e-upper item" href="{{ shop.url }}/collections/apparel">apparel</a></li>
-    <li class="trg-dd" data-trgdd="is-kids"><a class="link-kids e-upper item" href="{{ shop.url }}/collections/kids">kids</a></li>
-    <li class="trg-dd" data-trgdd="is-accessories"><a class="link-accessories e-upper item" href="{{ shop.url }}/collections/accessories">accessories</a></li>  {% for link in linklists.main-menu.links %}
+    <li class="trg-dd" data-trgdd="is-sneakers">
+      <button class="link-sneakers e-upper item">sneakers</button>
+    </li>
+    <li class="trg-dd" data-trgdd="is-apparel">
+      <button class="link-apparel e-upper item">apparel</button>
+    </li>
+    <li class="trg-dd" data-trgdd="is-kids">
+      <button class="link-kids e-upper item">kids</button>
+    </li>
+    <li class="trg-dd" data-trgdd="is-accessories">
+      <button class="link-accessories e-upper item">accessories</button>
+    </li>  {% for link in linklists.main-menu.links %}
     <li><a class="link-{{ link.title | downcase }} item" href="{{ link.url }}">{{ link.title }}</a></li>  {% endfor %}
   </ul>
 </nav>

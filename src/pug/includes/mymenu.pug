@@ -50,7 +50,8 @@ nav.main-menu.no-mobile.el-fix
 
         each list, index in['sneakers','apparel','kids','accessories']
             li(data-trgdd="is-"+list).trg-dd
-                a(href= "{{ shop.url }}/collections/"+list, class="link-"+list).e-upper.item=list
+                //-a(href= "{{ shop.url }}/collections/"+list, class="link-"+list).e-upper.item=list
+                button(class="link-"+list).e-upper.item=list
         |   {% for link in linklists.main-menu.links %}
         li
             a(href= "{{ link.url }}", class="link-{{ link.title | downcase }}").item {{ link.title }}

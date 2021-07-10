@@ -12,9 +12,9 @@
         left: 0
         position: fixed
         top: 5rem
-        opacity: 0
-        transform: translateY(-114%)
-        transition: transform .8s cubic-bezier(0, 0.79, 0.2, 1)
+        //opacity: 0
+        //transform: translateY(-114%)
+        //transition: transform .8s cubic-bezier(0, 0.79, 0.2, 1)
         width: 100vw
         z-index: 8
     
@@ -34,6 +34,7 @@
     @include serif
     display: flex
     gap: 9.9rem
+    will-change: transform, opacity
 
 .menu-dd__links  ul
     margin: 2.3rem 0 0
@@ -53,6 +54,7 @@
 .menu-dd__featured
     width: 57.5rem
     position: relative
+    will-change: transform, opacity
 
 
 .menu-dd__featured__hold
@@ -110,10 +112,15 @@
 
 .dd-active
     transform: translateY(0%)
-    z-index: 7
+    z-index: 9
     opacity: 1
 
 .is-dropd .menu-dd__fader
     opacity: 1
     pointer-events: auto
     visibility: visible
+
+
+.trg-dd-active button
+    background: var(--dark) !important
+    color: var(--soft) !important
