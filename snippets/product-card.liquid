@@ -18,7 +18,7 @@
       <div class="prod-card__img__logo">
            {% for collection in prod.collections %}
               {% assign col_title = collection.title | downcase %}
-              {% if vendor == col_title  %}<img src="{{  collections[collection.handle].image | img_url: '200x'}}" alt="{{ vendor }} {{ col_title }}">      {% endif %}
+              {% if vendor == col_title  %}<img src="{{  collection.image | img_url: '200x'}}" alt="{{ vendor }} {{ col_title }}">      {% endif %}
           {% endfor %}
       </div>  {% if prod.metafields.drop.drop_month %}
       <div class="prod-card__img__date"><span>{{ prod.metafields.drop.drop_day }} {{ prod.metafields.drop.drop_month }}</span></div>  {% elsif prod.compare_at_price_max > prod.price and has_stock > 0 %}

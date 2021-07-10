@@ -30,7 +30,7 @@
                 |   {% for collection in prod.collections %}
                 |       {% assign col_title = collection.title | downcase %}
                 |       {% if vendor == col_title  %}
-                img(src="{{  collections[collection.handle].image | img_url: '200x'}}", alt="{{ vendor }} {{ col_title }}")
+                img(src="{{  collection.image | img_url: '200x'}}", alt="{{ vendor }} {{ col_title }}")
                 |       {% endif %}
                 |   {% endfor %}
             
