@@ -15,6 +15,8 @@
 |   {% endfor %}
 |   {% else %}
 |   {% endif %}
+|   {% assign vendor = prod.vendor | downcase  %}
+
 .prod-card__each(class!="{% if prod.metafields.drop.drop_month %}card-drop{% elsif prod.variants.size > 1 %}card-variant{% endif %}") 
     .prod-card__hold
         .prod-card__imgs
@@ -24,7 +26,14 @@
                     li.prod-card__img__each 
                         img(src="{{  image.src | img_url: 'master' }}" alt="{{ image.src | escape }}").img-load
                     |   {% endfor %}
-            .prod-card__img__logo !{logoBrand}
+            .prod-card__img__logo 
+                |   {% for collection in prod.collections %}
+                |       {% assign col_title = collection.title | downcase %}
+                |       {% if vendor == col_title  %}
+                img(src="{{  collections[collection.handle].image | img_url: '200x'}}", alt="{{ vendor }} {{ col_title }}")
+                |       {% endif %}
+                |   {% endfor %}
+            
             
             //- =========================  DATE OR DISCOUNT
             |   {% if prod.metafields.drop.drop_month %}

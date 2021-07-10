@@ -1,3 +1,4 @@
+
 |   {% unless template == 'index' or template == 'cart' or template == 'list-collections' %}
 nav.breadcrumbs.breadcrumbs-prod(role="navigation" aria-label="breadcrumbs").no-mobile.e-flex
     a(href="{{ shop.url }}") Home   |   
@@ -12,3 +13,17 @@ nav.breadcrumbs.breadcrumbs-prod(role="navigation" aria-label="breadcrumbs").no-
 //- =========================  COLLECTIONS  ========================= -//
 //- =========================  COLLECTIONS  ========================= -//
     |   {% section 'brands-list' %}
+
+    |   {% for collection in collections %}
+    |       {% if collection.image %}
+    |         {{ collection.image | img_url: '450x450' | img_tag: collection.image.alt }}
+    |       {% else %}
+    //-|         {% assign alt = collection.title | escape %}
+    //-|         {{ collection.products.first.image | img_url: '450x450' | img_tag: alt }}
+    |       {% endif %}
+    |   {% endfor %}
+
+    ul
+        |   {% for product_vendor in shop.vendors %}
+        li {{ product_vendor | link_to_vendor }}
+        |   {% endfor %}
