@@ -2,10 +2,11 @@
 <form class="js-add-cart" action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
   <div class="ctn-variants">
       {% assign has_stock = 0 %}
+      {% assign current_variant = product.selected_variant.id %}
       {% if product.variants.size > 1 %}
       {% for variant in product.variants %}
       {% if variant.available %}
-    <fieldset class="fieldset-var">
+    <fieldset class="fieldset-var {% if variant.id == current_variant %}variant-active{% endif %}">
       <input class="{% unless variant.available %}disabled{% endunless %} js-variant-radio" type="radio" name="id" id="variant-{{ forloop.index }}" value="{{ variant.id }}" data-inventory-qty="{{ variant.inventory_quantity }}">
       <label for="variant-{{ forloop.index }}">{{ variant.title }}</label>
     </fieldset>  {% if variant.inventory_quantity != 0 %} {% assign has_stock = variant.inventory_quantity %} {% endif %}

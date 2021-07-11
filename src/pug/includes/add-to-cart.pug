@@ -4,12 +4,13 @@ form(action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCar
     //- =========================  variants  ========================= -//
     .ctn-variants
         |   {% assign has_stock = 0 %}
+        |   {% assign current_variant = product.selected_variant.id %}
         |   {% if product.variants.size > 1 %}
         //-  variants sizess
         |   {% for variant in product.variants %}
         |   {% if variant.available %}
 
-        fieldset.fieldset-var
+        fieldset.fieldset-var(class="{% if variant.id == current_variant %}variant-active{% endif %}")
             input(type="radio", name="id" id="variant-{{ forloop.index }}" value="{{ variant.id }}", data-inventory-qty="{{ variant.inventory_quantity }}", class="{% unless variant.available %}disabled{% endunless %}").js-variant-radio
             label(for="variant-{{ forloop.index }}") {{ variant.title }}
         |   {% if variant.inventory_quantity != 0 %} {% assign has_stock = variant.inventory_quantity %} {% endif %}

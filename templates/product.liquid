@@ -1,5 +1,5 @@
   {% assign fields = product.metafields %}
-<div class="page page-product {% if product.metafields.drop.drop_month %}dropsoon-product{% endif %}" data-barba="container" data-barba-namespace="product" data-ispage="product" data-scroll-content>
+<div class="page page-product {% if product.metafields.drop.drop_month %}dropsoon-product{% endif %}" data-barba="container" data-barba-namespace="product" data-ispage="product" data-scroll-content data-variant="{{ product.selected_variant.id }}">
   <header class="header-prod {% if product.variant.selected == true %}isvariant{%endif%}">
     <div class="header-prod__bread">  {% render 'breadcrumbs-prod' %}</div>
     <div class="header-prod__hold">

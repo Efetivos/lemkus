@@ -32,11 +32,33 @@ class Product {
 
             this.anchorsImgs()
             this.pinObjects()
-        }
+        } //close responsive
+
+        this.verifyVariantPage()
     }
 
 
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //? - =========================  VERIFY IF IS VARIANT  ========================= -//
+    //? - =========================  VERIFY IF IS VARIANT  ========================= -//
+    verifyVariantPage() {
+        $(document).ready(function () {
+            if (window.location.href.indexOf("variant") > -1) {
+                $('#add-to-cart-button').removeClass('disabled-add-cart')
+                $('.variant-active .js-variant-radio').trigger('click')
+            }
+        });
+    }
 
 
 
@@ -116,9 +138,9 @@ class Product {
                 trigger: el,
                 start: 'top 15%',
                 end: 'bottom 15%',
-                onEnter: () => $(that.thumbs.each).eq(index).addClass('thumbs-active') ,
-                onLeave: () => $(that.thumbs.each).eq(index).removeClass('thumbs-active') ,
-                onEnterBack: () => $(that.thumbs.each).eq(index).addClass('thumbs-active') ,
+                onEnter: () => $(that.thumbs.each).eq(index).addClass('thumbs-active'),
+                onLeave: () => $(that.thumbs.each).eq(index).removeClass('thumbs-active'),
+                onEnterBack: () => $(that.thumbs.each).eq(index).addClass('thumbs-active'),
                 onLeaveBack: () => $(that.thumbs.each).eq(index).removeClass('thumbs-active')
             })
 

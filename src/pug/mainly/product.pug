@@ -12,7 +12,7 @@
 
 
 
-.page.page-product(data-barba="container", data-barba-namespace="product", data-ispage="product", data-scroll-content,  class!="{% if product.metafields.drop.drop_month %}dropsoon-product{% endif %}")
+.page.page-product(data-barba="container", data-barba-namespace="product", data-ispage="product", data-scroll-content,  class!="{% if product.metafields.drop.drop_month %}dropsoon-product{% endif %}", data-variant="{{ product.selected_variant.id }}")
     header.header-prod(class="{% if product.variant.selected == true %}isvariant{%endif%}")
         .header-prod__bread
             |   {% render 'breadcrumbs-prod' %}
