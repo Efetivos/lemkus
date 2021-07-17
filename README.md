@@ -1,8 +1,8 @@
-## Time: 204h00
+## Time: 205h00
 Data: 00:15  | 07.16  
 Daily: -0:00 
   
-Additional Hours: 2:00  
+Additional Hours: 3:00  
 Extra Hours: + 4:30  
 ![Screenshot](./cover.png) (https://github.com/Efetivos/lemkus)
 

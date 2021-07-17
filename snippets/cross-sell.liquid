@@ -1,17 +1,18 @@
 
   {% assign $id =  product.id %}
-  {% assign type = product.collections[0].title %}
-<section class="dropping-card dropping-card-regular no-mobile">
+  {% assign type = product.type %}
+<section class="dropping-card dropping-card-regular no-mobile" data-type="{{ type }}">
     {% assign count = 0 %}
     {% assign $id_high = '' %}
-    {% for hl in collection.products %}
-    {% if hl.id != $id and hl.id != $id and count < 1 %}
+    {% for collection_this in collections %}
+    {% for hl in collections[collection_this.handle].products %}
+    {% if hl.id != $id and count < 1 and hl.type == type %}
   <div class="dropping-card__hold js-find-hover">  {% assign $id_high = hl.id %}
     <div class="dropping-card__bg" style="background:#eaeaea"></div>
     <div class="dropping-card__infos">
       <div class="dropping-card__logo"> 
         <!--img(src="{{ section.settings.img_logo_brand | img_url: 'master' }}", alt='{{ section.settings.img_logo_brand.alt | escape }}').img-load-->
-      </div><a class="dropping-card__title dharma" href="{{ hl.url | within: collection }}">{{ hl.title }}</a>
+      </div><a class="dropping-card__title dharma" href="{{ hl.url | within: collection }}">{{ hl.title }} </a>
       <div class="dropping-card__price recosemi">{{ hl.price | money }}</div>
       <div class="dropping-card__infos__img no-desk"><a href="{{ hl.url | within: collection }}"> <img class="img-load" src="{{  hl.featured_image.src  | img_url: 'master' }}" alt="{{ hl.src | escape }}"></a></div><a class="dropping-card__notify btn-hover cream-v" href="{{ hl.url | within: collection }}"><span class="static">VIEW PRODUCT</span><span class="hover" data-hover="VIEW PRODUCT      VIEW PRODUCT      ">VIEW PRODUCT      VIEW PRODUCT      </span></a>
     </div>
@@ -19,26 +20,31 @@
   </div>  {% assign count = count | plus: 1 %}
     {% endif %}
     {% endfor %}
+    {% endfor %}
 </section>
 <nav class="cross-sell no-desk">
   <div class="cross-sell__hold colle-cards">
       {% assign countA = 0 %}
-      {% for cross_mob in collection.products offset:1 %}
-      {% if cross_mob.id != $id and cross_mob.id != $id_high and countA < 4 %}
+      {% for collection_this in collections %}
+      {% for cross_mob in collections[collection_this.handle].products %}
+      {% if cross_mob.id != $id and cross_mob.id != $id_high and countA < 4 and cross_mob.type == type %}
       {% render 'product-card' prod: cross_mob %}
       {% assign countA = countA | plus: 1 %}
       {% endif %}
+      {% endfor %}
       {% endfor %}
   </div>
 </nav>
 <nav class="cross-sell no-mobile">
   <div class="cross-sell__hold colle-cards">
       {% assign countB = 0 %}
-      {% for cross_desk in collection.products offset:1 %}
-      {% if cross_desk.id != $id and cross_desk.id != $id_high and countB < 3 %}
+      {% for collection_this in collections %}
+      {% for cross_desk in collections[collection_this.handle].products %}
+      {% if cross_desk.id != $id and cross_desk.id != $id_high and countB < 3 and cross_desk.type == type %}
       {% render 'product-card' prod: cross_desk %}
       {% assign countB = countB | plus: 1 %}
       {% endif %}
+      {% endfor %}
       {% endfor %}
   </div>
 </nav>
