@@ -45,11 +45,14 @@ section.dropping-card.dropping-card-inv
                             span.infos__secs SECS
                 |   {% endif %}
 
-            //-a(href="#" class="BIS_trigger" data-product-data="{{ product | json | escape }}").dropping-card__notify.btn-hover NOTIFY ME
-            .dropping-card__notify.btn-hover
-                    span.static NOTIFY ME
-                    span.hover(data-hover="NOTIFY ME      NOTIFY ME      ") NOTIFY ME      NOTIFY ME      
 
+            form(action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm").js-add-cart
+                |   {% unless current_variant.available %}
+                //-a(href="#" class="BIS_trigger" data-product-data="{{ product | json | escape }}").dropping-card__notify.btn-hover NOTIFY ME
+                .dropping-card__notify.btn-hover
+                        span(data-product-data="{{ product | json | escape }}").BIS_trigger.static NOTIFY ME
+                        span.BIS_trigger.hover(data-product-data="{{ product | json | escape }}", data-hover="NOTIFY ME      NOTIFY ME      ") NOTIFY ME      NOTIFY ME      
+                |   {% endunless %}
 
 
 

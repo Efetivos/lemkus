@@ -1,4 +1,4 @@
-
+  {% assign product = all_products[section.settings.dropping_card_prod] %}
 <section class="dropping-card dropping-card-regular">
   <div class="dropping-card__hold js-find-hover">
     <div class="dropping-card__bg" style="background:#eaeaea"></div>
@@ -18,7 +18,9 @@
           </ul>
         </div>  {% endif %}
       </div>
-      <div class="dropping-card__notify btn-hover"><span class="static">NOTIFY ME</span><span class="hover" data-hover="NOTIFY ME      NOTIFY ME      ">NOTIFY ME      NOTIFY ME      </span></div>
+      <form class="js-add-cart" action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">  {% unless current_variant.available %}
+        <div class="dropping-card__notify btn-hover"><span class="BIS_trigger static" data-product-data="{{ product | json | escape }}">NOTIFY ME</span><span class="BIS_trigger hover" data-product-data="{{ product | json | escape }}" data-hover="NOTIFY ME      NOTIFY ME      ">NOTIFY ME      NOTIFY ME      </span></div>  {% endunless %}
+      </form>
     </div>
     <div class="dropping-card__img no-mobile hover-img"> <a href="{{ all_products[section.settings.dropping_card_prod].url | within: collection }}"> <img class="img-load" src="{{  all_products[section.settings.dropping_card_prod].featured_image.src  | img_url: 'master' }}" alt="{{ all_products[section.settings.dropping_card_prod].src | escape }}"></a></div>
   </div>
