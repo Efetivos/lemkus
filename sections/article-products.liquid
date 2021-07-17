@@ -18,7 +18,7 @@
         ]
     }
 {% endschema %}
-{% assign article_cols = collections[section.settings.articles_prod] %}
+{% assign article_cols = collections[article.metafields.accentuate.collection_handle] %}
 <section class="collect-index {% if section.settings.is_drag_art %}js-slider-section{% endif%}">
   <h1 class="collect-index__title dharma">{{ section.settings.text_dropped }}</h1>
   <div class="collect-index__hold colle-cards {% if section.settings.is_drag_art %}js-slider-section__holder{% endif%}">

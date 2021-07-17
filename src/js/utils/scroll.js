@@ -70,18 +70,18 @@ class Smooth {
         if (this.isPage === 'index') {
             if (!this.once) {
                 index.init(this.contentPage)
-                if($('.cols_index__drag').length > 0 && window.innerWidth > 1024 ) { 
+                if ($('.cols_index__drag').length > 0 && window.innerWidth > 1024) {
                     cursor.init()
-                    new SliderDrag(this.contentPage.querySelector('#shopify-section-index-cols'),'cols') 
+                    new SliderDrag(this.contentPage.querySelector('#shopify-section-index-cols'), 'cols')
                 }
-                if($('.dropped-drag').length > 0 && window.innerWidth > 1024 ) { 
+                if ($('.dropped-drag').length > 0 && window.innerWidth > 1024) {
                     this.contentPage.querySelectorAll('.dropped-drag').forEach((el) => {
-                        new SliderDrag(el,'drag__cntrl') 
+                        new SliderDrag(el, 'drag__cntrl')
                     })
                 }
                 this.once = true
             }
-                
+
             index.onScroll()
         }
 
@@ -91,9 +91,9 @@ class Smooth {
         // ______________ launches
         if (this.isPage === 'launches') {
             if (!this.once) {
-                if($('.header-laun__colle__hold').length > 0 && window.innerWidth > 1024 ) { 
+                if ($('.header-laun__colle__hold').length > 0 && window.innerWidth > 1024) {
                     cursor.init()
-                    new SliderDrag(this.contentPage.querySelector('#shopify-section-launches-header'), 'header-launch') 
+                    new SliderDrag(this.contentPage.querySelector('#shopify-section-launches-header'), 'header-launch')
                 }
                 launches.init()
                 this.once = true
@@ -198,7 +198,7 @@ class Smooth {
                         clearInterval(checkExist);
                     }
                 }, 100); // check every 100ms
-                gsap.delayedCall(5, () => window.dispatchEvent(new Event('resize')) )
+                gsap.delayedCall(5, () => window.dispatchEvent(new Event('resize')))
             }
         }
 
@@ -251,32 +251,29 @@ class Smooth {
         window.removeEventListener('scroll', this.scroll, { passive: true })
     }
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
     //? - =========================  verify drag  ========================= -//
     //? - =========================  verify drag  ========================= -//
     verifyDrag() {
         //mobile
+
+
         this.slider = this.contentPage.querySelectorAll('.js-slider') || null
-        if($(window).width() < 1025 && this.slider.length > 0) {
+        if ($(window).width() < 1025 && this.slider.length > 0) {
             this.slider.forEach((el) => {
                 new DragSlider(el)
             })
-        } else {
-            this.slider.forEach((el) => {
-                //new DragSlider(el)
-            })
-
         }
-        
+
         //this.slider_section = this.contentPage.querySelectorAll('.js-slider-section') || null
         //if(this.slider_section.length > 0) {
         //    this.slider_section.forEach((el) => {
@@ -285,7 +282,7 @@ class Smooth {
         //}
 
     }
-    
+
     init() {
         //this.contentPage = contentPage
         //this.isPage = isPage

@@ -19,7 +19,7 @@
         }
     {% endschema %}
 
-| {% assign article_cols = collections[section.settings.articles_prod] %}
+| {% assign article_cols = collections[article.metafields.accentuate.collection_handle] %}
 section.collect-index(class="{% if section.settings.is_drag_art %}js-slider-section{% endif%}")
 
     h1.collect-index__title.dharma {{ section.settings.text_dropped }}
@@ -31,6 +31,6 @@ section.collect-index(class="{% if section.settings.is_drag_art %}js-slider-sect
 
         | {% endfor %}
 
-    
+
 
 

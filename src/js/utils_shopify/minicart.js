@@ -1,3 +1,4 @@
+import DragSlider from '../utils_global/sliders'
 import { ajaxify } from './ajaxify'
 
 class Minicart {
@@ -50,6 +51,10 @@ class Minicart {
                 ajaxify.removeItem(cart_body)
                 ajaxify.onQtyChange(cart_body)
                 
+                if($(window).width() < 1025) {
+                    new DragSlider(cart_body.querySelector('.cart-colle.js-slider'))
+                }
+
                 setTimeout(function () { $('.add-cart-btns').removeClass('loading-item') }, 500);
                 
             }).catch(function (err) {
