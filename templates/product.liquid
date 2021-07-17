@@ -27,7 +27,7 @@
           </ul>  {% endif %}
           <div class="header-prod__prices-guides">
             <div class="{% if product.compare_at_price_max != 0 %} is-sale {% endif %} header-prod__prices"><span class="regular-price">{{ product.price | money }}</span>{% if product.compare_at_price_max != 0 %}<span class="sale-price">{{ product.compare_at_price_max  | money  }}</span>{% endif %}</div>
-            <div class="header-prod__guide"><a class="recosemi e-upper underline" href="#">SIZE GUIDE</a></div>
+            <div class="header-prod__guide"><a class="recosemi e-upper underline" href="{{ shop.metafields.globals.size_guide }}" target="_blank">SIZE GUIDE</a></div>
           </div>  {% if product.metafields.drop.drop_month %}
             {% assign drop_day = product.metafields.drop.drop_day %}
             {% assign drop_month = product.metafields.drop.drop_month %}
@@ -39,7 +39,6 @@
             </ul>
           </div>  {% endif %}
             {% render 'add-to-cart' %}
-            {% if product.metafields.drop.drop_month %}<a class="prod-card__notify btn-hover notifyme klaviyo-bis-trigger" href="#"><span class="static">NOTIFY ME</span><span class="hover" data-hover="NOTIFY ME      NOTIFY ME      NOTIFY ME      NOTIFY ME      NOTIFY ME      ">NOTIFY ME      NOTIFY ME      NOTIFY ME      NOTIFY ME      NOTIFY ME      </span></a>  {% endif %}
           <div class="prod-descr">
             <div class="prod-descr__content no-desk">{{ fields.descr.description }} </div>  {% if fields.descr.details != blank %}
             <div class="ctn-accord">

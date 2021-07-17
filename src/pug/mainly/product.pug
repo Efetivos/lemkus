@@ -75,7 +75,7 @@
                             span.sale-price {{ product.compare_at_price_max  | money  }}
                             | {% endif %}
                         .header-prod__guide
-                            a(href="#").recosemi.e-upper.underline SIZE GUIDE
+                            a(href="{{ shop.metafields.globals.size_guide }}", target="_blank").recosemi.e-upper.underline SIZE GUIDE
 
                     //- COUNTDOWN
                     |   {% if product.metafields.drop.drop_month %}
@@ -103,12 +103,12 @@
 
                     //- =========================  NOTIFY  ========================= -//
                     //- =========================  NOTIFY  ========================= -//
-                    
-                    |   {% if product.metafields.drop.drop_month %}
-                    a(href="#").prod-card__notify.btn-hover.notifyme.klaviyo-bis-trigger
-                        span.static NOTIFY ME
-                        span.hover(data-hover="NOTIFY ME      NOTIFY ME      NOTIFY ME      NOTIFY ME      NOTIFY ME      ") NOTIFY ME      NOTIFY ME      NOTIFY ME      NOTIFY ME      NOTIFY ME      
-                    |   {% endif %}
+                        
+                        |   {% if product.metafields.drop.drop_month %}
+                        a(href="#").prod-card__notify.btn-hover.notifyme.klaviyo-bis-trigger
+                            span.static NOTIFY ME
+                            span.hover(data-hover="NOTIFY ME      NOTIFY ME      NOTIFY ME      NOTIFY ME      NOTIFY ME      ") NOTIFY ME      NOTIFY ME      NOTIFY ME      NOTIFY ME      NOTIFY ME      
+                        |   {% endif %}
 
 
 
